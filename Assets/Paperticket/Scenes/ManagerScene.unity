@@ -837,8 +837,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edeef47095226442a4e53e9184efa65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LoadFirstScene: 0
-  _FirstSceneName: MelbTestScene01
+  _LoadFirstScene: 1
+  _FirstSceneName: WorkExperience01 - Onboarding
   _Debug: 0
 --- !u!4 &1833220342
 Transform:

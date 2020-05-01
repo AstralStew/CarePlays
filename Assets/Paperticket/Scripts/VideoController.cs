@@ -45,7 +45,8 @@ namespace Paperticket {
 
         //Current time of the video in seconds
         public float currentVideoTime;
-        private long endFrames;
+        [SerializeField] private long currentFrames;
+        [SerializeField] private long endFrames;
 
 
         [Header("Optional")]
@@ -78,6 +79,8 @@ namespace Paperticket {
                 // The current time of the video playthrough
                 currentVideoTime = (float)videoPlayer.time;
             }
+
+            currentFrames = videoPlayer.frame;
 
             if (!videoPlayer.isLooping && videoStarted && !videoEnded && (videoPlayer.frame >= endFrames)) {
                 FinishVideo();
@@ -140,7 +143,7 @@ namespace Paperticket {
 
             videoLoaded = true;
 
-            endFrames = (long)videoPlayer.frameCount;
+            endFrames = (long)videoPlayer.frameCount - 1;
 
             if (autoPlay) {
                 if (_Debug) Debug.Log("[VideoController] Autoplay is on, playing video!");
@@ -285,6 +288,8 @@ namespace Paperticket {
             if (!videoPlayer.isLooping) {
                 videoEnded = true;
                 videoStarted = false;
+
+                videoPlayer.Pause();
 
                 if (_UseFinishEvents && _FinishEvents.Length > 0 && finishIndexNo < _FinishEvents.Length) {
 

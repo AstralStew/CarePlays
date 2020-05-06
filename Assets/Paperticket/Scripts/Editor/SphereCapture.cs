@@ -11,10 +11,10 @@ public class SphereCapture : EditorWindow {
                 
         // Capture the image and save to a byte array
         byte[] byteArray = I360Render.Capture( 1920, false, null, true );
-        
+
 
         // Create the following directory if it does not yet exist
-        string outputDirectory = "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/Output/360 Unity Captures/";
+        string outputDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures) + "/Unity 360 Captures/";
         if (!Directory.Exists(outputDirectory)) {
             Directory.CreateDirectory(outputDirectory);
         }
@@ -26,9 +26,9 @@ public class SphereCapture : EditorWindow {
 
         if (File.Exists(filePath)) {
             File.Move(filePath, outputDirectory + "360UnityCapture_" + "test" + ".png");
-            Debug.LogWarning("[BuildBundles] SUCCESS -> Expansion file should be saved as '" + outputDirectory + "360UnityCapture_" + System.DateTime.Now + ".png" + "'");
+            Debug.Log("[SphereCapture] SUCCESS -> Expansion file should be saved as '" + outputDirectory + "360UnityCapture_" + System.DateTime.Now + ".png" + "'");
         } else {
-            Debug.LogError("[BuildBundles] ERROR -> Could not find '" + filePath + "'");
+            Debug.LogError("[SphereCapture] ERROR -> Could not find '" + filePath + "'");
         }
 
     }

@@ -25,7 +25,7 @@ public class SphereCapture : EditorWindow {
 
 
         if (File.Exists(filePath)) {
-            File.Move(filePath, outputDirectory + "360UnityCapture_" + "test" + ".png");
+            File.Move(filePath, outputDirectory + "360UnityCapture_" + System.DateTime.Now.ToString("dd-MM-yyyy_hh-mm-ss") + ".png");
             Debug.Log("[SphereCapture] SUCCESS -> Expansion file should be saved as '" + outputDirectory + "360UnityCapture_" + System.DateTime.Now + ".png" + "'");
         } else {
             Debug.LogError("[SphereCapture] ERROR -> Could not find '" + filePath + "'");

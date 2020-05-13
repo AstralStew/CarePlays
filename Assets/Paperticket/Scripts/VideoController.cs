@@ -143,7 +143,7 @@ namespace Paperticket {
 
             videoLoaded = true;
 
-            endFrames = (long)videoPlayer.frameCount - 1;
+            endFrames = (long)videoPlayer.frameCount - 15;
 
             if (autoPlay) {
                 if (_Debug) Debug.Log("[VideoController] Autoplay is on, playing video!");

@@ -170,6 +170,36 @@ MonoBehaviour:
   m_CameraGameObject: {fileID: 1376756423}
   m_TrackingSpace: 0
   m_CameraYOffset: 1.36144
+--- !u!1 &291600505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 291600506}
+  m_Layer: 0
+  m_Name: RaycastAttach
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &291600506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291600505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1891529375}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &347959886
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +749,7 @@ MonoBehaviour:
   m_Device: 0
   m_PoseSource: 2
   m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
+  m_TrackingType: 1
   m_UpdateType: 0
   m_UseRelativeTransform: 0
 --- !u!20 &1376756426
@@ -837,8 +867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edeef47095226442a4e53e9184efa65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LoadFirstScene: 1
-  _FirstSceneName: WorkExperience01 - Onboarding
+  _LoadFirstScene: 0
+  _FirstSceneName: Induction03 - Cigarette Conundrum
   _Debug: 0
 --- !u!4 &1833220342
 Transform:
@@ -885,7 +915,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 291600506}
   m_Father: {fileID: 471308902}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1110,8 +1141,8 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 1594727781}
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_AttachTransform: {fileID: 0}
+    m_Bits: 256
+  m_AttachTransform: {fileID: 291600506}
   m_StartingSelectedInteractable: {fileID: 0}
   m_OnHoverEnter:
     m_PersistentCalls:
@@ -1183,7 +1214,7 @@ MonoBehaviour:
   m_EnableInputActions: 1
   m_ControllerNode: 5
   m_SelectUsage: 2
-  m_ActivateUsage: 2
+  m_ActivateUsage: 3
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
   m_ModelPrefab: {fileID: 2862273434692911969, guid: 5f437ffd5bc42f54ba740cec283781ea,

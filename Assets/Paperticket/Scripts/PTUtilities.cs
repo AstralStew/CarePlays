@@ -341,135 +341,7 @@ namespace Paperticket {
 
 
 
-
-        /// <summary>
-        /// Fades the alpha of a sprite renderer to the target value over the duration
-        /// </summary>
-        /// <param name="sprite">The sprite renderer to change</param>
-        /// <param name="targetAlpha">The target alpha value to fade to</param>
-        /// <param name="duration">The duration of the fade in seconds</param>
-        public void FadeAlpha( SpriteRenderer sprite, float targetAlpha, float duration ) {
-
-            if (_Debug) Debug.Log("[PTUtilities] Sprite " + sprite.name + "received");
-
-            StartCoroutine(FadeAlphaTo(sprite, targetAlpha, duration));
-
-        }
-        /// <summary>
-        /// Fades the alpha of a TextMeshPro asset to the target value over the duration
-        /// </summary>
-        /// <param name="textmesh">The TextMeshPro asset to change</param>
-        /// <param name="targetAlpha">The target alpha value to fade to</param>
-        /// <param name="duration">The duration of the fade in seconds</param>
-        public void FadeAlpha( TextMeshPro textmesh, float targetAlpha, float duration ) {
-
-            if (_Debug) Debug.Log("[PTUtilities] TextMesh " + textmesh.name + "received");
-
-            StartCoroutine(FadeAlphaTo(textmesh, targetAlpha, duration));
-
-        }
-        /// <summary>
-        /// Fades the alpha of a mesh renderer's main material to the target value over the duration
-        /// </summary>
-        /// <param name="meshRenderer">The mesh renderer asset to change</param>
-        /// <param name="targetAlpha">The target alpha value to fade to</param>
-        /// <param name="duration">The duration of the fade in seconds</param>
-        public void FadeAlpha( MeshRenderer meshRenderer, float targetAlpha, float duration ) {
-
-            if (_Debug) Debug.Log("[PTUtilities] Material " + meshRenderer.name + "received");
-
-            StartCoroutine(FadeAlphaTo(meshRenderer, targetAlpha, duration));
-
-        }
-
-
-
-        /// <summary>
-        /// Fades the alpha of a sprite renderer to the target value over the duration
-        /// </summary>
-        /// <param name="sprite">The sprite renderer to change</param>
-        /// <param name="targetAlpha">The target alpha value to fade to</param>
-        /// <param name="duration">The duration of the fade in seconds</param>
-        public void FadeColor( SpriteRenderer sprite, Color targetColor, float duration ) {
-
-            if (_Debug) Debug.Log("[PTUtilities] Sprite " + sprite.name + "received");
-
-            StartCoroutine(FadeColorTo(sprite, targetColor, duration));
-
-        }
-        /// <summary>
-        /// Fades the alpha of a sprite renderer to the target value over the duration
-        /// </summary>
-        /// <param name="sprite">The sprite renderer to change</param>
-        /// <param name="targetAlpha">The target alpha value to fade to</param>
-        /// <param name="duration">The duration of the fade in seconds</param>
-        public void FadeColor( SpriteRenderer sprite, Color targetColor, float duration, out Coroutine fadeCoroutine ) {
-
-            if (_Debug) Debug.Log("[PTUtilities] Sprite " + sprite.name + "received");
-
-            fadeCoroutine = StartCoroutine(FadeColorTo(sprite, targetColor, duration));
-
-        }
-        /// <summary>
-        /// Fades the alpha of a sprite renderer to the target value over the duration
-        /// </summary>
-        /// <param name="sprite">The sprite renderer to change</param>
-        /// <param name="targetAlpha">The target alpha value to fade to</param>
-        /// <param name="duration">The duration of the fade in seconds</param>
-        public void FadeColor( MeshRenderer meshRenderer, Color targetColor, float duration ) {
-
-            if (_Debug) Debug.Log("[PTUtilities] MeshRenderer " + meshRenderer.name + "received");
-
-            StartCoroutine(FadeColorTo(meshRenderer, targetColor, duration));
-
-        }
-        /// <summary>
-        /// Fades the alpha of a sprite renderer to the target value over the duration
-        /// </summary>
-        /// <param name="sprite">The sprite renderer to change</param>
-        /// <param name="targetAlpha">The target alpha value to fade to</param>
-        /// <param name="duration">The duration of the fade in seconds</param>
-        public void FadeColor( MeshRenderer meshRenderer, Color targetColor, float duration, out Coroutine fadeCoroutine ) {
-
-            if (_Debug) Debug.Log("[PTUtilities] MeshRenderer " + meshRenderer.name + "received");
-
-            fadeCoroutine = StartCoroutine(FadeColorTo(meshRenderer, targetColor, duration));
-
-        }
-
-
-        // Fading audio
-
-
-        /// <summary>
-        /// Fades the volume of an Audio Source to the target value over the duration
-        /// </summary>
-        /// <param name="audioSource">The Audio Source to change</param>
-        /// <param name="volume">The target volume to fade to</param>
-        /// <param name="duration">The duration of the fade in seconds</param>
-        public void FadeAudio( AudioSource audioSource, float volume, float duration ) {
-
-            StartCoroutine(FadeAudioTo(audioSource, volume, duration));
-
-        }
-
-        bool fadingAudioListener;
-        Coroutine fadeAudioListenerCoroutine;
-        bool fadingResonanceListener;
-        Coroutine fadeResonanceListenerCoroutine;
-
-        /// <summary>
-        /// Fades the volume of the Audio Listener to the target value over the duration
-        /// </summary>
-        /// <param name="volume">The target volume to fade to</param>
-        /// <param name="duration">The duration of the fade in seconds</param>
-        public void FadeAudioListener( float volume, float duration ) {
-
-            // If an audio listener fade is already happening, cancel it and start the new one
-            if (fadingAudioListener) StopCoroutine(fadeAudioListenerCoroutine);
-            fadeAudioListenerCoroutine = StartCoroutine(FadeAudioListenerTo(volume, duration));
-            
-        }
+       
 
 
 
@@ -479,7 +351,7 @@ namespace Paperticket {
         // The generalised helper ienumerators which change each setting over time
 
         // Helper coroutine for fading the alpha of a sprite
-        IEnumerator FadeAlphaTo( SpriteRenderer sprite, float targetAlpha, float duration ) {
+        public IEnumerator FadeAlphaTo( SpriteRenderer sprite, float targetAlpha, float duration ) {
 
             if (sprite.color.a != targetAlpha) {
 
@@ -509,7 +381,7 @@ namespace Paperticket {
 
         }
         // Helper coroutine for fading the alpha of text
-        IEnumerator FadeAlphaTo( TextMeshPro textmesh, float targetAlpha, float duration ) {
+        public IEnumerator FadeAlphaTo( TextMeshPro textmesh, float targetAlpha, float duration ) {
 
             if (textmesh.color.a != targetAlpha) {
 
@@ -539,7 +411,7 @@ namespace Paperticket {
 
         }
         // Helper coroutine for fading the alpha of mesh renderer
-        IEnumerator FadeAlphaTo( MeshRenderer mRenderer, float targetAlpha, float duration ) {
+        public IEnumerator FadeAlphaTo( MeshRenderer mRenderer, float targetAlpha, float duration ) {
 
             Material mat = mRenderer.material;
             Color col = mat.GetColor("_Color");
@@ -574,7 +446,7 @@ namespace Paperticket {
         }
 
         // Helper coroutine for fading the color of a sprite
-        IEnumerator FadeColorTo( SpriteRenderer sprite, Color targetColor, float duration ) {
+        public IEnumerator FadeColorTo( SpriteRenderer sprite, Color targetColor, float duration ) {
 
             if (sprite.color != targetColor) {
 
@@ -604,7 +476,7 @@ namespace Paperticket {
 
         }
         // Helper coroutine for fading the color of a sprite
-        IEnumerator FadeColorTo( MeshRenderer mRenderer, Color targetColor, float duration ) {
+        public IEnumerator FadeColorTo( MeshRenderer mRenderer, Color targetColor, float duration ) {
 
             Material mat = mRenderer.material;
 
@@ -639,7 +511,7 @@ namespace Paperticket {
         }
 
         // Helper coroutine for fading audio source volume
-        IEnumerator FadeAudioTo( AudioSource audio, float targetVolume, float duration ) {
+        public IEnumerator FadeAudioTo( AudioSource audio, float targetVolume, float duration ) {
             float volume = audio.volume;
             if (!audio.isPlaying) {
                 audio.Play();
@@ -655,6 +527,29 @@ namespace Paperticket {
             }
 
         }
+
+
+
+        // Fading audio
+
+        bool fadingAudioListener;
+        Coroutine fadeAudioListenerCoroutine;
+        bool fadingResonanceListener;
+        Coroutine fadeResonanceListenerCoroutine;
+
+        /// <summary>
+        /// Fades the volume of the Audio Listener to the target value over the duration
+        /// </summary>
+        /// <param name="volume">The target volume to fade to</param>
+        /// <param name="duration">The duration of the fade in seconds</param>
+        public void FadeAudioListener( float volume, float duration ) {
+
+            // If an audio listener fade is already happening, cancel it and start the new one
+            if (fadingAudioListener) StopCoroutine(fadeAudioListenerCoroutine);
+            fadeAudioListenerCoroutine = StartCoroutine(FadeAudioListenerTo(volume, duration));
+
+        }
+
         // Helper coroutine for fading audio listener volume
         IEnumerator FadeAudioListenerTo( float targetVolume, float duration ) {
             fadingAudioListener = true;
@@ -714,6 +609,122 @@ namespace Paperticket {
     }
 
 }
+
+
+
+
+
+// OLD FUNCTIONS
+
+
+///// <summary>
+///// Fades the volume of an Audio Source to the target value over the duration
+///// </summary>
+///// <param name="audioSource">The Audio Source to change</param>
+///// <param name="volume">The target volume to fade to</param>
+///// <param name="duration">The duration of the fade in seconds</param>
+//public void FadeAudio( AudioSource audioSource, float volume, float duration ) {
+
+//    StartCoroutine(FadeAudioTo(audioSource, volume, duration));
+
+//}
+
+///// <summary>
+///// Fades the alpha of a sprite renderer to the target value over the duration
+///// </summary>
+///// <param name="sprite">The sprite renderer to change</param>
+///// <param name="targetAlpha">The target alpha value to fade to</param>
+///// <param name="duration">The duration of the fade in seconds</param>
+//public void FadeAlpha( SpriteRenderer sprite, float targetAlpha, float duration ) {
+
+//    if (_Debug) Debug.Log("[PTUtilities] Sprite " + sprite.name + "received");
+
+//    StartCoroutine(FadeAlphaTo(sprite, targetAlpha, duration));
+
+//}
+///// <summary>
+///// Fades the alpha of a TextMeshPro asset to the target value over the duration
+///// </summary>
+///// <param name="textmesh">The TextMeshPro asset to change</param>
+///// <param name="targetAlpha">The target alpha value to fade to</param>
+///// <param name="duration">The duration of the fade in seconds</param>
+//public void FadeAlpha( TextMeshPro textmesh, float targetAlpha, float duration ) {
+
+//    if (_Debug) Debug.Log("[PTUtilities] TextMesh " + textmesh.name + "received");
+
+//    StartCoroutine(FadeAlphaTo(textmesh, targetAlpha, duration));
+
+//}
+///// <summary>
+///// Fades the alpha of a mesh renderer's main material to the target value over the duration
+///// </summary>
+///// <param name="meshRenderer">The mesh renderer asset to change</param>
+///// <param name="targetAlpha">The target alpha value to fade to</param>
+///// <param name="duration">The duration of the fade in seconds</param>
+//public void FadeAlpha( MeshRenderer meshRenderer, float targetAlpha, float duration ) {
+
+//    if (_Debug) Debug.Log("[PTUtilities] Material " + meshRenderer.name + "received");
+
+//    StartCoroutine(FadeAlphaTo(meshRenderer, targetAlpha, duration));
+
+//}
+
+
+
+///// <summary>
+///// Fades the alpha of a sprite renderer to the target value over the duration
+///// </summary>
+///// <param name="sprite">The sprite renderer to change</param>
+///// <param name="targetAlpha">The target alpha value to fade to</param>
+///// <param name="duration">The duration of the fade in seconds</param>
+//public void FadeColor( SpriteRenderer sprite, Color targetColor, float duration ) {
+
+//    if (_Debug) Debug.Log("[PTUtilities] Sprite " + sprite.name + "received");
+
+//    StartCoroutine(FadeColorTo(sprite, targetColor, duration));
+
+//}
+///// <summary>
+///// Fades the alpha of a sprite renderer to the target value over the duration
+///// </summary>
+///// <param name="sprite">The sprite renderer to change</param>
+///// <param name="targetAlpha">The target alpha value to fade to</param>
+///// <param name="duration">The duration of the fade in seconds</param>
+//public void FadeColor( SpriteRenderer sprite, Color targetColor, float duration, out Coroutine fadeCoroutine ) {
+
+//    if (_Debug) Debug.Log("[PTUtilities] Sprite " + sprite.name + "received");
+
+//    fadeCoroutine = StartCoroutine(FadeColorTo(sprite, targetColor, duration));
+
+//}
+///// <summary>
+///// Fades the alpha of a sprite renderer to the target value over the duration
+///// </summary>
+///// <param name="sprite">The sprite renderer to change</param>
+///// <param name="targetAlpha">The target alpha value to fade to</param>
+///// <param name="duration">The duration of the fade in seconds</param>
+//public void FadeColor( MeshRenderer meshRenderer, Color targetColor, float duration ) {
+
+//    if (_Debug) Debug.Log("[PTUtilities] MeshRenderer " + meshRenderer.name + "received");
+
+//    StartCoroutine(FadeColorTo(meshRenderer, targetColor, duration));
+
+//}
+///// <summary>
+///// Fades the alpha of a sprite renderer to the target value over the duration
+///// </summary>
+///// <param name="sprite">The sprite renderer to change</param>
+///// <param name="targetAlpha">The target alpha value to fade to</param>
+///// <param name="duration">The duration of the fade in seconds</param>
+//public void FadeColor( MeshRenderer meshRenderer, Color targetColor, float duration, out Coroutine fadeCoroutine ) {
+
+//    if (_Debug) Debug.Log("[PTUtilities] MeshRenderer " + meshRenderer.name + "received");
+
+//    fadeCoroutine = StartCoroutine(FadeColorTo(meshRenderer, targetColor, duration));
+
+//}
+
+
 
 
 

@@ -20,6 +20,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Paperticket/Scenes/WorkExperience/WorkExperience04 - Finale.unity
     guid: fdb1bd38a8cc8864ea804bbea32780cf
+  - enabled: 1
+    path: Assets/Paperticket/Scenes/Induction/Induction01 - Module Selection.unity
+    guid: 198c42eff5055094a94efe799855723e
+  - enabled: 1
+    path: Assets/Paperticket/Scenes/Induction/Induction02 - Game Show.unity
+    guid: b225f24632a0a404bb5d24a30f2fd412
+  - enabled: 1
+    path: Assets/Paperticket/Scenes/Induction/Induction03 - Cigarette Conundrum.unity
+    guid: 259c80cdafa6f4145afac27a7d113599
+  - enabled: 1
+    path: Assets/Paperticket/Scenes/Induction/Induction04 - Kinship Lesson.unity
+    guid: d59881cc3d8d4e543ad09013f2055e85
+  - enabled: 1
+    path: Assets/Paperticket/Scenes/Induction/Induction05 - Privacy and Consent.unity
+    guid: 6222331bac37791459ac0c7a5d2b557e
+  - enabled: 1
+    path: Assets/Paperticket/Scenes/Induction/Induction06 - Finale.unity
+    guid: edf1bf267226eb946a4e20d839ccfa6b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a35a7b3bce2f4294886b4ad4a30469fd,
       type: 2}

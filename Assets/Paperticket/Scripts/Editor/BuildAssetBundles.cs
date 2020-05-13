@@ -16,7 +16,8 @@ public class BuildAssetBundles : Editor {
         if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android) {
 
             // Define (or create) a path for the asset bundles to build into
-            assetBundleDirectory = "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/APKs/Asset Bundles/";
+            assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/Android Asset Bundles/";
+            //assetBundleDirectory = "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/APKs/Asset Bundles/";
 
             // Use uncompressed asset bundle option on android to allow videos to be read
             buildAssetBundleOptions = BuildAssetBundleOptions.UncompressedAssetBundle;
@@ -25,7 +26,8 @@ public class BuildAssetBundles : Editor {
         } else {
 
             // Define (or create) a path for the asset bundles to build into
-            assetBundleDirectory = "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/EXEs/Asset Bundles/";
+            assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/PC Asset Bundles/";
+            //assetBundleDirectory = "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/EXEs/Asset Bundles/";
 
             // Otherwise (PC presumably) use chunk based compression for smaller file size
             buildAssetBundleOptions = BuildAssetBundleOptions.ChunkBasedCompression;

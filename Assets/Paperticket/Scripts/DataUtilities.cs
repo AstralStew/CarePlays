@@ -19,7 +19,8 @@ namespace Paperticket {
             get {
 
                 if (Application.platform == RuntimePlatform.WindowsEditor) {
-                    return "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/EXEs/Asset Bundles/" + _ExpansionFileName;
+                    return System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/PC Asset Bundles/" + _ExpansionFileName;
+                    //return "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/EXEs/Asset Bundles/" + _ExpansionFileName;
 
                 } else if (Application.platform == RuntimePlatform.WindowsPlayer) {
                     return Application.dataPath + "/Asset Bundles/" + _ExpansionFileName;

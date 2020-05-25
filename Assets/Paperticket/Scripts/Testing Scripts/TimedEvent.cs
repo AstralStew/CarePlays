@@ -17,7 +17,7 @@ public class TimedEvent : MonoBehaviour
     [SerializeField] UnityEvent OnEventTriggered;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         timeToChange = Time.time + TimeBeforeSceneChange;
     }

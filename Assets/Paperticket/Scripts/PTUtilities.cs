@@ -6,7 +6,6 @@ using UnityEngine.Audio;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
-//using VRTK;
 
 namespace Paperticket {
 
@@ -21,53 +20,111 @@ namespace Paperticket {
 
         public AudioMixer _ResonanceMaster;
 
-        [SerializeField] Transform headProxy;
-        [SerializeField] GameObject controllerProxy;
-        [SerializeField] Vector3 velocityTest;
-        [SerializeField] Vector3 angularTest;
+        public XRRig playerRig;
+
+
 
         [Header("Controls")]
+        
+        //[SerializeField] Vector3 velocityTest;
+        //[SerializeField] float velocitySensitivity;
+        //[SerializeField] Vector3 angularTest;
+        //[SerializeField] float angularSensitivity;
+        //[SerializeField] Vector3 accelerationTest;
+        //[SerializeField] float accelerationSensitivity;
+        //[SerializeField] Vector3 angularAccelerationTest;
+        //[SerializeField] float angularAccelerationSensitivity;
 
         public bool _Debug;
 
-        public Vector3 HeadsetPosition() {
-            return headProxy.position;
-        }
+        
 
-        public Quaternion HeadsetRotation() {
-            return Quaternion.Euler(new Vector3(0, headProxy.rotation.eulerAngles.y, 0));
-        }
+        [Header("Read Only")]
 
-        [HideInInspector] public bool SetupComplete;
+        public Transform headProxy;
+        public XRController controller;
+        MeshRenderer controllerRenderer;
 
         enum Handedness { Left, Right, Both }
 
         
+        public Vector3 HeadsetPosition() {
+            return headProxy.position;
+        }
+        public Quaternion HeadsetRotation() {
+            return Quaternion.Euler(new Vector3(0, headProxy.rotation.eulerAngles.y, 0));
+        }
+
+        public bool ControllerTriggerButton;
+        public bool ControllerPrimaryButton;
+        public Vector3 ControllerVelocity;
+        public Vector3 ControllerAngularVelocity;
+        public Vector3 ControllerAcceleration;
+        public Vector3 ControllerAngularAcceleration;
+        
+        [HideInInspector] public bool SetupComplete;
+        
+        
 
         void Awake() {
 
-            // make sure we hafve the controllers and headset aliases
-            if (headProxy == null) {
-                Debug.LogError("[PTUtilities] ERROR -> No PlayerCamera defined!");
-                enabled = false;
-            }
-            if (controllerProxy == null) {
-                Debug.LogError("[PTUtilities] ERROR -> No ControllerAlias defined!");
-                enabled = false;
-            }
-                       
-            // Create an instanced version of this script
+            // Create an instanced version of this script, or destroy it if one already exists
             if (instance == null) {
                 instance = this;
             } else if (instance != this) {
                 Destroy(gameObject);
             }
+                       
+            StartCoroutine(Setup());
+            
+        }
+        IEnumerator Setup() {
+            if (_Debug) Debug.Log("[PTUtilities] Starting setup...");
+
+            // Make sure our player rig is defined
+            while (playerRig == null) {
+                Debug.LogError("[PTUtilities] ERROR -> No Player Rig defined! Something has gone wrong!");
+                yield return null;
+            }
 
 
+            // Grab the player's head camera            
+            while (headProxy == null) {
+                if (_Debug) Debug.Log("[PTUtilities] Looking for Head Proxy object...");
+                headProxy = playerRig.cameraGameObject.transform;
+                yield return null;
+                //enabled = false;
+            }
+            if (_Debug) Debug.Log("[PTUtilities] Head Proxy found!");
 
+
+            // Grab the controller
+            while (controller == null) {
+                if (_Debug) Debug.Log("[PTUtilities] Looking for Controller object...");
+                foreach (XRController cont in playerRig.GetComponentsInChildren<XRController>()) {
+                    if (cont.controllerNode == XRNode.LeftHand || cont.controllerNode == XRNode.RightHand) controller = cont;
+                }
+                yield return null;
+            }
+            if (_Debug) Debug.Log("[PTUtilities] Controller found!");
+
+
+            // Grab the controller renderer            
+            while (controllerRenderer == null) {
+                if (_Debug) Debug.Log("[PTUtilities] Looking for Controller Renderer object...");
+                controllerRenderer = controller.modelTransform.GetComponentInChildren<MeshRenderer>();
+                yield return null;
+            }
+            if (_Debug) Debug.Log("[PTUtilities] Controller Renderer found!");
+
+            // Finish setup
+            SetupComplete = true;
+            if (_Debug) Debug.Log("[PTUtilities] Setup complete!");
         }
 
+
         void FixedUpdate() {
+            if (!SetupComplete) return;
 
 
             List<XRNodeState> nodes = new List<XRNodeState>();
@@ -75,14 +132,54 @@ namespace Paperticket {
 
             foreach (XRNodeState ns in nodes) {
                 if (ns.nodeType == XRNode.RightHand) { 
-                    ns.TryGetVelocity(out velocityTest);
-                    velocityTest = new Vector3 (Mathf.Round(velocityTest.x * 100f) / 100f, Mathf.Round(velocityTest.y * 100f) / 100f, Mathf.Round(velocityTest.z * 100f) / 100f);
-                    ns.TryGetAngularVelocity(out angularTest);
-                    angularTest = new Vector3(Mathf.Round(angularTest.x * 100f) / 100f, Mathf.Round(angularTest.y * 100f) / 100f, Mathf.Round(angularTest.z * 100f) / 100f);
+                    ns.TryGetVelocity(out ControllerVelocity);
+                    ns.TryGetAngularVelocity(out ControllerAngularVelocity);                    
+                    ns.TryGetAcceleration(out ControllerAcceleration);                    
+                    ns.TryGetAngularAcceleration(out ControllerAngularAcceleration);
+                    
                 }
             }
-        }        
 
+            //velocityTest = new Vector3 (Mathf.Round(velocityTest.x * 100f) / 100f, Mathf.Round(velocityTest.y * 100f) / 100f, Mathf.Round(velocityTest.z * 100f) / 100f);
+            //angularTest = new Vector3(Mathf.Round(angularTest.x * 100f) / 100f, Mathf.Round(angularTest.y * 100f) / 100f, Mathf.Round(angularTest.z * 100f) / 100f);
+            //accelerationTest = new Vector3(Mathf.Round(accelerationTest.x * 100f) / 100f, Mathf.Round(accelerationTest.y * 100f) / 100f, Mathf.Round(accelerationTest.z * 100f) / 100f);
+            //angularAccelerationTest = new Vector3(Mathf.Round(angularAccelerationTest.x * 100f) / 100f, Mathf.Round(angularAccelerationTest.y * 100f) / 100f, Mathf.Round(angularAccelerationTest.z * 100f) / 100f);
+
+            //velocitySensitivity = Mathf.Max(0.1f, velocitySensitivity);
+            //angularSensitivity = Mathf.Max(0.1f, angularSensitivity);
+            //accelerationSensitivity = Mathf.Max(0.1f, accelerationSensitivity);
+            //angularAccelerationSensitivity = Mathf.Max(0.1f, angularAccelerationSensitivity);
+
+            //Color finalCol = (Color.red * Mathf.Clamp01(velocityTest.magnitude / velocitySensitivity)) + (Color.blue * Mathf.Clamp01(angularTest.magnitude / angularSensitivity));
+            //controllerRenderer.material.color = Color.Lerp(Color.white, finalCol, finalCol.maxColorComponent);
+
+
+        }
+
+
+        bool lastTriggerState;
+        bool lastPrimaryState;
+        void Update() {
+            if (!SetupComplete) return;
+
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.triggerButton, out ControllerTriggerButton) && ControllerTriggerButton) {                
+                if (!lastTriggerState) {
+                    // send event          
+                    if (_Debug) Debug.Log("[PTUtilities] Trigger button was just pressed.");
+                }
+            }
+            lastTriggerState = ControllerTriggerButton;
+
+
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out ControllerPrimaryButton) && ControllerPrimaryButton) {
+                if (!lastPrimaryState) {
+                    // send event          
+                    if (_Debug) Debug.Log("[PTUtilities] Primary button was just pressed.");
+                }
+            }
+            lastPrimaryState = ControllerPrimaryButton;
+
+        }
 
 
 
@@ -320,7 +417,7 @@ namespace Paperticket {
         /// <param name="toggle">True to enable, false to disable</param>
         public void ToggleControllerText( Hand hand, bool toggle ) {
 
-            controllerProxy.GetComponentInChildren<TextMeshPro>(true).gameObject.SetActive(toggle);
+            //controllerProxy.GetComponentInChildren<TextMeshPro>(true).gameObject.SetActive(toggle);
 
             //switch (hand) {
             //    case Hand.Left:
@@ -592,19 +689,19 @@ namespace Paperticket {
             fadingResonanceListener = false;
         }
 
-        bool flip = true;
-        void Update() {
+        //bool flip = true;
+        //void Update() {
 
-            if (Input.GetKeyDown(KeyCode.M)) {
-                if (flip) {
-                    FadeAudioListener(0f, 2f);
-                } else {
-                    FadeAudioListener(1f, 2f);
-                }
-                flip = !flip;
-            }
+        //    if (Input.GetKeyDown(KeyCode.M)) {
+        //        if (flip) {
+        //            FadeAudioListener(0f, 2f);
+        //        } else {
+        //            FadeAudioListener(1f, 2f);
+        //        }
+        //        flip = !flip;
+        //    }
 
-        }
+        //}
 
     }
 

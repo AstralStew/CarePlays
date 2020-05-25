@@ -57,7 +57,7 @@ namespace Paperticket {
 
 
         // Use this for initialization
-        void Start() {
+        void OnEnable() {
 
             //Make sure the video doesn't skip frames (to keep the audio in sync)
             videoPlayer.skipOnDrop = skipFramesOnDrop;

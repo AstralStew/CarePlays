@@ -3,7 +3,12 @@ guid: 6af0a1982c208c847bdccf6902623eb7
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LowPolyGradient
+    second: {fileID: 2100000, guid: 43af915cd2cd0b143a2fb4460b240e47, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

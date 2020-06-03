@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 73006f89e2718e349bfc2076d1f82017,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -199,12 +200,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0477be9459782e94285309f76f084c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressCube: {fileID: 2025392720}
+  progressBar: {fileID: 0}
   velocitySensitivity: 0.5
   angularSensitivity: 15
   maxProgress: 40
   fishEscapeRate: 7
   controllerHookRate: 12
+  controllerHookCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  cubeMaxHeight: 10
   debugging: 0
   currentProgress: 0
   currentHook: 0
@@ -303,6 +311,8 @@ MonoBehaviour:
   _Debug: 1
   headProxy: {fileID: 0}
   controller: {fileID: 0}
+  ControllerTriggerButton: 0
+  ControllerPrimaryButton: 0
   ControllerVelocity: {x: 0, y: 0, z: 0}
   ControllerAngularVelocity: {x: 0, y: 0, z: 0}
   ControllerAcceleration: {x: 0, y: 0, z: 0}

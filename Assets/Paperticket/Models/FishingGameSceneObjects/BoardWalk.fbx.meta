@@ -3,7 +3,22 @@ guid: 13532775d0679f34c912fe9fc838ddb8
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoardwalkBanister
+    second: {fileID: 2100000, guid: 48af34e0f70ee2047b0190d402f5d2b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoardwalkPoles
+    second: {fileID: 2100000, guid: 9c3bfedddab59d9459a665e9142bbbe5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boardwalkwood
+    second: {fileID: 2100000, guid: 8594ac452d6ea3c408215131b732299a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -68,7 +83,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -87,7 +102,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
   additionalBone: 0

@@ -9,7 +9,22 @@ ModelImporter:
   - first:
       74: 6210070000292565690
     second: FishingRod_bsdelete
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlackRubber
+    second: {fileID: 2100000, guid: 4bca5f8da959d04449c360fa58434178, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GreyMetal
+    second: {fileID: 2100000, guid: 063af32795a3b2347abc36ba592dc01b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RodHighlight
+    second: {fileID: 2100000, guid: 6c899be1a48cd7847ad6be00e0e39ad4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -67,7 +82,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
@@ -86,7 +101,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.099999994
+    globalScale: 10
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

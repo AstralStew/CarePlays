@@ -31,6 +31,9 @@ public class CrossSceneEventHelper : MonoBehaviour
 
     }
 
-    
+    public void SetControllerBeam( bool toggle ) {
+        PTUtilities.instance.ControllerBeamActive = toggle;
+    }
+
 
 }

@@ -12,6 +12,8 @@ namespace Paperticket {
         [SerializeField] PathCreator fishProgressPath;
         [SerializeField] Transform fish;
 
+        [SerializeField] SkinnedMeshRenderer fishingRod;
+
         [Header("Controller Settings")]
 
         [SerializeField] float velocitySensitivity = 1.5f;
@@ -26,7 +28,7 @@ namespace Paperticket {
 
         [Space(10)]
 
-        [SerializeField] float cubeMaxHeight = 10;
+        [SerializeField] float rodBlendWeightMultiplier = 50;
 
         [Space(10)]
 
@@ -64,10 +66,12 @@ namespace Paperticket {
             velocitySensitivity = Mathf.Max(0.1f, velocitySensitivity);
             angularSensitivity = Mathf.Max(0.1f, angularSensitivity);
 
-            //progressBar.localScale = Vector3.one - Vector3.up;
-            //progressBar.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
+            fish.GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
             SetFishProgress(1f);
+
+            fishingRod.SetBlendShapeWeight(0, rodBlendWeightMultiplier);
+            fishingRod.SetBlendShapeWeight(1, 0);
 
             if (debugging) Debug.Log("[WE02FishingGame] Starting deep fishing challenge!");
 
@@ -84,10 +88,10 @@ namespace Paperticket {
                 currentProgress = Mathf.Clamp(currentProgress + ((currentHook * controllerHookRate) - fishEscapeRate) * Time.deltaTime, 0, maxProgress);
                 if (debugging) Debug.Log("[WE02FishingGame] Current progress = " + currentProgress + " / " + maxProgress);
 
-                // Change the graphics of the progress cube
-                //progressBar.localScale = new Vector3(progressBar.localScale.x, (currentProgress / maxProgress) * cubeMaxHeight, progressBar.localScale.z);
-
                 SetFishProgress(1 - (currentProgress / maxProgress));
+
+                // Bend the fishing rod skinned mesh renderer
+                fishingRod.SetBlendShapeWeight(0, rodBlendWeightMultiplier * (1 - (currentProgress / maxProgress)));
 
                 yield return null; 
             }
@@ -102,10 +106,11 @@ namespace Paperticket {
 
             // Set initial values
             bool hauledFish = false;
-            //progressBar.localScale = new Vector3(progressBar.localScale.x, cubeMaxHeight, progressBar.localScale.z);
-            //progressBar.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
 
             SetFishProgress(0f);
+            fishingRod.SetBlendShapeWeight(0, 0);
+
+            fish.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
 
             if (debugging) Debug.Log("[WE02FishingGame] Starting shallow fishing challenge!");
@@ -124,7 +129,8 @@ namespace Paperticket {
             }
 
             // Celebrate!
-            //progressBar.GetComponentInChildren<MeshRenderer>().material.color = Color.green;
+            fish.GetComponentInChildren<SpriteRenderer>().color = Color.green;
+            fishingRod.SetBlendShapeWeight(1, 20);
             yield return new WaitForSeconds(1f);
 
             if (debugging) Debug.Log("[WE02FishingGame] Finished the shallow fishing challenge!");

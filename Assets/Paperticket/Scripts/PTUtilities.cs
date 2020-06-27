@@ -63,8 +63,18 @@ namespace Paperticket {
         public Vector3 ControllerAngularAcceleration;
         
         [HideInInspector] public bool SetupComplete;
-        
-        
+
+
+        //public bool LeftControllerBeamActive {
+        //    get { return leftController.GetComponent<XRInteractorLineVisual>().enabled; }
+        //    set { leftController.GetComponent<XRInteractorLineVisual>().enabled = value; }
+        //}
+
+        public bool ControllerBeamActive {
+            get { return controller.GetComponent<XRInteractorLineVisual>().enabled; }
+            set { controller.GetComponent<XRInteractorLineVisual>().enabled = value; }
+        }
+
 
         void Awake() {
 
@@ -473,7 +483,7 @@ namespace Paperticket {
                 if (_Debug) Debug.Log("[PTUtilities] Sprite " + sprite.name + " successfully faded to alpha " + alpha);
 
             } else {
-                if (_Debug) Debug.LogError("[PTUtilities] Sprite " + sprite.name + " already at alpha " + targetAlpha + ", cancelling fade");
+                if (_Debug) Debug.LogWarning("[PTUtilities] Sprite " + sprite.name + " already at alpha " + targetAlpha + ", cancelling fade");
             }
 
         }
@@ -503,7 +513,7 @@ namespace Paperticket {
                 if (_Debug) Debug.Log("[PTUtilities] TextMesh " + textmesh.name + "successfully faded to alpha " + targetAlpha);
 
             } else {
-                if (_Debug) Debug.LogError("[PTUtilities] TextMesh " + textmesh.name + " already at alpha " + targetAlpha + ", cancelling fade");
+                if (_Debug) Debug.LogWarning("[PTUtilities] TextMesh " + textmesh.name + " already at alpha " + targetAlpha + ", cancelling fade");
             }
 
         }
@@ -538,7 +548,7 @@ namespace Paperticket {
                 if (_Debug) Debug.Log("[PTUtilities] MeshRenderer " + mRenderer.name + " successfully faded to alpha " + targetAlpha);
 
             } else {
-                if (_Debug) Debug.LogError("[PTUtilities] MeshRenderer " + mRenderer.name + " already at alpha " + targetAlpha + ", cancelling fade");
+                if (_Debug) Debug.LogWarning("[PTUtilities] MeshRenderer " + mRenderer.name + " already at alpha " + targetAlpha + ", cancelling fade");
             }
         }
 
@@ -568,7 +578,7 @@ namespace Paperticket {
                 if (_Debug) Debug.Log("[PTUtilities] Sprite " + sprite.name + "successfully faded to " + color);
 
             } else {
-                if (_Debug) Debug.LogError("[PTUtilities] Sprite " + sprite.name + " already at color " + targetColor + ", cancelling fade");
+                if (_Debug) Debug.LogWarning("[PTUtilities] Sprite " + sprite.name + " already at color " + targetColor + ", cancelling fade");
             }
 
         }
@@ -602,7 +612,7 @@ namespace Paperticket {
                 if (_Debug) Debug.Log("[PTUtilities] MeshRenderer " + mRenderer.name + "successfully faded to " + color);
 
             } else {
-                if (_Debug) Debug.LogError("[PTUtilities] MeshRenderer " + mRenderer.name + " already at color " + targetColor + ", cancelling fade");
+                if (_Debug) Debug.LogWarning("[PTUtilities] MeshRenderer " + mRenderer.name + " already at color " + targetColor + ", cancelling fade");
             }
 
         }

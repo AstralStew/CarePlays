@@ -51,8 +51,16 @@ namespace Paperticket {
         public Vector3 HeadsetPosition() {
             return headProxy.position;
         }
+
+        public Vector3 HeadsetForward() {
+            return headProxy.forward;
+        }
+
         public Quaternion HeadsetRotation() {
             return Quaternion.Euler(new Vector3(0, headProxy.rotation.eulerAngles.y, 0));
+        }
+        public Vector3 HeadsetRotationAsEuler() {
+            return new Vector3(0, headProxy.rotation.eulerAngles.y, 0);
         }
 
         public bool ControllerTriggerButton;

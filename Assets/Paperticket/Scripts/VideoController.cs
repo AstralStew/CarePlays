@@ -29,6 +29,7 @@ namespace Paperticket {
 
         [SerializeField] bool externalAudio;
         [SerializeField] AudioSource externalAudioSource;
+        [SerializeField] Vector3 initialRotation;
 
 
         [Header("Read Only")]
@@ -58,6 +59,12 @@ namespace Paperticket {
 
         // Use this for initialization
         void OnEnable() {
+
+            // Set the video sphere position
+            //transform.position = PTUtilities.instance.HeadsetPosition();
+            //transform.rotation = Quaternion.Euler(initialRotation);
+            transform.position = PTUtilities.instance.HeadsetPosition();
+            transform.rotation = PTUtilities.instance.HeadsetRotation() * Quaternion.Euler(initialRotation);
 
             //Make sure the video doesn't skip frames (to keep the audio in sync)
             videoPlayer.skipOnDrop = skipFramesOnDrop;

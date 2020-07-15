@@ -36,4 +36,12 @@ public class CrossSceneEventHelper : MonoBehaviour
     }
 
 
+    public void MatchHeadsetTransform (Transform target ) {
+
+        target.position = PTUtilities.instance.HeadsetPosition();
+        target.rotation = PTUtilities.instance.HeadsetRotation();
+
+    }
+
+
 }

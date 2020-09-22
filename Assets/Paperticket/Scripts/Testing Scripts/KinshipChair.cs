@@ -40,7 +40,7 @@ namespace Paperticket {
                 gameObject.SetActive(false);
             }
             mat = mesh.material;
-            defaultColor = mat.color;
+            defaultColor = mat.GetColor("_BaseColor");
 
         }
 
@@ -48,7 +48,7 @@ namespace Paperticket {
         public virtual void HoverOn ( XRBaseInteractor interactor ) {
             if (!Active) return;
 
-            mat.color = Color.green;
+            mat.SetColor("_BaseColor", Color.cyan);
             if (debugging) Debug.Log("[KinshipChair] Hover on!");
         }
 
@@ -56,7 +56,7 @@ namespace Paperticket {
         public virtual void HoverOff( XRBaseInteractor interactor ) {
             if (!Active) return;
 
-            mat.color = defaultColor;
+            mat.SetColor("_BaseColor", defaultColor);
             if (debugging) Debug.Log("[KinshipChair] Hover off!");
         }
 

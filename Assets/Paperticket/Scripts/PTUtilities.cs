@@ -42,8 +42,9 @@ namespace Paperticket {
         [Header("Read Only")]
 
         public Transform headProxy;
-        public XRController controller;
-        MeshRenderer controllerRenderer;
+        public XRController rightController;
+        public XRController leftController;
+        MeshRenderer rightControllerRenderer;
 
         enum Handedness { Left, Right, Both }
 
@@ -79,8 +80,8 @@ namespace Paperticket {
         //}
 
         public bool ControllerBeamActive {
-            get { return controller.GetComponent<XRInteractorLineVisual>().enabled; }
-            set { controller.GetComponent<XRInteractorLineVisual>().enabled = value; }
+            get { return rightController.GetComponent<XRInteractorLineVisual>().enabled; }
+            set { rightController.GetComponent<XRInteractorLineVisual>().enabled = value; }
         }
 
 
@@ -116,21 +117,31 @@ namespace Paperticket {
             if (_Debug) Debug.Log("[PTUtilities] Head Proxy found!");
 
 
-            // Grab the controller
-            while (controller == null) {
-                if (_Debug) Debug.Log("[PTUtilities] Looking for Controller object...");
+            // Grab the right controller
+            while (rightController == null) {
+                if (_Debug) Debug.Log("[PTUtilities] Looking for Right Controller object...");
                 foreach (XRController cont in playerRig.GetComponentsInChildren<XRController>()) {
-                    if (cont.controllerNode == XRNode.LeftHand || cont.controllerNode == XRNode.RightHand) controller = cont;
+                    if (cont.controllerNode == XRNode.RightHand) rightController = cont;
                 }
                 yield return null;
             }
-            if (_Debug) Debug.Log("[PTUtilities] Controller found!");
+            if (_Debug) Debug.Log("[PTUtilities] Right Controller found!");
+
+            // Grab the right controller
+            while (leftController == null) {
+                if (_Debug) Debug.Log("[PTUtilities] Looking for Left Controller object...");
+                foreach (XRController cont in playerRig.GetComponentsInChildren<XRController>()) {
+                    if (cont.controllerNode == XRNode.LeftHand) leftController = cont;
+                }
+                yield return null;
+            }
+            if (_Debug) Debug.Log("[PTUtilities] Left Controller found!");
 
 
-            // Grab the controller renderer            
-            while (controllerRenderer == null) {
+            // Grab the right controller renderer            
+            while (rightControllerRenderer == null) {
                 if (_Debug) Debug.Log("[PTUtilities] Looking for Controller Renderer object...");
-                controllerRenderer = controller.modelTransform.GetComponentInChildren<MeshRenderer>();
+                rightControllerRenderer = rightController.modelTransform.GetComponentInChildren<MeshRenderer>();
                 yield return null;
             }
             if (_Debug) Debug.Log("[PTUtilities] Controller Renderer found!");
@@ -180,7 +191,7 @@ namespace Paperticket {
         void Update() {
             if (!SetupComplete) return;
 
-            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.triggerButton, out ControllerTriggerButton) && ControllerTriggerButton) {                
+            if (rightController.inputDevice.TryGetFeatureValue(CommonUsages.triggerButton, out ControllerTriggerButton) && ControllerTriggerButton) {                
                 if (!lastTriggerState) {
                     // send event          
                     if (_Debug) Debug.Log("[PTUtilities] Trigger button was just pressed.");
@@ -189,7 +200,7 @@ namespace Paperticket {
             lastTriggerState = ControllerTriggerButton;
 
 
-            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out ControllerPrimaryButton) && ControllerPrimaryButton) {
+            if (rightController.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out ControllerPrimaryButton) && ControllerPrimaryButton) {
                 if (!lastPrimaryState) {
                     // send event          
                     if (_Debug) Debug.Log("[PTUtilities] Primary button was just pressed.");

@@ -46,7 +46,7 @@ public class MoveTransformOnPath : MonoBehaviour
         } else if (endInstruction == EndOfPathInstruction.Loop) {
             timeIncrement = Time.deltaTime * speed;
             currentTime = Mathf.Clamp01(currentTime + timeIncrement);
-            SetFishProgress(currentTime);
+            SetFishProgress(currentTime);            
         } else {
             enabled = false;
         }

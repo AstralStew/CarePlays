@@ -12,32 +12,49 @@ namespace Paperticket {
 
     public class VideoController : MonoBehaviour {
 
-        [Header("References")]
+
+        [SerializeField] bool _Debug;
+
+        [Header("REFERENCES")]
 
         //Grab the video player and audio source
         public VideoPlayer videoPlayer;
         private string completePath;
 
 
-        [Header("Controls")]
-
+        [Header("VIDEO CONTROLS")]
+        [Space(10)]
         [SerializeField] string currentVideoName;
-
         public bool autoPlay;
-
         [SerializeField] bool skipFramesOnDrop;
 
+
+        [Header("PRE-START CONTROLS")]
+        [Space(10)]
+        [SerializeField] bool moveToHead;
+        [SerializeField] bool rotateToHead;
+
+
+        [Header("AUDIO CONTROLS")]
+        [Space(10)]
         [SerializeField] bool externalAudio;
         [SerializeField] AudioSource externalAudioSource;
         [SerializeField] Vector3 initialRotation;
 
 
-        [Header("Read Only")]
+        [Header("EVENT CONTROLS")]
+        [Space(10)]
+        [SerializeField] bool _UseFinishEvents;
+        [SerializeField] UnityEvent[] _FinishEvents;
+        
+        int finishIndexNo;
 
-        [SerializeField] bool _Debug;
+
+        [Header("READ ONLY")]
+        [Space(5)]
 
         [SerializeField] string datapath;
-
+        [Space(10)]
         public bool videoLoaded;
         public bool videoStarted;
         public bool playingVideo;
@@ -45,16 +62,12 @@ namespace Paperticket {
 
 
         //Current time of the video in seconds
+        [Space(10)]
         public float currentVideoTime;
         [SerializeField] private long currentFrames;
         [SerializeField] private long endFrames;
 
 
-        [Header("Optional")]
-
-        [SerializeField] bool _UseFinishEvents;
-        [SerializeField] UnityEvent[] _FinishEvents;
-        int finishIndexNo;
 
 
         // Use this for initialization
@@ -63,8 +76,8 @@ namespace Paperticket {
             // Set the video sphere position
             //transform.position = PTUtilities.instance.HeadsetPosition();
             //transform.rotation = Quaternion.Euler(initialRotation);
-            transform.position = PTUtilities.instance.HeadsetPosition();
-            transform.rotation = PTUtilities.instance.HeadsetRotation() * Quaternion.Euler(initialRotation);
+            if (moveToHead) transform.position = PTUtilities.instance.HeadsetPosition();
+            if (rotateToHead) transform.rotation = PTUtilities.instance.HeadsetRotation() * Quaternion.Euler(initialRotation);
 
             //Make sure the video doesn't skip frames (to keep the audio in sync)
             videoPlayer.skipOnDrop = skipFramesOnDrop;

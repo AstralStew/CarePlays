@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
+using System;
 
 namespace Paperticket {
 
@@ -21,6 +22,8 @@ namespace Paperticket {
         public AudioMixer _ResonanceMaster;
 
         public XRRig playerRig;
+
+        public SpriteRenderer headGfx;
 
 
 
@@ -85,6 +88,14 @@ namespace Paperticket {
         }
 
 
+
+
+
+
+
+
+
+
         void Awake() {
 
             // Create an instanced version of this script, or destroy it if one already exists
@@ -138,13 +149,13 @@ namespace Paperticket {
             if (_Debug) Debug.Log("[PTUtilities] Left Controller found!");
 
 
-            // Grab the right controller renderer            
-            while (rightControllerRenderer == null) {
-                if (_Debug) Debug.Log("[PTUtilities] Looking for Controller Renderer object...");
-                rightControllerRenderer = rightController.modelTransform.GetComponentInChildren<MeshRenderer>();
-                yield return null;
-            }
-            if (_Debug) Debug.Log("[PTUtilities] Controller Renderer found!");
+            //// Grab the right controller renderer            
+            //while (rightControllerRenderer == null) {
+            //    if (_Debug) Debug.Log("[PTUtilities] Looking for Controller Renderer object...");
+            //    rightControllerRenderer = rightController.modelTransform.GetComponentInChildren<MeshRenderer>();
+            //    yield return null;
+            //}
+            //if (_Debug) Debug.Log("[PTUtilities] Controller Renderer found!");
 
             // Finish setup
             SetupComplete = true;
@@ -540,7 +551,14 @@ namespace Paperticket {
         public IEnumerator FadeAlphaTo( MeshRenderer mRenderer, float targetAlpha, float duration ) {
 
             Material mat = mRenderer.material;
-            Color col = mat.GetColor("_Color");
+
+            string propertyName = "";
+            propertyName = mat.HasProperty("_BaseColor") ? "_BaseColor" : mat.HasProperty("_Color") ? "_Color" : "";
+            if (propertyName == "") {
+                Debug.LogError("[PTUtilities] ERROR -> Could not find property name of mesh renderer to fade! Cancelling...");
+            }
+
+            Color col = mat.GetColor(propertyName);
 
             if (col.a != targetAlpha) {
 
@@ -553,10 +571,10 @@ namespace Paperticket {
                 float alpha = col.a;
                 for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
                     Color newColor = new Color(col.r, col.g, col.b, Mathf.Lerp(alpha, targetAlpha, t));
-                    mat.SetColor("_Color", newColor);
+                    mat.SetColor(propertyName, newColor);
                     yield return null;
                 }
-                mat.SetColor("_Color", new Color(col.r, col.g, col.b, targetAlpha));
+                mat.SetColor(propertyName, new Color(col.r, col.g, col.b, targetAlpha));
 
 
                 if (targetAlpha == 0f) {
@@ -606,7 +624,13 @@ namespace Paperticket {
 
             Material mat = mRenderer.material;
 
-            if (mat.GetColor("_Color") != targetColor) {
+            string propertyName = "";            
+            propertyName = mat.HasProperty("_Color") ? "_Color" : mat.HasProperty("_BaseColor") ? "_BaseColor" : "";
+            if (propertyName == "") {
+                Debug.LogError("[PTUtilities] ERROR -> Could not find property name of mesh renderer to fade! Cancelling...");
+            }
+
+            if (mat.GetColor(propertyName) != targetColor) {
 
                 if (_Debug) Debug.Log("[PTUtilities] Fading Sprite " + mRenderer.name + "to color " + targetColor);
 
@@ -615,13 +639,13 @@ namespace Paperticket {
                 }
 
 
-                Color color = mat.GetColor("_Color");
+                Color color = mat.GetColor(propertyName);
                 for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
                     Color newColor = Color.Lerp(color, targetColor, t);
-                    mat.SetColor("_Color", newColor);
+                    mat.SetColor(propertyName, newColor);
                     yield return null;
                 }
-                mat.SetColor("_Color", targetColor);
+                mat.SetColor(propertyName, targetColor);
 
                 if (targetColor.a == 0f) {
                     mRenderer.enabled = false;

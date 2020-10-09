@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using Paperticket;
 
 public class CrossSceneEventHelper : MonoBehaviour
 {
-    
-
-
-
+           
     public void LoadNextScene (string sceneName, float invokeTime ) {
         StartCoroutine(WaitThenLoadNextScene(sceneName, invokeTime));
     }
@@ -43,5 +41,63 @@ public class CrossSceneEventHelper : MonoBehaviour
 
     }
 
+    // GENERAL EVENTS
+
+    public void DestroyGameObject( GameObject objectToDestroy ) {
+        Destroy(objectToDestroy);
+    }
+
+    public void FadeSpriteIn( SpriteRenderer sprite ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 1, 1.5f));
+    }
+
+    public void FadeSpriteOut( SpriteRenderer sprite ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 0, 1.5f));
+    }
+
+    public void FadeTextIn( TextMeshPro text ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, 1, 1.5f));
+    }
+
+    public void FadeTextOut( TextMeshPro text ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, 0, 1.5f));
+    }
+       
+    public void FadeMeshIn( MeshRenderer mesh ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 1, 0.5f));
+    }
+
+    public void FadeMeshOut( MeshRenderer mesh ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 0, 0.5f));
+    }
+
+
+    Coroutine headFadeCo;
+    public void FadeHeadsetColor( Color color, float duration ) {
+        if (headFadeCo != null) StopCoroutine(headFadeCo);
+        headFadeCo = StartCoroutine(PTUtilities.instance.FadeColorTo(PTUtilities.instance.headGfx, color, duration));
+    }
+
+    public void FadeHeadsetIn( float duration ) {
+        if (headFadeCo != null) StopCoroutine(headFadeCo);
+        headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 1f, duration));
+    }
+
+    public void FadeHeadsetOut( float duration ) {
+        if (headFadeCo != null) StopCoroutine(headFadeCo);
+        headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 0f, duration));
+    }
+
+    public void FadeHeadsetToBlack(float duration ) {
+        FadeHeadsetColor(Color.black, duration);
+    }
+
+    public void FadeHeadsetToWhite( float duration ) {
+        FadeHeadsetColor(Color.white, duration);
+    }
+
+    public void FadeHeadsetToBlue( float duration ) {
+        FadeHeadsetColor(Color.Lerp(Color.cyan, Color.white,0.5f), duration);
+    }
 
 }

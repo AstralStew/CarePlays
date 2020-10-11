@@ -15,6 +15,7 @@ public class TimedEvent : MonoBehaviour
     [Header("Events")]
 
     [SerializeField] UnityEvent OnEventTriggered;
+    [SerializeField] UnityEvent OnEvent2Triggered;
 
     // Start is called before the first frame update
     void OnEnable()

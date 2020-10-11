@@ -46,6 +46,26 @@ public class CrossSceneEventHelper : MonoBehaviour
     public void DestroyGameObject( GameObject objectToDestroy ) {
         Destroy(objectToDestroy);
     }
+    
+
+    public void FadeAudioSourceIn(AudioSource source ) {
+        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, 1f, 0.5f));
+    }
+    public void FadeAudioSourceIn( AudioSource source, float volume, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, volume, duration));
+    }
+    public void FadeAudioSourceOut( AudioSource source ) {
+        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, 0f, 0.5f));
+    }
+
+
+    public void FadeMeshIn( MeshRenderer mesh ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 1, 0.5f));
+    }
+
+    public void FadeMeshOut( MeshRenderer mesh ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 0, 0.5f));
+    }
 
     public void FadeSpriteIn( SpriteRenderer sprite ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 1, 1.5f));
@@ -61,14 +81,6 @@ public class CrossSceneEventHelper : MonoBehaviour
 
     public void FadeTextOut( TextMeshPro text ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, 0, 1.5f));
-    }
-       
-    public void FadeMeshIn( MeshRenderer mesh ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 1, 0.5f));
-    }
-
-    public void FadeMeshOut( MeshRenderer mesh ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 0, 0.5f));
     }
 
 

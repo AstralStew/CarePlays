@@ -6,6 +6,7 @@ using PathCreation;
 using System.IO;
 using System;
 using UnityEditor;
+using System.Security.Policy;
 
 namespace Paperticket {
     public class WE02FishingGame2 : MonoBehaviour {
@@ -27,17 +28,17 @@ namespace Paperticket {
         Transform playerRig;
         //Transform playerHead;
 
-        [Header("GAME CONTROLS")]
+        [Header("GENERAL CONTROLS")]
 
         [Space(10)]
         [SerializeField] bool autostart;
+        [SerializeField] [Range(0,1)] float startingProgress;
         [Space(10)]
-        [SerializeField] [Range(0, 1)] float finishProgress;
-        [SerializeField] float finishDuration;
-        [SerializeField] float finishPlayerSpeed;
-
-        [SerializeField] UnityEvent finishEvents;
-
+        [SerializeField] float externalSpeedMod = 1;
+        [SerializeField] float externalCheckRate = 0.2f;
+        [SerializeField] float externalFadeOut = 0.5f;
+        [Space(10)]
+        [SerializeField] ProgressEvent[] progressEvents;
 
 
         [Header("ROD CONTROLS")]
@@ -70,6 +71,17 @@ namespace Paperticket {
 
 
 
+        [Header("FINISHING CONTROLS")]
+
+        [Space(10)]
+        [SerializeField] [Range(0, 1)] float finishProgress;
+        [SerializeField] float finishDuration;
+        [SerializeField] float finishPlayerSpeed;
+
+        [SerializeField] UnityEvent finishEvents;
+
+
+
         [Header("READ ONLY")]
         [Space(10)]
         [SerializeField] bool gameActive;
@@ -85,7 +97,7 @@ namespace Paperticket {
         [SerializeField] [Range(-1, 1)] float lineStartX;
         [SerializeField] [Range(-1, 1)] float lineEndX;
         [Space(10)]
-        [SerializeField] [Range(0,1)] float progress;
+        [SerializeField] [Range(0, 1)] float progress;
         [Space(10)]
         [SerializeField] bool impeded;
 
@@ -99,8 +111,15 @@ namespace Paperticket {
 
 
 
+        [SerializeField] UnityEvent onKnockback;
+        bool knockbackPlayed;
+        [SerializeField] UnityEvent onBubbles;
+        bool bubblesPlayed;
+        [SerializeField] UnityEvent onCoral;
+        bool coralPlayed;
+
         // PUBLIC VARIABLES  
-        
+
         public bool GameActive {
             get { return gameActive; }
             set { gameActive = true; }
@@ -109,7 +128,7 @@ namespace Paperticket {
 
 
         public bool Impeded {
-            get { return impeded; } 
+            get { return impeded; }
             set { impeded = value;
                 if (impededCbeckCo == null) impededCbeckCo = StartCoroutine(ImpededCheck());
                 else ResetImpeded();
@@ -133,15 +152,19 @@ namespace Paperticket {
 
 
 
-        [Space(20)]
-        [SerializeField] float externalSpeedMod = 1;
-        [SerializeField] float externalCheckRate = 0.2f;
-        [SerializeField] float externalFadeOut = 0.5f;
-
         public float ExternalSpeedMod {
             get { return externalSpeedMod; }
             set { if (externalSpeedMod != 1 && value < externalSpeedMod) return;
                 externalSpeedMod = value;
+
+                // Play the "ouch" or "weee" sounds if necessary
+                if (value < 1 && progress > 0.2 && !coralPlayed && onCoral != null) {
+                    coralPlayed = true;
+                    onCoral.Invoke();
+                } else if (value > 1 && !bubblesPlayed && onBubbles != null) {
+                    bubblesPlayed = true;
+                    onBubbles.Invoke();
+                }
 
                 // Start a new set of checks if we aren't checking yet
                 if (externalModCo == null) {
@@ -160,7 +183,7 @@ namespace Paperticket {
         }
         Coroutine externalModCo;
         Coroutine externalFadeCo;
-        [SerializeField] float externalCheckTimer = 0;
+        float externalCheckTimer = 0;
         IEnumerator CheckingExternalMod() {
             yield return new WaitForFixedUpdate();
             externalCheckTimer = externalCheckRate;
@@ -189,7 +212,7 @@ namespace Paperticket {
 
 
         void Awake() {
-                
+
             if (backgroundSprite == null) Debug.LogError("[WE02FishingGame] ERROR -> No background sprite registered!");
             if (objectSprites == null) Debug.LogError("[WE02FishingGame] ERROR -> No object sprite registered!");
 
@@ -200,12 +223,14 @@ namespace Paperticket {
                 gameActive = true;
                 PlayerControl = true;
             }
+
+            progress = startingProgress;
         }
 
 
         void FixedUpdate() {
             if (!gameActive) return;
-            
+
             ResolveProgress();
 
             // Only do the following if the player is able to control the rod
@@ -216,18 +241,23 @@ namespace Paperticket {
 
                 // Animate the fishing rod in the player's hand
                 UpdateRodGraphics();
+
+                // Check for any of the events keyed to go off at a certain amount of progress
+                CheckProgressEvents();
+
+                // Check if the game has finished, to transition to the final events
+                CheckForFinish();
             }
 
-            CheckForFinish();
 
         }
-               
+
 
         void ResolveProgress() {
-            
+
             // Convert the fishing rod position into the target
             CalculateTarget();
-            
+
             // Move the global Objects transform and change background color 
             UpdateObjectsAndBackground();
 
@@ -237,7 +267,7 @@ namespace Paperticket {
             // Move/flip the player fish (must come after CalculateFishingLine)
             UpdatePlayerFish();
 
-            
+
         }
         void CalculateTarget() {
             if (!Application.isPlaying) return;
@@ -246,14 +276,14 @@ namespace Paperticket {
 
             //headDistance = playerRig.InverseTransformPoint(playerHead.position).x;
 
-            targetLineX = Mathf.Clamp(rodDistance / rodMaxDistance,-1,1) * lineXMultiplier;
+            targetLineX = Mathf.Clamp(rodDistance / rodMaxDistance, -1, 1) * lineXMultiplier;
 
         }
         void CalculateReeling() {
             if (!Application.isPlaying) return;
 
             // Save the current controller velocity and apply senitivity curve 
-            reelVelocity = Mathf.Clamp01(PTUtilities.instance.ControllerVelocity.magnitude / velocitySensitivity);            
+            reelVelocity = Mathf.Clamp01(PTUtilities.instance.ControllerVelocity.magnitude / velocitySensitivity);
             reelTotal = reelSensitivity.Evaluate(reelVelocity);
 
             //if (reelTotal > 0.05f) progress += (reelTotal * reelSpeed * 0.0001f * (impeded ? 0.4f : 1f));
@@ -262,8 +292,8 @@ namespace Paperticket {
             } else {
                 progress += ((reelTotal * reelSpeed) + (externalSpeedMod - 1)) * 0.0001f;
             }
-            
-        }        
+
+        }
         void UpdateObjectsAndBackground() {
 
             // Evaluate background colours
@@ -278,7 +308,7 @@ namespace Paperticket {
         Vector3 lineStartPos;
         Vector3 lineEndPos;
         float smoothVel;
-        void UpdateFishingLine() {            
+        void UpdateFishingLine() {
 
             // Move the end of the line towards the start
             lineStartX = Mathf.Lerp(lineStartX, targetLineX, lineStartSpeed * (PlayerControl ? 1f : 0.5f));
@@ -294,7 +324,7 @@ namespace Paperticket {
                 lineEndX = Mathf.SmoothDamp(lineEndX, lineStartX, ref smoothVel, lineEndSmoothTime, lineEndMaxDelta);
                 lineEndPos = new Vector3(lineEndX, fishHeight, 5);
                 fishingLine.SetPosition(1, lineEndPos);
-            } 
+            }
 
         }
         void UpdatePlayerFish() {
@@ -323,11 +353,37 @@ namespace Paperticket {
 
 
 
-        
+
         void UpdateRodGraphics() {
 
             fishingRod.SetBlendShapeWeight(0, rodBlendWeightMultiplier * (1 - progress));
             fishingRod.SetBlendShapeWeight(1, 0);
+
+        }
+
+        [Space(10)]
+        int progressEventIndex;
+        void CheckProgressEvents() {
+
+            for (int i = progressEventIndex; i < progressEvents.Length; i++) {
+                if (debugging) Debug.Log("[WE02FishingGame2] Starting to check progress events");
+
+                if (progress < progressEvents[i].threshold) {
+                    if (debugging) Debug.Log("[WE02FishingGame2] Event(" + progressEventIndex + ") hasn't reached threshold("+progress+"/"+progressEvents[i].threshold+"), stopping events here for now");
+
+                    return;
+                    
+                } else {
+                    if (debugging) Debug.Log("[WE02FishingGame2] Event(" + progressEventIndex + ") reached threshold(" + progress + "/" + progressEvents[i].threshold + ")! Moving on...");
+
+                    if (progressEvents[i].Event != null) progressEvents[i].Event.Invoke();
+
+                    progressEventIndex += 1;
+                }
+
+                if (debugging) Debug.Log("[WE02FishingGame2] Finished checking progress events");
+            }
+
 
         }
 
@@ -345,12 +401,12 @@ namespace Paperticket {
         IEnumerator FinishAnimation() {
 
             float t = 0;
-            while (t < finishDuration) {                              
+            while (t < finishDuration) {
                 t += Time.fixedDeltaTime;
-                
+
                 fishingLine.transform.Translate(Vector3.up * finishPlayerSpeed * Time.fixedDeltaTime);
                 playerFish.Translate(Vector3.up * finishPlayerSpeed * Time.fixedDeltaTime);
-                                
+
                 yield return new WaitForFixedUpdate();
             }
 
@@ -373,7 +429,9 @@ namespace Paperticket {
 
         Coroutine autoMoveCo;
         float knockbackDuration = 1.5f;
-        public void Knockback( float speed) {
+
+
+        public void Knockback( float speed ) {
 
             if (!PlayerControl) return;
 
@@ -383,6 +441,12 @@ namespace Paperticket {
 
             if (autoMoveCo != null) StopCoroutine(autoMoveCo);
             autoMoveCo = StartCoroutine(MoveAutomatically(-speed, knockbackDuration));
+
+            // Play the "ouch" sound if haven't already
+            if (!knockbackPlayed && onKnockback != null) {
+                knockbackPlayed = true;
+                onKnockback.Invoke();
+            }
 
         }
 
@@ -399,15 +463,15 @@ namespace Paperticket {
 
         }
 
-        IEnumerator MoveAutomatically(float adjustment, float duration ) {
+        IEnumerator MoveAutomatically( float adjustment, float duration ) {
 
             yield return null;
-            
+
             float t = 0;
             float startProg = progress;
             while (t < duration) {
 
-                progress = Mathf.Lerp(startProg, startProg + adjustment, AnimationCurve.EaseInOut(0f,0f,1f,1f).Evaluate(Mathf.Clamp01(t / duration)));
+                progress = Mathf.Lerp(startProg, startProg + adjustment, AnimationCurve.EaseInOut(0f, 0f, 1f, 1f).Evaluate(Mathf.Clamp01(t / duration)));
 
                 //progress += speed * 0.0001f;                
                 t += Time.fixedDeltaTime;
@@ -443,4 +507,19 @@ namespace Paperticket {
 
 
     }
+
+    [Serializable]
+    public class ProgressEvent {
+
+        [Range(0,1)] public float threshold;
+        public UnityEvent Event;
+
+        public ProgressEvent (float progressThreshold, UnityEvent eventToSend ) {
+            threshold = progressThreshold;
+            Event = eventToSend;
+        }
+
+    }
+
+
 }

@@ -48,32 +48,43 @@ public class CrossSceneEventHelper : MonoBehaviour
     }
     
 
+
     public void FadeAudioSourceIn(AudioSource source ) {
         StartCoroutine(PTUtilities.instance.FadeAudioTo(source, 1f, 0.5f));
     }
-    public void FadeAudioSourceIn( AudioSource source, float volume, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, volume, duration));
-    }
+
     public void FadeAudioSourceOut( AudioSource source ) {
         StartCoroutine(PTUtilities.instance.FadeAudioTo(source, 0f, 0.5f));
     }
+    public void FadeAudioSource( AudioSource source, float volume, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, volume, duration));
+    }
+
+
 
 
     public void FadeMeshIn( MeshRenderer mesh ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 1, 0.5f));
     }
-
     public void FadeMeshOut( MeshRenderer mesh ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 0, 0.5f));
     }
 
+    public void FadeMesh( MeshRenderer mesh, float alpha, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, alpha, duration));
+    }
+
+
     public void FadeSpriteIn( SpriteRenderer sprite ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 1, 1.5f));
     }
-
     public void FadeSpriteOut( SpriteRenderer sprite ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 0, 1.5f));
     }
+    public void FadeSprite( SpriteRenderer sprite, float alpha, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, alpha, duration));
+    }
+
 
     public void FadeTextIn( TextMeshPro text ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, 1, 1.5f));
@@ -82,6 +93,10 @@ public class CrossSceneEventHelper : MonoBehaviour
     public void FadeTextOut( TextMeshPro text ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, 0, 1.5f));
     }
+    public void FadeText( TextMeshPro text, float alpha, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, alpha, duration));
+    }
+
 
 
     Coroutine headFadeCo;
@@ -100,6 +115,8 @@ public class CrossSceneEventHelper : MonoBehaviour
         headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 0f, duration));
     }
 
+
+
     public void FadeHeadsetToBlack(float duration ) {
         FadeHeadsetColor(Color.black, duration);
     }
@@ -108,8 +125,16 @@ public class CrossSceneEventHelper : MonoBehaviour
         FadeHeadsetColor(Color.white, duration);
     }
 
-    public void FadeHeadsetToBlue( float duration ) {
-        FadeHeadsetColor(Color.Lerp(Color.cyan, Color.white,0.5f), duration);
+    //public void FadeHeadsetToBlue( float duration ) {
+    //    FadeHeadsetColor(Color.Lerp(Color.cyan, Color.white,0.5f), duration);
+    //}
+
+    public void TeleportPlayer(Vector3 worldPosition, Vector3 forwardDirection) {
+        PTUtilities.instance.TeleportPlayer(worldPosition, forwardDirection);
+    }
+
+    public void TeleportPlayer(Transform targetTransform ) {
+        PTUtilities.instance.TeleportPlayer(targetTransform);
     }
 
 }

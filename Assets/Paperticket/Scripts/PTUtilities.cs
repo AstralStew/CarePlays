@@ -7,6 +7,7 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 namespace Paperticket {
 
@@ -39,6 +40,10 @@ namespace Paperticket {
         //[SerializeField] float angularAccelerationSensitivity;
 
         public bool _Debug;
+
+        [Space(10)]
+
+        [SerializeField] AnimationCurve shakeTransformCurve;
 
         
 
@@ -665,6 +670,37 @@ namespace Paperticket {
 
         }
 
+        // Helper coroutine for fading the color of a text mesh
+        public IEnumerator FadeColorTo( TextMeshPro textMesh, Color targetColor, float duration ) {
+
+            if (textMesh.color != targetColor) {
+
+                if (_Debug) Debug.Log("[PTUtilities] Fading Text " + textMesh.name + "to color " + targetColor);
+
+                if (!textMesh.enabled) {
+                    textMesh.enabled = true;
+                }
+
+                Color color = textMesh.color;
+                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                    textMesh.color = Color.Lerp(color, targetColor, t);
+                    yield return null;
+                }
+                textMesh.color = targetColor;
+
+                if (targetColor.a == 0f) {
+                    textMesh.enabled = false;
+                }
+                yield return null;
+
+                if (_Debug) Debug.Log("[PTUtilities] Text " + textMesh.name + "successfully faded to " + color);
+
+            } else {
+                if (_Debug) Debug.LogWarning("[PTUtilities] Text " + textMesh.name + " already at color " + targetColor + ", cancelling fade");
+            }
+
+        }
+
         // Helper coroutine for fading audio source volume
         public IEnumerator FadeAudioTo( AudioSource audio, float targetVolume, float duration ) {
             float volume = audio.volume;
@@ -683,7 +719,24 @@ namespace Paperticket {
 
         }
 
+        public IEnumerator ShakeTransform (Transform target, Vector3 shakeAmount, float duration ) {
+            
+            float t = 0;
+            Vector3 initialPos = target.localPosition;
+            //float curveTime = shakeTransformCurve.keys[shakeTransformCurve.length - 1].time;
 
+            if (_Debug) Debug.Log("[PTUtilities] Shaking transform " + target.name);
+
+            while (t < duration) {
+                yield return null;
+                target.localPosition = initialPos + (shakeAmount * shakeTransformCurve.Evaluate(t / duration));
+                t += Time.deltaTime;
+            }
+            target.localPosition = initialPos;
+
+            if (_Debug) Debug.Log("[PTUtilities] Finished shaking " + target.name);
+
+        }
 
         // Fading audio
 

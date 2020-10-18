@@ -46,7 +46,11 @@ public class CrossSceneEventHelper : MonoBehaviour
     public void DestroyGameObject( GameObject objectToDestroy ) {
         Destroy(objectToDestroy);
     }
-    
+
+
+    public void ShakeTransform( Transform target, Vector3 shakeAmount, float duration) {
+        StartCoroutine(PTUtilities.instance.ShakeTransform(target, shakeAmount, duration));
+    }
 
 
     public void FadeAudioSourceIn(AudioSource source ) {
@@ -69,9 +73,11 @@ public class CrossSceneEventHelper : MonoBehaviour
     public void FadeMeshOut( MeshRenderer mesh ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 0, 0.5f));
     }
-
     public void FadeMesh( MeshRenderer mesh, float alpha, float duration ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, alpha, duration));
+    }
+    public void FadeMeshColor( MeshRenderer mesh, Color color, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeColorTo(mesh, color, duration));
     }
 
 
@@ -84,6 +90,9 @@ public class CrossSceneEventHelper : MonoBehaviour
     public void FadeSprite( SpriteRenderer sprite, float alpha, float duration ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, alpha, duration));
     }
+    public void FadeSpriteColor( SpriteRenderer sprite, Color color, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeColorTo(sprite, color, duration));
+    }
 
 
     public void FadeTextIn( TextMeshPro text ) {
@@ -95,6 +104,9 @@ public class CrossSceneEventHelper : MonoBehaviour
     }
     public void FadeText( TextMeshPro text, float alpha, float duration ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, alpha, duration));
+    }
+    public void FadeTextColor( TextMeshPro text, Color color, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeColorTo(text, color, duration));
     }
 
 

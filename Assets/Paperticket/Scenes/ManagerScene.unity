@@ -250,6 +250,84 @@ MonoBehaviour:
   playerRig: {fileID: 90448138}
   headGfx: {fileID: 1653417250}
   _Debug: 1
+  shakeTransformCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.0048383144
+      inSlope: -7.7383647
+      outSlope: -7.7383647
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.12871699
+      value: -1.0008973
+      inSlope: 3.8691819
+      outSlope: 3.8691819
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.25743398
+      value: 0.9912206
+      inSlope: 4.6916003
+      outSlope: 4.6916003
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.50262666
+      value: -0.5028678
+      inSlope: -1.0282748
+      outSlope: -1.0282748
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.75057364
+      value: 0.49808875
+      inSlope: -1.0325468
+      outSlope: -1.0325468
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.87380093
+      value: -0.25385302
+      inSlope: 0.9410083
+      outSlope: 0.9410083
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9361787
+      value: 0.24417645
+      inSlope: 1.9960238
+      outSlope: 1.9960238
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9985565
+      value: -0.0048383144
+      inSlope: -3.9920409
+      outSlope: -3.9920409
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   headProxy: {fileID: 0}
   rightController: {fileID: 1891529379}
   leftController: {fileID: 1008697338}

@@ -195,6 +195,10 @@ namespace Paperticket {
             videoLoaded = false;
             videoEnded = false;
 
+            // Set position and rotation if applicable
+            if (moveToHead) transform.position = PTUtilities.instance.HeadsetPosition();
+            if (rotateToHead) transform.rotation = PTUtilities.instance.HeadsetRotation() * Quaternion.Euler(initialRotation);
+
             // Load the prepare the next video
             StartCoroutine(LoadVideoClipFromBundle(newVideoName));
 

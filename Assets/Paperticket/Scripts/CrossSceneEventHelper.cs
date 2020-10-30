@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Paperticket;
+using UnityEngine.Rendering;
 
 public class CrossSceneEventHelper : MonoBehaviour
 {
@@ -110,6 +111,11 @@ public class CrossSceneEventHelper : MonoBehaviour
     }
 
 
+    public void FadePostVolume (Volume volume, float targetWeight, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadePostVolumeTo(volume, targetWeight, duration));
+    }
+
+
 
     Coroutine headFadeCo;
     public void FadeHeadsetColor( Color color, float duration ) {
@@ -147,6 +153,9 @@ public class CrossSceneEventHelper : MonoBehaviour
 
     public void TeleportPlayer(Transform targetTransform ) {
         PTUtilities.instance.TeleportPlayer(targetTransform);
+    }
+    public void TeleportPlayer( Transform targetTransform, bool rotatePlayer ) {
+        PTUtilities.instance.TeleportPlayer(targetTransform, rotatePlayer);
     }
 
 }

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 namespace Paperticket {
     public class IN05PhoneLogic : MonoBehaviour {
 
         [Header("REFERENCES")]
         [SerializeField] Transform photoSprites;
-        [SerializeField] SpriteRenderer[] indicatorKnobs;
+        //[SerializeField] SpriteRenderer[] indicatorKnobs;
+        [SerializeField] TextMeshPro photoNumberText;
         [SerializeField] Transform PostButton;
         [SerializeField] Transform AskButton;
 
@@ -22,6 +24,7 @@ namespace Paperticket {
         [Space(10)]
         [SerializeField] UnityEvent2 onCorrect;
         [SerializeField] UnityEvent2 onIncorrect;
+        [SerializeField] UnityEvent2 onFinish;
 
         [Header("PHOTO CONTROLS")]
         [Space(10)]
@@ -33,10 +36,10 @@ namespace Paperticket {
 
         [Header("READ ONLY")]
 
-        int currentPhotoIndex = 0; 
+        int currentPhotoIndex = 0;
+        bool gameFinished = false;
 
         
-        // Start is called before the first frame update
         void Awake() {
 
         }
@@ -44,6 +47,7 @@ namespace Paperticket {
 
 
         public void SubmitAnswer (bool askPermission ) {
+            if (gameFinished) return;
 
             if (askPermission == shouldAsk[currentPhotoIndex]) {
                 //StartCoroutine(CorrectAnswer());
@@ -56,45 +60,27 @@ namespace Paperticket {
             }
         }
 
-        //Coroutine answerCo;
-        //IEnumerator CorrectAnswer() {
-
-        //    answerCo = null;
-        //    yield return null;
-        //}
-
-        //IEnumerator IncorrectAnswer() {
-
-        //    //float t = 0;
-        //    //Vector3 postButtonPos = PostButton.localPosition;
-        //    //Vector3 askButtonPos = AskButton.localPosition;
-            
-        //    //while (t < buttonShakeCurve.keys[buttonShakeCurve.length - 1].time) {
-        //    //    yield return null;
-        //    //    PostButton.localPosition = postButtonPos + ( Vector3.right * buttonShakeCurve.Evaluate(t));
-        //    //    AskButton.localPosition = askButtonPos + (Vector3.right * buttonShakeCurve.Evaluate(t));
-        //    //    t += Time.deltaTime;                
-        //    //}
-        //    //PostButton.localPosition = postButtonPos;
-        //    //AskButton.localPosition = askButtonPos;
-
-           
-
-
-
-
-        //    answerCo = null;
-        //}
 
         public void MoveSelection() {
-            // Cancel if out of photos
-            if (currentPhotoIndex >= numberOfPhotos - 1) return;
+            if (gameFinished) return;
 
-            // Cancel if currently transitioning
-            if (movingCo != null) return;
+            // Check what photo we're up to
+            if (currentPhotoIndex < numberOfPhotos - 1) {
 
-            // Start a new transition
-            movingCo = StartCoroutine(movingSelection());
+                // Cancel if currently transitioning
+                if (movingCo != null) return;
+
+                // Start a new transition
+                movingCo = StartCoroutine(movingSelection());
+            
+            // We're up to the last photo
+            } else if (currentPhotoIndex == numberOfPhotos - 1) {
+
+                // Send the final event
+                if (onFinish != null) onFinish.Invoke();
+                gameFinished = true;
+
+            } else Debug.LogErrorFormat("[{0}] ERROR -> Attempted to go beyond the number of photos available! cancelling", this);
 
         }
 
@@ -105,9 +91,10 @@ namespace Paperticket {
             Vector3 startPos = photoSprites.localPosition;
             Vector3 endPos = startPos + translationPerMove;
 
-            // Change the colours of the indicator knobs
-            StartCoroutine(PTUtilities.instance.FadeColorTo(indicatorKnobs[currentPhotoIndex], Color.white, moveDuration));
-            StartCoroutine(PTUtilities.instance.FadeColorTo(indicatorKnobs[currentPhotoIndex + 1], Color.black, moveDuration));
+            // DEPRECATED Change the colours of the indicator knobs
+            //StartCoroutine(PTUtilities.instance.FadeColorTo(indicatorKnobs[currentPhotoIndex], Color.white, moveDuration));
+            //StartCoroutine(PTUtilities.instance.FadeColorTo(indicatorKnobs[currentPhotoIndex + 1], Color.black, moveDuration));
+
 
             while (t < moveDuration) {
                 yield return null;
@@ -118,12 +105,11 @@ namespace Paperticket {
             photoSprites.localPosition = endPos;
             currentPhotoIndex += 1;
 
+
+            photoNumberText.text = (currentPhotoIndex + 1) + " of " + numberOfPhotos;
+
             movingCo = null;
         }
-
-
-
-
 
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
@@ -233,28 +234,39 @@ namespace Paperticket {
 
 
         /// <summary>
-        /// Teleport the player to the specified position and rotation, taking into account player height for mobile
+        /// Teleport the player to the specified position and rotation, taking into account camera position/rotation in rig
         /// </summary>
-        /// <param name="position">The position to telelport to</param>
-        /// <param name="rotation">The rotation when teleported</param>
+        /// <param name="position">The position to teleport to</param>
+        /// <param name="forwardDirection">The foward direction to teleport to</param>
         public void TeleportPlayer( Vector3 position, Vector3 forwardDirection ) {
-
-            //transform.SetPositionAndRotation(position, rotation);
-
-            //// Grab the teleport script (GO: TeleportSettings) 
-            //VRTK_BasicTeleport teleport = VRTK_ObjectCache.registeredTeleporters[0];
-
-            //// Force the teleport, ignoring any target checking or floor adjustment
-            //teleport.ForceTeleport(position, HeadsetRotationToMatch(rotation));
-
+            
             playerRig.MoveCameraToWorldLocation(position);
             playerRig.MatchRigUpCameraForward(Vector3.up, forwardDirection);
 
         }
+        /// <summary>
+        /// Teleport the player to the specified position, taking into account camera position in rig
+        /// </summary>
+        /// <param name="position">The position to teleport to</param>
+        public void TeleportPlayer( Vector3 position) {
+            playerRig.MoveCameraToWorldLocation(position);
+        }
+        /// <summary>
+        /// Teleport the player to match the specified transform, taking into account camera position in rig
+        /// </summary>
+        /// <param name="target">The transform to teleport to</param>
         public void TeleportPlayer (Transform target ) {
             TeleportPlayer(target.position, target.forward);
         }
-
+        /// <summary>
+        /// Teleport the player to match the specified transform, taking into account camera position in rig
+        /// </summary>
+        /// <param name="target">The transform to teleport to</param>
+        /// <param name="rotatePlayer">Whether to rotate the player to match the transform or not</param>
+        public void TeleportPlayer( Transform target, bool rotatePlayer) {
+            if (rotatePlayer) TeleportPlayer(target.position, target.forward);
+            else TeleportPlayer(target.position);
+        }
 
 
 
@@ -700,6 +712,30 @@ namespace Paperticket {
             }
 
         }
+
+
+        // Helper coroutine for fading volume weight
+        public IEnumerator FadePostVolumeTo( Volume volume, float targetWeight, float duration ) {
+            float weight = volume.weight;
+            targetWeight = Mathf.Clamp01(targetWeight);
+
+            if (!volume.enabled) volume.enabled = true;
+
+
+            for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                float newWeight = Mathf.Lerp(weight, targetWeight, t);
+                volume.weight = newWeight;
+                yield return null;
+            }
+            volume.weight = targetWeight;
+            if (targetWeight == 0) {
+                volume.enabled = false;
+            }
+        }
+
+
+
+
 
         // Helper coroutine for fading audio source volume
         public IEnumerator FadeAudioTo( AudioSource audio, float targetVolume, float duration ) {

@@ -394,6 +394,12 @@ namespace Paperticket {
                 gameActive = false;
                 StopAllCoroutines();
 
+                // Do Splash etc
+                if (finishEvents != null) {
+                    finishEvents.Invoke();
+                }
+
+
                 autoMoveCo = StartCoroutine(FinishAnimation());
 
             }
@@ -409,13 +415,7 @@ namespace Paperticket {
 
                 yield return new WaitForFixedUpdate();
             }
-
-            // Do Splash etc
-            if (finishEvents != null) {
-                finishEvents.Invoke();
-            }
-
-
+                     
 
         }
 

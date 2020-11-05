@@ -20,7 +20,7 @@ namespace Paperticket {
         [SerializeField] int numberOfPhotos;
         [SerializeField] bool[] shouldAsk;
         [Space(10)]
-        [SerializeField] AnimationCurve buttonShakeCurve;
+        public AnimationCurve buttonShakeCurve;
         [Space(10)]
         [SerializeField] UnityEvent2 onCorrect;
         [SerializeField] UnityEvent2 onIncorrect;

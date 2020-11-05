@@ -774,6 +774,25 @@ namespace Paperticket {
 
         }
 
+        public IEnumerator MoveTransformViaCurve( Transform target, AnimationCurve animCurve, Vector3 moveAmount, float duration ) {
+
+            float t = 0;
+            Vector3 initialPos = target.localPosition;
+            //float curveTime = shakeTransformCurve.keys[shakeTransformCurve.length - 1].time;
+
+            if (_Debug) Debug.Log("[PTUtilities] Shaking transform " + target.name);
+
+            while (t < duration) {
+                yield return null;
+                target.localPosition = initialPos + (moveAmount * animCurve.Evaluate(t / duration));
+                t += Time.deltaTime;
+            }
+            target.localPosition = initialPos;
+
+            if (_Debug) Debug.Log("[PTUtilities] Finished shaking " + target.name);
+
+        }
+
         // Fading audio
 
         bool fadingAudioListener;

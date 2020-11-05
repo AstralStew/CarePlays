@@ -53,6 +53,31 @@ public class CrossSceneEventHelper : MonoBehaviour
         StartCoroutine(PTUtilities.instance.ShakeTransform(target, shakeAmount, duration));
     }
 
+    public enum CurveType { Constant, Linear, EaseInOut }
+
+    public void MoveTransformViaCurve( Transform target, CurveType curveType, Vector3 moveAmount, float duration ) {
+
+        AnimationCurve curve = new AnimationCurve();
+
+        switch (curveType) {
+            case CurveType.Constant:
+                curve = AnimationCurve.Constant(0, 1, 1);
+                break;
+            case CurveType.Linear:
+                curve = AnimationCurve.Linear(0, 0, 1, 1);
+                break;
+            case CurveType.EaseInOut:
+                curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+                break;
+            default:
+                Debug.LogError("[{0}] ERROR -> Bad CurveType recieved in MoveTransformViaCurve!!");
+                break;
+        }
+
+        StartCoroutine(PTUtilities.instance.MoveTransformViaCurve (target, curve, moveAmount, duration));
+        
+    }
+
 
     public void FadeAudioSourceIn(AudioSource source ) {
         StartCoroutine(PTUtilities.instance.FadeAudioTo(source, 1f, 0.5f));
@@ -158,4 +183,5 @@ public class CrossSceneEventHelper : MonoBehaviour
         PTUtilities.instance.TeleportPlayer(targetTransform, rotatePlayer);
     }
 
+        
 }

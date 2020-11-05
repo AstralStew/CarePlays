@@ -47,6 +47,27 @@ namespace Paperticket {
         }
 
 
+        private void OnTriggerEnter( Collider collision ) {
+            if (triggerType == TriggerType.OnTriggerStay || (OneTimeUse && used)) return;
+
+            if (((1 << collision.gameObject.layer) & triggerLayers) != 0) {
+                if (!requireTag || requireTag && collision.gameObject.tag == tag) {
+                    StartCoroutine(CountdownToEvent(TriggerType.OnTriggerEnter));
+                }
+            }
+        }
+
+        private void OnTriggerStay( Collider collision ) {
+            if (triggerType == TriggerType.OnTriggerEnter || (OneTimeUse && used)) return;
+
+            if (((1 << collision.gameObject.layer) & triggerLayers) != 0) {
+                if (!requireTag || requireTag && collision.gameObject.tag == tag) {
+                    StartCoroutine(CountdownToEvent(TriggerType.OnTriggerStay));
+                }
+            }
+        }
+
+
 
         IEnumerator CountdownToEvent(TriggerType type) {
             if (debugging) Debug.Log("[EventSender] Counting down event...");

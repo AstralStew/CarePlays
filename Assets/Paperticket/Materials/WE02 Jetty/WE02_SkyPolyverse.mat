@@ -9,9 +9,9 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: WE02_SkyPolyverse
   m_Shader: {fileID: 4800000, guid: 6fc9318f5193c094c98c0d450cd61e3b, type: 3}
-  m_ShaderKeywords: _BACKGROUNDMODE_COLORS _ENABLEBUILTINFOG_ON _ENABLECLOUDSROTATION_ON
-    _ENABLECLOUDS_ON _ENABLESUN_ON _GLOSSYREFLECTIONS_OFF _MAPPING_LATITUDE_LONGITUDE_LAYOUT
-    _SPECULARHIGHLIGHTS_OFF _SUNDISK_HIGH_QUALITY
+  m_ShaderKeywords: _BACKGROUNDMODE_COLORS _ENABLECLOUDSROTATION_ON _ENABLECLOUDS_ON
+    _ENABLESUN_ON _GLOSSYREFLECTIONS_OFF _MAPPING_LATITUDE_LONGITUDE_LAYOUT _SPECULARHIGHLIGHTS_OFF
+    _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -127,7 +127,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EnableBuiltinFog: 1
+    - _EnableBuiltinFog: 0
     - _EnableClouds: 1
     - _EnableCloudsRotation: 1
     - _EnableMoon: 0
@@ -153,8 +153,8 @@ Material:
     - _MirrorOnBack: 0
     - _Mode: 0
     - _MoonCat: 1
-    - _MoonIntensity: 1
-    - _MoonSize: 0.5
+    - _MoonIntensity: 4.38
+    - _MoonSize: 0.528
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PatternCat: 1
@@ -174,7 +174,7 @@ Material:
     - _SunCat: 1
     - _SunDisk: 2
     - _SunIntensity: 1.64
-    - _SunSize: 0.524
+    - _SunSize: 0.535
     - _SunSizeConvergence: 1
     - _TITLE: 1
     - _TwinklingContrast: 1

@@ -9,35 +9,8 @@ EditorBuildSettings:
     path: Assets/Paperticket/Scenes/ManagerScene.unity
     guid: 90818312183d6a14ba233d70dcccfb6f
   - enabled: 1
-    path: Assets/Paperticket/Scenes/WorkExperience/WorkExperience01 - Onboarding.unity
-    guid: faf354509c645b14b953e6535dd9e308
-  - enabled: 1
-    path: Assets/Paperticket/Scenes/WorkExperience/WorkExperience02 - Jetty.unity
-    guid: 61e28ba524bba824d947b03930d7708d
-  - enabled: 1
-    path: Assets/Paperticket/Scenes/WorkExperience/WorkExperience03 - Dawn.unity
-    guid: b873b440115c48c479d557d62cb236bf
-  - enabled: 1
-    path: Assets/Paperticket/Scenes/WorkExperience/WorkExperience04 - Finale.unity
-    guid: fdb1bd38a8cc8864ea804bbea32780cf
-  - enabled: 1
-    path: Assets/Paperticket/Scenes/Induction/Induction01 - Module Selection.unity
-    guid: 198c42eff5055094a94efe799855723e
-  - enabled: 1
-    path: Assets/Paperticket/Scenes/Induction/Induction02 - Game Show.unity
-    guid: b225f24632a0a404bb5d24a30f2fd412
-  - enabled: 1
-    path: Assets/Paperticket/Scenes/Induction/Induction03 - Cigarette Conundrum.unity
-    guid: 259c80cdafa6f4145afac27a7d113599
-  - enabled: 1
-    path: Assets/Paperticket/Scenes/Induction/Induction04 - Kinship Lesson.unity
-    guid: d59881cc3d8d4e543ad09013f2055e85
-  - enabled: 1
-    path: Assets/Paperticket/Scenes/Induction/Induction05 - Privacy and Consent.unity
-    guid: 6222331bac37791459ac0c7a5d2b557e
-  - enabled: 1
-    path: Assets/Paperticket/Scenes/Induction/Induction06 - Finale.unity
-    guid: edf1bf267226eb946a4e20d839ccfa6b
+    path: Assets/Paperticket/Scenes/_Prototypes/FishingSceneTransitionMatching.unity
+    guid: f42bb34becdac7f49854cca55384201b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a35a7b3bce2f4294886b4ad4a30469fd,
       type: 2}

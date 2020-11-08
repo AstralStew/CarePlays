@@ -6,7 +6,6 @@ using PathCreation;
 using System.IO;
 using System;
 using UnityEditor;
-using System.Security.Policy;
 
 namespace Paperticket {
     public class WE02FishingGame2 : MonoBehaviour {
@@ -57,11 +56,16 @@ namespace Paperticket {
         [SerializeField] AnimationCurve objectsHeightCurve;
         [SerializeField] AnimationCurve fadeHeightCurve;
         [SerializeField] Gradient backgroundColors;
+        [Space(10)]
+        [SerializeField] float fadeSpriteZOffset = 1.31f;
+        [SerializeField] float objectsZOffset = 1.72f;
+
 
 
         [Header("LINE CONTROLS")]
         [Space(10)]
         [SerializeField] float fishHeight;
+        [SerializeField] float lineZOffset = 11f;
         [SerializeField] Vector3 fishToLineOffset;
         [Space(10)]
         [SerializeField] float lineXMultiplier = 1f;
@@ -300,8 +304,8 @@ namespace Paperticket {
             backgroundSprite.color = backgroundColors.Evaluate(progress);
 
             // Move all underwater objects and the fade sprite 
-            objectSprites.localPosition = new Vector3(0, objectsHeightCurve.Evaluate(progress), 5);
-            fadeSprite.localPosition = new Vector3(0, fadeHeightCurve.Evaluate(progress), 4.5f);
+            objectSprites.localPosition = new Vector3(0, objectsHeightCurve.Evaluate(progress), objectsZOffset);
+            fadeSprite.localPosition = new Vector3(0, fadeHeightCurve.Evaluate(progress), fadeSpriteZOffset);
 
 
         }
@@ -314,7 +318,7 @@ namespace Paperticket {
             lineStartX = Mathf.Lerp(lineStartX, targetLineX, lineStartSpeed * (PlayerControl ? 1f : 0.5f));
 
             // Calculate the fishing line positions
-            lineStartPos = new Vector3(lineStartX, 1.02f, 5);
+            lineStartPos = new Vector3(lineStartX, 1.02f, lineZOffset);
 
             // Move the fishing line renderer
             fishingLine.SetPosition(0, lineStartPos);
@@ -322,7 +326,7 @@ namespace Paperticket {
             // Only move the end of the line if the player has control                        
             if (PlayerControl) {
                 lineEndX = Mathf.SmoothDamp(lineEndX, lineStartX, ref smoothVel, lineEndSmoothTime, lineEndMaxDelta);
-                lineEndPos = new Vector3(lineEndX, fishHeight, 5);
+                lineEndPos = new Vector3(lineEndX, fishHeight, lineZOffset);
                 fishingLine.SetPosition(1, lineEndPos);
             }
 

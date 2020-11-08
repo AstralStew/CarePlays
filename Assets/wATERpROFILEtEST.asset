@@ -20,7 +20,7 @@ MonoBehaviour:
   enableLightAbsorption: 0
   depthColor: {r: 0, g: 0.45, b: 0.65, a: 0.85}
   maxDepth: 5
-  enableFoam: 1
+  enableFoam: 0
   foamColor: {r: 1, g: 1, b: 1, a: 1}
   foamDistance: 4.64
   enableFoamHQ: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
   slopeFoamFlowSpeed: 20
   slopeFoamDistance: 50
   enableRipple: 1
-  rippleHeight: 0.212
+  rippleHeight: 0.135
   rippleSpeed: 0.1
   rippleNoiseScale: 17.5
   enableWave: 0

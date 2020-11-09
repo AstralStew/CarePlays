@@ -5,8 +5,7 @@ using TMPro;
 using Paperticket;
 using UnityEngine.Rendering;
 
-public class CrossSceneEventHelper : MonoBehaviour
-{
+public class CrossSceneEventHelper : MonoBehaviour {
            
     public void LoadNextScene (string sceneName, float invokeTime ) {
         StartCoroutine(WaitThenLoadNextScene(sceneName, invokeTime));
@@ -93,11 +92,11 @@ public class CrossSceneEventHelper : MonoBehaviour
 
 
 
-    public void FadeMeshIn( MeshRenderer mesh ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 1, 0.5f));
+    public void FadeMeshIn( MeshRenderer mesh, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 1, duration));
     }
-    public void FadeMeshOut( MeshRenderer mesh ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 0, 0.5f));
+    public void FadeMeshOut( MeshRenderer mesh, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 0, duration));
     }
     public void FadeMesh( MeshRenderer mesh, float alpha, float duration ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, alpha, duration));
@@ -150,12 +149,12 @@ public class CrossSceneEventHelper : MonoBehaviour
 
     public void FadeHeadsetIn( float duration ) {
         if (headFadeCo != null) StopCoroutine(headFadeCo);
-        headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 1f, duration));
+        headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 0f, duration));
     }
 
     public void FadeHeadsetOut( float duration ) {
         if (headFadeCo != null) StopCoroutine(headFadeCo);
-        headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 0f, duration));
+        headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 1f, duration));
     }
 
 

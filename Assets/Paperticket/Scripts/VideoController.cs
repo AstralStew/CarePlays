@@ -42,10 +42,12 @@ namespace Paperticket {
         [SerializeField] Vector3 initialRotation;
 
 
-        [Header("EVENT CONTROLS")]
+        [Header("FINISH CONTROLS")]
+        [Space(10)]
+        [SerializeField] float earlyFinishDuration = 0.5f;
         [Space(10)]
         [SerializeField] bool _UseFinishEvents;
-        [SerializeField] UnityEvent[] _FinishEvents;
+        [SerializeField] UnityEvent2[] _FinishEvents;
         
         int finishIndexNo;
 
@@ -163,7 +165,7 @@ namespace Paperticket {
 
             videoLoaded = true;
 
-            endFrames = (long)videoPlayer.frameCount - 15;
+            endFrames = (long)(videoPlayer.frameCount - (earlyFinishDuration * videoPlayer.frameRate)); // 15
 
             if (autoPlay) {
                 if (_Debug) Debug.Log("[VideoController] Autoplay is on, playing video!");

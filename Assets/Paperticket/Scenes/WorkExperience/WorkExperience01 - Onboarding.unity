@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b327560d560f38c4eb6b6659307e3985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Debug: 0
+  _Debug: 1
   videoPlayer: {fileID: 1934923453}
   currentVideoName: WE01a_IntroStart
   autoPlay: 1

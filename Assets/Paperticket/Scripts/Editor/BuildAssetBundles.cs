@@ -5,34 +5,67 @@ using UnityEditor;
 
 public class BuildAssetBundles : Editor {
 
+    [MenuItem("Paperticket/Build Asset Bundles/Android")]
+    public static void BuildAndroidBundle() {
 
-    [MenuItem("Paperticket/Build Asset Bundles")]
-    public static void BuildBundles() {
+        Debug.LogWarning("[BuildBundles] Building out Android asset bundles...");
 
-        BuildAssetBundleOptions buildAssetBundleOptions;
-        string assetBundleDirectory = null;
+        BuildAssetBundleOptions buildAssetBundleOptions = BuildAssetBundleOptions.UncompressedAssetBundle;
+        string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/Android Asset Bundles/";
+
+        BuildBundles(buildAssetBundleOptions, assetBundleDirectory);
+    
+    }
+
+    [MenuItem("Paperticket/Build Asset Bundles/PC")]
+    public static void BuildPCBundle() {
+
+        Debug.LogWarning("[BuildBundles] Building out PC asset bundles...");
+
+        BuildAssetBundleOptions buildAssetBundleOptions = BuildAssetBundleOptions.ChunkBasedCompression;
+        string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/PC Asset Bundles/"; 
+
+        BuildBundles(buildAssetBundleOptions, assetBundleDirectory);
+
+    }
+
+    [MenuItem("Paperticket/Build Asset Bundles/Both")]
+    public static void BuildBothBundles() {
+
+        Debug.LogWarning("[BuildBundles] Building out both Android and PC asset bundles:");
+
+        BuildAndroidBundle();
+        BuildPCBundle();
+
+    }
+
+    //[MenuItem("Paperticket/Build Asset Bundles")]
+    public static void BuildBundles( BuildAssetBundleOptions buildAssetBundleOptions , string assetBundleDirectory ) {
+
+        //BuildAssetBundleOptions buildAssetBundleOptions;
+        //string assetBundleDirectory = null;
 
         /// ANDROID BUILD TARGET
-        if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android) {
+        //if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android) {
 
-            // Define (or create) a path for the asset bundles to build into
-            assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/Android Asset Bundles/";
-            //assetBundleDirectory = "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/APKs/Asset Bundles/";
+        //    // Define (or create) a path for the asset bundles to build into
+        //    assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/Android Asset Bundles/";
+        //    //assetBundleDirectory = "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/APKs/Asset Bundles/";
 
-            // Use uncompressed asset bundle option on android to allow videos to be read
-            buildAssetBundleOptions = BuildAssetBundleOptions.UncompressedAssetBundle;
+        //    // Use uncompressed asset bundle option on android to allow videos to be read
+        //    buildAssetBundleOptions = BuildAssetBundleOptions.UncompressedAssetBundle;
 
-        /// PC BUILD TARGET
-        } else {
+        ///// PC BUILD TARGET
+        //} else {
 
-            // Define (or create) a path for the asset bundles to build into
-            assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/PC Asset Bundles/";
-            //assetBundleDirectory = "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/EXEs/Asset Bundles/";
+        //    // Define (or create) a path for the asset bundles to build into
+        //    assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/PC Asset Bundles/";
+        //    //assetBundleDirectory = "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/EXEs/Asset Bundles/";
 
-            // Otherwise (PC presumably) use chunk based compression for smaller file size
-            buildAssetBundleOptions = BuildAssetBundleOptions.ChunkBasedCompression;
+        //    // Otherwise (PC presumably) use chunk based compression for smaller file size
+        //    buildAssetBundleOptions = BuildAssetBundleOptions.ChunkBasedCompression;
 
-        }
+        //}
 
         // Make sure the directory above exists
         if (!System.IO.Directory.Exists(assetBundleDirectory)) {

@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 5406372553308936652}
   - component: {fileID: 5406372553308936650}
   m_Layer: 8
-  m_Name: ButtonInteractable
+  m_Name: ButtonInteractable_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,8 +173,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c66917dc2c3e014c97fe4305b54c23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oneUse: 1
+  useSprite: 1
   fadeTime: 0.5
+  defaultColor: {r: 1, g: 1, b: 1, a: 0.5}
+  hoveredColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  oneUse: 1
+  usedColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   debugging: 1
 --- !u!54 &5406372553308936652
 Rigidbody:
@@ -377,6 +382,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -98,7 +98,7 @@ public class SceneViewPresets {
                 SaveSettings();
             settings.winPos.x = Mathf.Clamp(newPos.x, 15 - newPos.width, aView.position.width - 15);
             settings.winPos.y = Mathf.Clamp(newPos.y, 21, aView.position.height - 15);
-            if (settings.showCones && e.control) {
+            if (settings.showCones && e.keyCode == KeyCode.PageUp) {
                 int colorCount = 0;
                 foreach (var p in settings.presets) {
                     var c = _colors[colorCount++];
@@ -183,7 +183,7 @@ public class SceneViewPresets {
                     }
                     GUI.color = Color.white;
                 } else {
-                    if (e.control) {
+                    if (e.keyCode == KeyCode.PageUp) {
                         GUI.color = _colors[colorCount++];
                         colorCount = colorCount % _colors.Length;
                     }

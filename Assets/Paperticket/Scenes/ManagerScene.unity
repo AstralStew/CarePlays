@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _LoadFirstScene: 0
-  _FirstSceneName: DesertMenuScene
+  _FirstSceneName: WorkExperience02 - Jetty
   _Debug: 0
 --- !u!4 &1833220342
 Transform:

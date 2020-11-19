@@ -53,7 +53,9 @@ namespace Paperticket {
         public Transform headProxy;
         public XRController rightController;
         public XRController leftController;
-        MeshRenderer rightControllerRenderer;
+        XRRayInteractor rightRayInteractor;
+        XRInteractorLineVisual rightRayVisual;
+
 
         enum Handedness { Left, Right, Both }
 
@@ -83,14 +85,14 @@ namespace Paperticket {
         [HideInInspector] public bool SetupComplete;
 
 
-        //public bool LeftControllerBeamActive {
-        //    get { return leftController.GetComponent<XRInteractorLineVisual>().enabled; }
-        //    set { leftController.GetComponent<XRInteractorLineVisual>().enabled = value; }
-        //}
-
         public bool ControllerBeamActive {
-            get { return rightController.GetComponent<XRInteractorLineVisual>().enabled; }
-            set { rightController.GetComponent<XRInteractorLineVisual>().enabled = value; }
+            get { 
+                return rightRayInteractor.enabled; 
+            }
+            set {
+                rightRayInteractor.enabled = value;
+                rightRayVisual.enabled = value; 
+            }
         }
 
 
@@ -144,7 +146,7 @@ namespace Paperticket {
             }
             if (_Debug) Debug.Log("[PTUtilities] Right Controller found!");
 
-            // Grab the right controller
+            // Grab the left controller
             while (leftController == null) {
                 if (_Debug) Debug.Log("[PTUtilities] Looking for Left Controller object...");
                 foreach (XRController cont in playerRig.GetComponentsInChildren<XRController>()) {
@@ -154,14 +156,22 @@ namespace Paperticket {
             }
             if (_Debug) Debug.Log("[PTUtilities] Left Controller found!");
 
+            // Grab the right controller's XR ray interactor            
+            while (rightRayInteractor == null) {
+                if (_Debug) Debug.Log("[PTUtilities] Looking for Right Ray Interactor object...");
+                rightRayInteractor = rightController.GetComponent<XRRayInteractor>();
+                yield return null;
+            }
+            if (_Debug) Debug.Log("[PTUtilities] Right Ray Interactor found!");
 
-            //// Grab the right controller renderer            
-            //while (rightControllerRenderer == null) {
-            //    if (_Debug) Debug.Log("[PTUtilities] Looking for Controller Renderer object...");
-            //    rightControllerRenderer = rightController.modelTransform.GetComponentInChildren<MeshRenderer>();
-            //    yield return null;
-            //}
-            //if (_Debug) Debug.Log("[PTUtilities] Controller Renderer found!");
+            // Grab the right controller's XR ray visual          
+            while (rightRayVisual == null) {
+                if (_Debug) Debug.Log("[PTUtilities] Looking for Right Ray Visual object...");
+                rightRayVisual = rightController.GetComponent<XRInteractorLineVisual>();
+                yield return null;
+            }
+            if (_Debug) Debug.Log("[PTUtilities] Right Ray Visual found!");
+
 
             // Finish setup
             SetupComplete = true;

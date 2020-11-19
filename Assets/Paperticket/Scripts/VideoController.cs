@@ -33,13 +33,13 @@ namespace Paperticket {
         [Space(10)]
         [SerializeField] bool moveToHead;
         [SerializeField] bool rotateToHead;
+        [SerializeField] Vector3 initialRotation;
 
 
         [Header("AUDIO CONTROLS")]
         [Space(10)]
         [SerializeField] bool externalAudio;
         [SerializeField] AudioSource externalAudioSource;
-        [SerializeField] Vector3 initialRotation;
 
 
         [Header("FINISH CONTROLS")]
@@ -69,17 +69,15 @@ namespace Paperticket {
         [SerializeField] private long currentFrames;
         [SerializeField] private long endFrames;
 
-
-
+        
 
         // Use this for initialization
         void OnEnable() {
 
-            // Set the video sphere position
-            //transform.position = PTUtilities.instance.HeadsetPosition();
-            //transform.rotation = Quaternion.Euler(initialRotation);
+            // Set the video sphere position and rotation (if applicable)
             if (moveToHead) transform.position = PTUtilities.instance.HeadsetPosition();
             if (rotateToHead) transform.rotation = PTUtilities.instance.HeadsetRotation() * Quaternion.Euler(initialRotation);
+            else transform.rotation = Quaternion.Euler(initialRotation);
 
             //Make sure the video doesn't skip frames (to keep the audio in sync)
             videoPlayer.skipOnDrop = skipFramesOnDrop;
@@ -111,74 +109,9 @@ namespace Paperticket {
         }
 
 
-        //-----------------------------------------------------------
-        // VIDEO COMMANDS
-        //-----------------------------------------------------------
-
-        // Set the clip of the new video to be played
-        IEnumerator LoadVideoClipFromBundle( string clipName ) {
-            if (_Debug) Debug.Log("[VideoController] Setting the video clip");
-
-            //Let other scripts know the video hasn't started yet
-            videoStarted = false;
-
-            // Load the asset bundle from the above path
-            AssetBundle videoBundle = DataUtilities.instance._ExpansionAssetBundle;
-
-            // Load the video clip from the asset bundle and wait until it's finished
-            var assetLoadRequest = videoBundle.LoadAssetAsync<VideoClip>(clipName);
-            yield return assetLoadRequest;
-
-            // Treat the video as a VideoClip and give to the video player
-            VideoClip clip = assetLoadRequest.asset as VideoClip;
-            videoPlayer.clip = clip;
-            currentVideoName = clipName;
-
-            if (_Debug) Debug.Log("[VideoController] Video clip set to '" + clip.name + "'");
-
-
-            // Chucked this in here to test the above, put back in Start if necessary
-            StartCoroutine(PreparingVideo());
-
-        }
-
-
-
-        // Start preparing the video and waits till its done
-        IEnumerator PreparingVideo() {
-
-            if (_Debug) Debug.Log("[VideoController] Starting video preparation");
-
-            // Setup error checking
-            videoPlayer.errorReceived += VideoPlayerErrorReceived;
-
-            //Prepare next video
-            videoPlayer.Prepare();
-
-            //Wait until video is prepared			
-            if (_Debug) Debug.Log("[VideoController] Preparing video");
-            while (!videoPlayer.isPrepared) {
-                yield return null;
-
-            }
-            if (_Debug) Debug.Log("[VideoController] Video prepared!");
-
-            videoLoaded = true;
-
-            endFrames = (long)(videoPlayer.frameCount - (earlyFinishDuration * videoPlayer.frameRate)); // 15
-
-            if (autoPlay) {
-                if (_Debug) Debug.Log("[VideoController] Autoplay is on, playing video!");
-                PlayVideo();
-            }
-        }
-
-
-        void VideoPlayerErrorReceived( VideoPlayer source, string message ) {
-            Debug.LogError("[VideoController] VideoPlayer on '" + source.gameObject.name + "' error received! Error = " + message);
-            videoPlayer.errorReceived -= VideoPlayerErrorReceived;
-        }
-
+                     
+        #region PUBLIC VIDEO FUNCTIONS
+               
 
         //-----------------------------------------------------------
         // PUBLIC VIDEO CONTROLS
@@ -200,13 +133,13 @@ namespace Paperticket {
             // Set position and rotation if applicable
             if (moveToHead) transform.position = PTUtilities.instance.HeadsetPosition();
             if (rotateToHead) transform.rotation = PTUtilities.instance.HeadsetRotation() * Quaternion.Euler(initialRotation);
+            else transform.rotation = Quaternion.Euler(initialRotation);
 
             // Load the prepare the next video
             StartCoroutine(LoadVideoClipFromBundle(newVideoName));
 
         }
-
-
+        
         // Plays the video if it's not already playing 
         public void PlayVideo() {
 
@@ -288,12 +221,22 @@ namespace Paperticket {
             }
 
         }
+        
+        // A stop method so that it can be invoked on command
+        public void StopVideo() {
+            videoPlayer.Stop();
+            if (externalAudio) {
+                externalAudioSource.Stop();
+            }
+
+            videoEnded = true;
+        }
+
+        #endregion
 
 
+        #region OTHER PUBLIC FUNCTIONS
 
-        //-----------------------------------------------------------
-        // PUBLIC AUDIO CONTROLS
-        //-----------------------------------------------------------
 
         public void SetAudioVolume( float volume ) {
 
@@ -304,6 +247,17 @@ namespace Paperticket {
             }
 
         }
+
+        public void SetInitialRotation (Vector3 rotation ) {
+
+            initialRotation = rotation;
+
+        }
+
+        #endregion
+
+
+        #region INTERNAL FUNCTIONS
 
         //-----------------------------------------------------------
         // EVENT HANDLERS
@@ -328,15 +282,78 @@ namespace Paperticket {
             }
         }
 
-        // A stop method so that it can be invoked on command
-        public void StopVideo() {
-            videoPlayer.Stop();
-            if (externalAudio) {
-                externalAudioSource.Stop();
-            }
 
-            videoEnded = true;
+        void VideoPlayerErrorReceived( VideoPlayer source, string message ) {
+            Debug.LogError("[VideoController] VideoPlayer on '" + source.gameObject.name + "' error received! Error = " + message);
+            videoPlayer.errorReceived -= VideoPlayerErrorReceived;
         }
+
+        #endregion
+
+
+        #region INTERNAL COROUTINES
+
+        // Set the clip of the new video to be played
+        IEnumerator LoadVideoClipFromBundle( string clipName ) {
+            if (_Debug) Debug.Log("[VideoController] Setting the video clip");
+
+            //Let other scripts know the video hasn't started yet
+            videoStarted = false;
+
+            // Load the asset bundle from the above path
+            AssetBundle videoBundle = DataUtilities.instance._ExpansionAssetBundle;
+
+            // Load the video clip from the asset bundle and wait until it's finished
+            var assetLoadRequest = videoBundle.LoadAssetAsync<VideoClip>(clipName);
+            yield return assetLoadRequest;
+
+            // Treat the video as a VideoClip and give to the video player
+            VideoClip clip = assetLoadRequest.asset as VideoClip;
+            videoPlayer.clip = clip;
+            currentVideoName = clipName;
+
+            if (_Debug) Debug.Log("[VideoController] Video clip set to '" + clip.name + "'");
+
+
+            // Chucked this in here to test the above, put back in Start if necessary
+            StartCoroutine(PreparingVideo());
+
+        }
+
+        // Start preparing the video and waits till its done
+        IEnumerator PreparingVideo() {
+
+            if (_Debug) Debug.Log("[VideoController] Starting video preparation");
+
+            // Setup error checking
+            videoPlayer.errorReceived += VideoPlayerErrorReceived;
+
+            //Prepare next video
+            videoPlayer.Prepare();
+
+            //Wait until video is prepared			
+            if (_Debug) Debug.Log("[VideoController] Preparing video");
+            while (!videoPlayer.isPrepared) {
+                yield return null;
+
+            }
+            if (_Debug) Debug.Log("[VideoController] Video prepared!");
+
+            videoLoaded = true;
+
+            endFrames = (long)(videoPlayer.frameCount - (earlyFinishDuration * videoPlayer.frameRate)); // 15
+
+            if (autoPlay) {
+                if (_Debug) Debug.Log("[VideoController] Autoplay is on, playing video!");
+                PlayVideo();
+            }
+        }
+
+
+        #endregion
+
+
+
     }
 
 }

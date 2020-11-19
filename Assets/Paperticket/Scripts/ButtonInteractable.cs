@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class ButtonInteractable : MonoBehaviour
-{
+public class ButtonInteractable : MonoBehaviour {
+
     protected XRBaseInteractable baseInteractable;
     protected SpriteRenderer spriteRend;
     protected MeshRenderer meshRend;
@@ -29,11 +29,13 @@ public class ButtonInteractable : MonoBehaviour
 
     [Space(10)]
     [SerializeField] protected bool oneUse = false;
-    protected bool used;
+    protected bool used = false;
+    [Space(10)]
+    [SerializeField] protected bool locked = false;
     [Space(10)]
     [SerializeField] protected UnityEvent2 selectEvent;
     [Space(10)]
-    [SerializeField] protected bool useSprite = true;
+    protected bool useSprite = true;
 
     protected Coroutine fadingCoroutine;
 
@@ -45,11 +47,6 @@ public class ButtonInteractable : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        //spriteRend = spriteRend ?? GetComponentInChildren<SpriteRenderer>() ?? GetComponentInChildren<SpriteRenderer>(true);
-        //if (!spriteRend && useSprite) {
-        //    if (debugging) Debug.LogError("[ButtonInteractable] ERROR -> No sprite found on or beneath this button! Please add one. Disabling object.");
-        //    gameObject.SetActive(false);
-        //}
 
         genRenderer = genRenderer != null ? genRenderer : 
                        GetComponentInChildren<Renderer>() != null ? GetComponentInChildren<Renderer>() :
@@ -95,18 +92,19 @@ public class ButtonInteractable : MonoBehaviour
     protected virtual void Initialise() {
 
         if (oneUse && used) {
-            if (fadingCoroutine != null)StopCoroutine(fadingCoroutine);
-            fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, usedColor, fadeTime));
+            if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
+            if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, usedColor, fadeTime));
+            else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, usedColor, fadeTime));
 
         } else {
-            Invoke("HoverOff", 0.5f);
+            Invoke("HoverOff", 0.01f);
         }
 
     }
 
     public virtual void HoverOn() { HoverOn(null); }
     public virtual void HoverOn ( XRBaseInteractor interactor ) {
-        if (oneUse && used) return;
+        if (locked || (oneUse && used)) return;
         
         if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
         if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, hoveredColor, fadeTime));
@@ -119,7 +117,7 @@ public class ButtonInteractable : MonoBehaviour
 
     public virtual void HoverOff() { HoverOff(null); }
     public virtual void HoverOff( XRBaseInteractor interactor ) {
-        if (oneUse && used) return;
+        if (locked || (oneUse && used)) return;
         
         if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
         if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, fadeTime));
@@ -131,7 +129,7 @@ public class ButtonInteractable : MonoBehaviour
 
     public virtual void Select() { Select(null); }
     public virtual void Select( XRBaseInteractor interactor ) {
-        if (oneUse && used) return;
+        if (locked || (oneUse && used)) return;
         
         if (fadingCoroutine != null)StopCoroutine(fadingCoroutine);
         if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, selectedColor, fadeTime));
@@ -143,7 +141,31 @@ public class ButtonInteractable : MonoBehaviour
         if (debugging) Debug.Log("[ButtonInteractable] Selected!");
     }
 
+    public virtual void ToggleButton( bool toggle ) {
+        locked = toggle;
+    }
 
+    public virtual void FadeButton (bool fadeIn, float duration ) {
+
+        if (fadeIn) {
+
+            if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
+            if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, duration));
+            else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, duration));
+
+            locked = false;
+
+        } else {
+
+            if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
+            if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(spriteRend, 0, duration));
+            else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(meshRend, 0, duration));
+
+            locked = true;
+
+        }
+
+    }
 
 
     #region UNUSED
@@ -151,7 +173,7 @@ public class ButtonInteractable : MonoBehaviour
 
     public virtual void Deselect() { Deselect(null); }
     public virtual void Deselect( XRBaseInteractor interactor ) {
-        if (oneUse && used) return;
+        if (locked || (oneUse && used)) return;
         
         if (oneUse) {
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);

@@ -790,16 +790,37 @@ namespace Paperticket {
             Vector3 initialPos = target.localPosition;
             //float curveTime = shakeTransformCurve.keys[shakeTransformCurve.length - 1].time;
 
-            if (_Debug) Debug.Log("[PTUtilities] Shaking transform " + target.name);
+            if (_Debug) Debug.Log("[PTUtilities] Moving transform " + target.name);
 
             while (t < duration) {
                 yield return null;
                 target.localPosition = initialPos + (moveAmount * animCurve.Evaluate(t / duration));
                 t += Time.deltaTime;
             }
-            target.localPosition = initialPos;
+            target.localPosition = initialPos + moveAmount;
 
-            if (_Debug) Debug.Log("[PTUtilities] Finished shaking " + target.name);
+            if (_Debug) Debug.Log("[PTUtilities] Finished moving " + target.name);
+
+        }
+
+        public IEnumerator ScaleTransformViaCurve( Transform target, AnimationCurve animCurve, Vector3 scaleAmount, float duration ) {
+
+            float t = 0;
+            Vector3 initialScale = target.localScale;
+            Vector3 finalScale = Vector3.Scale(initialScale, scaleAmount);
+            //float curveTime = shakeTransformCurve.keys[shakeTransformCurve.length - 1].time;
+
+            if (_Debug) Debug.Log("[PTUtilities] Scaling transform " + target.name);
+
+            while (t < duration) {
+                yield return null;
+                //target.localScale = initialScale + Vector3.Scale(initialScale, scaleAmount) * animCurve.Evaluate(t / duration);
+                target.localScale = Vector3.Lerp(initialScale, finalScale, animCurve.Evaluate(t / duration));
+                t += Time.deltaTime;
+            }
+            target.localScale = finalScale;
+
+            if (_Debug) Debug.Log("[PTUtilities] Finished scaling " + target.name);
 
         }
 

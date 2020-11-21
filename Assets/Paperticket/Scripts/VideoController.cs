@@ -13,7 +13,6 @@ namespace Paperticket {
     public class VideoController : MonoBehaviour {
 
 
-        [SerializeField] bool _Debug;
 
         [Header("REFERENCES")]
 
@@ -63,9 +62,11 @@ namespace Paperticket {
         public bool videoEnded;
 
 
-        //Current time of the video in seconds
+        [Header("DEBUGGING")]
         [Space(10)]
-        public float currentVideoTime;
+        [SerializeField] bool debugging;
+        [Space(10)]
+        public float currentVideoTime;                // in seconds
         [SerializeField] private long currentFrames;
         [SerializeField] private long endFrames;
 
@@ -120,7 +121,7 @@ namespace Paperticket {
         // Reset the video controller and get a new video lined up
         public void SetNextVideo( string newVideoName ) {
 
-            if (_Debug) Debug.Log("[VideoController] Switching the video to " + newVideoName);
+            if (debugging) Debug.Log("[VideoController] Switching the video to " + newVideoName);
 
             // Stop the video
             videoPlayer.Stop();            
@@ -149,7 +150,7 @@ namespace Paperticket {
 
                 // Play the video
                 videoPlayer.Play();
-                if (_Debug) Debug.Log("[VideoController] Playing the video");
+                if (debugging) Debug.Log("[VideoController] Playing the video");
 
                 // If it exists, set audio time to 0 and play the audio
                 if (externalAudio) {
@@ -163,7 +164,7 @@ namespace Paperticket {
                 // If we aren't playing, play the video
                 if (!playingVideo) {
                     videoPlayer.Play();
-                    if (_Debug) Debug.Log("[VideoController] Were we interrupted? Playing the video again");
+                    if (debugging) Debug.Log("[VideoController] Were we interrupted? Playing the video again");
                 }
 
                 // Force the external audio time to match the video time
@@ -177,7 +178,7 @@ namespace Paperticket {
 
         // Set the time of the video (only seems to work when playing)
         public void SetTime( float time ) {
-            if (_Debug) Debug.Log("[VideoController] Atempting to set time to " + time + " seconds...");
+            if (debugging) Debug.Log("[VideoController] Atempting to set time to " + time + " seconds...");
 
             // Check if the provided time is viable
             if (time < (endFrames / videoPlayer.frameRate)) {
@@ -191,7 +192,7 @@ namespace Paperticket {
 
         // Add or subtract a certain amount of time from the video
         public void AddTimeStep( float timeStep ) {
-            if (_Debug) Debug.Log("[VideoController] Atempting to step forward " + timeStep + " seconds...");
+            if (debugging) Debug.Log("[VideoController] Atempting to step forward " + timeStep + " seconds...");
 
             // Set up an end buffer of 5 seconds
             float totalTime = endFrames - 5f;
@@ -213,7 +214,7 @@ namespace Paperticket {
 
             if (!playingVideo) return;
 
-            if (_Debug) Debug.Log("[VideoController] Pausing the video");
+            if (debugging) Debug.Log("[VideoController] Pausing the video");
             videoPlayer.Pause();
 
             if (externalAudio) {
@@ -240,7 +241,7 @@ namespace Paperticket {
 
         public void SetAudioVolume( float volume ) {
 
-            if (_Debug) Debug.Log("[VideoController] Setting audio volume");
+            if (debugging) Debug.Log("[VideoController] Setting audio volume");
 
             if (externalAudio) {
                 externalAudioSource.volume = Mathf.Clamp01(volume);
@@ -295,7 +296,7 @@ namespace Paperticket {
 
         // Set the clip of the new video to be played
         IEnumerator LoadVideoClipFromBundle( string clipName ) {
-            if (_Debug) Debug.Log("[VideoController] Setting the video clip");
+            if (debugging) Debug.Log("[VideoController] Setting the video clip");
 
             //Let other scripts know the video hasn't started yet
             videoStarted = false;
@@ -312,7 +313,7 @@ namespace Paperticket {
             videoPlayer.clip = clip;
             currentVideoName = clipName;
 
-            if (_Debug) Debug.Log("[VideoController] Video clip set to '" + clip.name + "'");
+            if (debugging) Debug.Log("[VideoController] Video clip set to '" + clip.name + "'");
 
 
             // Chucked this in here to test the above, put back in Start if necessary
@@ -323,7 +324,7 @@ namespace Paperticket {
         // Start preparing the video and waits till its done
         IEnumerator PreparingVideo() {
 
-            if (_Debug) Debug.Log("[VideoController] Starting video preparation");
+            if (debugging) Debug.Log("[VideoController] Starting video preparation");
 
             // Setup error checking
             videoPlayer.errorReceived += VideoPlayerErrorReceived;
@@ -332,19 +333,19 @@ namespace Paperticket {
             videoPlayer.Prepare();
 
             //Wait until video is prepared			
-            if (_Debug) Debug.Log("[VideoController] Preparing video");
+            if (debugging) Debug.Log("[VideoController] Preparing video");
             while (!videoPlayer.isPrepared) {
                 yield return null;
 
             }
-            if (_Debug) Debug.Log("[VideoController] Video prepared!");
+            if (debugging) Debug.Log("[VideoController] Video prepared!");
 
             videoLoaded = true;
 
             endFrames = (long)(videoPlayer.frameCount - (earlyFinishDuration * videoPlayer.frameRate)); // 15
 
             if (autoPlay) {
-                if (_Debug) Debug.Log("[VideoController] Autoplay is on, playing video!");
+                if (debugging) Debug.Log("[VideoController] Autoplay is on, playing video!");
                 PlayVideo();
             }
         }

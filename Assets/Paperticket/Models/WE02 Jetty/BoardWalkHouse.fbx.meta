@@ -1,14 +1,14 @@
 fileFormatVersion: 2
 guid: 012585726da2aeb4db736cb2bc9abb8a
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 19301
   internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: House
-    second: {fileID: 2100000, guid: 712262b6b6f4e504d863cb27b2a88826, type: 2}
+    second: {fileID: 2100000, guid: 9e08ff98a479c5340b29d912c18ab13b, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -48,6 +48,7 @@ ModelImporter:
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1

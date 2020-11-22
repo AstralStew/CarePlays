@@ -183,7 +183,7 @@ Material:
     - _Metallic2: 0
     - _Metallic3: 0
     - _Mode: 0
-    - _NumLayersCount: 5
+    - _NumLayersCount: 2
     - _OcclusionStrength: 1
     - _OverrideLightmapDir: 0
     - _Parallax: 0.02

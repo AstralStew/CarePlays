@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: a76d811417e61d941b97e1088d93b5ff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7313715800138684932
+    second: WE02_PlayerFishSwim_S01
+  - first:
+      213: 1544498161126039081
+    second: WE02_PlayerFishSwim_S02
+  - first:
+      213: -1341042543024474274
+    second: WE02_PlayerFishSwim_S03
+  - first:
+      213: 2972800649397582357
+    second: WE02_PlayerFishSwim_S04
+  - first:
+      213: 1374753882000936152
+    second: WE02_PlayerFishSwim_S05
+  - first:
+      213: 7936234284572187761
+    second: WE02_PlayerFishSwim_S06
+  - first:
+      213: 3059771891257836649
+    second: WE02_PlayerFishSwim_S07
+  - first:
+      213: -7551005170403755525
+    second: WE02_PlayerFishSwim_S08
+  - first:
+      213: 7982241957528610277
+    second: WE02_PlayerFishSwim_S09
+  - first:
+      213: 3625489731820510133
+    second: WE02_PlayerFishSwim_S10
+  - first:
+      213: 4178645105647477930
+    second: WE02_PlayerFishSwim_S11
+  - first:
+      213: 8610381287120066746
+    second: WE02_PlayerFishSwim_S12
+  - first:
+      213: 7450976945841735367
+    second: WE02_Reed_S01
+  - first:
+      213: -2876848808080743874
+    second: WE02_Reed_S02
+  - first:
+      213: 1391841198696751248
+    second: WE02_Reed_S03
+  - first:
+      213: -5689454452636081963
+    second: WE02_Reed_S04
+  - first:
+      213: -5686079754105678183
+    second: WE02_Reed_S05
+  - first:
+      213: 4389250649779123346
+    second: WE02_Reed_S06
+  - first:
+      213: 6757637552710418865
+    second: WE02_Reed_S07
+  - first:
+      213: 9206646423614920303
+    second: WE02_Reed_S08
+  - first:
+      213: 6075869307239138403
+    second: WE02_Reed_S09
+  - first:
+      213: -341808945186878797
+    second: FishingGame_SpriteSheet_0
+  - first:
+      213: -8138004957180128096
+    second: FishingGame_SpriteSheet_1
+  - first:
+      213: -7507237052820159687
+    second: FishingGame_SpriteSheet_2
+  - first:
+      213: -4867167368606530468
+    second: FishingGame_SpriteSheet_3
+  - first:
+      213: -2152163683529734626
+    second: FishingGame_SpriteSheet_4
+  - first:
+      213: 7210143732157900299
+    second: FishingGame_SpriteSheet_5
+  - first:
+      213: 3789588793636845545
+    second: FishingGame_SpriteSheet_6
+  - first:
+      213: 6225078951594406155
+    second: FishingGame_SpriteSheet_7
+  - first:
+      213: -461660068494656534
+    second: FishingGame_SpriteSheet_8
+  - first:
+      213: -3867928695297162015
+    second: FishingGame_SpriteSheet_9
+  - first:
+      213: 719576612060502336
+    second: FishingGame_SpriteSheet_10
+  - first:
+      213: 4583859467897214447
+    second: FishingGame_SpriteSheet_11
+  - first:
+      213: -7442594339009806960
+    second: FishingGame_SpriteSheet_12
+  - first:
+      213: -2742036986062127555
+    second: FishingGame_SpriteSheet_13
+  - first:
+      213: -8555001336423765303
+    second: FishingGame_SpriteSheet_14
+  - first:
+      213: 630293649151806099
+    second: FishingGame_SpriteSheet_15
+  - first:
+      213: 1726514290635902017
+    second: FishingGame_SpriteSheet_16
+  - first:
+      213: 4490064521082939165
+    second: FishingGame_SpriteSheet_17
+  - first:
+      213: 1985346162872666650
+    second: FishingGame_SpriteSheet_18
+  - first:
+      213: -7883494853245119502
+    second: FishingGame_SpriteSheet_19
+  - first:
+      213: -3318366787044278828
+    second: FishingGame_SpriteSheet_20
+  - first:
+      213: -6710346336029170701
+    second: FishingGame_SpriteSheet_21
+  - first:
+      213: -4779949908963317301
+    second: FishingGame_SpriteSheet_22
+  - first:
+      213: 1742544858409611978
+    second: FishingGame_SpriteSheet_23
+  - first:
+      213: 3950194118704112452
+    second: FishingGame_SpriteSheet_24
+  - first:
+      213: -5649914128031668109
+    second: FishingGame_SpriteSheet_25
+  - first:
+      213: -8423781266860668676
+    second: FishingGame_SpriteSheet_26
+  - first:
+      213: 753277645335330885
+    second: FishingGame_SpriteSheet_27
+  - first:
+      213: 4468115378742960765
+    second: FishingGame_SpriteSheet_28
+  - first:
+      213: -7736718354989788178
+    second: FishingGame_SpriteSheet_29
+  - first:
+      213: 83252891843700589
+    second: FishingGame_SpriteSheet_30
+  - first:
+      213: -5554082688046360165
+    second: FishingGame_SpriteSheet_31
+  - first:
+      213: -1119107276356586234
+    second: FishingGame_SpriteSheet_32
+  - first:
+      213: 9111640016225803337
+    second: FishingGame_SpriteSheet_33
+  - first:
+      213: -6315507800045445262
+    second: FishingGame_SpriteSheet_34
+  - first:
+      213: -6406968427261970615
+    second: FishingGame_SpriteSheet_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bac5194396a14bf0800000000000000
+      internalID: -341808945186878797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 896
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a419e2cb9fff0f80800000000000000
+      internalID: -8138004957180128096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933010eecafe0d790800000000000000
+      internalID: -7507237052820159687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54c5dbc019547cb0800000000000000
+      internalID: -4867167368606530468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 896
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16c6b0588af122e0800000000000000
+      internalID: -2152163683529734626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 896
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06e7cef5839f0460800000000000000
+      internalID: 7210143732157900299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 896
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e776810ee2579430800000000000000
+      internalID: 3789588793636845545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 896
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01bb88135ce36650800000000000000
+      internalID: 6225078951594406155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebb46a1d9ad799f0800000000000000
+      internalID: -461660068494656534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4c544485b525ac0800000000000000
+      internalID: -3867928695297162015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0499b8ebd137cf900800000000000000
+      internalID: 719576612060502336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe5135456e32d9f30800000000000000
+      internalID: 4583859467897214447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09dbcf791e796b890800000000000000
+      internalID: -7442594339009806960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 768
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3eb8cc93e352f9d0800000000000000
+      internalID: -2742036986062127555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca28716c97864980800000000000000
+      internalID: -8555001336423765303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 768
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ac0e50cb04fb800800000000000000
+      internalID: 630293649151806099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14c0df0999fc5f710800000000000000
+      internalID: 1726514290635902017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17abbd74e9ef4e30800000000000000
+      internalID: 4490064521082939165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ac53af0dd5d8b10800000000000000
+      internalID: 1985346162872666650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f354b31333389290800000000000000
+      internalID: -7883494853245119502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingGame_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 128
+        height: 128
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd75c71dfac2f1d0800000000000000
+      internalID: -3318366787044278828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a9dbb334cc085d741abcd7df5dcb1beb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

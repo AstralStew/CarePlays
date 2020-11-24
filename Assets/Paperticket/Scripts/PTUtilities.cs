@@ -620,6 +620,36 @@ namespace Paperticket {
                 if (_Debug) Debug.LogWarning("[PTUtilities] MeshRenderer " + mRenderer.name + " already at alpha " + targetAlpha + ", cancelling fade");
             }
         }
+        // Helper coroutine for fading the alpha of an image
+        public IEnumerator FadeAlphaTo( Image image, float targetAlpha, float duration ) {
+
+            if (image.color.a != targetAlpha) {
+
+                if (_Debug) Debug.Log("[PTUtilities] Fading Image " + image.name + " to alpha " + targetAlpha);
+
+                if (!image.enabled) {
+                    image.enabled = true;
+                }
+
+                float alpha = image.color.a;
+                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                    image.color = new Color(image.color.r, image.color.g, image.color.b, Mathf.Lerp(alpha, targetAlpha, t));
+                    yield return null;
+                }
+                image.color = new Color(image.color.r, image.color.g, image.color.b, targetAlpha);
+
+                if (targetAlpha == 0f) {
+                    image.enabled = false;
+                }
+                yield return null;
+
+                if (_Debug) Debug.Log("[PTUtilities] Image " + image.name + " successfully faded to alpha " + alpha);
+
+            } else {
+                if (_Debug) Debug.LogWarning("[PTUtilities] Image " + image.name + " already at alpha " + targetAlpha + ", cancelling fade");
+            }
+
+        }
 
         // Helper coroutine for fading the color of a sprite
         public IEnumerator FadeColorTo( SpriteRenderer sprite, Color targetColor, float duration ) {
@@ -719,6 +749,36 @@ namespace Paperticket {
 
             } else {
                 if (_Debug) Debug.LogWarning("[PTUtilities] Text " + textMesh.name + " already at color " + targetColor + ", cancelling fade");
+            }
+
+        }
+        // Helper coroutine for fading the color of an image
+        public IEnumerator FadeColorTo( Image image, Color targetColor, float duration ) {
+
+            if (image.color != targetColor) {
+
+                if (_Debug) Debug.Log("[PTUtilities] Fading Image " + image.name + "to color " + targetColor);
+
+                if (!image.enabled) {
+                    image.enabled = true;
+                }
+
+                Color color = image.color;
+                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                    image.color = Color.Lerp(color, targetColor, t);
+                    yield return null;
+                }
+                image.color = targetColor;
+
+                if (targetColor.a == 0f) {
+                    image.enabled = false;
+                }
+                yield return null;
+
+                if (_Debug) Debug.Log("[PTUtilities] Image " + image.name + "successfully faded to " + color);
+
+            } else {
+                if (_Debug) Debug.LogWarning("[PTUtilities] Image " + image.name + " already at color " + targetColor + ", cancelling fade");
             }
 
         }

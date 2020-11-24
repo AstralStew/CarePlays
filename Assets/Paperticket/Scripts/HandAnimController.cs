@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Paperticket {
-    [RequireComponent(typeof(Animator))]
     public class HandAnimController : MonoBehaviour {
         public enum HandPose { Idle, Fist, Grab_big, Grab_small, Point, Spread, Thumbs_up, Ok, Peace, Rock, Hold_gun, Fire_gun, Hold_sword, Cast_spell, Dragonball };
 
@@ -17,6 +16,10 @@ namespace Paperticket {
 
         void Awake() {
             animator = animator ?? GetComponent<Animator>();
+            if (!animator) {
+                Debug.LogError("[HandAnimController] ERROR -> No animator found! Disabling hand...");
+                gameObject.SetActive(false);
+            }
         }
         void OnEnable() {
             SetHandPose(pose);    

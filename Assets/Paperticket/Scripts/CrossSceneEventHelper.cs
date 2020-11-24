@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Paperticket;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class CrossSceneEventHelper : MonoBehaviour {
            
@@ -154,6 +155,20 @@ public class CrossSceneEventHelper : MonoBehaviour {
     }
     public void FadeTextColor( TextMeshPro text, Color color, float duration ) {
         StartCoroutine(PTUtilities.instance.FadeColorTo(text, color, duration));
+    }
+
+
+    public void FadeImageIn( Image image, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(image, 1, duration));
+    }
+    public void FadeImageOut( Image image, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(image, 0, duration));
+    }
+    public void FadeImage( Image image, float alpha, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(image, alpha, duration));
+    }
+    public void FadeImageColor( Image image, Color color, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeColorTo(image, color, duration));
     }
 
 

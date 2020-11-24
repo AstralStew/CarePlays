@@ -60,11 +60,11 @@ public class ButtonInteractable : MonoBehaviour {
             if (genRenderer as SpriteRenderer != null) {
                 spriteRend = genRenderer as SpriteRenderer;
                 useSprite = true;
-                Debug.Log("RENDERER = SPRITE");
+                //Debug.Log("RENDERER = SPRITE");
             } else if (genRenderer as MeshRenderer != null) {
                 meshRend = genRenderer as MeshRenderer;
                 useSprite = false;
-                Debug.Log("RENDERER = MESH");
+                //Debug.Log("RENDERER = MESH");
             }
 
             if (spriteRend == null && meshRend == null) {

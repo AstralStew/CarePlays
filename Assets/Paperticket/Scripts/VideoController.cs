@@ -245,6 +245,10 @@ namespace Paperticket {
 
             if (externalAudio) {
                 externalAudioSource.volume = Mathf.Clamp01(volume);
+            } else if (videoPlayer.audioOutputMode == VideoAudioOutputMode.AudioSource) {
+                videoPlayer.GetTargetAudioSource(0).volume = Mathf.Clamp01(volume);
+            } else {
+                videoPlayer.SetDirectAudioVolume(0, Mathf.Clamp01(volume));
             }
 
         }

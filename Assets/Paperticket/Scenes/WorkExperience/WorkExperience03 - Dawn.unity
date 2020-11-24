@@ -178,7 +178,7 @@ Transform:
   m_GameObject: {fileID: 101712095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6032996, y: 3.085431, z: 2.6033}
+  m_LocalScale: {x: 2.995617, y: 3.5504055, z: 2.9956174}
   m_Children:
   - {fileID: 1684308704}
   m_Father: {fileID: 1254175551}
@@ -251,7 +251,7 @@ MonoBehaviour:
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 0.85
           m_StringArgument: 
           m_BoolArgument: 0
           m_Vector2Argument: {x: 0, y: 0}
@@ -519,7 +519,7 @@ MonoBehaviour:
   OnEnterTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1821233965}
+      - m_Target: {fileID: 2111352546}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -544,6 +544,77 @@ MonoBehaviour:
   OnStayTriggered:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &291649798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 291649799}
+  - component: {fileID: 291649800}
+  m_Layer: 0
+  m_Name: '[DE] Start second sequence'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &291649799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291649798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1666282384}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &291649800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291649798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeEvent: 0.3
+  OneTimeUse: 1
+  debug: 0
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 2052240122}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &361095865
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,40 +696,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &387775509
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 387775510}
-  m_Layer: 0
-  m_Name: '[Scripts - video version]'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &387775510
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387775509}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 462414975}
-  - {fileID: 704612127}
-  - {fileID: 1821233966}
-  - {fileID: 680464511}
-  m_Father: {fileID: 645670583}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &434100452
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,83 +777,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &462414974
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 462414975}
-  - component: {fileID: 462414976}
-  m_Layer: 0
-  m_Name: '[VE] Pause video (doctors)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &462414975
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462414974}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.48330233, y: 2.7094238, z: -2.5741897}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 387775510}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &462414976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462414974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugging: 0
-  videoController: {fileID: 1934923455}
-  videoTimeBeforeEvent: 84.5
-  OneTimeUse: 1
-  OnEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Arguments: []
-        m_CallState: 2
-        m_Target: {fileID: 1934923455}
-        m_MethodName: PauseVideo
-        m_Modes: 01000000
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 609538446}
-        m_MethodName: SetActive
-        m_Modes: 06000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &464146648
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +804,7 @@ Transform:
   m_GameObject: {fileID: 464146648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6033, y: 3.085431, z: 2.6033}
+  m_LocalScale: {x: 2.9956174, y: 3.5504055, z: 2.9956174}
   m_Children:
   - {fileID: 673560284}
   m_Father: {fileID: 609538447}
@@ -967,7 +927,7 @@ MonoBehaviour:
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 0.85
           m_StringArgument: 
           m_BoolArgument: 0
           m_Vector2Argument: {x: 0, y: 0}
@@ -1055,6 +1015,26 @@ MonoBehaviour:
         m_Target: {fileID: 645670582}
         m_MethodName: SetActive
         m_Modes: 06000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1934923455}
+        m_MethodName: SetAudioVolume
+        m_Modes: 04000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &546593480
@@ -1102,12 +1082,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 6.35
+  timeBeforeEvent: 2.85
   OneTimeUse: 1
   debug: 0
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1371809451}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1994455531}
+        m_MethodName: SetActive
+        m_Modes: 06000000
       - m_Arguments:
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
@@ -1142,7 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 6
+  timeBeforeEvent: 2.5
   OneTimeUse: 1
   debug: 0
   OnEventTriggered:
@@ -1168,6 +1188,26 @@ MonoBehaviour:
         m_Target: {fileID: 1934923455}
         m_MethodName: SetNextVideo
         m_Modes: 05000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1934923455}
+        m_MethodName: SetAudioVolume
+        m_Modes: 04000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &546593484
@@ -1265,7 +1305,7 @@ MonoBehaviour:
   OnEnterTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 704612126}
+      - m_Target: {fileID: 1381779076}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -1317,7 +1357,7 @@ Transform:
   m_GameObject: {fileID: 626546986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6032994, y: 3.085431, z: 2.6033}
+  m_LocalScale: {x: 2.995617, y: 3.5504055, z: 2.9956174}
   m_Children:
   - {fileID: 881615297}
   m_Father: {fileID: 2052240123}
@@ -1390,7 +1430,7 @@ MonoBehaviour:
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 0.85
           m_StringArgument: 
           m_BoolArgument: 0
           m_Vector2Argument: {x: 0, y: 0}
@@ -1473,7 +1513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &645670583
 Transform:
   m_ObjectHideFlags: 0
@@ -1487,7 +1527,7 @@ Transform:
   m_Children:
   - {fileID: 1569206182}
   - {fileID: 1371809452}
-  - {fileID: 387775510}
+  - {fileID: 1666282384}
   - {fileID: 1082012349}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1523,186 +1563,6 @@ Transform:
   m_Father: {fileID: 464146649}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &680464510
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 680464511}
-  - component: {fileID: 680464512}
-  m_Layer: 0
-  m_Name: '[VE] Pause video (doctors) (1)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &680464511
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680464510}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.48330233, y: 2.7094238, z: -2.5741897}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 387775510}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &680464512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680464510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugging: 0
-  videoController: {fileID: 1934923455}
-  videoTimeBeforeEvent: 84.5
-  OneTimeUse: 1
-  OnEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Arguments: []
-        m_CallState: 2
-        m_Target: {fileID: 1934923455}
-        m_MethodName: PauseVideo
-        m_Modes: 01000000
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 609538446}
-        m_MethodName: SetActive
-        m_Modes: 06000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!1 &704612126
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 704612127}
-  - component: {fileID: 704612129}
-  - component: {fileID: 704612128}
-  m_Layer: 0
-  m_Name: '[DE/VE] Nails sequence'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &704612127
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704612126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 387775510}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &704612128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704612126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugging: 0
-  videoController: {fileID: 1934923455}
-  videoTimeBeforeEvent: 91.5
-  OneTimeUse: 1
-  OnEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Arguments: []
-        m_CallState: 2
-        m_Target: {fileID: 1934923455}
-        m_MethodName: PauseVideo
-        m_Modes: 01000000
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 1254175550}
-        m_MethodName: SetActive
-        m_Modes: 06000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &704612129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704612126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBeforeEvent: 0.5
-  OneTimeUse: 1
-  debug: 0
-  OnEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Arguments: []
-        m_CallState: 2
-        m_Target: {fileID: 1934923455}
-        m_MethodName: PlayVideo
-        m_Modes: 01000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &881615296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,7 +1623,6 @@ Transform:
   m_Children:
   - {fileID: 544593974}
   - {fileID: 1994455532}
-  - {fileID: 1769115354}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1922,10 +1781,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taliaSource: {fileID: 1793906944}
   taliaClips:
-  - {fileID: 8300000, guid: 69a32b49815cf7244b7233f8d7b788da, type: 3}
-  - {fileID: 8300000, guid: dec121875850fab498c9b8d92245aacb, type: 3}
-  - {fileID: 8300000, guid: 1e2c18e456869764885919b1a72bb115, type: 3}
-  - {fileID: 8300000, guid: d0a800bcfba3d914b873486f14f0d467, type: 3}
+  - {fileID: 8300000, guid: 2b6cf3bbb8528604cb4400d6d288791e, type: 3}
+  - {fileID: 8300000, guid: c92353bb9cdc99a498b9da5fa42a8e77, type: 3}
+  - {fileID: 8300000, guid: 658e29b6d885e7a479feaa0fac260004, type: 3}
 --- !u!4 &1071452090
 Transform:
   m_ObjectHideFlags: 0
@@ -2455,7 +2313,7 @@ MonoBehaviour:
   OnEnterTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1821233965}
+      - m_Target: {fileID: 546593480}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -2490,12 +2348,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1371809452}
   m_Layer: 0
-  m_Name: '[Scripts - audio version]'
+  m_Name: '[Scripts - Careplan 1]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1371809452
 Transform:
   m_ObjectHideFlags: 0
@@ -2627,7 +2485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1404789888
 Transform:
   m_ObjectHideFlags: 0
@@ -3191,6 +3049,39 @@ Transform:
   m_Father: {fileID: 1417914642}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -10.6368685, y: -81.89419, z: 92.21188}
+--- !u!1 &1666282383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1666282384}
+  m_Layer: 0
+  m_Name: '[Scripts - Careplan 2]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1666282384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666282383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1867084624}
+  - {fileID: 291649799}
+  - {fileID: 2111352547}
+  m_Father: {fileID: 645670583}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684308703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3232,10 +3123,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1694148846}
   - component: {fileID: 1694148849}
-  - component: {fileID: 1694148848}
   - component: {fileID: 1694148847}
   m_Layer: 0
-  m_Name: '[DE] Start careplan sequence'
+  m_Name: '[DE] Start first sequence'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3293,31 +3183,6 @@ MonoBehaviour:
         m_Target: {fileID: 609538446}
         m_MethodName: SetActive
         m_Modes: 06000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1694148848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694148845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBeforeEvent: 10
-  OneTimeUse: 1
-  debug: 0
-  OnEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Arguments: []
-        m_CallState: 2
-        m_Target: {fileID: 1071452089}
-        m_MethodName: PlayNextClip
-        m_Modes: 01000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1694148849
@@ -3405,77 +3270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7641197479f5944aaecc732d472916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1769115352
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1769115354}
-  - component: {fileID: 1769115353}
-  m_Layer: 0
-  m_Name: '[TE] SwitchToThirdVideo'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1769115353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769115352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBeforeEvent: 0.35
-  OneTimeUse: 1
-  debug: 0
-  OnEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.String, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: WE03c_Party
-          m_BoolArgument: 0
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 1934923455}
-        m_MethodName: SetNextVideo
-        m_Modes: 05000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!4 &1769115354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769115352}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.48330233, y: -2.2061734, z: 2.5741897}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 899428393}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1793906942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3487,7 +3281,7 @@ GameObject:
   - component: {fileID: 1793906943}
   - component: {fileID: 1793906944}
   m_Layer: 0
-  m_Name: '[ASource] Talia'
+  m_Name: '[AudioSource] Talia'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3604,103 +3398,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1821233965
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1821233966}
-  - component: {fileID: 1821233969}
-  - component: {fileID: 1821233968}
-  m_Layer: 0
-  m_Name: '[DE] End first sequence'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1821233966
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821233965}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 387775510}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1821233968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821233965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBeforeEvent: 2
-  OneTimeUse: 1
-  debug: 0
-  OnEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 645670582}
-        m_MethodName: SetActive
-        m_Modes: 06000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1821233969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821233965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBeforeEvent: 0.5
-  OneTimeUse: 1
-  debug: 0
-  OnEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Arguments: []
-        m_CallState: 2
-        m_Target: {fileID: 1934923455}
-        m_MethodName: PlayVideo
-        m_Modes: 01000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1826656239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3728,7 +3425,7 @@ Transform:
   m_GameObject: {fileID: 1826656239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6032991, y: 3.085431, z: 2.6033}
+  m_LocalScale: {x: 2.995617, y: 3.5504055, z: 2.9956174}
   m_Children:
   - {fileID: 1952628647}
   m_Father: {fileID: 280948527}
@@ -3801,7 +3498,7 @@ MonoBehaviour:
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 0.85
           m_StringArgument: 
           m_BoolArgument: 0
           m_Vector2Argument: {x: 0, y: 0}
@@ -3899,6 +3596,54 @@ Transform:
   m_Father: {fileID: 2031242502}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.45161378, y: 6.4016876, z: 112.868805}
+--- !u!1 &1867084623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1867084624}
+  - component: {fileID: 1867084625}
+  m_Layer: 0
+  m_Name: '[Manager] WE03CareplanLogic'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1867084624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867084623}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1666282384}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1867084625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867084623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabd7f6a405b1f547ad1cb35835e6698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taliaSource: {fileID: 1793906944}
+  taliaClips:
+  - {fileID: 8300000, guid: 2b6cf3bbb8528604cb4400d6d288791e, type: 3}
+  - {fileID: 8300000, guid: c92353bb9cdc99a498b9da5fa42a8e77, type: 3}
+  - {fileID: 8300000, guid: 658e29b6d885e7a479feaa0fac260004, type: 3}
 --- !u!1 &1934923452
 GameObject:
   m_ObjectHideFlags: 0
@@ -3993,51 +3738,11 @@ MonoBehaviour:
   _UseFinishEvents: 1
   _FinishEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.String, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: WE03b_RespiteINT
-          m_BoolArgument: 0
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 1934923455}
-        m_MethodName: SetNextVideo
-        m_Modes: 05000000
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   - m_PersistentCalls:
-      m_Calls:
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 1769115352}
-        m_MethodName: SetActive
-        m_Modes: 06000000
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   - m_PersistentCalls:
@@ -4097,30 +3802,6 @@ MonoBehaviour:
         m_Target: {fileID: 1760068396}
         m_MethodName: LoadNextScene
         m_Modes: 0500000004000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 645670582}
-        m_MethodName: SetActive
-        m_Modes: 06000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   datapath: 
@@ -4286,7 +3967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1994455532
 Transform:
   m_ObjectHideFlags: 0
@@ -4338,6 +4019,26 @@ MonoBehaviour:
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         m_CallState: 2
         m_Target: {fileID: 645670582}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1666282383}
         m_MethodName: SetActive
         m_Modes: 06000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
@@ -4599,6 +4300,118 @@ Transform:
   m_Father: {fileID: 1057825918}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -9.568409, y: 11.874649, z: -19.268469}
+--- !u!1 &2111352546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2111352547}
+  - component: {fileID: 2111352549}
+  - component: {fileID: 2111352548}
+  m_Layer: 0
+  m_Name: '[DE] End sequence'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2111352547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111352546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1666282384}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2111352548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111352546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeEvent: 3.35
+  OneTimeUse: 1
+  debug: 0
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 645670582}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &2111352549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111352546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeEvent: 3
+  OneTimeUse: 1
+  debug: 0
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.String, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: WE03c_Party
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1934923455}
+        m_MethodName: SetNextVideo
+        m_Modes: 05000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2124456377
 GameObject:
   m_ObjectHideFlags: 0

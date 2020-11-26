@@ -9,6 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace Paperticket {
 
@@ -948,10 +949,21 @@ namespace Paperticket {
 
     }
 
+    [Serializable]
+    public class ProgressEvent  {
+
+        public string name;
+        [Range(0, 1)] public float threshold;
+        public UnityEvent2 progressEvent;
+
+        public ProgressEvent( float progressThreshold, UnityEvent2 eventToSend ) {
+            name = progressThreshold.ToString();
+            threshold = progressThreshold;
+            progressEvent = eventToSend;
+        }
+
+    }
+
+
 }
-
-
-
-
-
 

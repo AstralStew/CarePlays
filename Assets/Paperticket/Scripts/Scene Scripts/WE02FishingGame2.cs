@@ -380,7 +380,7 @@ namespace Paperticket {
                 } else {
                     if (debugging) Debug.Log("[WE02FishingGame2] Event(" + progressEventIndex + ") reached threshold(" + progress + "/" + progressEvents[i].threshold + ")! Moving on...");
 
-                    if (progressEvents[i].Event != null) progressEvents[i].Event.Invoke();
+                    if (progressEvents[i].progressEvent != null) progressEvents[i].progressEvent.Invoke();
 
                     progressEventIndex += 1;
                 }
@@ -511,19 +511,4 @@ namespace Paperticket {
 
 
     }
-
-    [Serializable]
-    public class ProgressEvent {
-
-        [Range(0,1)] public float threshold;
-        public UnityEvent Event;
-
-        public ProgressEvent (float progressThreshold, UnityEvent eventToSend ) {
-            threshold = progressThreshold;
-            Event = eventToSend;
-        }
-
-    }
-
-
 }

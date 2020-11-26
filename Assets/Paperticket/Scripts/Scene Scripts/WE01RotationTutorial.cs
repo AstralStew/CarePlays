@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 namespace Paperticket {
     public class WE01RotationTutorial : MonoBehaviour {
@@ -28,9 +29,8 @@ namespace Paperticket {
         float rotationTotal;
         bool finished;
 
-        [Header("READ ONLY")]
-        [Space(10)]
-        [SerializeField] UnityEvent2 finishEvent;
+        [Space(10)]        
+        [SerializeField] List<ProgressEvent> progressEvents = new List<ProgressEvent>();
 
 
 
@@ -40,7 +40,9 @@ namespace Paperticket {
 
             CalculateHandRotation();
             UpdateGraphics();
-            CheckEndCondition();
+            CheckProgressEvents();
+
+            if (progress >= 1) finished = true;
 
         }
 
@@ -55,25 +57,27 @@ namespace Paperticket {
 
         }
 
-
         void UpdateGraphics() {
 
             progressBar.sizeDelta = new Vector2(progress * progressMax, progressBar.sizeDelta.y);
 
         }
 
-        void CheckEndCondition() {
+        int progressEventIndex = 0;
+        void CheckProgressEvents() {
 
-            if (progress >= 1) {
-
-                if (finishEvent != null) finishEvent.Invoke();
-
-                finished = true;
+            for (int i = progressEventIndex; i < progressEvents.Count; i++) {
+                if (progress >= progressEvents[i].threshold) {
+                    if (progressEvents[i].progressEvent != null) progressEvents[i].progressEvent.Invoke();
+                    progressEventIndex += 1;
+                }
 
             }
 
         }
 
-
     }
 }
+
+
+

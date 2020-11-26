@@ -249,7 +249,7 @@ MonoBehaviour:
   _ResonanceMaster: {fileID: 24100000, guid: f175a44f6bb1dac4cad2f5d1318b74d8, type: 2}
   playerRig: {fileID: 90448138}
   headGfx: {fileID: 1653417250}
-  _Debug: 1
+  _Debug: 0
   shakeTransformCurve:
     serializedVersion: 2
     m_Curve:

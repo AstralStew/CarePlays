@@ -32,9 +32,16 @@ namespace Paperticket {
                 }
 
                 // Destroy this script if this is a one time use, otherwise reset
-                if (OneTimeUse) {
-                    if (debug) Debug.Log("[TimedEvent] One time use is enabled, disabling this script");
-                    Destroy(this);
+                if (OneTimeUse) {                   
+
+                    if (GetComponents<Component>().Length > 2) {
+                        if (debug) Debug.Log("[TimedEvent] One time use is enabled, disabling this script");
+                        Destroy(this);
+                    } else {
+                        if (debug) Debug.Log("[TimedEvent] One time use is enabled, destroying this object");
+                        Destroy(gameObject);
+                    }
+                    
                 } else {
                     timeToChange = Time.time + timeBeforeEvent;
                 }

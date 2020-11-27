@@ -35,7 +35,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: 081af5c0e04008140b98f70f21251b8d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 898177c0d77900b4c9ea1b765869f111, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -125,7 +125,7 @@ Material:
     - _BakedMask: 1
     - _Blend: 0
     - _BumpScale: 1
-    - _ColorVariationSpread: 1.79
+    - _ColorVariationSpread: 17.61
     - _Cull: 0
     - _Cutoff: 0.485
     - _DebugGust: 0
@@ -181,8 +181,8 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossRemap: {r: 0, g: 1, b: 0, a: 0}
     - _GustHighlightColor: {r: 1, g: 1, b: 1, a: 0}
-    - _HSL: {r: 0.023163445, g: 0.08249497, b: 0.2836396, a: 0}
-    - _HSLVariation: {r: -0.09873815, g: -0.3586787, b: -0.004616618, a: 0}
+    - _HSL: {r: -0.046013072, g: -0.36652267, b: 0.7264188, a: 0}
+    - _HSLVariation: {r: -0.13116294, g: -0.51478076, b: 0.6288983, a: 0}
     - _LowVegetationStiffness: {r: 0, g: 1, b: 0, a: 0}
     - _OcclusionRemap: {r: 0, g: 0.98792756, b: 0, a: 0}
     - _ScaleFade: {r: 50, g: 20, b: 0, a: 0}

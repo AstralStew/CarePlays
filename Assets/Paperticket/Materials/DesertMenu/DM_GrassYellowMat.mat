@@ -181,8 +181,8 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossRemap: {r: 0.26961768, g: 1, b: 0, a: 0}
     - _GustHighlightColor: {r: 1, g: 1, b: 1, a: 0}
-    - _HSL: {r: -0.07341604, g: -0.26740894, b: 0.2273016, a: 0}
-    - _HSLVariation: {r: -0.094714, g: -0.2820233, b: 0.17244576, a: 0}
+    - _HSL: {r: -0.07341604, g: -0.26740894, b: 0.64746964, a: 0}
+    - _HSLVariation: {r: -0.094714, g: -0.2820233, b: 0.3573197, a: 0}
     - _LowVegetationStiffness: {r: 0, g: 1, b: 0, a: 0}
     - _OcclusionRemap: {r: 0, g: 1, b: 0, a: 0}
     - _ScaleFade: {r: 50, g: 20, b: 0, a: 0}

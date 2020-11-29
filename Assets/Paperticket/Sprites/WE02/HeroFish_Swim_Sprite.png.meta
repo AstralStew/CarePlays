@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: c3ee027ad53c6c648864de978b68fbb1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6540725559399598527
+    second: HeroFish_Swim_Sprite_0
+  - first:
+      213: -8337737756736775122
+    second: HeroFish_Swim_Sprite_1
+  - first:
+      213: -2009520185065331187
+    second: HeroFish_Swim_Sprite_2
+  - first:
+      213: -1747528694894534354
+    second: HeroFish_Swim_Sprite_3
+  - first:
+      213: -2705590983216627134
+    second: HeroFish_Swim_Sprite_4
+  - first:
+      213: -3592056890032434574
+    second: HeroFish_Swim_Sprite_5
+  - first:
+      213: 8796133752970837753
+    second: HeroFish_Swim_Sprite_6
+  - first:
+      213: -3367522098191338385
+    second: HeroFish_Swim_Sprite_7
+  - first:
+      213: 3012451687203340079
+    second: HeroFish_Swim_Sprite_8
+  - first:
+      213: -8946381343600764700
+    second: HeroFish_Swim_Sprite_9
+  - first:
+      213: 105404430534920748
+    second: HeroFish_Swim_Sprite_10
+  - first:
+      213: -1374234193723946924
+    second: HeroFish_Swim_Sprite_11
+  - first:
+      213: 219070531838242447
+    second: HeroFish_Swim_Sprite_12
+  - first:
+      213: -1129662862874236128
+    second: HeroFish_Swim_Sprite_0
+  - first:
+      213: -3607860800444428093
+    second: HeroFish_Swim_Sprite_1
+  - first:
+      213: -1115370405678496691
+    second: HeroFish_Swim_Sprite_2
+  - first:
+      213: -7596248326931797721
+    second: HeroFish_Swim_Sprite_3
+  - first:
+      213: 562501837345809551
+    second: HeroFish_Swim_Sprite_4
+  - first:
+      213: -4082358681698998125
+    second: HeroFish_Swim_Sprite_5
+  - first:
+      213: 456683387960460616
+    second: HeroFish_Swim_Sprite_6
+  - first:
+      213: -5103779762116209927
+    second: HeroFish_Swim_Sprite_7
+  - first:
+      213: -1245207891559128802
+    second: HeroFish_Swim_Sprite_8
+  - first:
+      213: -3328432140410283169
+    second: HeroFish_Swim_Sprite_9
+  - first:
+      213: 5550137157659807757
+    second: HeroFish_Swim_Sprite_10
+  - first:
+      213: 7985873921673253551
+    second: HeroFish_Swim_Sprite_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 872.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b2e668c91a250f0800000000000000
+      internalID: -1129662862874236128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 872.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0147e97bd4eedc0800000000000000
+      internalID: -3607860800444428093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 872.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44cc8886886580f0800000000000000
+      internalID: -1115370405678496691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 872.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729239fa464b49690800000000000000
+      internalID: -7596248326931797721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 872.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f846088d0786ec700800000000000000
+      internalID: 562501837345809551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 3085
+        y: 872.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3986993886c8857c0800000000000000
+      internalID: -4082358681698998125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845843a2f17765600800000000000000
+      internalID: 456683387960460616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_7
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 0.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f25c3be85bbb29b0800000000000000
+      internalID: -5103779762116209927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 0.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11ea10250228bee0800000000000000
+      internalID: -1245207891559128802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_9
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 0.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b1ad36a980fc1d0800000000000000
+      internalID: -3328432140410283169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_10
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 0.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d005209c65c060d40800000000000000
+      internalID: 5550137157659807757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish_Swim_Sprite_11
+      rect:
+        serializedVersion: 2
+        x: 3085
+        y: 0.5
+        width: 617.8333
+        height: 872.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2d362550683de60800000000000000
+      internalID: 7985873921673253551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

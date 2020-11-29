@@ -457,7 +457,7 @@ namespace Paperticket {
 
         public void MoveToStart() {
 
-            lineEndPos = new Vector3(lineEndX, -1.25f, 5);
+            lineEndPos = new Vector3(lineEndX, -0.25f, lineZOffset);
             fishingLine.SetPosition(1, lineEndPos);
 
             //lineEndPos = transform.InverseTransformPoint(fishStartPos.position);

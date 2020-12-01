@@ -6,12 +6,12 @@ namespace Paperticket {
     public class BaseAnimController : MonoBehaviour {
 
         [Header("BASE")]
-        [SerializeField] protected Animator animator;
-        protected int currentIndex;
-        [SerializeField] protected bool debugging;
+        [SerializeField] protected Animator animator = null;
+        [SerializeField] protected bool debugging = false;
+        [SerializeField] [Tooltip("NOTE: this should be read only")] protected int currentIndex = 0;
 
         public virtual void Awake() {
-            animator = animator ?? GetComponent<Animator>();
+            animator = animator ?? GetComponent<Animator>() ?? GetComponentInChildren<Animator>();
             if (!animator) {
                 Debug.LogError("[BaseAnimController] ERROR -> No animator found! Disabling animation controller...");
                 gameObject.SetActive(false);

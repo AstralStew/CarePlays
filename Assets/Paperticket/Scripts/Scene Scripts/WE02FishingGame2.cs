@@ -30,8 +30,8 @@ namespace Paperticket {
         [Header("GENERAL CONTROLS")]
 
         [Space(10)]
-        [SerializeField] bool autostart;
-        [SerializeField] [Range(0,1)] float startingProgress;
+        [SerializeField] bool autostart = false;
+        [SerializeField] [Range(0,1)] float startingProgress = 0.1f;
         [Space(10)]
         [SerializeField] float externalSpeedMod = 1;
         [SerializeField] float externalCheckRate = 0.2f;
@@ -42,13 +42,12 @@ namespace Paperticket {
 
         [Header("ROD CONTROLS")]
         [Space(10)]
-        [SerializeField] float velocitySensitivity;
-        //[SerializeField] float angularSensitivity;
+        [SerializeField] float velocitySensitivity = 0.8f;
         [SerializeField] AnimationCurve reelSensitivity;
-        [SerializeField] float reelSpeed;
+        [SerializeField] float reelSpeed = 4;
         [Space(10)]
-        [SerializeField] float rodMaxDistance;
-        [SerializeField] float rodBlendWeightMultiplier;
+        [SerializeField] float rodMaxDistance = 1;
+        [SerializeField] float rodBlendWeightMultiplier = 50;
 
 
         [Header("OBJECT CONTROLS")]
@@ -64,23 +63,25 @@ namespace Paperticket {
 
         [Header("LINE CONTROLS")]
         [Space(10)]
-        [SerializeField] float fishHeight;
-        [SerializeField] float lineZOffset = 11f;
+        [SerializeField] float fishHeight = -1.69f;
+        [SerializeField] float lineZOffset = 1f;
+        [SerializeField] float lineYOffset = 3f;
         [SerializeField] Vector3 fishToLineOffset;
+        [SerializeField] float fishRotationMultiplier = 25;
         [Space(10)]
         [SerializeField] float lineXMultiplier = 1f;
-        [SerializeField] float lineStartSpeed;
-        [SerializeField] float lineEndMaxDelta;
-        [SerializeField] float lineEndSmoothTime;
+        [SerializeField] float lineStartSpeed = 0.02f;
+        [SerializeField] float lineEndMaxDelta = 0.8f;
+        [SerializeField] float lineEndSmoothTime = 0.6f;
 
 
 
         [Header("FINISHING CONTROLS")]
 
         [Space(10)]
-        [SerializeField] [Range(0, 1)] float finishProgress;
-        [SerializeField] float finishDuration;
-        [SerializeField] float finishPlayerSpeed;
+        [SerializeField] [Range(0, 1)] float finishProgress = 0.989f;
+        [SerializeField] float finishDuration = 1;
+        [SerializeField] float finishPlayerSpeed = 1.3f;
 
         [SerializeField] UnityEvent finishEvents;
 
@@ -88,30 +89,30 @@ namespace Paperticket {
 
         [Header("READ ONLY")]
         [Space(10)]
-        [SerializeField] bool gameActive;
-        [SerializeField] bool PlayerControl;
+        [SerializeField] bool gameActive = false;
+        [SerializeField] bool PlayerControl = false;
         [Space(10)]
-        [SerializeField] float reelVelocity;
+        [SerializeField] float reelVelocity = 0;
         //[SerializeField] float reelAngular;
-        [SerializeField] [Range(0, 1)] float reelTotal;
+        [SerializeField] [Range(0, 1)] float reelTotal = 0;
         [Space(10)]
-        [SerializeField] float rodDistance;
+        [SerializeField] float rodDistance = 0;
         [Space(10)]
-        [SerializeField] [Range(-1, 1)] float targetLineX;
-        [SerializeField] [Range(-1, 1)] float lineStartX;
-        [SerializeField] [Range(-1, 1)] float lineEndX;
+        [SerializeField] [Range(-1, 1)] float targetLineX = 0;
+        [SerializeField] [Range(-1, 1)] float lineStartX = 0;
+        [SerializeField] [Range(-1, 1)] float lineEndX = 0;
         [Space(10)]
-        [SerializeField] [Range(0, 1)] float progress;
+        [SerializeField] [Range(0, 1)] float progress = 0;
         [Space(10)]
-        [SerializeField] bool impeded;
+        [SerializeField] bool impeded = false;
 
 
 
         [Header("DEBUG")]
         [Space(10)]
-        [SerializeField] bool debugging;
-        [SerializeField] bool debugScroll;
-        [SerializeField] [Range(0.1f, 10)] float debugScrollSpeed;
+        [SerializeField] bool debugging = false;
+        [SerializeField] bool debugScroll = false;
+        [SerializeField] [Range(0.1f, 10)] float debugScrollSpeed = 1.2f;
 
 
 
@@ -161,13 +162,18 @@ namespace Paperticket {
             set { if (externalSpeedMod != 1 && value < externalSpeedMod) return;
                 externalSpeedMod = value;
 
-                // Play the "ouch" or "weee" sounds if necessary
+                // Play the "ouch" sound if necessary
                 if (value < 1 && progress > 0.2 && !coralPlayed && onCoral != null) {
                     coralPlayed = true;
                     onCoral.Invoke();
-                } else if (value > 1 && !bubblesPlayed && onBubbles != null) {
-                    bubblesPlayed = true;
-                    onBubbles.Invoke();
+                } else if (value > 1) {
+                    // Switch to the Speed animation
+                    fishSprite.GetComponent<BasicAnimController>().PlayAnimationOnce(2);
+                    // Play the "weee" sound if necessary
+                    if (!bubblesPlayed && onBubbles != null) {
+                        bubblesPlayed = true;
+                        onBubbles.Invoke();
+                    }
                 }
 
                 // Start a new set of checks if we aren't checking yet
@@ -208,6 +214,8 @@ namespace Paperticket {
             externalSpeedMod = 1;
             externalFadeCo = null;
             externalModCo = null;
+
+            fishSprite.GetComponent<BasicAnimController>().SetAnimation(0);
         }
 
 
@@ -309,16 +317,16 @@ namespace Paperticket {
 
 
         }
-        Vector3 lineStartPos;
-        Vector3 lineEndPos;
-        float smoothVel;
+        Vector3 lineStartPos = Vector3.zero;
+        Vector3 lineEndPos = Vector3.zero;
+        float smoothVel = 0;
         void UpdateFishingLine() {
 
             // Move the end of the line towards the start
             lineStartX = Mathf.Lerp(lineStartX, targetLineX, lineStartSpeed * (PlayerControl ? 1f : 0.5f));
 
             // Calculate the fishing line positions
-            lineStartPos = new Vector3(lineStartX, 1.02f, lineZOffset);
+            lineStartPos = new Vector3(lineStartX, lineYOffset, lineZOffset);
 
             // Move the fishing line renderer
             fishingLine.SetPosition(0, lineStartPos);
@@ -331,27 +339,22 @@ namespace Paperticket {
             }
 
         }
+
+        float fishRotation = 0;
         void UpdatePlayerFish() {
 
-            // Check which side of the line the fish is on
-            if (lineStartX < lineEndX) {
+            // Move the fish to track the end of the fishing line
+            playerFish.localPosition = lineEndPos + fishToLineOffset;
 
-                // Move the fish to track the end of the fishing line
-                playerFish.localPosition = lineEndPos + fishToLineOffset;
+            // Check which side of the line the fish is on and rotate accordingly
+            fishRotation = fishRotationMultiplier * (lineEndX - lineStartX);
+            //if (lineStartX < lineEndX) 
+                
+            //else 
+            //    fishRotation = -25 * (lineStartX - lineEndX);
 
-                // Flip the fish sprite and rotate
-                fishSprite.flipX = true;
-                fishSprite.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, -25));
 
-            } else {
-
-                // Move the fish to track the end of the fishing line
-                playerFish.localPosition = lineEndPos - fishToLineOffset;
-
-                // Flip the fish sprite and rotate
-                fishSprite.flipX = false;
-                fishSprite.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 25));
-            }
+            fishSprite.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, fishRotation));
 
         }
 
@@ -366,7 +369,7 @@ namespace Paperticket {
         }
 
         [Space(10)]
-        int progressEventIndex;
+        int progressEventIndex = 0;
         void CheckProgressEvents() {
 
             for (int i = progressEventIndex; i < progressEvents.Length; i++) {
@@ -441,7 +444,8 @@ namespace Paperticket {
 
             PlayerControl = false;
 
-            fishSprite.color = Color.red;
+            //fishSprite.color = Color.red;
+            fishSprite.GetComponent<BasicAnimController>().PlayAnimationOnce(1);
 
             if (autoMoveCo != null) StopCoroutine(autoMoveCo);
             autoMoveCo = StartCoroutine(MoveAutomatically(-speed, knockbackDuration));
@@ -484,7 +488,8 @@ namespace Paperticket {
             }
             progress = startProg + adjustment;
 
-            fishSprite.color = Color.white;
+            //fishSprite.color = Color.white;
+            fishSprite.GetComponent<BasicAnimController>().SetAnimation(0);
 
             PlayerControl = true;
         }

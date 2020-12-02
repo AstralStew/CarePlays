@@ -19,7 +19,7 @@ namespace Paperticket {
         [SerializeField] UnityEvent2 counterEvent = null;
 
         int currentCount = 0;
-        bool finished;
+        bool finished = false;
         
 
         void Check() {

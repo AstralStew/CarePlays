@@ -44,6 +44,7 @@ namespace Paperticket {
         [Header("FINISH CONTROLS")]
         [Space(10)]
         [SerializeField] float earlyFinishDuration = 0.5f;
+        [SerializeField] bool pauseVideoOnFinish = true;
         [Space(10)]
         [SerializeField] bool _UseFinishEvents;
         [SerializeField] UnityEvent2[] _FinishEvents;
@@ -274,7 +275,7 @@ namespace Paperticket {
                 videoEnded = true;
                 videoStarted = false;
 
-                videoPlayer.Pause();
+                if (pauseVideoOnFinish) PauseVideo();
 
                 if (_UseFinishEvents && _FinishEvents.Length > 0 && finishIndexNo < _FinishEvents.Length) {
 

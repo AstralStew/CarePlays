@@ -4,9 +4,8 @@ using UnityEngine;
 namespace Paperticket {
     public class TaliaAnimController : BaseAnimController {
 
-        public enum TaliaAnimations { T_Pose, Standing_Idle, Acknowledging, Head_Nod, Hard_Head_Nod, Thoughtful_Head_Shake, Talking_1,
-                                Talking_2, Knows_Some_Things, Waving, Weight_Shift, Stand_To_Sit, Sitting_Idle, Sitting_Talking,
-                                Sitting_Clap_1, Sitting_Clap_2}
+        public enum TaliaAnimations { T_Pose, Standing_Idle, Acknowledging, Head_Nod, Talking_1, Talking_2, Clap_Knows_Some_Things, Clap_Out,
+                                        Stand_To_Sit, Sitting_Idle, Sit_To_Stand }
 
         [Header("CONTROLS")]
         [Space(10)]

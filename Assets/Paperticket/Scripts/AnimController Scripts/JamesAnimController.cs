@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Paperticket {
     public class JamesAnimController : BaseAnimController {
 
-        public enum JamesAnimations { T_Pose, Idle_1, Idle_2, Roll, Clapping, Cheer_1, Cheer_2 }
+        public enum JamesAnimations { T_Pose, Idle_1, Idle_2, Roll, Pose_For_Photo, Clapping, Cheer_1, Cheer_2 }
 
         [Header("CONTROLS")]
         [Space(10)]

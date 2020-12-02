@@ -4,9 +4,8 @@ using UnityEngine;
 namespace Paperticket {
     public class RyanAnimController : BaseAnimController {
 
-        public enum RyanAnimations { T_Pose, Standing_Idle, Fishing_Idle, Fishing_Cast, Holding_Fish, Posing_For_Photo, Reacting,
-                                Stand_Clapping, Surprised, Stand_To_Sit, Sitting_Idle_1, Sitting_Idle_2, Sitting_Talking, Sitting_Clap,
-                                Sitting_Stand_To_Clap, Sitting_Cheer, Sit_To_Stand}
+        public enum RyanAnimations { T_Pose, Standing_Idle, Posing_For_Photo, Holding_Fish_Pose, Idle_Weight_Shift, Thats_Too_Deadly, Stand_To_Sit, Sitting_Idle_1,
+                                        Sitting_Idle_2, Sitting_Clap, Sitting_Cheer, Sit_To_Stand}
 
         [Header("CONTROLS")]
         [Space(10)]

@@ -17,12 +17,8 @@ namespace Paperticket {
         [Space(15)]
         [SerializeField] Transform playerFish;
         [SerializeField] SpriteRenderer fishSprite;
-        [SerializeField] SpriteRenderer backgroundSprite;
-        [SerializeField] Transform fadeSprite;
         [SerializeField] Transform objectSprites;
         [SerializeField] LineRenderer fishingLine;
-        [Space(15)]
-        [SerializeField] Transform fishStartPos;
 
         Transform playerRig;
         //Transform playerHead;
@@ -31,7 +27,7 @@ namespace Paperticket {
 
         [Space(10)]
         [SerializeField] bool autostart = false;
-        [SerializeField] [Range(0,1)] float startingProgress = 0.1f;
+        [SerializeField] [Range(0,1)] float startingProgress = 0.026f;
         [Space(10)]
         [SerializeField] float externalSpeedMod = 1;
         [SerializeField] float externalCheckRate = 0.2f;
@@ -90,7 +86,7 @@ namespace Paperticket {
         [Header("READ ONLY")]
         [Space(10)]
         [SerializeField] bool gameActive = false;
-        [SerializeField] bool PlayerControl = false;
+        [SerializeField] bool playerControl = false;
         [Space(10)]
         [SerializeField] float reelVelocity = 0;
         //[SerializeField] float reelAngular;
@@ -127,9 +123,12 @@ namespace Paperticket {
 
         public bool GameActive {
             get { return gameActive; }
-            set { gameActive = true; }
+            set { gameActive = value; }
         }
-
+        public bool PlayerControl {
+            get { return playerControl; }
+            set { playerControl = value; }
+        }
 
 
         public bool Impeded {
@@ -165,14 +164,14 @@ namespace Paperticket {
                 // Play the "ouch" sound if necessary
                 if (value < 1 && progress > 0.2 && !coralPlayed && onCoral != null) {
                     coralPlayed = true;
-                    onCoral.Invoke();
+                    //onCoral.Invoke();
                 } else if (value > 1) {
                     // Switch to the Speed animation
                     fishSprite.GetComponent<BasicAnimController>().PlayAnimationOnce(2);
                     // Play the "weee" sound if necessary
                     if (!bubblesPlayed && onBubbles != null) {
                         bubblesPlayed = true;
-                        onBubbles.Invoke();
+                        //onBubbles.Invoke();
                     }
                 }
 
@@ -225,7 +224,6 @@ namespace Paperticket {
 
         void Awake() {
 
-            if (backgroundSprite == null) Debug.LogError("[WE02FishingGame] ERROR -> No background sprite registered!");
             if (objectSprites == null) Debug.LogError("[WE02FishingGame] ERROR -> No object sprite registered!");
 
             playerRig = PTUtilities.instance.playerRig.transform;
@@ -233,7 +231,7 @@ namespace Paperticket {
 
             if (autostart) {
                 gameActive = true;
-                PlayerControl = true;
+                playerControl = true;
             }
 
             progress = startingProgress;
@@ -246,7 +244,7 @@ namespace Paperticket {
             ResolveProgress();
 
             // Only do the following if the player is able to control the rod
-            if (PlayerControl) {
+            if (playerControl) {
 
                 // Work out how much the player is reeling in
                 CalculateReeling();
@@ -271,7 +269,7 @@ namespace Paperticket {
             CalculateTarget();
 
             // Move the global Objects transform and change background color 
-            UpdateObjectsAndBackground();
+            UpdateObjects();
 
             // Move the fishing line renderer
             UpdateFishingLine();
@@ -306,14 +304,11 @@ namespace Paperticket {
             }
 
         }
-        void UpdateObjectsAndBackground() {
+        void UpdateObjects() {
 
-            // Evaluate background colours
-            backgroundSprite.color = backgroundColors.Evaluate(progress);
 
-            // Move all underwater objects and the fade sprite 
+            // Move all underwater objects
             objectSprites.localPosition = new Vector3(0, objectsHeightCurve.Evaluate(progress), objectsZOffset);
-            fadeSprite.localPosition = new Vector3(0, fadeHeightCurve.Evaluate(progress), fadeSpriteZOffset);
 
 
         }
@@ -323,7 +318,7 @@ namespace Paperticket {
         void UpdateFishingLine() {
 
             // Move the end of the line towards the start
-            lineStartX = Mathf.Lerp(lineStartX, targetLineX, lineStartSpeed * (PlayerControl ? 1f : 0.5f));
+            lineStartX = Mathf.Lerp(lineStartX, targetLineX, lineStartSpeed * (playerControl ? 1f : 0.5f));
 
             // Calculate the fishing line positions
             lineStartPos = new Vector3(lineStartX, lineYOffset, lineZOffset);
@@ -332,7 +327,7 @@ namespace Paperticket {
             fishingLine.SetPosition(0, lineStartPos);
 
             // Only move the end of the line if the player has control                        
-            if (PlayerControl) {
+            if (playerControl) {
                 lineEndX = Mathf.SmoothDamp(lineEndX, lineStartX, ref smoothVel, lineEndSmoothTime, lineEndMaxDelta);
                 lineEndPos = new Vector3(lineEndX, fishHeight, lineZOffset);
                 fishingLine.SetPosition(1, lineEndPos);
@@ -397,7 +392,7 @@ namespace Paperticket {
         void CheckForFinish() {
             if (progress >= finishProgress) {
 
-                PlayerControl = false;
+                playerControl = false;
                 gameActive = false;
                 StopAllCoroutines();
 
@@ -440,9 +435,9 @@ namespace Paperticket {
 
         public void Knockback( float speed ) {
 
-            if (!PlayerControl) return;
+            if (!playerControl) return;
 
-            PlayerControl = false;
+            playerControl = false;
 
             //fishSprite.color = Color.red;
             fishSprite.GetComponent<BasicAnimController>().PlayAnimationOnce(1);
@@ -453,7 +448,7 @@ namespace Paperticket {
             // Play the "ouch" sound if haven't already
             if (!knockbackPlayed && onKnockback != null) {
                 knockbackPlayed = true;
-                onKnockback.Invoke();
+                //onKnockback.Invoke();
             }
 
         }
@@ -491,7 +486,7 @@ namespace Paperticket {
             //fishSprite.color = Color.white;
             fishSprite.GetComponent<BasicAnimController>().SetAnimation(0);
 
-            PlayerControl = true;
+            playerControl = true;
         }
 
 

@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class ButtonInteractable : MonoBehaviour {
 
-    protected XRBaseInteractable baseInteractable;
-    protected SpriteRenderer spriteRend;
-    protected MeshRenderer meshRend;
+    protected enum RendererType { Generic, Mesh, Sprite, Image } 
+
 
     [Space(10)]
     [SerializeField] protected bool debugging;
@@ -17,6 +17,10 @@ public class ButtonInteractable : MonoBehaviour {
     [Header("GRAPHICS")]
 
     [SerializeField] protected Renderer genRenderer;
+    [SerializeField] protected Image imageRenderer;
+    protected XRBaseInteractable baseInteractable;
+    protected SpriteRenderer spriteRend;
+    protected MeshRenderer meshRend;
     [Space(10)]
     [SerializeField] protected float fadeTime = 0.25f;
     [SerializeField] protected Color defaultColor = new Color(1, 1, 1, 0.5f);
@@ -34,10 +38,9 @@ public class ButtonInteractable : MonoBehaviour {
     [SerializeField] protected bool locked = false;
     [Space(10)]
     [SerializeField] protected UnityEvent2 selectEvent;
-    [Space(10)]
-    protected bool useSprite = true;
+    protected RendererType rendererType = RendererType.Generic;
 
-    protected Coroutine fadingCoroutine;
+    protected Coroutine fadingCoroutine = null;
 
     void Awake() {
 
@@ -54,21 +57,25 @@ public class ButtonInteractable : MonoBehaviour {
                        null;
 
         if (!genRenderer) {
-            if (debugging) Debug.LogError("[ButtonInteractable] ERROR -> No renderer found on or beneath this button! Please add one. Disabling object.");
-            gameObject.SetActive(false);
+            if (!imageRenderer) {
+                Debug.LogError("[ButtonInteractable] ERROR -> No renderer or image found on or beneath this button! Please add one. Disabling object.");
+                gameObject.SetActive(false);
+            } else {
+                rendererType = RendererType.Image;
+            }
         } else {
             if (genRenderer as SpriteRenderer != null) {
+                rendererType = RendererType.Sprite;
                 spriteRend = genRenderer as SpriteRenderer;
-                useSprite = true;
-                //Debug.Log("RENDERER = SPRITE");
-            } else if (genRenderer as MeshRenderer != null) {
-                meshRend = genRenderer as MeshRenderer;
-                useSprite = false;
-                //Debug.Log("RENDERER = MESH");
-            }
 
+            } else if (genRenderer as MeshRenderer != null) {
+                rendererType = RendererType.Mesh;
+                meshRend = genRenderer as MeshRenderer;
+            }
+            
             if (spriteRend == null && meshRend == null) {
-                if (debugging) Debug.LogError("[ButtonInteractable] ERROR -> No appropriate renderer found on or beneath this button! Please add one. Disabling object.");
+                rendererType = RendererType.Generic;                
+                Debug.LogError("[ButtonInteractable] ERROR -> No appropriate renderer found on or beneath this button! Please add one. Disabling object.");
                 gameObject.SetActive(false);
             }
         }
@@ -92,9 +99,23 @@ public class ButtonInteractable : MonoBehaviour {
     protected virtual void Initialise() {
 
         if (oneUse && used) {
+
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
-            if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, usedColor, fadeTime));
-            else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, usedColor, fadeTime));
+            switch (rendererType) {
+                case RendererType.Mesh:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, usedColor, fadeTime));
+                    break;
+                case RendererType.Sprite:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, usedColor, fadeTime));
+                    break;
+                case RendererType.Image:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, usedColor, fadeTime));
+                    break;
+                case RendererType.Generic:
+                default:
+                    Debug.LogError("[ButtonInteractable] ERROR -> Bad RendererType passed! Cancelling...");
+                    break;
+            }
 
         } else {
             Invoke("HoverOff", 0.01f);
@@ -105,12 +126,23 @@ public class ButtonInteractable : MonoBehaviour {
     public virtual void HoverOn() { HoverOn(null); }
     public virtual void HoverOn ( XRBaseInteractor interactor ) {
         if (locked || (oneUse && used)) return;
-        
+
         if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
-        if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, hoveredColor, fadeTime));
-        else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, hoveredColor, fadeTime));
-
-
+        switch (rendererType) {
+            case RendererType.Mesh:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, hoveredColor, fadeTime));
+                    break;
+            case RendererType.Sprite:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, hoveredColor, fadeTime));
+                break;
+            case RendererType.Image:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, hoveredColor, fadeTime));
+                    break;
+            case RendererType.Generic:
+            default:
+                Debug.LogError("[ButtonInteractable] ERROR -> Bad RendererType passed! Cancelling...");
+                break;
+        }
 
         if (debugging) Debug.Log("[ButtonInteractable] Hovering on!");
     }
@@ -120,8 +152,21 @@ public class ButtonInteractable : MonoBehaviour {
         if (locked || (oneUse && used)) return;
         
         if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
-        if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, fadeTime));
-        else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, fadeTime));
+        switch (rendererType) {
+            case RendererType.Mesh:
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, fadeTime));
+                break;
+            case RendererType.Sprite:
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, fadeTime));
+                break;
+            case RendererType.Image:
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, defaultColor, fadeTime));
+                break;
+            case RendererType.Generic:
+            default:
+                Debug.LogError("[ButtonInteractable] ERROR -> Bad RendererType passed! Cancelling...");
+                break;
+        }
 
 
         if (debugging) Debug.Log("[ButtonInteractable] Hovering off!");
@@ -131,9 +176,22 @@ public class ButtonInteractable : MonoBehaviour {
     public virtual void Select( XRBaseInteractor interactor ) {
         if (locked || (oneUse && used)) return;
         
-        if (fadingCoroutine != null)StopCoroutine(fadingCoroutine);
-        if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, selectedColor, fadeTime));
-        else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, selectedColor, fadeTime));
+        if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
+        switch (rendererType) {
+            case RendererType.Mesh:
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, selectedColor, fadeTime));
+                break;
+            case RendererType.Sprite:
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, selectedColor, fadeTime));
+                break;
+            case RendererType.Image:
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, selectedColor, fadeTime));
+                break;
+            case RendererType.Generic:
+            default:
+                Debug.LogError("[ButtonInteractable] ERROR -> Bad RendererType passed! Cancelling...");
+                break;
+        }
 
         used = true;
         if (selectEvent != null) selectEvent.Invoke();
@@ -150,16 +208,42 @@ public class ButtonInteractable : MonoBehaviour {
         if (fadeIn) {
 
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
-            if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, duration));
-            else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, duration));
+            switch (rendererType) {
+                case RendererType.Mesh:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, duration));
+                    break;
+                case RendererType.Sprite:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, duration));
+                    break;
+                case RendererType.Image:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, defaultColor, duration));
+                    break;
+                case RendererType.Generic:
+                default:
+                    Debug.LogError("[ButtonInteractable] ERROR -> Bad RendererType passed! Cancelling...");
+                    break;
+            }
 
             locked = false;
 
         } else {
 
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
-            if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(spriteRend, 0, duration));
-            else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(meshRend, 0, duration));
+            switch (rendererType) {
+                case RendererType.Mesh:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(meshRend, 0, duration));
+                    break;
+                case RendererType.Sprite:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(spriteRend, 0, duration));
+                    break;
+                case RendererType.Image:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(imageRenderer, 0, duration));
+                    break;
+                case RendererType.Generic:
+                default:
+                    Debug.LogError("[ButtonInteractable] ERROR -> Bad RendererType passed! Cancelling...");
+                    break;
+            }
 
             locked = true;
 
@@ -177,14 +261,39 @@ public class ButtonInteractable : MonoBehaviour {
         
         if (oneUse) {
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
-            if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, usedColor, fadeTime));
-            else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, usedColor, fadeTime));
+            switch (rendererType) {
+                case RendererType.Mesh:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, usedColor, fadeTime));
+                    break;
+                case RendererType.Sprite:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, usedColor, fadeTime));
+                    break;
+                case RendererType.Image:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, usedColor, fadeTime));
+                    break;
+                case RendererType.Generic:
+                default:
+                    Debug.LogError("[ButtonInteractable] ERROR -> Bad RendererType passed! Cancelling...");
+                    break;
+            }
         } else {
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
-            if (useSprite) fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, fadeTime));
-            else fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, fadeTime));
+            switch (rendererType) {
+                case RendererType.Mesh:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, fadeTime));
+                    break;
+                case RendererType.Sprite:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, fadeTime));
+                    break;
+                case RendererType.Image:
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, defaultColor, fadeTime));
+                    break;
+                case RendererType.Generic:
+                default:
+                    Debug.LogError("[ButtonInteractable] ERROR -> Bad RendererType passed! Cancelling...");
+                    break;
+            }
         }
-
 
         if (debugging) Debug.Log("[ButtonInteractable] Deselected!");
     }

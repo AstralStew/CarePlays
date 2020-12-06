@@ -15,15 +15,25 @@ namespace Paperticket {
         [SerializeField] float timeBeforeEvent = 0;
         [SerializeField] bool oneUse = true;
         [SerializeField] bool resetCounter = false;
-        [Space(5)]
+        [Space(10)]
         [SerializeField] UnityEvent2 counterEvent = null;
+
 
         int currentCount = 0;
         bool finished = false;
-        
+
+
+        [Header("LIVE VARIABLES")]
+        [Space(5)]
+        [SerializeField] bool eventLocked = false;
+
+        public bool locked {
+            get { return eventLocked; }
+            set { eventLocked = value; }
+        }
 
         void Check() {
-            if (finished) return;
+            if (finished || eventLocked) return;
             if (currentCount >= eventThreshold) {
 
                 finished = true;
@@ -55,26 +65,40 @@ namespace Paperticket {
 
 
 
+
+
+
         #region PUBLIC CALLS
 
         public void Increment() {
+            if (eventLocked) return;
             currentCount += 1;
             Check();
         }
 
         public void Decrement() {
+            if (eventLocked) return;
             currentCount -= 1;
             Check();
         }
 
         public void Add( int amount ) {
+            if (eventLocked) return;
             currentCount += amount;
             Check();
         }
         public void Remove( int amount ) {
+            if (eventLocked) return;
             currentCount -= amount;
             Check();
         }
+
+
+        public void ResetCounter() {
+            currentCount = 0;
+        }
+
+
         #endregion
 
     }

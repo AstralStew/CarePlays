@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 58902a7d56a0ba141bb4e00602e221d6
+guid: c3e610af183f709498eef767de76f1e7
 VideoClipImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -11,8 +11,17 @@ VideoClipImporter:
   encodeAlpha: 0
   flipVertical: 0
   flipHorizontal: 0
-  importAudio: 1
-  targetSettings: {}
+  importAudio: 0
+  targetSettings:
+    0:
+      enableTranscoding: 0
+      codec: 0
+      resizeFormat: 0
+      aspectRatio: 0
+      customWidth: 3840
+      customHeight: 1920
+      bitrateMode: 2
+      spatialQuality: 2
   userData: 
   assetBundleName: videos
   assetBundleVariant: 

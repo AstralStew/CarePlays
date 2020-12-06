@@ -404,7 +404,6 @@ MonoBehaviour:
   _bundleIdentifier: 1
   _ExpansionAssetBundle: {fileID: 0}
   _Debug: 1
-  _VideoNames: []
   loadProgressOnStart: 0
   StringKeys: []
   FloatKeys: []

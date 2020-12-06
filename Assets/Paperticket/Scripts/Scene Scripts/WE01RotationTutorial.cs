@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 namespace Paperticket {
     public class WE01RotationTutorial : MonoBehaviour {
 
         [Header("REFERENCES")]
 
-        [SerializeField] RectTransform progressBar;
+        //[SerializeField] RectTransform progressBar;
+        [SerializeField] Image progressImage;
 
         [Header("HAND CONTROLS")]
         [Space(10)]
@@ -19,7 +21,7 @@ namespace Paperticket {
         [Header("PROGRESS CONTROLS")]
         [Space(10)]
         [SerializeField] float progressSpeed;
-        [SerializeField] float progressMax;
+        //[SerializeField] float progressMax;
 
 
         [Header("READ ONLY")]
@@ -59,7 +61,8 @@ namespace Paperticket {
 
         void UpdateGraphics() {
 
-            progressBar.sizeDelta = new Vector2(progress * progressMax, progressBar.sizeDelta.y);
+            //progressBar.sizeDelta = new Vector2(progress * progressMax, progressBar.sizeDelta.y);
+            progressImage.fillAmount = progress;
 
         }
 

@@ -14,6 +14,8 @@ namespace Paperticket {
 
         [SerializeField] Transform rodTarget;
         [SerializeField] SkinnedMeshRenderer fishingRod;
+        [SerializeField] AudioSource reelHandle;
+
         [Space(15)]
         [SerializeField] Transform playerFish;
         [SerializeField] SpriteRenderer fishSprite;
@@ -44,6 +46,7 @@ namespace Paperticket {
         [Space(10)]
         [SerializeField] float rodMaxDistance = 1;
         [SerializeField] float rodBlendWeightMultiplier = 50;
+        [SerializeField] float handleRotateSpeed = 1;
 
 
         [Header("OBJECT CONTROLS")]
@@ -306,7 +309,17 @@ namespace Paperticket {
         }
         void UpdateObjects() {
 
+            // Update the reeling handle and control reeling audio
+            if (playerControl && reelTotal > 0.075f) {
 
+                reelHandle.transform.Rotate(reelVelocity * externalSpeedMod * Vector3.left * handleRotateSpeed * Time.fixedDeltaTime);
+
+                if (!reelHandle.isPlaying) reelHandle.Play();
+
+            } else {
+                reelHandle.transform.Rotate(Vector3.right * 0.25f * handleRotateSpeed * Time.fixedDeltaTime);
+                if (reelHandle.isPlaying) reelHandle.Pause();
+            }
             // Move all underwater objects
             objectSprites.localPosition = new Vector3(0, objectsHeightCurve.Evaluate(progress), objectsZOffset);
 

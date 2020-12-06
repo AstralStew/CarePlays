@@ -1,0 +1,524 @@
+fileFormatVersion: 2
+guid: 43ebb7bc97cc0f84aaf543fa064c6bd3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5423603143063810712
+    second: NiceWork_0
+  - first:
+      213: 1677369899668652684
+    second: NiceWork_1
+  - first:
+      213: -1133625795242193616
+    second: NiceWork_2
+  - first:
+      213: 4080169000892889402
+    second: NiceWork_3
+  - first:
+      213: -5415887412159030256
+    second: NiceWork_4
+  - first:
+      213: 7800620246760017891
+    second: NiceWork_5
+  - first:
+      213: -3708961090486042929
+    second: NiceWork_6
+  - first:
+      213: 583893062539011479
+    second: NiceWork_7
+  - first:
+      213: 2665350426141532927
+    second: NiceWork_8
+  - first:
+      213: -5187268306342098906
+    second: NiceWork_9
+  - first:
+      213: 3414554306862692049
+    second: NiceWork_10
+  - first:
+      213: -4234948863869836579
+    second: NiceWork_11
+  - first:
+      213: 6652247238471877353
+    second: NiceWork_12
+  - first:
+      213: 8304264932994461520
+    second: NiceWork_13
+  - first:
+      213: 4018082879075740506
+    second: NiceWork_14
+  - first:
+      213: -6898639413533610733
+    second: NiceWork_15
+  - first:
+      213: 1074123921721553127
+    second: NiceWork_16
+  - first:
+      213: 8091441288890668578
+    second: NiceWork_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NiceWork_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d4df64dad7bb4b0800000000000000
+      internalID: -5423603143063810712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_1
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 0
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c82cea26907374710800000000000000
+      internalID: 1677369899668652684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_2
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 0
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d8e5e685d8440f0800000000000000
+      internalID: -1133625795242193616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_3
+      rect:
+        serializedVersion: 2
+        x: 2157
+        y: 0
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a39f7c1b61caf9830800000000000000
+      internalID: 4080169000892889402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_4
+      rect:
+        serializedVersion: 2
+        x: 2876
+        y: 0
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c50ced717e6d4b0800000000000000
+      internalID: -5415887412159030256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 459
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3efc9d3f8ce514c60800000000000000
+      internalID: 7800620246760017891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_6
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 459
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fce75d30a8f178cc0800000000000000
+      internalID: -3708961090486042929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_7
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 459
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795e37395a76a1800800000000000000
+      internalID: 583893062539011479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_8
+      rect:
+        serializedVersion: 2
+        x: 2157
+        y: 459
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff22a18471a3df420800000000000000
+      internalID: 2665350426141532927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_9
+      rect:
+        serializedVersion: 2
+        x: 2876
+        y: 459
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62846dd65fe1308b0800000000000000
+      internalID: -5187268306342098906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 918
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d6b4de0d0fe26f20800000000000000
+      internalID: 3414554306862692049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_11
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 918
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2281f22707a35c0800000000000000
+      internalID: -4234948863869836579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_12
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 918
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e280374e97815c50800000000000000
+      internalID: 6652247238471877353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_13
+      rect:
+        serializedVersion: 2
+        x: 2157
+        y: 918
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05f2edb65fcae3370800000000000000
+      internalID: 8304264932994461520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_14
+      rect:
+        serializedVersion: 2
+        x: 2876
+        y: 918
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5b636df61913c730800000000000000
+      internalID: 4018082879075740506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1377
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31de1d2010c1340a0800000000000000
+      internalID: -6898639413533610733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_16
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1377
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e076fe040e08ee00800000000000000
+      internalID: 1074123921721553127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NiceWork_17
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 1377
+        width: 719
+        height: 459
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226d1416bf29a4070800000000000000
+      internalID: 8091441288890668578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

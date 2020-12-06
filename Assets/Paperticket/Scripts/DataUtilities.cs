@@ -67,10 +67,6 @@ namespace Paperticket {
         [SerializeField] bool _Debug;
 
 
-        [Header("Video Data")]
-
-        [SerializeField] string[] _VideoNames;
-
 
         [Header("Preloaded Progress Data")]
 

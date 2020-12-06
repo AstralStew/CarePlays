@@ -48,6 +48,10 @@ public class CrossSceneEventHelper : MonoBehaviour {
         Destroy(objectToDestroy);
     }
 
+    public void DestroyComponent (Component componentToDestroy ) {
+        Destroy(componentToDestroy);
+    }
+
 
     public void ShakeTransform( Transform target, Vector3 shakeAmount, float duration) {
         StartCoroutine(PTUtilities.instance.ShakeTransform(target, shakeAmount, duration));

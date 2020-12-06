@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5d48042fc4a34254a8f75b0c54f0228c
+guid: dc6e7df1bf1be4c409ffbecb5d056d54
 VideoClipImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -14,5 +14,5 @@ VideoClipImporter:
   importAudio: 1
   targetSettings: {}
   userData: 
-  assetBundleName: videos
+  assetBundleName: 
   assetBundleVariant: 

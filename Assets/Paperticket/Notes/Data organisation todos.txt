@@ -1,0 +1,81 @@
+
+DataUtilities
+
+	- Add building out all the asset bundles (already fine?)
+	- Hook for loading/unloading specific bundles
+	- Keep track of all bundles loaded
+
+
+SceneUtilities
+
+	- Unload previous scene first
+	- Purge resources afterwards
+	- Load next scene asynchronously
+
+CrossSceneEventHelper
+
+	- Tell DataUtilities to load the required asset bundles on start
+	- Unload the used asset bundles when scene is finished
+
+
+
+
+ORGANISATION
+
+
+ManagerScene:				Main.OBB?
+DesertMenu:				Main.OBB?, Desert.OBB, Menu.OBB
+WorkExperience01 - Onboarding: 		Main.OBB?, Desert.OBB, WE01.OBB
+WorkExperience02 - Jetty: 		Main.OBB?, WE02.OBB
+WorkExperience03 - Dawn: 		Main.OBB?, WE03.OBB
+WorkExperience04 - Finale:		Main.OBB?, WE04.OBB
+
+
+
+
+MAIN.OBB? 	[ Loaded first and always active ] 	? May not be needed
+	
+	Characters
+	Hands
+	Head gfx
+	Controller beams	
+	HowTo Icons	
+	In-built assets (default sprites, cubes, etc)
+
+
+DESERT.OBB	[ Loaded in DesertMenu and WE01 ]
+
+	Desert assets (rocks, trees, grass)
+
+
+MENU.OBB	[ Loaded in DesertMenu ]
+
+	Menu assets (Road, Signs, Barrel)
+
+
+WE01.OBB	[ Loaded in WE01 ]
+	
+	Videos: WE01a, WE01b
+	Tutorial UI assets
+	Ryan/Talia audio assets
+			
+
+WE02.OBB	[ Loaded in WE02 ]
+	
+	Videos: WE02a, WE02b, WE02c
+	Recreational activities UI assets
+	3D Jetty assets
+	Fishing game assets
+	Ryan/James audio assets
+
+
+WE03.OBB	[ Loaded in WE03 ]
+	
+	Videos: WE03a, WE03b, WE03c
+	Careplan assets
+	Talia audio assets
+	
+	
+WE04.OBB	[ Loaded in WE04 ]
+	
+	Videos: WE04a

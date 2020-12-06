@@ -24,7 +24,11 @@ namespace Paperticket {
         [Header("VIDEO CONTROLS")]
         [Space(10)]
         [SerializeField] string currentVideoName;
-        public bool autoPlay;
+        [SerializeField] bool autoPlay;
+        public bool AutoPlay {
+            get { return autoPlay; }
+            set { autoPlay = value; }
+        }
         [SerializeField] bool skipFramesOnDrop;
 
 
@@ -275,7 +279,10 @@ namespace Paperticket {
                 videoEnded = true;
                 videoStarted = false;
 
-                if (pauseVideoOnFinish) PauseVideo();
+                if (pauseVideoOnFinish) {
+                    videoPlayer.Pause();
+                    if (externalAudio) externalAudioSource.Pause();
+                }
 
                 if (_UseFinishEvents && _FinishEvents.Length > 0 && finishIndexNo < _FinishEvents.Length) {
 

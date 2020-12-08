@@ -246,5 +246,22 @@ public class CrossSceneEventHelper : MonoBehaviour {
         PTUtilities.instance.TeleportPlayer(targetTransform, rotatePlayer);
     }
 
-        
+
+
+    public void LoadAssetBundle(DataUtilities.AssetBundles assetBundle ) {
+        if (DataUtilities.instance.isBundleLoaded(assetBundle)) {
+            Debug.Log("[CrossSceneEventHelper] AssetBundle '"+assetBundle+"' was already loaded, disregarding load request.");
+            return;
+        }
+        DataUtilities.instance.LoadAssetBundle(assetBundle);
+    }
+
+    public void UnloadAssetBundle( DataUtilities.AssetBundles assetBundle, bool unloadAllLoadedAssets ) {
+        if (!DataUtilities.instance.isBundleLoaded(assetBundle)) {
+            Debug.Log("[CrossSceneEventHelper] AssetBundle '" + assetBundle + "' is not loaded, disregarding unload request.");
+            return;
+        }
+        DataUtilities.instance.UnloadAssetBundle(assetBundle, unloadAllLoadedAssets);
+    }
+
 }

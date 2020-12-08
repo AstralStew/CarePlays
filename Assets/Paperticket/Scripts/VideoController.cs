@@ -17,32 +17,33 @@ namespace Paperticket {
         [Header("REFERENCES")]
 
         //Grab the video player and audio source
-        public VideoPlayer videoPlayer;
+        public VideoPlayer videoPlayer = null;
+        [SerializeField] DataUtilities.AssetBundles requiredBundle = 0;
         private string completePath;
 
 
         [Header("VIDEO CONTROLS")]
         [Space(10)]
-        [SerializeField] string currentVideoName;
-        [SerializeField] bool autoPlay;
+        [SerializeField] string currentVideoName ="";
+        [SerializeField] bool autoPlay = true;
         public bool AutoPlay {
             get { return autoPlay; }
             set { autoPlay = value; }
         }
-        [SerializeField] bool skipFramesOnDrop;
+        [SerializeField] bool skipFramesOnDrop = true;
 
 
         [Header("PRE-START CONTROLS")]
         [Space(10)]
-        [SerializeField] bool moveToHead;
-        [SerializeField] bool rotateToHead;
-        [SerializeField] Vector3 initialRotation;
+        [SerializeField] bool moveToHead = false;
+        [SerializeField] bool rotateToHead = false;
+        [SerializeField] Vector3 initialRotation = Vector3.zero;
 
 
         [Header("AUDIO CONTROLS")]
         [Space(10)]
-        [SerializeField] bool externalAudio;
-        [SerializeField] AudioSource externalAudioSource;
+        [SerializeField] bool externalAudio = false;
+        [SerializeField] AudioSource externalAudioSource = null;
 
 
         [Header("FINISH CONTROLS")]
@@ -50,30 +51,30 @@ namespace Paperticket {
         [SerializeField] float earlyFinishDuration = 0.5f;
         [SerializeField] bool pauseVideoOnFinish = true;
         [Space(10)]
-        [SerializeField] bool _UseFinishEvents;
-        [SerializeField] UnityEvent2[] _FinishEvents;
+        [SerializeField] bool _UseFinishEvents = false;
+        [SerializeField] UnityEvent2[] _FinishEvents = null;
         
-        int finishIndexNo;
+        int finishIndexNo = 0;
 
 
         [Header("READ ONLY")]
         [Space(5)]
 
-        [SerializeField] string datapath;
+        [SerializeField] string datapath = "";
         [Space(10)]
-        public bool videoLoaded;
-        public bool videoStarted;
-        public bool playingVideo;
-        public bool videoEnded;
+        public bool videoLoaded = false;
+        public bool videoStarted = false;
+        public bool playingVideo = false;
+        public bool videoEnded = false;
 
 
         [Header("DEBUGGING")]
         [Space(10)]
-        [SerializeField] bool debugging;
+        [SerializeField] bool debugging = false;
         [Space(10)]
-        public float currentVideoTime;                // in seconds
-        [SerializeField] private long currentFrames;
-        [SerializeField] private long endFrames;
+        public float currentVideoTime = 0;                // in seconds
+        [SerializeField] private long currentFrames = 0;
+        [SerializeField] private long endFrames = 0;
 
         
 
@@ -129,7 +130,8 @@ namespace Paperticket {
             if (debugging) Debug.Log("[VideoController] Switching the video to " + newVideoName);
 
             // Stop the video
-            videoPlayer.Stop();            
+            videoPlayer.Stop();
+            if (externalAudio) externalAudioSource.Stop();
 
             // Set the bools to false
             videoStarted = false;
@@ -159,8 +161,8 @@ namespace Paperticket {
 
                 // If it exists, set audio time to 0 and play the audio
                 if (externalAudio) {
-                    externalAudioSource.Play();
                     externalAudioSource.time = 0f;
+                    externalAudioSource.Play();
                 }
 
                 // If the video hasn't ended yet...
@@ -307,6 +309,7 @@ namespace Paperticket {
         #region INTERNAL COROUTINES
 
         // Set the clip of the new video to be played
+        [SerializeField] AssetBundle videoBundle;
         IEnumerator LoadVideoClipFromBundle( string clipName ) {
             if (debugging) Debug.Log("[VideoController] Setting the video clip");
 
@@ -314,8 +317,13 @@ namespace Paperticket {
             videoStarted = false;
 
             // Load the asset bundle from the above path
-            AssetBundle videoBundle = DataUtilities.instance._ExpansionAssetBundle;
-
+            videoBundle = DataUtilities.instance.GetAssetBundle(requiredBundle); //_ExpansionAssetBundle;
+            while (videoBundle == null) {
+                if (debugging) Debug.Log("[VideoController] Attempting to get asset bundle '"+requiredBundle.ToString()+"'");
+                videoBundle = DataUtilities.instance.GetAssetBundle(requiredBundle); //_ExpansionAssetBundle;
+                yield return null;
+            }
+            if (debugging) Debug.Log("[VideoController] Got the asset bundle '" + videoBundle + "'");
             // Load the video clip from the asset bundle and wait until it's finished
             var assetLoadRequest = videoBundle.LoadAssetAsync<VideoClip>(clipName);
             yield return assetLoadRequest;

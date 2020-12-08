@@ -387,7 +387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &773205470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,8 +402,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ExpansionFileName: 
   _bundleIdentifier: 1
+  autoloadFirstBundle: 0
   _ExpansionAssetBundle: {fileID: 0}
-  _Debug: 1
+  loadedBundles: []
+  debugging: 1
+  frameDebugging: 0
   loadProgressOnStart: 0
   StringKeys: []
   FloatKeys: []

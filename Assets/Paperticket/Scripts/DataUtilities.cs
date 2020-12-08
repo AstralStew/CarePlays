@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace Paperticket {
 
     public class DataUtilities : MonoBehaviour {
+        
+        public enum AssetBundles { video, we01, we02, we03, we04}
+        
         public static DataUtilities instance = null;
 
         // RONE obb expansion file was "main.1.com.StudioBento.RONE.obb";
@@ -15,18 +19,23 @@ namespace Paperticket {
         [Tooltip("WARNING - > Make sure this matches the Bundle Version in Player Settings for every new build!")]
         [SerializeField] int _bundleIdentifier = 1;
 
+        [SerializeField] bool autoloadFirstBundle = true;
+
+
+        #region Expansion Paths
+
         public string ExpansionFilePath {
             get {
 
                 if (Application.platform == RuntimePlatform.WindowsEditor) {
-                    return System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/PC Asset Bundles/" + _ExpansionFileName;
+                    return System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/PC Asset Bundles/";
                     //return "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/EXEs/Asset Bundles/" + _ExpansionFileName;
 
                 } else if (Application.platform == RuntimePlatform.WindowsPlayer) {
-                    return Application.dataPath + "/Asset Bundles/" + _ExpansionFileName;
+                    return Application.dataPath + "/Asset Bundles/";
 
                 } else if (Application.platform == RuntimePlatform.Android) {
-                    return "/sdcard/Android/obb/" + Application.identifier + "/" + _ExpansionFileName;
+                    return "/sdcard/Android/obb/" + Application.identifier + "/";
 
                 } else {
                     Debug.LogError("[DataUtilities] Bad platform for ExpansionFilePath!");
@@ -54,26 +63,29 @@ namespace Paperticket {
             }
         }
 
-        public AssetBundle _ExpansionAssetBundle;
+        #endregion
 
+        public AssetBundle _ExpansionAssetBundle = null;
 
+        public List<AssetBundle> loadedBundles = null;
 
         [System.Serializable]
         class ProgressFloat {
-            public string String;
-            public float Float;
+            public string String = "";
+            public float Float = 0;
         }
 
-        [SerializeField] bool _Debug;
+        [SerializeField] bool debugging = false;
+        [SerializeField] bool frameDebugging = false;
 
 
 
         [Header("Preloaded Progress Data")]
+        [Space(20)]
+        public bool loadProgressOnStart = false;
 
-        public bool loadProgressOnStart;
-
-        [SerializeField] List<string> StringKeys;
-        [SerializeField] List<ProgressFloat> FloatKeys;
+        [SerializeField] List<string> StringKeys = null;
+        [SerializeField] List<ProgressFloat> FloatKeys = null;
 
 
 
@@ -92,40 +104,119 @@ namespace Paperticket {
             // Load and save a reference to the expansion asset bundle containing the videos        
             //_ExpansionFileName = "main." + _bundleIdentifier + "." + Application.identifier + ".obb";
             _ExpansionFileName = ExpansionFileName;
-            if (_Debug) Debug.Log("[DataUtilities] Attempting to grab ExpansionAssetBundle from: " + ExpansionFilePath);
+            if (debugging) Debug.Log("[DataUtilities] Attempting to grab ExpansionAssetBundle from: " + ExpansionFilePath + _ExpansionFileName);
 
-            _ExpansionAssetBundle = AssetBundle.LoadFromFile(ExpansionFilePath);
-            if (_Debug) Debug.Log("[DataUtilities]" + _ExpansionAssetBundle == null ? " Failed to load ExpansionAssetBundle" : " ExpansionAssetBundle successfully loaded!");
+            //_ExpansionAssetBundle = AssetBundle.LoadFromFile(ExpansionFilePath + _ExpansionFileName);
+
+            if (autoloadFirstBundle) LoadAssetBundle(AssetBundles.we01);
+
+            
+
+            //if (debugging) Debug.Log("[DataUtilities]" + _ExpansionAssetBundle == null ? " Failed to load ExpansionAssetBundle" : " ExpansionAssetBundle successfully loaded!");
 
         }
+
+
+
+
+        public void LoadAssetBundle(AssetBundles assetBundle) {
+
+            //AssetBundle newAssetBundle = AssetBundle.LoadFromFile(ExpansionFilePath + assetBundle.ToString());
+            if (debugging) Debug.Log("[DataUtilities] Attempting to load AssetBundle '" + assetBundle.ToString() + "'...");
+            StartCoroutine(LoadingAssetBundle(assetBundle));
+
+        }
+
+        public void UnloadAssetBundle (AssetBundles assetBundle, bool unloadAllLoadedObjects ) {
+
+            if (debugging) Debug.Log("[DataUtilities] Attempting to unload AssetBundle '" + assetBundle.ToString() + "'...");
+
+            foreach (AssetBundle bundle in loadedBundles) {
+                if (bundle.name == assetBundle.ToString()) {                    
+                    bundle.Unload(unloadAllLoadedObjects);
+                    if (debugging) Debug.Log("[DataUtilities] AssetBundle '" + assetBundle.ToString() + "' unloaded!");
+                    loadedBundles.Remove(bundle);
+                    return;
+                }
+            }
+            Debug.LogError("[DataUtilities] ERROR -> AssetBundle '" + assetBundle.ToString() + "' was not found in Loaded Bundles! Could not unload...");
+        }
+
+
+
+        public bool isBundleLoaded (AssetBundles assetBundle) {
+            foreach (AssetBundle bundle in loadedBundles) {
+                if (bundle == null) {
+                    Debug.LogWarning("[DataUtilities] WARNING -> Loaded AssetBundle '" + assetBundle + "' returned null, returning false");
+                    return false;
+
+                } else if (bundle.name == assetBundle.ToString()) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+        public AssetBundle GetAssetBundle( AssetBundles assetBundle ) {
+            foreach (AssetBundle bundle in loadedBundles) {
+                if (bundle.name == assetBundle.ToString()) {
+                    return bundle;
+                }
+            }
+            if (debugging) Debug.LogWarning("[DataUtilities] Could not find AssetBundle '" + assetBundle.ToString() + "'! Returning null. ");
+            return null;
+        }
+
+
+
+
+
+
+        IEnumerator LoadingAssetBundle(AssetBundles assetBundle) {
+            var bundleLoadRequest = AssetBundle.LoadFromFileAsync(ExpansionFilePath + assetBundle.ToString());
+            yield return bundleLoadRequest;
+
+            var loadedBundle = bundleLoadRequest.assetBundle;
+            if (loadedBundle == null) {
+                Debug.LogError("[DataUtilities] ERROR -> Failed to load AssetBundle '" + assetBundle.ToString() + "'! Ignoring request, this is probably a fatal error :( ");
+                yield break;
+            }
+            loadedBundles.Add(loadedBundle);
+            if (debugging) Debug.Log("[DataUtilities] AssetBundle '" + assetBundle.ToString() + "' successfully loaded!");
+        }
+
+
+
+
+
+        #region Progress Keys
+
+
 
         void LoadPlayerProgress() {
 
             // Load all string progress keys
             for (int i = 0; i < StringKeys.Count; i++) {
                 SetProgressKey(StringKeys[i]);
-                if (_Debug) Debug.Log("[DataUtilities] New string progress key added: " + StringKeys[i] + ", " + CheckProgressKey(StringKeys[i]));
+                if (debugging) Debug.Log("[DataUtilities] New string progress key added: " + StringKeys[i] + ", " + CheckProgressKey(StringKeys[i]));
             }
 
             // Load all float progress keys
             for (int i = 0; i < FloatKeys.Count; i++) {
                 SetProgressKeyAsFloat(FloatKeys[i].String, FloatKeys[i].Float);
-                if (_Debug) Debug.Log("[DataUtilities] New float progress key added: " + FloatKeys[i].String + ", value = " + GetProgressKeyAsFloat(FloatKeys[i].String));
+                if (debugging) Debug.Log("[DataUtilities] New float progress key added: " + FloatKeys[i].String + ", value = " + GetProgressKeyAsFloat(FloatKeys[i].String));
             }
 
         }
 
-
-
-
-
-
+                          
 
         public bool CheckProgressKey( string keyName ) {
             if (PlayerPrefs.HasKey(keyName)) {
                 return PlayerPrefs.GetInt(keyName) == 1;
             }
-            if (_Debug) Debug.Log("[DataUtilities] Cannot find progress key '" + keyName + "' (string)");
+            if (debugging) Debug.Log("[DataUtilities] Cannot find progress key '" + keyName + "' (string)");
             return false;
         }
 
@@ -133,7 +224,7 @@ namespace Paperticket {
             if (PlayerPrefs.HasKey(keyName)) {
                 return PlayerPrefs.GetFloat(keyName);
             }
-            if (_Debug) Debug.Log("[DataUtilities] Cannot find progress key '" + keyName + "' (float)");
+            if (debugging) Debug.Log("[DataUtilities] Cannot find progress key '" + keyName + "' (float)");
             return 0;
         }
 
@@ -161,7 +252,7 @@ namespace Paperticket {
 
 
         public void ClearPlayerProgress() {
-            if (_Debug) Debug.Log("[DataUtilities] Clearing all player progress! OwO");
+            if (debugging) Debug.Log("[DataUtilities] Clearing all player progress! OwO");
 
             PlayerPrefs.DeleteAll();
             PlayerPrefs.Save();
@@ -173,8 +264,29 @@ namespace Paperticket {
 
         }
 
+        #endregion
 
 
+
+
+        #region Debugging 
+
+        private void OnValidate() {
+            if (frameDebugging && frameDebugCo == null) StartCoroutine(FrameDebugging());
+            else if (!frameDebugging && frameDebugCo != null) StopCoroutine(FrameDebugging());
+        }
+        Coroutine frameDebugCo;
+        IEnumerator FrameDebugging() {
+            while (true) {
+                Debug.Log("[DataUtilities] AssetBundle we01: " + isBundleLoaded(AssetBundles.we01) + "\n " +
+                          "[DataUtilities] AssetBundle we02: " + isBundleLoaded(AssetBundles.we02) + "\n " +
+                          "[DataUtilities] AssetBundle we03: " + isBundleLoaded(AssetBundles.we03) + "\n " +
+                          "[DataUtilities] AssetBundle we04: " + isBundleLoaded(AssetBundles.we04) + "\n ");
+                yield return new WaitForSeconds(1f);
+            }
+        }
+
+        #endregion
     }
 
 }

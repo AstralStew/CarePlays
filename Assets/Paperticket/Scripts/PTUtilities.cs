@@ -885,6 +885,28 @@ namespace Paperticket {
 
         }
 
+
+        public IEnumerator RotateTransformViaCurve ( Transform target, AnimationCurve animCurve, Vector3 rotateAmount, float duration) {
+
+            float t = 0;
+            Vector3 initialRot = target.localRotation.eulerAngles;
+
+            if (_Debug) Debug.Log("[PTUtilities] Rotating transform " + target.name);
+
+            while (t < duration) {
+                yield return null;
+                target.localRotation = Quaternion.Euler (initialRot + (rotateAmount * animCurve.Evaluate(t / duration)));
+                t += Time.deltaTime;
+            }
+            target.localRotation = Quaternion.Euler(initialRot + rotateAmount);
+
+            if (_Debug) Debug.Log("[PTUtilities] Finished rotating " + target.name);
+
+        }
+
+
+
+
         // Fading audio
 
         bool fadingAudioListener;

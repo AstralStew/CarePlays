@@ -97,11 +97,34 @@ public class CrossSceneEventHelper : MonoBehaviour {
                 curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
                 break;
             default:
-                Debug.LogError("[{0}] ERROR -> Bad CurveType recieved in MoveTransformViaCurve!!");
+                Debug.LogError("[{0}] ERROR -> Bad CurveType recieved in ScaleTransformViaCurve!!");
                 break;
         }
 
         StartCoroutine(PTUtilities.instance.ScaleTransformViaCurve(target, curve, scaleAmount, duration));
+
+    }
+
+    public void RotateTransformViaCurve( Transform target, CurveType curveType, Vector3 rotateAmount, float duration ) {
+
+        AnimationCurve curve = new AnimationCurve();
+
+        switch (curveType) {
+            case CurveType.Constant:
+                curve = AnimationCurve.Constant(0, 1, 1);
+                break;
+            case CurveType.Linear:
+                curve = AnimationCurve.Linear(0, 0, 1, 1);
+                break;
+            case CurveType.EaseInOut:
+                curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+                break;
+            default:
+                Debug.LogError("[{0}] ERROR -> Bad CurveType recieved in RotateTransformViaCurve!!");
+                break;
+        }
+
+        StartCoroutine(PTUtilities.instance.RotateTransformViaCurve(target, curve, rotateAmount, duration));
 
     }
 

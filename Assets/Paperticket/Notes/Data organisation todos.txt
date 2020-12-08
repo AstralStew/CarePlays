@@ -40,7 +40,9 @@ MAIN.OBB? 	[ Loaded first and always active ] 	? May not be needed
 	Head gfx
 	Controller beams	
 	HowTo Icons	
+	Phones
 	In-built assets (default sprites, cubes, etc)
+	
 
 
 DESERT.OBB	[ Loaded in DesertMenu and WE01 ]

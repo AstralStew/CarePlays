@@ -7,7 +7,21 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class CrossSceneEventHelper : MonoBehaviour {
-           
+
+    public void SwitchToScene( string sceneName, float invokeTime ) {
+        StartCoroutine(WaitThenSwitchToScene(sceneName, invokeTime));
+    }
+    IEnumerator WaitThenSwitchToScene( string sceneName, float invokeTime ) {
+        yield return new WaitForSeconds(invokeTime);
+        SwitchToScene(sceneName);
+    }
+
+    public void SwitchToScene(string sceneName ) {
+        SceneUtilities.instance.LoadSceneExclusive(sceneName);
+    }
+
+
+
     public void LoadNextScene (string sceneName, float invokeTime ) {
         StartCoroutine(WaitThenLoadNextScene(sceneName, invokeTime));
     }
@@ -29,6 +43,9 @@ public class CrossSceneEventHelper : MonoBehaviour {
         SceneUtilities.instance.UnloadScene(gameObject.scene.name);
 
     }
+
+
+
 
     public void SetControllerBeam( bool toggle ) {
         PTUtilities.instance.ControllerBeamActive = toggle;

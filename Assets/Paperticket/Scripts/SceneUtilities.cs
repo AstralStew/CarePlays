@@ -29,7 +29,7 @@ namespace Paperticket {
 
         AsyncOperation asyncOperation = null;
 
-
+        [SerializeField] bool convergeDynamicGI = false;
 
         string lastSceneStarted = "";
 
@@ -60,6 +60,11 @@ namespace Paperticket {
         }
 
 
+
+
+
+
+        #region Public variables
 
         public bool CheckSceneLoaded( string sceneName ) {
             if (SceneManager.GetSceneByName(sceneName).isLoaded) {
@@ -93,18 +98,61 @@ namespace Paperticket {
             }
         }
 
+        #endregion
 
 
+        #region Public Calls
 
+        public void LoadScene( string sceneToLoad, bool setActive ) {
+            if (_Debug) Debug.Log("[SceneUtilities] Attempting to load scene '" + sceneToLoad + "'" + (setActive ? ", and set it as the active scene" : "" ));
+            StartCoroutine(LoadingScene(sceneToLoad, setActive));
 
-
-
-
+        }
 
         public void BeginLoadScene( string sceneToLoad ) {
             if (_Debug) Debug.Log("[SceneUtilities] Attempting to begin loading scene '" + sceneToLoad + "'");
             StartCoroutine(BeginLoadingScene(sceneToLoad));
         }
+
+        public void FinishLoadScene( bool setSceneActive ) {
+            if (_Debug) Debug.Log("[SceneUtilities] Attempting to finish loading '" + lastSceneStarted + "'");
+            StartCoroutine(FinishLoadingScene(setSceneActive));
+        }
+
+        public void LoadSceneExclusive( string sceneToLoad ) {
+
+            if (_Debug) Debug.Log("[SceneUtilities] Attempting to load scene '"+sceneToLoad+"' exclusively");
+            StartCoroutine(LoadingSceneExclusive(sceneToLoad));
+        }
+
+        public void UnloadScene( string scene ) {
+            if (_Debug) Debug.Log("[SceneUtilities] Attempting to unload scene '"+scene+"' asynchronously (enforcing a max scene count of 2)");
+            StartCoroutine(UnloadingScene(scene, 2, true));
+        }
+
+        public void UnloadScene( string scene, int maxSceneCount, bool forceSceneCleanup ) {
+            if (_Debug) Debug.Log("[SceneUtilities] Attempting to unload scene '"+scene+"' asynchronously (enforcing a max scene count of "+maxSceneCount+")");
+            StartCoroutine(UnloadingScene(scene, maxSceneCount, forceSceneCleanup));
+        }
+
+        public void ForceUnloadUnusedAssets() {
+            StartCoroutine(FlushingUnusedAssets());
+        }
+
+
+        #endregion
+
+
+        #region Loading / Unloading Couroutines
+
+        IEnumerator LoadingScene( string sceneToLoad, bool setActive ) {
+
+            yield return BeginLoadingScene(sceneToLoad);
+            yield return FinishLoadingScene(setActive);
+
+        }
+
+
         IEnumerator BeginLoadingScene( string sceneToLoad ) {
 
             // Begin to load the new scene
@@ -124,10 +172,7 @@ namespace Paperticket {
 
         }
 
-        public void FinishLoadScene( bool setSceneActive ) {
-            if (_Debug) Debug.Log("[SceneUtilities] Attempting to finish loading '" + lastSceneStarted + "'");
-            StartCoroutine(FinishLoadingScene(setSceneActive));
-        }
+       
         IEnumerator FinishLoadingScene( bool setSceneActive ) {
 
             // Finish loading the new scene
@@ -142,7 +187,7 @@ namespace Paperticket {
 
                 while (SceneManager.GetActiveScene().name != lastSceneStarted) {
                     SceneManager.SetActiveScene(SceneManager.GetSceneByName(lastSceneStarted));
-                    yield return new WaitForSeconds(0.3f);
+                    yield return new WaitForSeconds(0.1f);
                 }
 
 
@@ -152,8 +197,12 @@ namespace Paperticket {
             }
 
             // Wait until the dynamic GI is converged
-            if (_Debug) Debug.Log("[SceneUtilities] Finished loading '" + lastSceneStarted + "'! Waiting for dynamic GI to update");
-            yield return new WaitUntil(() => DynamicGI.isConverged);
+            if (_Debug) Debug.Log("[SceneUtilities] Finished loading '" + lastSceneStarted + "'!");
+
+            if (convergeDynamicGI) { 
+                if (_Debug) Debug.Log("Waiting for dynamic GI to update");
+                yield return new WaitUntil(() => DynamicGI.isConverged);
+            }
 
             // Send an event out for the caller script to pick up
             if (OnSceneLoad != null) {
@@ -165,16 +214,16 @@ namespace Paperticket {
         }
 
 
+        IEnumerator LoadingSceneExclusive ( string sceneToLoad ) {
 
-
-
-
-        public void UnloadScene( string scene ) {
-            if (_Debug) Debug.Log("[SceneUtilities] Attempting to unload scene '" + scene + "' asynchronously");
-            StartCoroutine(UnloadingScene(scene));
+            yield return StartCoroutine(UnloadingScene(SceneManager.GetActiveScene().name, 1, true));
+            yield return BeginLoadingScene(sceneToLoad);
+            yield return FinishLoadingScene(true);
         }
 
-        IEnumerator UnloadingScene( string scene ) {
+
+
+        IEnumerator UnloadingScene( string scene, int maxSceneCount, bool forceSceneCleanup ) {
 
             // Unload the scene asynchronously
             asyncOperation = SceneManager.UnloadSceneAsync(scene);
@@ -182,10 +231,10 @@ namespace Paperticket {
             yield return null;
 
             // Double check there are the right number of scenes loaded
-            if (SceneManager.sceneCount > 2) {
+            if (SceneManager.sceneCount > maxSceneCount) {
                 if (_Debug) Debug.Log("[SceneUtilities] Too many scenes, waiting for scene cleanup to complete...");
-                ForceSceneCleanup();
-                yield return new WaitUntil(() => SceneManager.sceneCount <= 2);
+                if (forceSceneCleanup) ForceSceneCleanup(maxSceneCount);
+                yield return new WaitUntil(() => SceneManager.sceneCount <= maxSceneCount);
                 if (_Debug) Debug.Log("[SceneUtilities] Scenes cleanup complete!");
             }
 
@@ -205,9 +254,13 @@ namespace Paperticket {
 
 
 
-        public void ForceUnloadUnusedAssets() {
-            StartCoroutine(FlushingUnusedAssets());
-        }
+        #endregion
+
+
+
+
+        #region Cleanup functions
+
 
         IEnumerator FlushingUnusedAssets() {
 
@@ -222,14 +275,11 @@ namespace Paperticket {
             if (_Debug) Debug.Log("[SceneUtilities] Unused assets flushed!");
 
         }
-
-
-
-
-        void ForceSceneCleanup() {
+                       
+        void ForceSceneCleanup( int maxSceneCount) {
 
             // Only the current scene and the ManagerScene are loaded
-            if (SceneManager.sceneCount <= 2) return;
+            if (SceneManager.sceneCount <= maxSceneCount) return;
 
             // Check which scenes have to be removed
             bool currentSceneFound = false;
@@ -250,6 +300,8 @@ namespace Paperticket {
                 
             }
         }
+
+        #endregion
     }
 
 }

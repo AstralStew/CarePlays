@@ -36,7 +36,7 @@ namespace Paperticket {
         }
 
         void Update() {
-
+            if (!videoController.playingVideo) return;
             if (videoController.currentVideoTime >= videoTimeBeforeEvent) {
 
                 // Trigger the event
@@ -47,7 +47,7 @@ namespace Paperticket {
 
                 // Destroy this script if this is a one time use, otherwise disable it
                 if (OneTimeUse) {
-                    if (debugging) Debug.Log("[VideoEvent] One time use is enabled, disabling this script");
+                    if (debugging) Debug.Log("[VideoEvent] One time use is enabled, destroying this script");
                     Destroy(this);
                 } else {
                     enabled = false;

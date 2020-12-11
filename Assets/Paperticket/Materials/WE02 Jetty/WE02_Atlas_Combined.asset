@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41887b1546f5c44ab54e7e65aad3bc, type: 3}
+  m_Name: WE02_Atlas_Combined
+  m_EditorClassIdentifier: 
+  version: 3252
+  resultType: 0
+  materialsAndUVRects:
+  - material: {fileID: 2100000, guid: e76d53374e2efac4fab8a0fd156c7bac, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.00048828125
+      y: 0.00048828125
+      width: 0.5
+      height: 0.5
+    srcObjName: WE02_Brush3
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 9e08ff98a479c5340b29d912c18ab13b, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.50146484
+      y: 0.00048828125
+      width: 0.125
+      height: 0.125
+    srcObjName: WE01_Trees_Bush3 (55)
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  resultMaterials:
+  - combinedMaterial: {fileID: 2100000, guid: 7cc34bb569cbef54ba2d9faf898a3188, type: 2}
+    considerMeshUVs: 0
+    sourceMaterials:
+    - {fileID: 2100000, guid: 06f3ed95604e84549aaced2c38b8c797, type: 2}
+    - {fileID: 2100000, guid: 496173f836159df48abb30a7ff21a0da, type: 2}
+    - {fileID: 2100000, guid: 34a2b5cc5d3e5d64a893bea803c6872b, type: 2}
+    - {fileID: 2100000, guid: 9e08ff98a479c5340b29d912c18ab13b, type: 2}
+    - {fileID: 2100000, guid: e76d53374e2efac4fab8a0fd156c7bac, type: 2}
+  resultMaterialsTexArray: []
+  doMultiMaterial: 1

@@ -205,7 +205,7 @@ Material:
     - _UVMask: 0
     - _UVSec: 0
     - _UnityShadowMode: 0
-    - _UnityShadowPower: 0.2
+    - _UnityShadowPower: 1
     - _UnityShadowSharpness: 1
     - _VERTEXPOSITIONMASK_ON: 0
     - _VertexColorsEnabled: 0
@@ -244,6 +244,6 @@ Material:
     - _TranslucencyColor: {r: 1, g: 1, b: 1, a: 1}
     - _TranslucencyTint: {r: 0, g: 0, b: 0, a: 0}
     - _TranslucentColor: {r: 0.60294116, g: 0.60294116, b: 0.60294116, a: 0}
-    - _UnityShadowColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
+    - _UnityShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _WindDirectionAndStrength: {r: 1, g: 1, b: 1, a: 1}
     - _WindFade: {r: 50, g: 20, b: 0, a: 0}

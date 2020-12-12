@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c3e610af183f709498eef767de76f1e7
+guid: f4205256d2c489f42b611059dbcb70bf
 VideoClipImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -11,17 +11,8 @@ VideoClipImporter:
   encodeAlpha: 0
   flipVertical: 0
   flipHorizontal: 0
-  importAudio: 0
-  targetSettings:
-    0:
-      enableTranscoding: 0
-      codec: 0
-      resizeFormat: 0
-      aspectRatio: 0
-      customWidth: 3840
-      customHeight: 1920
-      bitrateMode: 2
-      spatialQuality: 2
+  importAudio: 1
+  targetSettings: {}
   userData: 
-  assetBundleName: we04
+  assetBundleName: 
   assetBundleVariant: 

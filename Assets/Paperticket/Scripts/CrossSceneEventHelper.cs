@@ -350,7 +350,7 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
 
 
-    public void LoadAssetBundle(DataUtilities.AssetBundles assetBundle ) {
+    public void LoadAssetBundle(AssetBundles assetBundle ) {
         if (DataUtilities.instance.isBundleLoaded(assetBundle)) {
             Debug.Log("[CrossSceneEventHelper] AssetBundle '"+assetBundle+"' was already loaded, disregarding load request.");
             return;
@@ -358,7 +358,7 @@ public class CrossSceneEventHelper : MonoBehaviour {
         DataUtilities.instance.LoadAssetBundle(assetBundle);
     }
 
-    public void UnloadAssetBundle( DataUtilities.AssetBundles assetBundle, bool unloadAllLoadedAssets ) {
+    public void UnloadAssetBundle( AssetBundles assetBundle, bool unloadAllLoadedAssets ) {
         if (!DataUtilities.instance.isBundleLoaded(assetBundle)) {
             Debug.Log("[CrossSceneEventHelper] AssetBundle '" + assetBundle + "' is not loaded, disregarding unload request.");
             return;

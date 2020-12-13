@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace Paperticket {
     public class BundleEvent : MonoBehaviour {
 
-        [SerializeField] DataUtilities.AssetBundles requiredBundle = 0;
+        [SerializeField] AssetBundles requiredBundle = 0;
         [Space(10)]
         [SerializeField] float checkFrequency = 1f;
         [SerializeField] bool OneTimeUse = true;

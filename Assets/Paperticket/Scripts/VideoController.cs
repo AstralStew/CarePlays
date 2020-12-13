@@ -18,7 +18,7 @@ namespace Paperticket {
 
         //Grab the video player and audio source
         public VideoPlayer videoPlayer = null;
-        [SerializeField] DataUtilities.AssetBundles requiredBundle = 0;
+        [SerializeField] AssetBundles requiredBundle = 0;
         private string completePath;
 
 

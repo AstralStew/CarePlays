@@ -1,16 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
-using System.IO;
-using System.Data.SqlClient;
 
 namespace Paperticket {
 
+
     public class DataUtilities : MonoBehaviour {
-        
-        public enum AssetBundles { video, we01, we02, we03, we04}
-        
+
         public static DataUtilities instance = null;
 
         // RONE obb expansion file was "main.1.com.StudioBento.RONE.obb";
@@ -69,6 +65,10 @@ namespace Paperticket {
 
         public List<AssetBundle> loadedBundles = null;
 
+
+
+
+
         [System.Serializable]
         class ProgressFloat {
             public string String = "";
@@ -110,7 +110,7 @@ namespace Paperticket {
 
             if (autoloadFirstBundle) LoadAssetBundle(AssetBundles.we01);
 
-            
+
 
             //if (debugging) Debug.Log("[DataUtilities]" + _ExpansionAssetBundle == null ? " Failed to load ExpansionAssetBundle" : " ExpansionAssetBundle successfully loaded!");
 
@@ -118,8 +118,10 @@ namespace Paperticket {
 
 
 
+        #region Public loading/unloading bundle calls
 
-        public void LoadAssetBundle(AssetBundles assetBundle) {
+
+        public void LoadAssetBundle( AssetBundles assetBundle ) {
 
             //AssetBundle newAssetBundle = AssetBundle.LoadFromFile(ExpansionFilePath + assetBundle.ToString());
             if (debugging) Debug.Log("[DataUtilities] Attempting to load AssetBundle '" + assetBundle.ToString() + "'...");
@@ -127,12 +129,12 @@ namespace Paperticket {
 
         }
 
-        public void UnloadAssetBundle (AssetBundles assetBundle, bool unloadAllLoadedObjects ) {
+        public void UnloadAssetBundle( AssetBundles assetBundle, bool unloadAllLoadedObjects ) {
 
             if (debugging) Debug.Log("[DataUtilities] Attempting to unload AssetBundle '" + assetBundle.ToString() + "'...");
 
             foreach (AssetBundle bundle in loadedBundles) {
-                if (bundle.name == assetBundle.ToString()) {                    
+                if (bundle.name == assetBundle.ToString()) {
                     bundle.Unload(unloadAllLoadedObjects);
                     if (debugging) Debug.Log("[DataUtilities] AssetBundle '" + assetBundle.ToString() + "' unloaded!");
                     loadedBundles.Remove(bundle);
@@ -142,9 +144,21 @@ namespace Paperticket {
             Debug.LogError("[DataUtilities] ERROR -> AssetBundle '" + assetBundle.ToString() + "' was not found in Loaded Bundles! Could not unload...");
         }
 
+        public void UnloadAllBundles( bool unloadAllLoadedObjects ) {
+            if (debugging) Debug.Log("[DataUtilities] Attempting to unload all loaded asset bundles (except main)");
+            StartCoroutine(UnloadingAllAssetBundles(unloadAllLoadedObjects));
+        }
 
 
-        public bool isBundleLoaded (AssetBundles assetBundle) {
+        #endregion
+
+
+
+
+        #region Public bundle utilities
+
+
+        public bool isBundleLoaded( AssetBundles assetBundle ) {
             foreach (AssetBundle bundle in loadedBundles) {
                 if (bundle == null) {
                     Debug.LogWarning("[DataUtilities] WARNING -> Loaded AssetBundle '" + assetBundle + "' returned null, returning false");
@@ -169,9 +183,28 @@ namespace Paperticket {
         }
 
 
+        public AssetBundles[] GetLoadedBundles () {
+            List<AssetBundles> bundleList = new List<AssetBundles>();            
+            foreach(AssetBundle bundle in loadedBundles) {
+                bundleList.Add((AssetBundles)System.Enum.Parse(typeof(AssetBundles), bundle.name));
+            }
+            if (bundleList.Count > 0) return bundleList.ToArray();
+            else return null;
+        }
 
 
 
+
+
+
+
+        #endregion
+
+
+
+
+
+        #region Bundle coroutines
 
         IEnumerator LoadingAssetBundle(AssetBundles assetBundle) {
             var bundleLoadRequest = AssetBundle.LoadFromFileAsync(ExpansionFilePath + assetBundle.ToString());
@@ -185,6 +218,22 @@ namespace Paperticket {
             loadedBundles.Add(loadedBundle);
             if (debugging) Debug.Log("[DataUtilities] AssetBundle '" + assetBundle.ToString() + "' successfully loaded!");
         }
+
+
+        IEnumerator UnloadingAllAssetBundles(bool unloadAllLoadedObjects) {
+
+            for (int i = 0; i < loadedBundles.Count; i++) {
+
+                loadedBundles[i].Unload(unloadAllLoadedObjects);
+                yield return null;
+
+            }
+
+
+        }
+
+
+        #endregion
 
 
 

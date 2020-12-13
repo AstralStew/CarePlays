@@ -83,7 +83,9 @@ namespace Paperticket {
             return false;
         }
 
-
+        public int SceneCount {
+            get { return SceneManager.sceneCount; }
+        }
 
         /// <summary>
         /// Get the progress on the current scene load
@@ -133,6 +135,11 @@ namespace Paperticket {
         public void UnloadScene( string scene, int maxSceneCount, bool forceSceneCleanup ) {
             if (_Debug) Debug.Log("[SceneUtilities] Attempting to unload scene '"+scene+"' asynchronously (enforcing a max scene count of "+maxSceneCount+")");
             StartCoroutine(UnloadingScene(scene, maxSceneCount, forceSceneCleanup));
+        }
+
+        public void UnloadActiveScene (int maxSceneCount, bool forceSceneCleanup ) {
+            if (_Debug) Debug.Log("[SceneUtilities] Attempting to unload scene '"+SceneManager.GetActiveScene().name+"' asynchronously (enforcing a max scene count of "+maxSceneCount+")");
+            StartCoroutine(UnloadingScene(SceneManager.GetActiveScene().name, maxSceneCount, forceSceneCleanup));
         }
 
         public void ForceUnloadUnusedAssets() {
@@ -224,6 +231,12 @@ namespace Paperticket {
 
 
         IEnumerator UnloadingScene( string scene, int maxSceneCount, bool forceSceneCleanup ) {
+
+            // Make sure the scene is not the manager scene
+            if (scene == "ManagerScene") {
+                Debug.LogError("[SceneUtilities] ERROR -> Cannot unload ManagerScene! It's too important! Stop that...");
+                yield break;
+            }
 
             // Unload the scene asynchronously
             asyncOperation = SceneManager.UnloadSceneAsync(scene);

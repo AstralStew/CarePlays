@@ -103,6 +103,7 @@ public class BuildAssetBundles : Editor {
         // Build the asset bundles into the above directory
         BuildPipeline.BuildAssetBundles(assetBundleDirectory, buildAssetBundleOptions, EditorUserBuildSettings.activeBuildTarget);
 
+
         // Find the file and rename it
         string filePath = assetBundleDirectory + "main";
         if (System.IO.File.Exists(filePath)) {

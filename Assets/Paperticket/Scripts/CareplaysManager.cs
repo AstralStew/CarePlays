@@ -28,6 +28,8 @@ namespace Paperticket {
         }
         IEnumerator Initialising() {
 
+            if (!debugging) debugging = true;
+
             // Set as the CareplaysManager static instance
             if (instance == null) {
                 instance = this;
@@ -90,6 +92,7 @@ namespace Paperticket {
                 foreach (AssetBundles oldBundle in DataUtilities.instance.GetLoadedBundles()) {
                     if (!newBundles.Contains(oldBundle)) {
                         DataUtilities.instance.UnloadAssetBundle(oldBundle, true);
+                        yield return new WaitUntil(() => !DataUtilities.instance.isBundleLoaded(oldBundle));
                     }
                     yield return null;
                 }
@@ -99,8 +102,8 @@ namespace Paperticket {
             foreach (AssetBundles newBundle in newBundles) {
                 if (!DataUtilities.instance.isBundleLoaded(newBundle)) {
                     DataUtilities.instance.LoadAssetBundle(newBundle);
-                }
-                yield return null;
+                    yield return new WaitUntil(() => DataUtilities.instance.isBundleLoaded(newBundle));
+                }                
             }
 
             // Begin loading the next scene

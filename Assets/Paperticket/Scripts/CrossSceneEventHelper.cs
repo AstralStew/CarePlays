@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Paperticket;
@@ -12,7 +11,7 @@ public class CrossSceneEventHelper : MonoBehaviour {
     #region Scene loading/unloading calls
 
     public void LoadCareScene (CareScene sceneToLoad ) {
-        Debug.Log("[CrossSceneEventHelper] Attempting to load new care scene: " + sceneToLoad.ToString());
+        Debug.LogWarning("[CrossSceneEventHelper] Attempting to load new care scene: " + sceneToLoad.ToString());
         CareplaysManager.instance.LoadCareScene(sceneToLoad);
     }
 

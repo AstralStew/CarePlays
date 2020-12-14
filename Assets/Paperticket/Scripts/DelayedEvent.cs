@@ -20,6 +20,7 @@ namespace Paperticket {
 
         // Start is called before the first frame update
         void OnEnable() {
+
             timeToChange = Time.time + timeBeforeEvent;
         }
 

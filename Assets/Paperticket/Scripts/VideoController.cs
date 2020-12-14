@@ -82,7 +82,7 @@ namespace Paperticket {
         void OnEnable() {
 
 
-            if (!debugging) debugging = true;
+            //if (!debugging) debugging = true;
 
             // Set the video sphere position and rotation (if applicable)
             if (moveToHead) transform.position = PTUtilities.instance.HeadsetPosition();
@@ -109,9 +109,8 @@ namespace Paperticket {
 
                 // The current time of the video playthrough
                 currentVideoTime = (float)videoPlayer.time;
-            }
-
-            currentFrames = videoPlayer.frame;
+                currentFrames = videoPlayer.frame;
+            }            
 
             if (!videoPlayer.isLooping && videoStarted && !videoEnded && (videoPlayer.frame >= endFrames)) {
                 FinishVideo();
@@ -141,6 +140,7 @@ namespace Paperticket {
             videoStarted = false;
             videoLoaded = false;
             videoEnded = false;
+            currentVideoTime = 0;
 
             // Set position and rotation if applicable
             if (moveToHead) transform.position = PTUtilities.instance.HeadsetPosition();

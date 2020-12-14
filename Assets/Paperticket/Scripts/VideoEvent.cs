@@ -28,6 +28,8 @@ namespace Paperticket {
         // Start is called before the first frame update
         void OnEnable() {
 
+            debugging = true;
+
             if (!videoController) {
                 Debug.LogError("[VideoEvent] ERROR -> No VideoController defined! Disabling...");
                 enabled = false;

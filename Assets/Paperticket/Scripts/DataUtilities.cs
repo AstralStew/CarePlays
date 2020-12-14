@@ -197,7 +197,7 @@ namespace Paperticket {
             List<AssetBundles> bundleList = new List<AssetBundles>();            
             foreach(AssetBundle bundle in loadedBundles) {
                 if (bundle.name == "main") {
-                    if (debugging) Debug.Log("[DataUtilities] Skipping expansion file in GetLoadBundles...");
+                    if (debugging) Debug.Log("[DataUtilities] Skipping main expansion file in GetLoadBundles...");
                     continue;
                 }
                 bundleList.Add((AssetBundles)System.Enum.Parse(typeof(AssetBundles), bundle.name));

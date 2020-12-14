@@ -70,7 +70,7 @@ namespace Paperticket {
 
         [Header("DEBUGGING")]
         [Space(10)]
-        [SerializeField] bool debugging = false;
+        [SerializeField] bool debugging = true;
         [Space(10)]
         public float currentVideoTime = 0;                // in seconds
         [SerializeField] private long currentFrames = 0;
@@ -80,6 +80,9 @@ namespace Paperticket {
 
         // Use this for initialization
         void OnEnable() {
+
+
+            if (!debugging) debugging = true;
 
             // Set the video sphere position and rotation (if applicable)
             if (moveToHead) transform.position = PTUtilities.instance.HeadsetPosition();
@@ -91,6 +94,7 @@ namespace Paperticket {
 
             videoPlayer.source = VideoSource.VideoClip;
             StartCoroutine(LoadVideoClipFromBundle(currentVideoName));
+
 
         }
 

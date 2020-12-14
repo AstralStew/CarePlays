@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Desert_SkyPolyverse
-  m_Shader: {fileID: 4800000, guid: 6fc9318f5193c094c98c0d450cd61e3b, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6b473eb86b84ac5439972f473ab884bd, type: 3}
   m_ShaderKeywords: _BACKGROUNDMODE_COLORS _ENABLEBUILTINFOG_ON _ENABLECLOUDSROTATION_ON
     _ENABLECLOUDS_ON _ENABLESUN_ON _GLOSSYREFLECTIONS_OFF _MAPPING_LATITUDE_LONGITUDE_LAYOUT
     _SPECULARHIGHLIGHTS_OFF _SUNDISK_HIGH_QUALITY
@@ -26,7 +26,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BackgroundCubemap:
-        m_Texture: {fileID: 8900000, guid: 2496987be02f21244bcd1e6c3bfa5aff, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -115,7 +115,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AtmosphereThickness: 0.76
-    - _BackgroundExposure: 1
+    - _BackgroundExposure: 0
     - _BackgroundMode: 0
     - _BumpScale: 1
     - _CloudsCat: 1

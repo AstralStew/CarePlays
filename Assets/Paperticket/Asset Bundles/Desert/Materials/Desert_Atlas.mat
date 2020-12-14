@@ -136,4 +136,4 @@ Material:
     - _FlatSpecularColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _UnityShadowColor: {r: 0.5283019, g: 0.14675052, b: 0, a: 1}
+    - _UnityShadowColor: {r: 0.54901963, g: 0.14532872, b: 0, a: 0.5882353}

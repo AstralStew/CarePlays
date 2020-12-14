@@ -42,7 +42,7 @@ namespace Paperticket {
             }
 
             // Load the intro scene
-            if (_LoadFirstScene || !Application.isEditor) {
+            if (_LoadFirstScene) {
                 StartCoroutine(LoadingFirstScene());
             }
         }

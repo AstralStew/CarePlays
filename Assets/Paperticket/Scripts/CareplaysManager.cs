@@ -6,11 +6,13 @@ using UnityEngine;
 namespace Paperticket {
 
     #region public enums
-    public enum AssetBundles { desert, menu, we01, we02, we03, we04 }
+    public enum AssetBundles { desert, menu, menuscene, we01, we01scene, we02, we02scene, we03, we03scene, we04, we04scene }
     public enum CareScene { DesertMenu, WE01_Onboarding, WE02_Jetty, WE03_Dawn, WE04_Finale }
     #endregion
 
     public class CareplaysManager : MonoBehaviour {
+
+        public static CareplaysManager instance = null;
 
         public List<CareSceneInfo> careSceneManifest = null;
 
@@ -26,10 +28,20 @@ namespace Paperticket {
         }
         IEnumerator Initialising() {
 
+            // Set as the CareplaysManager static instance
+            if (instance == null) {
+                instance = this;
+            } else if (instance != this) {
+                Destroy(gameObject);
+            }
+
+            // Wait for other utility scripts to be ready
             yield return new WaitUntil(() => PTUtilities.instance != null);
             yield return new WaitUntil(() => SceneUtilities.instance != null);
             yield return new WaitUntil(() => DataUtilities.instance != null);
+            yield return new WaitUntil(() => DataUtilities.instance.finishedInitialising = true);
 
+            // Load the first careplays scene
             if (loadFirstScene) LoadCareScene(firstScene);
         }
 

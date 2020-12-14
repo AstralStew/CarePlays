@@ -39,6 +39,38 @@ public class BuildAssetBundles : Editor {
 
     }
 
+    [MenuItem("Paperticket/Build Asset Bundles/Rename main OBB for PC")]
+    public static void RenameMainObbForPC() {
+
+        string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/PC Asset Bundles/";
+
+        string filePath = assetBundleDirectory + "main";
+        if (System.IO.File.Exists(filePath)) {
+            //System.IO.File.Move(filePath, assetBundleDirectory + "main." + PlayerSettings.Android.bundleVersionCode + ".com.StudioBento.RONE.obb");
+            System.IO.File.Move(filePath, assetBundleDirectory + "main." + PlayerSettings.Android.bundleVersionCode + "." + Application.identifier + ".obb");
+            Debug.LogWarning("[BuildBundles] SUCCESS -> Expansion file should be saved as '" + assetBundleDirectory + "main." + PlayerSettings.Android.bundleVersionCode + "." + Application.identifier + ".obb'");
+        } else {
+            Debug.LogError("[BuildBundles] ERROR -> Could not find '" + filePath + "'");
+        }
+
+    }
+
+    [MenuItem("Paperticket/Build Asset Bundles/Rename main OBB for Android")]
+    public static void RenameMainObbForAndroid() {
+
+        string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/Android Asset Bundles/";
+
+        string filePath = assetBundleDirectory + "main";
+        if (System.IO.File.Exists(filePath)) {
+            //System.IO.File.Move(filePath, assetBundleDirectory + "main." + PlayerSettings.Android.bundleVersionCode + ".com.StudioBento.RONE.obb");
+            System.IO.File.Move(filePath, assetBundleDirectory + "main." + PlayerSettings.Android.bundleVersionCode + "." + Application.identifier + ".obb");
+            Debug.LogWarning("[BuildBundles] SUCCESS -> Expansion file should be saved as '" + assetBundleDirectory + "main." + PlayerSettings.Android.bundleVersionCode + "." + Application.identifier + ".obb'");
+        } else {
+            Debug.LogError("[BuildBundles] ERROR -> Could not find '" + filePath + "'");
+        }
+
+    }
+
     [MenuItem("Paperticket/Build Asset Bundles/Open Bundle Directory...")]
     public static void OpenBundleDirectory() {
 
@@ -48,6 +80,14 @@ public class BuildAssetBundles : Editor {
         System.Diagnostics.Process.Start("explorer.exe", "/select," + assetBundleDirectory);
 
     }
+
+
+
+
+
+
+
+
 
     //[MenuItem("Paperticket/Build Asset Bundles")]
     public static void BuildBundles( BuildAssetBundleOptions buildAssetBundleOptions , string assetBundleDirectory ) {
@@ -64,7 +104,7 @@ public class BuildAssetBundles : Editor {
         BuildPipeline.BuildAssetBundles(assetBundleDirectory, buildAssetBundleOptions, EditorUserBuildSettings.activeBuildTarget);
 
         // Find the file and rename it
-        string filePath = assetBundleDirectory + "videos";
+        string filePath = assetBundleDirectory + "main";
         if (System.IO.File.Exists(filePath)) {
             //System.IO.File.Move(filePath, assetBundleDirectory + "main." + PlayerSettings.Android.bundleVersionCode + ".com.StudioBento.RONE.obb");
             System.IO.File.Move(filePath, assetBundleDirectory + "main." + PlayerSettings.Android.bundleVersionCode + "."+ Application.identifier + ".obb");

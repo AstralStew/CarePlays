@@ -89,6 +89,8 @@ namespace Paperticket {
 
 
 
+        public bool finishedInitialising;
+
         void Awake() {
 
             // Set this object as the DataUtilities instance
@@ -108,9 +110,10 @@ namespace Paperticket {
 
             //_ExpansionAssetBundle = AssetBundle.LoadFromFile(ExpansionFilePath + _ExpansionFileName);
 
-            if (autoloadFirstBundle) LoadAssetBundle(AssetBundles.we01);
+            //if (autoloadFirstBundle) LoadAssetBundle(AssetBundles.we01);
 
-
+            if (autoloadFirstBundle) LoadMainBundle();
+            else finishedInitialising = true;
 
             //if (debugging) Debug.Log("[DataUtilities]" + _ExpansionAssetBundle == null ? " Failed to load ExpansionAssetBundle" : " ExpansionAssetBundle successfully loaded!");
 
@@ -120,6 +123,10 @@ namespace Paperticket {
 
         #region Public loading/unloading bundle calls
 
+        void LoadMainBundle() {
+            if (debugging) Debug.Log("[DataUtilities] Attempting to load AssetBundle '" + ExpansionFileName + "'...");
+            StartCoroutine(LoadingMainAssetBundle());
+        }
 
         public void LoadAssetBundle( AssetBundles assetBundle ) {
 
@@ -148,6 +155,9 @@ namespace Paperticket {
             if (debugging) Debug.Log("[DataUtilities] Attempting to unload all loaded asset bundles (except main)");
             StartCoroutine(UnloadingAllAssetBundles(unloadAllLoadedObjects));
         }
+
+
+
 
 
         #endregion
@@ -186,6 +196,10 @@ namespace Paperticket {
         public AssetBundles[] GetLoadedBundles () {
             List<AssetBundles> bundleList = new List<AssetBundles>();            
             foreach(AssetBundle bundle in loadedBundles) {
+                if (bundle.name == "main") {
+                    if (debugging) Debug.Log("[DataUtilities] Skipping expansion file in GetLoadBundles...");
+                    continue;
+                }
                 bundleList.Add((AssetBundles)System.Enum.Parse(typeof(AssetBundles), bundle.name));
             }
             if (bundleList.Count > 0) return bundleList.ToArray();
@@ -219,11 +233,27 @@ namespace Paperticket {
             if (debugging) Debug.Log("[DataUtilities] AssetBundle '" + assetBundle.ToString() + "' successfully loaded!");
         }
 
+        IEnumerator LoadingMainAssetBundle() {
+            var bundleLoadRequest = AssetBundle.LoadFromFileAsync(ExpansionFilePath + ExpansionFileName);
+            yield return bundleLoadRequest;
+
+            var loadedBundle = bundleLoadRequest.assetBundle;
+            if (loadedBundle == null) {
+                Debug.LogError("[DataUtilities] ERROR -> Failed to load AssetBundle '"+ExpansionFileName+"'! Ignoring request, this is probably a fatal error :( ");
+                yield break;
+            }
+            loadedBundles.Add(loadedBundle);
+            if (debugging) Debug.Log("[DataUtilities] AssetBundle '"+ExpansionFileName+"' successfully loaded!");
+
+            finishedInitialising = true;
+        }
+
 
         IEnumerator UnloadingAllAssetBundles(bool unloadAllLoadedObjects) {
 
             for (int i = 0; i < loadedBundles.Count; i++) {
 
+                if (loadedBundles[i].name == ExpansionFileName) continue;
                 loadedBundles[i].Unload(unloadAllLoadedObjects);
                 yield return null;
 
@@ -326,7 +356,7 @@ namespace Paperticket {
         }
         Coroutine frameDebugCo;
         IEnumerator FrameDebugging() {
-            while (true) {
+            while (Application.isPlaying) {
                 Debug.Log("[DataUtilities] AssetBundle we01: " + isBundleLoaded(AssetBundles.we01) + "\n " +
                           "[DataUtilities] AssetBundle we02: " + isBundleLoaded(AssetBundles.we02) + "\n " +
                           "[DataUtilities] AssetBundle we03: " + isBundleLoaded(AssetBundles.we03) + "\n " +

@@ -11,6 +11,16 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
     #region Scene loading/unloading calls
 
+    public void LoadCareScene (CareScene sceneToLoad ) {
+        Debug.Log("[CrossSceneEventHelper] Attempting to load new care scene: " + sceneToLoad.ToString());
+        CareplaysManager.instance.LoadCareScene(sceneToLoad);
+    }
+
+
+    // NOTE: You shouldn't need to use these direct scene calls anymore
+    // All loading/unloading is done with the above LoadCareScene function
+    // (This also applies to the bundle loading/unloading further down)
+
     public void SwitchToScene( string sceneName, float invokeTime ) {
         StartCoroutine(WaitThenSwitchToScene(sceneName, invokeTime));
     }

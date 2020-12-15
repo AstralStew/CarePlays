@@ -38,6 +38,9 @@ namespace Paperticket {
         [SerializeField] bool moveToHead = false;
         [SerializeField] bool rotateToHead = false;
         [SerializeField] Vector3 initialRotation = Vector3.zero;
+        [Space(10)]
+        [SerializeField] bool rePrepareOnError = true;
+        [SerializeField] [Min(0)] float rePrepareDelay = 0.5f;
 
 
         [Header("AUDIO CONTROLS")]
@@ -305,6 +308,8 @@ namespace Paperticket {
         void VideoPlayerErrorReceived( VideoPlayer source, string message ) {
             Debug.LogError("[VideoController] VideoPlayer on '" + source.gameObject.name + "' error received! Error = " + message);
             videoPlayer.errorReceived -= VideoPlayerErrorReceived;
+
+            if (rePrepareOnError) StartCoroutine(RepreparingOnError());
         }
 
         #endregion
@@ -340,12 +345,14 @@ namespace Paperticket {
             if (debugging) Debug.Log("[VideoController] Video clip set to '" + clip.name + "'");
 
 
-            // Chucked this in here to test the above, put back in Start if necessary
-            StartCoroutine(PreparingVideo());
+            // Prepare the video, stopping any current preparation attempts in case of error
+            if (preppingVideoCo != null) StopCoroutine(preppingVideoCo);
+            preppingVideoCo = StartCoroutine(PreparingVideo());
 
         }
 
         // Start preparing the video and waits till its done
+        Coroutine preppingVideoCo;
         IEnumerator PreparingVideo() {
 
             if (debugging) Debug.Log("[VideoController] Starting video preparation");
@@ -372,6 +379,14 @@ namespace Paperticket {
                 if (debugging) Debug.Log("[VideoController] Autoplay is on, playing video!");
                 PlayVideo();
             }
+        }
+
+
+        IEnumerator RepreparingOnError() {
+            yield return new WaitForSeconds(rePrepareDelay);
+            Debug.LogWarning("[VideoController] Attempting to prepare video again after receiving error...");
+            if (preppingVideoCo != null) StopCoroutine(preppingVideoCo);
+            preppingVideoCo = StartCoroutine(PreparingVideo());
         }
 
 

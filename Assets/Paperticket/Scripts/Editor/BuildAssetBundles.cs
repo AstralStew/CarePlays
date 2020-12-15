@@ -13,7 +13,7 @@ public class BuildAssetBundles : Editor {
         BuildAssetBundleOptions buildAssetBundleOptions = BuildAssetBundleOptions.UncompressedAssetBundle;
         string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/Android Asset Bundles/";
 
-        BuildBundles(buildAssetBundleOptions, assetBundleDirectory);
+        BuildBundles(buildAssetBundleOptions, assetBundleDirectory, BuildTarget.Android);
     
     }
 
@@ -24,8 +24,9 @@ public class BuildAssetBundles : Editor {
 
         BuildAssetBundleOptions buildAssetBundleOptions = BuildAssetBundleOptions.ChunkBasedCompression;
         string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/PC Asset Bundles/"; 
+        
 
-        BuildBundles(buildAssetBundleOptions, assetBundleDirectory);
+        BuildBundles(buildAssetBundleOptions, assetBundleDirectory, BuildTarget.StandaloneWindows);
 
     }
 
@@ -90,7 +91,7 @@ public class BuildAssetBundles : Editor {
 
 
     //[MenuItem("Paperticket/Build Asset Bundles")]
-    public static void BuildBundles( BuildAssetBundleOptions buildAssetBundleOptions , string assetBundleDirectory ) {
+    public static void BuildBundles( BuildAssetBundleOptions buildAssetBundleOptions , string assetBundleDirectory, BuildTarget buildSettings ) {
 
         // Delete the directory above if it already exists
         if (System.IO.Directory.Exists(assetBundleDirectory)) 
@@ -101,7 +102,7 @@ public class BuildAssetBundles : Editor {
 
 
         // Build the asset bundles into the above directory
-        BuildPipeline.BuildAssetBundles(assetBundleDirectory, buildAssetBundleOptions, EditorUserBuildSettings.activeBuildTarget);
+        BuildPipeline.BuildAssetBundles(assetBundleDirectory, buildAssetBundleOptions, buildSettings);// EditorUserBuildSettings.activeBuildTarget);
 
 
         // Find the file and rename it

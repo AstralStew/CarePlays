@@ -32,8 +32,8 @@ namespace Paperticket {
                     bundleEvent.Invoke();
 
                     // Destroy this script if this is a one time use, otherwise reset
-                    if (OneTimeUse) {
-                        if (GetComponents<Component>().Length > 2) {
+                    if (OneTimeUse ) {
+                        if (GetComponents<Component>().Length > 2 || transform.childCount > 0) {
                             if (debug) Debug.Log("[TimedEvent] One time use is enabled, disabling this script");
                             Destroy(this);
                         } else {

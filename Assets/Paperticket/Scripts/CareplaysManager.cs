@@ -6,7 +6,8 @@ using UnityEngine;
 namespace Paperticket {
 
     #region public enums
-    public enum AssetBundles { desert, menu, menuscene, we01, we01scene, we02, we02scene, we03, we03scene, we04, we04scene }
+    public enum AssetBundles { desert, menu, menuscene, we01, we01scene, we02, we02scene, we03, we03scene, we04, we04scene,
+                                characters }
     public enum CareScene { DesertMenu, WE01_Onboarding, WE02_Jetty, WE03_Dawn, WE04_Finale }
     #endregion
 

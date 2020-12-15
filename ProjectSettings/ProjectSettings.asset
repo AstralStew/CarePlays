@@ -667,7 +667,7 @@ PlayerSettings:
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
     1: POSEIDON;POSEIDON_URP
-    7: POSEIDON;POSEIDON_URP
+    7: 
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}

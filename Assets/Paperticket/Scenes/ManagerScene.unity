@@ -99,7 +99,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1307,10 +1307,10 @@ MonoBehaviour:
     requiredBundles: 000000000100000002000000
   - sceneName: WorkExperience01 - Onboarding
     careScene: 1
-    requiredBundles: 000000000300000004000000
+    requiredBundles: 0000000003000000040000000b000000
   - sceneName: WorkExperience02 - Jetty
     careScene: 2
-    requiredBundles: 0500000006000000
+    requiredBundles: 05000000060000000b000000
   - sceneName: WorkExperience03 - Dawn
     careScene: 3
     requiredBundles: 0700000008000000

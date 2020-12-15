@@ -99,7 +99,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1318,7 +1318,7 @@ MonoBehaviour:
     careScene: 4
     requiredBundles: 090000000a000000
   loadFirstScene: 1
-  firstScene: 3
+  firstScene: 0
   debugging: 1
 --- !u!1 &1891529374
 GameObject:

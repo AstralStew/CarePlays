@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _LoadFirstScene: 0
-  _FirstSceneName: 
+  _FirstSceneName: WorkExperience02 - Jetty
   _Debug: 0
   convergeDynamicGI: 0
 --- !u!4 &1833220342
@@ -1318,7 +1318,7 @@ MonoBehaviour:
     careScene: 4
     requiredBundles: 090000000a000000
   loadFirstScene: 1
-  firstScene: 0
+  firstScene: 2
   debugging: 1
 --- !u!1 &1891529374
 GameObject:

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Signs_Atlas-mat
+  m_Name: Signs_Atlas
   m_Shader: {fileID: 4800000, guid: 0daa94f23f43f498b822cfbfc22c6689, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _CELPRIMARYMODE_SINGLE _SPECULARHIGHLIGHTS_OFF
     _UNITYSHADOWMODE_NONE

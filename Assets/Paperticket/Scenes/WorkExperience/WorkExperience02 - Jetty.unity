@@ -7827,7 +7827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &140227957
 Transform:
   m_ObjectHideFlags: 0
@@ -7841,6 +7841,7 @@ Transform:
   m_Children:
   - {fileID: 1383581181}
   - {fileID: 1339673067}
+  - {fileID: 836050570}
   m_Father: {fileID: 955115867}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16124,7 +16125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &416021800
 Transform:
   m_ObjectHideFlags: 0
@@ -16138,6 +16139,7 @@ Transform:
   m_Children:
   - {fileID: 8853443454888344655}
   - {fileID: 2627852945881774594}
+  - {fileID: 543450652373674255}
   m_Father: {fileID: 955115867}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21411,7 +21413,7 @@ Transform:
   - {fileID: 1104813236}
   - {fileID: 1103567589}
   m_Father: {fileID: 2143215529}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &459815249
 GameObject:
@@ -22663,7 +22665,7 @@ Transform:
   m_LocalScale: {x: 0.4771738, y: 0.4771738, z: 0.4771738}
   m_Children: []
   m_Father: {fileID: 2143215529}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -1.7350001, y: -45.518, z: 88.297005}
 --- !u!136 &524216954
 CapsuleCollider:
@@ -37353,6 +37355,85 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.012324382, y: 0.06508379, z: -0.0049225762}
     m_Extent: {x: 0.10455863, y: 0.13771842, z: 0.10895926}
   m_DirtyAABB: 0
+--- !u!1 &836050569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 836050570}
+  - component: {fileID: 836050572}
+  - component: {fileID: 836050571}
+  m_Layer: 0
+  m_Name: WE02_FishingChair (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &836050570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836050569}
+  m_LocalRotation: {x: -0, y: -0.27290657, z: -0, w: 0.96204054}
+  m_LocalPosition: {x: 2.211, y: 0.505, z: -0.703}
+  m_LocalScale: {x: 1.1625, y: 1.4225513, z: 1.1625}
+  m_Children: []
+  m_Father: {fileID: 140227957}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -31.675001, z: 0}
+--- !u!23 &836050571
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836050569}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7cc34bb569cbef54ba2d9faf898a3188, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &836050572
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836050569}
+  m_Mesh: {fileID: 2804519111850383331, guid: a07c0c258bdc9044fb78012e6d7d1002, type: 3}
 --- !u!1 &836202761
 GameObject:
   m_ObjectHideFlags: 0
@@ -38071,6 +38152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 860312962}
   - component: {fileID: 860312963}
+  - component: {fileID: 860312964}
   m_Layer: 0
   m_Name: '[VE] During first video'
   m_TagString: Untagged
@@ -38093,6 +38175,52 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &860312963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860312961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugging: 0
+  videoController: {fileID: 1966986431}
+  videoTimeBeforeEvent: 0.25
+  OneTimeUse: 1
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0.75
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 748428917}
+        m_MethodName: FadeHeadsetIn
+        m_Modes: 04000000
+      - m_Arguments: []
+        m_CallState: 2
+        m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Modes: 
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &860312964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44381,7 +44509,7 @@ Transform:
   - {fileID: 416021800}
   - {fileID: 140227957}
   m_Father: {fileID: 2143215529}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &962918384
 GameObject:
@@ -58642,7 +58770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339673066}
   m_LocalRotation: {x: -0, y: -0.38682476, z: -0, w: 0.92215323}
-  m_LocalPosition: {x: 1.579431, y: -0.003000021, z: -2.169249}
+  m_LocalPosition: {x: 1.601, y: -0.003000021, z: -2.206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1786030601}
@@ -59253,7 +59381,7 @@ Transform:
   - {fileID: 526015428}
   - {fileID: 1826645590}
   m_Father: {fileID: 2143215529}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1375880282
 GameObject:
@@ -59787,7 +59915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383581180}
   m_LocalRotation: {x: -0, y: -0.43104893, z: -0, w: 0.9023285}
-  m_LocalPosition: {x: 2.1256592, y: -0.0059999824, z: -1.5195923}
+  m_LocalPosition: {x: 2.066, y: -0.0059999824, z: -1.605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 967034038}
@@ -61734,26 +61862,6 @@ MonoBehaviour:
         m_Target: {fileID: 748428917}
         m_MethodName: SetControllerBeam
         m_Modes: 06000000
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 748428917}
-        m_MethodName: FadeHeadsetIn
-        m_Modes: 04000000
       - m_Arguments:
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
@@ -80044,7 +80152,7 @@ Transform:
   m_Children:
   - {fileID: 9056788319462077189}
   m_Father: {fileID: 2143215529}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1838373312
 GameObject:
@@ -80867,7 +80975,7 @@ Transform:
   - {fileID: 130268191}
   - {fileID: 1235713985}
   m_Father: {fileID: 2143215529}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1890715413
 MonoBehaviour:
@@ -91980,7 +92088,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 543450652373674255}
   - {fileID: 955115867}
   - {fileID: 1373191672}
   - {fileID: 1890715412}
@@ -92615,8 +92722,8 @@ Transform:
   m_LocalPosition: {x: 2.4231653, y: 0.505, z: -0.7255918}
   m_LocalScale: {x: 1.1625, y: 1.4225513, z: 1.1625}
   m_Children: []
-  m_Father: {fileID: 2143215529}
-  m_RootOrder: 0
+  m_Father: {fileID: 416021800}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -31.675001, z: 0}
 --- !u!4 &543450653279942452
 Transform:

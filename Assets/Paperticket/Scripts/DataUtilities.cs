@@ -221,7 +221,7 @@ namespace Paperticket {
         #region Bundle coroutines
 
         IEnumerator LoadingAssetBundle(AssetBundles assetBundle) {
-            var bundleLoadRequest = AssetBundle.LoadFromFileAsync(ExpansionFilePath + assetBundle.ToString());
+            var bundleLoadRequest = AssetBundle.LoadFromFileAsync(ExpansionFilePath + assetBundle.ToString() +".obb");
             yield return bundleLoadRequest;
 
             var loadedBundle = bundleLoadRequest.assetBundle;

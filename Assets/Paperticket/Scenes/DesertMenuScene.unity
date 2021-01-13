@@ -573,6 +573,11 @@ MonoBehaviour:
         m_Target: {fileID: 1754529104}
         m_MethodName: SetActive
         m_Modes: 06000000
+      - m_Arguments: []
+        m_CallState: 2
+        m_Target: {fileID: 399674544}
+        m_MethodName: ResetInduction
+        m_Modes: 01000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &133048136
@@ -1609,6 +1614,7 @@ Transform:
   m_Children:
   - {fileID: 133048134}
   - {fileID: 1888576968}
+  - {fileID: 693477212}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1819,6 +1825,77 @@ Transform:
   m_Father: {fileID: 595407306}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 112.42999, y: -154.427, z: -102.62201}
+--- !u!1 &693477211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693477212}
+  - component: {fileID: 693477213}
+  m_Layer: 8
+  m_Name: '[DE] Load IN01'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &693477212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693477211}
+  m_LocalRotation: {x: -0, y: 0.13026969, z: -0, w: 0.9914786}
+  m_LocalPosition: {x: 1.9376392, y: 2.1729999, z: 4.721566}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 537955110}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693477213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693477211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeEvent: 1.1
+  OneTimeUse: 1
+  debug: 1
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Paperticket.CareScene, Assembly-CSharp
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 399674544}
+        m_MethodName: LoadCareScene
+        m_Modes: 07000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &700126173
 GameObject:
   m_ObjectHideFlags: 0
@@ -4540,7 +4617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1754529105
 Transform:
   m_ObjectHideFlags: 0
@@ -4716,7 +4793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1817339410
 Transform:
   m_ObjectHideFlags: 0
@@ -4903,41 +4980,6 @@ MonoBehaviour:
         m_MethodName: FadeHeadsetOut
         m_Modes: 04000000
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.String, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: DesertMenuScene
-          m_BoolArgument: 0
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 1.1
-          m_StringArgument: 
-          m_BoolArgument: 0
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 399674544}
-        m_MethodName: LoadNextScene
-        m_Modes: 0500000004000000
-      - m_Arguments:
         - m_ObjectArgument: {fileID: 8300000, guid: 19bfdedb7f9016d4f86b42f75d53bd1a,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
@@ -4958,6 +5000,26 @@ MonoBehaviour:
         m_Target: {fileID: 1279792278}
         m_MethodName: PlayOneShot
         m_Modes: 02000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 693477211}
+        m_MethodName: SetActive
+        m_Modes: 06000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1875010031
@@ -5001,7 +5063,7 @@ GameObject:
   - component: {fileID: 1888576968}
   - component: {fileID: 1888576969}
   m_Layer: 8
-  m_Name: '[DE] Load WE01 Onboarding'
+  m_Name: '[DE] Load WE01'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

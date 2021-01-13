@@ -8,12 +8,61 @@ using UnityEngine.UI;
 public class CrossSceneEventHelper : MonoBehaviour {
 
 
-    #region Scene loading/unloading calls
-
-    public void LoadCareScene (CareScene sceneToLoad ) {
+    #region Careplays calls
+    
+    public void LoadCareScene( CareScene sceneToLoad ) {
         Debug.LogWarning("[CrossSceneEventHelper] Attempting to load new care scene: " + sceneToLoad.ToString());
         CareplaysManager.instance.LoadCareScene(sceneToLoad);
     }
+
+    public void CompleteInductionModule( CareScene moduleToComplete ) {
+        switch (moduleToComplete) {
+
+            case CareScene.IN02_Choice:
+                CareplaysManager.instance.IN01HonestyComplete = true;
+                CareplaysManager.instance.IN01VideoIndex += 1;
+                break;
+            case CareScene.IN03_Reporting:
+                CareplaysManager.instance.IN01ReportComplete = true;
+                CareplaysManager.instance.IN01VideoIndex += 1;
+                break;
+            case CareScene.IN04_Cigarette:
+                CareplaysManager.instance.IN01ChoiceComplete = true;
+                CareplaysManager.instance.IN01VideoIndex += 1;
+                break;
+            case CareScene.IN05_Family:
+                CareplaysManager.instance.IN01CulturalComplete = true;
+                CareplaysManager.instance.IN01VideoIndex += 1;
+                break;
+            case CareScene.IN06_Privacy:
+                CareplaysManager.instance.IN01PrivacyComplete = true;
+                CareplaysManager.instance.IN01VideoIndex += 1;
+                break;
+            case CareScene.IN07_Finale:
+            case CareScene.IN01_Modules:
+            case CareScene.DesertMenu:
+            case CareScene.WE01_Onboarding:
+            case CareScene.WE02_Jetty:
+            case CareScene.WE03_Dawn:
+            case CareScene.WE04_Finale:
+            default:
+                Debug.LogError("CrossSceneEventHelper] ERROR -> Bad Induction module received: " + moduleToComplete);
+                break;
+        }
+    }
+
+    public void ResetInduction() {
+        CareplaysManager.instance.IN01ChoiceComplete = false;
+        CareplaysManager.instance.IN01CulturalComplete = false;
+        CareplaysManager.instance.IN01HonestyComplete = false;
+        CareplaysManager.instance.IN01PrivacyComplete = false;
+        CareplaysManager.instance.IN01ReportComplete = false;
+        CareplaysManager.instance.IN01VideoIndex = 0;
+    }
+
+    #endregion
+
+    #region Scene loading/unloading calls
 
 
     // NOTE: You shouldn't need to use these direct scene calls anymore

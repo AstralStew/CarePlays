@@ -25,6 +25,7 @@ namespace Paperticket {
         [Header("VIDEO CONTROLS")]
         [Space(10)]
         [SerializeField] string currentVideoName ="";
+        [SerializeField] bool autoLoad = true;
         [SerializeField] bool autoPlay = true;
         public bool AutoPlay {
             get { return autoPlay; }
@@ -96,7 +97,8 @@ namespace Paperticket {
             videoPlayer.skipOnDrop = skipFramesOnDrop;
 
             videoPlayer.source = VideoSource.VideoClip;
-            StartCoroutine(LoadVideoClipFromBundle(currentVideoName));
+            
+            if (autoLoad) StartCoroutine(LoadVideoClipFromBundle(currentVideoName));
 
 
         }

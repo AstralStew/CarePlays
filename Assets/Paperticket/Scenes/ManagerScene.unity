@@ -400,16 +400,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13be47ebead3e294e8dc4059a79b61ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ExpansionFileName: 
   _bundleIdentifier: 1
-  autoloadFirstBundle: 1
-  _ExpansionAssetBundle: {fileID: 0}
-  loadedBundles: []
-  debugging: 1
-  frameDebugging: 0
+  autoloadMainBundle: 1
   loadProgressOnStart: 0
   StringKeys: []
   FloatKeys: []
+  debugging: 1
+  frameDebugging: 0
+  loadDebugBundles: 1
+  debugBundles: 0e0000000f000000
+  loadedBundles: []
   finishedInitialising: 0
 --- !u!4 &773205471
 Transform:
@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _LoadFirstScene: 0
-  _FirstSceneName: WorkExperience02 - Jetty
+  _FirstSceneName: Induction01 - Module Selection
   _Debug: 0
   convergeDynamicGI: 0
 --- !u!4 &1833220342
@@ -1317,9 +1317,36 @@ MonoBehaviour:
   - sceneName: WorkExperience04 - Finale
     careScene: 4
     requiredBundles: 090000000a000000
+  - sceneName: Induction01 - Module Selection
+    careScene: 5
+    requiredBundles: 0c0000000d000000
+  - sceneName: Induction02 - Make A Choice
+    careScene: 6
+    requiredBundles: 0e0000000f000000
+  - sceneName: Induction03 - Reporting Abuse
+    careScene: 7
+    requiredBundles: 1000000011000000
+  - sceneName: Induction04 - Cigarette Conundrum
+    careScene: 8
+    requiredBundles: 1200000013000000
+  - sceneName: Induction05 - Family Knowledge
+    careScene: 9
+    requiredBundles: 14000000150000000b000000
+  - sceneName: Induction06 - Privacy and Consent
+    careScene: 10
+    requiredBundles: 1600000017000000
+  - sceneName: Induction07 - Finale
+    careScene: 11
+    requiredBundles: 1800000019000000
   loadFirstScene: 1
   firstScene: 0
   debugging: 1
+  IN01HonestyComplete: 0
+  IN01ChoiceComplete: 0
+  IN01CulturalComplete: 0
+  IN01PrivacyComplete: 0
+  IN01ReportComplete: 0
+  IN01VideoIndex: 0
 --- !u!1 &1891529374
 GameObject:
   m_ObjectHideFlags: 0

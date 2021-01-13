@@ -7,13 +7,18 @@ namespace Paperticket {
 
     #region public enums
     public enum AssetBundles { desert, menu, menuscene, we01, we01scene, we02, we02scene, we03, we03scene, we04, we04scene,
-                                characters }
-    public enum CareScene { DesertMenu, WE01_Onboarding, WE02_Jetty, WE03_Dawn, WE04_Finale }
+                                characters, in01, in01scene, in02, in02scene, in03, in03scene, in04, in04scene, in05,
+                                 in05scene, in06, in06scene, in07, in07scene}
+    public enum CareScene { DesertMenu, WE01_Onboarding, WE02_Jetty, WE03_Dawn, WE04_Finale, IN01_Modules, IN02_Choice, 
+                             IN03_Reporting, IN04_Cigarette, IN05_Family, IN06_Privacy, IN07_Finale }
     #endregion
 
     public class CareplaysManager : MonoBehaviour {
 
         public static CareplaysManager instance = null;
+
+
+        [Header("CONTROLS")]
 
         public List<CareSceneInfo> careSceneManifest = null;
 
@@ -24,9 +29,34 @@ namespace Paperticket {
         [Space(10)] 
         [SerializeField] bool debugging = false;
 
+
+    [Header("LIVE VARIABLES")]
+        [Space(20)]
+        public bool IN01HonestyComplete = false;
+        public bool IN01ChoiceComplete = false;
+        public bool IN01CulturalComplete = false;
+        public bool IN01PrivacyComplete = false;
+        public bool IN01ReportComplete = false;
+        public int IN01VideoIndex = 0;
+
         void Awake() {
-            StartCoroutine(Initialising());
+            StartCoroutine(Initialising());          
+
         }
+        
+
+        #region Public functions
+
+        public void LoadCareScene( CareScene careScene ) {
+            if (debugging) Debug.Log("[CareplaysManager] Attempting to load CareScene '"+careScene.ToString()+"'...");
+            StartCoroutine(LoadingCareScene(careScene));
+        }
+
+        #endregion
+
+
+        #region Internal Coroutines
+
         IEnumerator Initialising() {
 
             if (!debugging) debugging = true;
@@ -47,13 +77,6 @@ namespace Paperticket {
             // Load the first careplays scene
             if (loadFirstScene) LoadCareScene(firstScene);
         }
-
-
-        public void LoadCareScene( CareScene careScene ) {
-            if (debugging) Debug.Log("[CareplaysManager] Attempting to load CareScene '"+careScene.ToString()+"'...");
-            StartCoroutine(LoadingCareScene(careScene));
-        }
-
 
         IEnumerator LoadingCareScene( CareScene careScene ) {
             CareSceneInfo newSceneInfo = null;
@@ -114,6 +137,8 @@ namespace Paperticket {
         }
 
 
+
+        #endregion
 
     }
 

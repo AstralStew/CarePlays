@@ -9,15 +9,14 @@ namespace Paperticket {
 
         public static DataUtilities instance = null;
 
-        // RONE obb expansion file was "main.1.com.StudioBento.RONE.obb";
 
-        [SerializeField] string _ExpansionFileName = null;
+
+        [Header("CONTROLS")]
         [Tooltip("WARNING - > Make sure this matches the Bundle Version in Player Settings for every new build!")]
         [SerializeField] int _bundleIdentifier = 1;
 
-        [SerializeField] bool autoloadFirstBundle = true;
-
-
+        [SerializeField] bool autoloadMainBundle = true;
+        
         #region Expansion Paths
 
         public string ExpansionFilePath {
@@ -61,34 +60,35 @@ namespace Paperticket {
 
         #endregion
 
-        public AssetBundle _ExpansionAssetBundle = null;
+               
 
-        public List<AssetBundle> loadedBundles = null;
+        [Header("PRELOADED PROGRESS DATA")]
+        [Space(20)]
+        public bool loadProgressOnStart = false;
 
-
-
-
-
+        [SerializeField] List<string> StringKeys = null;
+        [SerializeField] List<ProgressFloat> FloatKeys = null;
+        
         [System.Serializable]
         class ProgressFloat {
             public string String = "";
             public float Float = 0;
         }
 
+               
+
+        [Header("DEBUG OPTIONS")]
+        [Space(20)]
         [SerializeField] bool debugging = false;
         [SerializeField] bool frameDebugging = false;
+        [Space(10)]
+        [SerializeField] bool loadDebugBundles = false;
+        [SerializeField] List<AssetBundles> debugBundles = null;
 
-
-
-        [Header("Preloaded Progress Data")]
+        [Header("LIVE VARIABLES")]
         [Space(20)]
-        public bool loadProgressOnStart = false;
-
-        [SerializeField] List<string> StringKeys = null;
-        [SerializeField] List<ProgressFloat> FloatKeys = null;
-
-
-
+        public List<AssetBundle> loadedBundles = null;
+        [Space(20)]
         public bool finishedInitialising;
 
         void Awake() {
@@ -103,17 +103,21 @@ namespace Paperticket {
             // Load the player's progress
             if (loadProgressOnStart) LoadPlayerProgress();
 
-            // Load and save a reference to the expansion asset bundle containing the videos        
-            //_ExpansionFileName = "main." + _bundleIdentifier + "." + Application.identifier + ".obb";
-            _ExpansionFileName = ExpansionFileName;
-            if (debugging) Debug.Log("[DataUtilities] Attempting to grab ExpansionAssetBundle from: " + ExpansionFilePath + _ExpansionFileName);
+            // Load and save a reference to the expansion asset bundle    
+            if (debugging) Debug.Log("[DataUtilities] Attempting to grab ExpansionAssetBundle from: " + ExpansionFilePath + ExpansionFileName);
 
-            //_ExpansionAssetBundle = AssetBundle.LoadFromFile(ExpansionFilePath + _ExpansionFileName);
+            // Load debug bundles if necessary
+            if (loadDebugBundles) {
+                if (debugBundles.Count > 0) {
+                    StartCoroutine(LoadingDebugBundles());
+                }
+            }
 
-            //if (autoloadFirstBundle) LoadAssetBundle(AssetBundles.we01);
-
-            if (autoloadFirstBundle) LoadMainBundle();
+            // If checked, load the main bundle
+            if (autoloadMainBundle) LoadMainBundle();
             else finishedInitialising = true;
+
+
 
             //if (debugging) Debug.Log("[DataUtilities]" + _ExpansionAssetBundle == null ? " Failed to load ExpansionAssetBundle" : " ExpansionAssetBundle successfully loaded!");
 
@@ -263,7 +267,18 @@ namespace Paperticket {
         }
 
 
+        IEnumerator LoadingDebugBundles() {
+            foreach (AssetBundles newBundle in debugBundles) {
+                if (!isBundleLoaded(newBundle)) {
+                    LoadAssetBundle(newBundle);
+                    yield return new WaitUntil(() => isBundleLoaded(newBundle));
+                }
+            }
+        }
+
+
         #endregion
+
 
 
 

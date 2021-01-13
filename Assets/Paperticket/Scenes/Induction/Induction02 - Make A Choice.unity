@@ -121,7 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &138914079
+--- !u!1 &46151145
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,80 +129,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 138914080}
-  - component: {fileID: 138914081}
-  m_Layer: 8
-  m_Name: Graphics
+  - component: {fileID: 46151146}
+  m_Layer: 0
+  m_Name: '[ENV] Contacting Choice'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &138914080
+  m_IsActive: 0
+--- !u!4 &46151146
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138914079}
+  m_GameObject: {fileID: 46151145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 760524782}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &138914081
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138914079}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 1
-  m_Size: {x: 0.5, y: 0.15}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &251826326
+--- !u!1 &210391757
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,42 +159,145 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 251826327}
-  - component: {fileID: 251826328}
-  m_Layer: 8
-  m_Name: Collider
+  - component: {fileID: 210391758}
+  - component: {fileID: 210391760}
+  - component: {fileID: 210391759}
+  m_Layer: 0
+  m_Name: '[DE] Switch videos'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &251826327
+  m_IsActive: 0
+--- !u!4 &210391758
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251826326}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 210391757}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 760524782}
+  m_Father: {fileID: 513654975}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &251826328
-BoxCollider:
+--- !u!114 &210391759
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251826326}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 210391757}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.15, z: 0.05}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeEvent: 1.25
+  OneTimeUse: 1
+  debug: 0
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1582088603}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &210391760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210391757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeEvent: 1.1
+  OneTimeUse: 1
+  debug: 0
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.String, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: IN02b_CarChoice2
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1934923455}
+        m_MethodName: SetNextVideo
+        m_Modes: 05000000
+      - m_Arguments: []
+        m_CallState: 2
+        m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Modes: 
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!1 &411738456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 411738457}
+  m_Layer: 0
+  m_Name: '[ENV] Paying Choice'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &411738457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411738456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &513654974
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,585 +326,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1193320571}
+  - {fileID: 210391758}
+  - {fileID: 1582088604}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &562770603
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 562770604}
-  - component: {fileID: 562770607}
-  - component: {fileID: 562770606}
-  - component: {fileID: 562770605}
-  m_Layer: 8
-  m_Name: ButtonInteractable_CigaretteConundrum
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &562770604
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562770603}
-  m_LocalRotation: {x: -0, y: -0.13052589, z: -0, w: 0.99144495}
-  m_LocalPosition: {x: -0.624, y: 0.98, z: 2.94}
-  m_LocalScale: {x: 1.4047, y: 1.4047, z: 1.4047}
-  m_Children:
-  - {fileID: 1176613406}
-  - {fileID: 818510820}
-  m_Father: {fileID: 645670583}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -15.000001, z: 0}
---- !u!114 &562770605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562770603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 818510821}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_OnFirstHoverEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 562770607}
-        m_MethodName: HoverOn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 562770607}
-        m_MethodName: HoverOff
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnLastHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 562770607}
-        m_MethodName: Select
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1760068396}
-        m_MethodName: LoadNextScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Induction03 - Cigarette Conundrum
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CustomReticle: {fileID: 0}
---- !u!54 &562770606
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562770603}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &562770607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562770603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c66917dc2c3e014c97fe4305b54c23e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugging: 1
-  genRenderer: {fileID: 0}
-  imageRenderer: {fileID: 0}
-  fadeTime: 0.5
-  defaultColor: {r: 1, g: 1, b: 1, a: 0.5}
-  hoveredColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  usedColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
-  oneUse: 1
-  locked: 0
-  selectEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!1 &645670582
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 645670583}
-  m_Layer: 0
-  m_Name: '[ENV] Module Selection'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &645670583
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645670582}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1068947718}
-  - {fileID: 562770604}
-  - {fileID: 760524782}
-  - {fileID: 1729185357}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &740751827
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 740751828}
-  - component: {fileID: 740751829}
-  m_Layer: 8
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &740751828
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740751827}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1729185357}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &740751829
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740751827}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.15, z: 0.05}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &760524781
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 760524782}
-  - component: {fileID: 760524785}
-  - component: {fileID: 760524784}
-  - component: {fileID: 760524783}
-  m_Layer: 8
-  m_Name: ButtonInteractable_KinshipLesson
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &760524782
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760524781}
-  m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0.624, y: 1.48, z: 2.94}
-  m_LocalScale: {x: 1.4047, y: 1.4047, z: 1.4047}
-  m_Children:
-  - {fileID: 138914080}
-  - {fileID: 251826327}
-  m_Father: {fileID: 645670583}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
---- !u!114 &760524783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760524781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 251826328}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_OnFirstHoverEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 760524785}
-        m_MethodName: HoverOn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 760524785}
-        m_MethodName: HoverOff
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnLastHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 760524785}
-        m_MethodName: Select
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1760068396}
-        m_MethodName: LoadNextScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Induction04 - Kinship Lesson
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CustomReticle: {fileID: 0}
---- !u!54 &760524784
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760524781}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &760524785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760524781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c66917dc2c3e014c97fe4305b54c23e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugging: 1
-  genRenderer: {fileID: 0}
-  imageRenderer: {fileID: 0}
-  fadeTime: 0.5
-  defaultColor: {r: 1, g: 1, b: 1, a: 0.5}
-  hoveredColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  usedColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
-  oneUse: 1
-  locked: 0
-  selectEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!1 &812120670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 812120671}
-  - component: {fileID: 812120672}
-  m_Layer: 8
-  m_Name: Graphics
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &812120671
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812120670}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1068947718}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &812120672
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812120670}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 1
-  m_Size: {x: 0.5, y: 0.15}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &818510819
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 818510820}
-  - component: {fileID: 818510821}
-  m_Layer: 8
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &818510820
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818510819}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 562770604}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &818510821
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818510819}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.15, z: 0.05}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &853860168
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 853860170}
-  - component: {fileID: 853860169}
-  m_Layer: 8
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &853860169
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853860168}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.15, z: 0.05}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &853860170
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853860168}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1068947718}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898876466
 GameObject:
@@ -882,173 +359,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1760068395}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1068947714
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1068947718}
-  - component: {fileID: 1068947716}
-  - component: {fileID: 1068947717}
-  - component: {fileID: 1068947715}
-  m_Layer: 8
-  m_Name: ButtonInteractable_GameShow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1068947715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068947714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 853860169}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_OnFirstHoverEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1068947716}
-        m_MethodName: HoverOn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1068947716}
-        m_MethodName: HoverOff
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnLastHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1068947716}
-        m_MethodName: Select
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1760068396}
-        m_MethodName: LoadNextScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Induction02 - GameShow
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CustomReticle: {fileID: 0}
---- !u!114 &1068947716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068947714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c66917dc2c3e014c97fe4305b54c23e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugging: 1
-  genRenderer: {fileID: 0}
-  imageRenderer: {fileID: 0}
-  fadeTime: 0.5
-  defaultColor: {r: 1, g: 1, b: 1, a: 0.5}
-  hoveredColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  usedColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
-  oneUse: 1
-  locked: 0
-  selectEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!54 &1068947717
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068947714}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!4 &1068947718
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068947714}
-  m_LocalRotation: {x: -0, y: -0.13052589, z: -0, w: 0.99144495}
-  m_LocalPosition: {x: -0.624, y: 1.48, z: 2.94}
-  m_LocalScale: {x: 1.4047, y: 1.4047, z: 1.4047}
-  m_Children:
-  - {fileID: 812120671}
-  - {fileID: 853860170}
-  m_Father: {fileID: 645670583}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -15.000001, z: 0}
 --- !u!1 &1141337850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,87 +489,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1176613405
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1176613406}
-  - component: {fileID: 1176613407}
-  m_Layer: 8
-  m_Name: Graphics
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1176613406
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176613405}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 562770604}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1176613407
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176613405}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 1
-  m_Size: {x: 0.5, y: 0.15}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1193320570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,7 +498,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1193320571}
+  - component: {fileID: 1193320574}
   - component: {fileID: 1193320572}
+  - component: {fileID: 1193320573}
   m_Layer: 0
   m_Name: '[VE] During first video'
   m_TagString: Untagged
@@ -1303,14 +536,136 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugging: 0
   videoController: {fileID: 1934923455}
-  videoTimeBeforeEvent: 0
+  videoTimeBeforeEvent: 61
   OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 411738456}
+        m_MethodName: SetActive
+        m_Modes: 06000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &1729185356
+--- !u!114 &1193320573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193320570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugging: 1
+  videoController: {fileID: 1934923455}
+  videoTimeBeforeEvent: 103
+  OneTimeUse: 1
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: FadeHeadsetToBlack
+        m_Modes: 04000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 210391757}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1193320574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193320570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugging: 0
+  videoController: {fileID: 1934923455}
+  videoTimeBeforeEvent: 0.25
+  OneTimeUse: 1
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0.75
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: FadeHeadsetIn
+        m_Modes: 04000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!1 &1369930885
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1318,161 +673,379 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1729185357}
-  - component: {fileID: 1729185360}
-  - component: {fileID: 1729185359}
-  - component: {fileID: 1729185358}
-  m_Layer: 8
-  m_Name: ButtonInteractable_PrivacyAndConsent
+  - component: {fileID: 1369930886}
+  - component: {fileID: 1369930887}
+  m_Layer: 0
+  m_Name: '[DE] Initial events'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1729185357
+--- !u!4 &1369930886
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729185356}
-  m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0.624, y: 0.98, z: 2.94}
-  m_LocalScale: {x: 1.4047, y: 1.4047, z: 1.4047}
-  m_Children:
-  - {fileID: 1791456023}
-  - {fileID: 740751828}
-  m_Father: {fileID: 645670583}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
---- !u!114 &1729185358
+  m_GameObject: {fileID: 1369930885}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1760068395}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369930887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729185356}
+  m_GameObject: {fileID: 1369930885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 740751829}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_OnFirstHoverEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEnter:
+  timeBeforeEvent: 0.05
+  OneTimeUse: 1
+  debug: 0
+  OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1729185360}
-        m_MethodName: HoverOn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 898876467}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         m_CallState: 2
-  m_OnHoverExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1729185360}
-        m_MethodName: HoverOff
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_Target: {fileID: 1760068396}
+        m_MethodName: TeleportPlayer
+        m_Modes: 02000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         m_CallState: 2
-  m_OnLastHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1729185360}
-        m_MethodName: Select
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_Target: {fileID: 1760068396}
+        m_MethodName: SetControllerBeam
+        m_Modes: 06000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1934923452}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 7718390321619097753}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.MeshRenderer, UnityEngine.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1760068396}
-        m_MethodName: LoadNextScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Induction05 - Privacy and Consent
+          m_FloatArgument: 1
+          m_StringArgument: 
           m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         m_CallState: 2
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CustomReticle: {fileID: 0}
---- !u!54 &1729185359
-Rigidbody:
+        m_Target: {fileID: 0}
+        m_MethodName: SetMeshAlpha
+        m_Modes: 0200000004000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!1 &1582088603
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729185356}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1729185360
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1582088604}
+  - component: {fileID: 1582088608}
+  - component: {fileID: 1582088607}
+  - component: {fileID: 1582088606}
+  - component: {fileID: 1582088605}
+  m_Layer: 0
+  m_Name: '[VE] During second video'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1582088604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582088603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 513654975}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1582088605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729185356}
+  m_GameObject: {fileID: 1582088603}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeEvent: 1.1
+  OneTimeUse: 1
+  debug: 0
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Paperticket.CareScene, Assembly-CSharp
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: CompleteInductionModule
+        m_Modes: 07000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Paperticket.CareScene, Assembly-CSharp
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: LoadCareScene
+        m_Modes: 07000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1582088606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582088603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c66917dc2c3e014c97fe4305b54c23e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debugging: 1
-  genRenderer: {fileID: 0}
-  imageRenderer: {fileID: 0}
-  fadeTime: 0.5
-  defaultColor: {r: 1, g: 1, b: 1, a: 0.5}
-  hoveredColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  usedColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
-  oneUse: 1
-  locked: 0
-  selectEvent:
+  videoController: {fileID: 1934923455}
+  videoTimeBeforeEvent: 90
+  OneTimeUse: 1
+  OnEventTriggered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: FadeHeadsetToBlack
+        m_Modes: 04000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1582088605}
+        m_MethodName: set_enabled
+        m_Modes: 06000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1582088607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582088603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugging: 0
+  videoController: {fileID: 1934923455}
+  videoTimeBeforeEvent: 55.5
+  OneTimeUse: 1
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 46151145}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1582088608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582088603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugging: 0
+  videoController: {fileID: 1934923455}
+  videoTimeBeforeEvent: 0.25
+  OneTimeUse: 1
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0.75
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: FadeHeadsetIn
+        m_Modes: 04000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1760068394
@@ -1503,6 +1076,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1369930886}
   - {fileID: 898876467}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1519,87 +1093,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7641197479f5944aaecc732d472916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1791456022
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1791456023}
-  - component: {fileID: 1791456024}
-  m_Layer: 8
-  m_Name: Graphics
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1791456023
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791456022}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1729185357}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1791456024
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791456022}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 1
-  m_Size: {x: 0.5, y: 0.15}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1934923452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,8 +1175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1934923453}
-  requiredBundle: 0
-  currentVideoName: IN01_IntroTest1
+  requiredBundle: 14
+  currentVideoName: IN02a_CarChoice1
+  autoLoad: 1
   autoPlay: 1
   skipFramesOnDrop: 1
   moveToHead: 0
@@ -1693,34 +1187,10 @@ MonoBehaviour:
   rePrepareDelay: 0.5
   externalAudio: 0
   externalAudioSource: {fileID: 0}
-  earlyFinishDuration: 0.5
+  earlyFinishDuration: 0.05
   pauseVideoOnFinish: 1
-  _UseFinishEvents: 1
-  _FinishEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 645670582}
-        m_MethodName: SetActive
-        m_Modes: 06000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  _UseFinishEvents: 0
+  _FinishEvents: []
   datapath: 
   videoLoaded: 0
   videoStarted: 0

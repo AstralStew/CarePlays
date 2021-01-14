@@ -4026,6 +4026,11 @@ MonoBehaviour:
         m_Target: {fileID: 1760068396}
         m_MethodName: FadeHeadsetIn
         m_Modes: 04000000
+      - m_Arguments: []
+        m_CallState: 2
+        m_Target: {fileID: 1934923455}
+        m_MethodName: SyncExternalAudio
+        m_Modes: 01000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &744948307
@@ -5778,6 +5783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1075451334}
+  - component: {fileID: 1075451337}
   - component: {fileID: 1075451335}
   - component: {fileID: 1075451336}
   m_Layer: 0
@@ -5900,6 +5906,32 @@ MonoBehaviour:
         m_Target: {fileID: 1760068396}
         m_MethodName: LoadCareScene
         m_Modes: 07000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1075451337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075451333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugging: 0
+  videoController: {fileID: 1934923455}
+  videoTimeBeforeEvent: 0.25
+  OneTimeUse: 1
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments: []
+        m_CallState: 2
+        m_Target: {fileID: 1934923455}
+        m_MethodName: SyncExternalAudio
+        m_Modes: 01000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1078954392
@@ -10961,7 +10993,7 @@ MonoBehaviour:
         m_MethodName: SetNextVideo
         m_Modes: 05000000
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: 5a20116409567724088180e4dbaf9a4e,
+        - m_ObjectArgument: {fileID: 8300000, guid: 97ee7dfd49484fc4096d26044f46d36f,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -12085,6 +12117,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 1934923453}
   requiredBundle: 3
   currentVideoName: WE01a_IntroStart
+  autoLoad: 1
   autoPlay: 1
   skipFramesOnDrop: 1
   moveToHead: 1

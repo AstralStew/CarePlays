@@ -115,6 +115,7 @@ namespace Paperticket {
                 // The current time of the video playthrough
                 currentVideoTime = (float)videoPlayer.time;
                 currentFrames = videoPlayer.frame;
+            
             }            
 
             if (!videoPlayer.isLooping && videoStarted && !videoEnded && (videoPlayer.frame >= endFrames)) {
@@ -248,6 +249,15 @@ namespace Paperticket {
 
             videoEnded = true;
         }
+
+        public void SyncExternalAudio() {
+            if (!externalAudio) {
+                Debug.LogWarning("[VideoController] Not using external audio, ignoring Sync External Audio");
+                return;
+            }
+            externalAudioSource.time = (float)videoPlayer.time;
+        }
+
 
         #endregion
 

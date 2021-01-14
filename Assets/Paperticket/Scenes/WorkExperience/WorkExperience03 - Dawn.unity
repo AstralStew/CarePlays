@@ -1266,7 +1266,7 @@ MonoBehaviour:
         m_MethodName: SetNextVideo
         m_Modes: 05000000
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: 837933bac6217374e907bc70580d3b89,
+        - m_ObjectArgument: {fileID: 8300000, guid: e0382b000024c5c4a857ca6fa6d63cef,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -4989,6 +4989,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 1934923453}
   requiredBundle: 7
   currentVideoName: WE03a_RespiteIntro
+  autoLoad: 1
   autoPlay: 1
   skipFramesOnDrop: 1
   moveToHead: 1

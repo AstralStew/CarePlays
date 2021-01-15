@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Desert_GrassMat
   m_Shader: {fileID: 4800000, guid: 0daa94f23f43f498b822cfbfc22c6689, type: 3}
-  m_ShaderKeywords: _CELPRIMARYMODE_SINGLE _UNITYSHADOWMODE_NONE
+  m_ShaderKeywords: _CELPRIMARYMODE_SINGLE _UNITYSHADOWMODE_MULTIPLY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
@@ -104,8 +104,8 @@ Material:
     - _SrcBlend: 5
     - _Surface: 1
     - _TextureImpact: 1
-    - _UnityShadowMode: 0
-    - _UnityShadowPower: 0.2
+    - _UnityShadowMode: 1
+    - _UnityShadowPower: 0.591
     - _UnityShadowSharpness: 1
     - _VertexColorsEnabled: 0
     - _WorkflowMode: 1

@@ -401,7 +401,7 @@ AudioSource:
   m_GameObject: {fileID: 1141337850}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: f175a44f6bb1dac4cad2f5d1318b74d8,
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 8d21d4b7044f4c6419316534b6873658,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -409,7 +409,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 1
+  Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -449,7 +449,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -806,7 +806,7 @@ MonoBehaviour:
             m_Bits: 0
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         m_CallState: 2
-        m_Target: {fileID: 0}
+        m_Target: {fileID: 1760068396}
         m_MethodName: SetMeshAlpha
         m_Modes: 0200000004000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,

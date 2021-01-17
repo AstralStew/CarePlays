@@ -514,7 +514,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 8d21d4b7044f4c6419316534b6873658,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6cea3f773e2b6e54db056d084f224455, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f876566c24c7cc542915cfa2edaea9fd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -760,6 +760,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 1934923453}
   requiredBundle: 9
   currentVideoName: WE04a_Outro
+  autoLoad: 1
   autoPlay: 1
   skipFramesOnDrop: 1
   moveToHead: 0

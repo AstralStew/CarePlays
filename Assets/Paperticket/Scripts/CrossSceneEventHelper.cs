@@ -297,17 +297,20 @@ public class CrossSceneEventHelper : MonoBehaviour {
     public void SetMeshAlpha (MeshRenderer mesh, float alpha ) {
 
         Material mat = mesh.material;
-        string propertyName = "";
-
-        propertyName = mat.HasProperty("_BaseColor") ? "_BaseColor" : mat.HasProperty("_Color") ? "_Color" : "";
+        
+        string propertyName = mat.HasProperty("_BaseColor") ? "_BaseColor" : mat.HasProperty("_Color") ? "_Color" : "";
         if (propertyName == "") {
             Debug.LogError("[CrossSceneEventHelper] ERROR -> Could not find property name of material! Cancelling set mesh alpha.");
+            return;
         }
 
         if (mat.GetColor(propertyName).a != alpha) {
             Color col = mat.GetColor(propertyName);
             mat.SetColor(propertyName, new Color(col.r, col.g, col.b, alpha));
         }
+
+        if (alpha == 0) mesh.enabled = false;
+        else mesh.enabled = true;
         
 
     }

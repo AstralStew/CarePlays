@@ -1,50 +1,71 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace Paperticket
-{
-    public class IN04KinshipGame : MonoBehaviour
-    {
-        [Header("References")]
+namespace Paperticket {
+    public class IN04KinshipGame : MonoBehaviour {
+
+        [Header("REFERENCES")]
         [SerializeField] KinshipPerson[] selectablePeople;
         [SerializeField] KinshipPerson[] lockedPeople;
         [SerializeField] KinshipChair[] allChairs;
+        [SerializeField] Transform selectionMarker; 
 
-        [Header("Controls")]
+        [Header("CONTROLS")]
+        [Space(10)]
+        [SerializeField] float markerHeight;
         [SerializeField] float timeToReset;
+        [SerializeField] UnityEvent2 OnReset;
+        [SerializeField] UnityEvent2 OnFinish;
+        [SerializeField] UnityEvent2 OnExtraChair;
 
-        [Header("Read Only")]
+
+        [Header("LIVE VARIABLES")]
+        [Space(10)]
         public bool GameActive = false;
         [SerializeField] KinshipPerson currentPerson = null;
         [SerializeField] int peopleIndex = 0;
+
+        
                 
 
         // Start is called before the first frame update
         void Start() {
             peopleIndex = 0;
             currentPerson = selectablePeople[0];
+        }
+
+        public void StartGame() {
             currentPerson.SelectPerson();
             GameActive = true;
+            TransformMarker();
         }
 
         public void SetPersonToChair( KinshipChair chair ) {
             if (!GameActive) return;
 
             // Move person to chair and disable it
-            currentPerson.SeatPerson(chair.transform);                        
+            currentPerson.SeatPerson(chair.attachPoint);                        
             chair.DisableChair();
 
             // Check if we are up to Malcolm yet
             if (currentPerson == selectablePeople[3]) {
-                
+
                 // End the game if the chair can seat Malcolm
-                if (chair.CanSeatMalcolm) EndGame();
+                if (chair.CanSeatMalcolm) {
+
+                    if (chair.IsExtraSeat && OnExtraChair != null) OnExtraChair.Invoke();
+
+                    EndGame();
+                }
 
                 // Reset the game if the chair cannot seat Malcolm
                 else {
-                    currentPerson.WrongChoice();
-                    lockedPeople[0].WrongChoice();
+                    foreach (KinshipPerson person in selectablePeople) person.WrongChoice();
+                    foreach (KinshipPerson person in lockedPeople) person.WrongChoice();
+                    //currentPerson.WrongChoice();
+                    //lockedPeople[0].WrongChoice();
                     StartCoroutine(WaitToReset());
                 }
 
@@ -53,6 +74,7 @@ namespace Paperticket
                 peopleIndex += 1;
                 currentPerson = selectablePeople[peopleIndex];
                 currentPerson.SelectPerson();
+                TransformMarker();
             }
 
         }
@@ -64,35 +86,34 @@ namespace Paperticket
 
             // Wait a few secs then reset
             yield return new WaitForSeconds(timeToReset);
-            ResetGame();
-        }
-        void ResetGame() {
-            
-            // Reset all people
-            foreach (KinshipPerson person in selectablePeople) { person.ResetPerson(); }
-            foreach (KinshipPerson person in lockedPeople) { person.ResetPerson(); }
-            
-            // Reset all chairs
-            foreach (KinshipChair chair in allChairs) {
-                chair.ResetChair();
-            }
 
             peopleIndex = 0;
             currentPerson = selectablePeople[0];
-            currentPerson.SelectPerson();
-            GameActive = true;
+
+            if (OnReset != null) OnReset.Invoke();
         }
 
         void EndGame() {
-
-            // Turn everyone green in celebration
-            foreach (KinshipPerson person in selectablePeople) { person.SelectPerson(); }
-            foreach (KinshipPerson person in lockedPeople) { person.SelectPerson(); }
-
+            
             GameActive = false;
+
+            foreach (KinshipPerson person in selectablePeople) person.Finish();
+            foreach (KinshipPerson person in lockedPeople) person.Finish();
+
+            if (OnFinish != null) OnFinish.Invoke();
+
         }
 
+        void TransformMarker() {
 
+            if (GameActive) {
+                selectionMarker.position = currentPerson.transform.position + (Vector3.up * markerHeight);
+                selectionMarker.gameObject.SetActive(true);
+            } else {
+                selectionMarker.gameObject.SetActive(false);
+            }
+
+        }
 
         
     }

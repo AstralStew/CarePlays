@@ -2,19 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Events;
 
 namespace Paperticket {
     public class KinshipChair : MonoBehaviour {
 
         protected XRBaseInteractable baseInteractable;
 
+        [Header("REFERENCES")]
         [SerializeField] IN04KinshipGame KinshipGame;
+        public Transform attachPoint;
+
+        [Header("CONTROLS")]
+        [Space(10)]
+        public bool CanSeatMalcolm = false;
+        public bool IsExtraSeat = false;
+        [Space(5)]
+        [SerializeField] bool debugging;
+        [Space(5)]
+        [SerializeField] UnityEvent2 OnSeated;
+        [SerializeField] UnityEvent2 OnEmptied;
+
+        [Header("LIVE VARIABLES")]
+        [Space(15)]
 
         public bool Active = false;
 
-        public bool CanSeatMalcolm = false;
-
-        [SerializeField] bool debugging;
 
         Material mat;
         Color defaultColor;
@@ -40,7 +53,7 @@ namespace Paperticket {
                 gameObject.SetActive(false);
             }
             mat = mesh.material;
-            defaultColor = mat.GetColor("_BaseColor");
+            defaultColor = mat.GetColor("_Color");
 
         }
 
@@ -48,7 +61,7 @@ namespace Paperticket {
         public virtual void HoverOn ( XRBaseInteractor interactor ) {
             if (!Active) return;
 
-            mat.SetColor("_BaseColor", Color.cyan);
+            mat.SetColor("_Color", Color.cyan);
             if (debugging) Debug.Log("[KinshipChair] Hover on!");
         }
 
@@ -56,7 +69,7 @@ namespace Paperticket {
         public virtual void HoverOff( XRBaseInteractor interactor ) {
             if (!Active) return;
 
-            mat.SetColor("_BaseColor", defaultColor);
+            mat.SetColor("_Color", defaultColor);
             if (debugging) Debug.Log("[KinshipChair] Hover off!");
         }
 

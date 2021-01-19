@@ -7,31 +7,32 @@ namespace Paperticket {
         public enum TaliaAnimations { T_Pose, Standing_Idle, Acknowledging, Head_Nod, Talking_1, Talking_2, Clap_Knows_Some_Things, Clap_Out,
                                         Stand_To_Sit, Sitting_Idle, Sit_To_Stand }
 
-        public enum TaliaFaceAnimations { Idle_Blink, Grin_Blink, Talking_Blink }
+        public enum TaliaFaceAnimations { IdleBlink, GrinBlink, TalkingBlink, Smug }
 
 
-        [Header("CONTROLS")]
+        [Header("BODY CONTROLS")]
         [Space(10)]
         [SerializeField] TaliaAnimations startingPose = TaliaAnimations.Standing_Idle;
-        [Space(10)]
+        [Space(5)]
         [SerializeField] [Min(0)] float startDelay = 0;
         [SerializeField] bool randomiseDelay = false;
 
-
+        [Header("FACE CONTROLS")]
         [Space(10)]
         [SerializeField] Animator faceAnimator = null;
-        [SerializeField] TaliaFaceAnimations startingFace = TaliaFaceAnimations.Idle_Blink;
+        [Space(5)]
+        [SerializeField] TaliaFaceAnimations startingFace = TaliaFaceAnimations.IdleBlink;
 
         int currentFaceIndex = 0;
 
         public override void OnEnable() {
             if (startDelay <= 0) {
+                animator.enabled = true;
+                faceAnimator.enabled = true;
                 SetAnimation((int)startingPose);
-
                 SetFaceAnimation(startingFace);
             } else {
                 StartCoroutine(SetAfterDelay());
-
                 StartCoroutine(SetFaceAfterDelay());
             }
         }
@@ -100,6 +101,7 @@ namespace Paperticket {
                 yield return new WaitForSeconds(startDelay);
             }
 
+            animator.enabled = true;
             SetAnimation((int)startingPose);
         }
 
@@ -111,6 +113,7 @@ namespace Paperticket {
                 yield return new WaitForSeconds(startDelay);
             }
 
+            faceAnimator.enabled = true;
             SetFaceAnimation(startingFace);
         }
 

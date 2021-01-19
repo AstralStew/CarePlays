@@ -14,7 +14,7 @@ public class SphereCapture : EditorWindow {
 
 
         // Create the following directory if it does not yet exist
-        string outputDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures) + "/Unity 360 Captures/";
+        string outputDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/CarePlaysVR/Unity 360 Captures/";
         if (!Directory.Exists(outputDirectory)) {
             Directory.CreateDirectory(outputDirectory);
         }

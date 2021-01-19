@@ -16,6 +16,7 @@ namespace Paperticket {
         [Space(10)]
         [SerializeField] float markerHeight;
         [SerializeField] float timeToReset;
+        [SerializeField] float timeBetweenCharacters;
         [SerializeField] UnityEvent2 OnReset;
         [SerializeField] UnityEvent2 OnFinish;
         [SerializeField] UnityEvent2 OnExtraChair;
@@ -48,6 +49,7 @@ namespace Paperticket {
             // Move person to chair and disable it
             currentPerson.SeatPerson(chair.attachPoint);                        
             chair.DisableChair();
+            selectionMarker.gameObject.SetActive(false);
 
             // Check if we are up to Malcolm yet
             if (currentPerson == selectablePeople[3]) {
@@ -64,17 +66,12 @@ namespace Paperticket {
                 else {
                     foreach (KinshipPerson person in selectablePeople) person.WrongChoice();
                     foreach (KinshipPerson person in lockedPeople) person.WrongChoice();
-                    //currentPerson.WrongChoice();
-                    //lockedPeople[0].WrongChoice();
                     StartCoroutine(WaitToReset());
                 }
 
             // Otherwise, set the next person as active
             } else {
-                peopleIndex += 1;
-                currentPerson = selectablePeople[peopleIndex];
-                currentPerson.SelectPerson();
-                TransformMarker();
+                StartCoroutine(WaitBetweenCharacters());
             }
 
         }
@@ -91,6 +88,21 @@ namespace Paperticket {
             currentPerson = selectablePeople[0];
 
             if (OnReset != null) OnReset.Invoke();
+        }
+
+
+        IEnumerator WaitBetweenCharacters() {
+
+            // Wait a few secs then select next character
+            yield return new WaitForSeconds(timeBetweenCharacters);
+
+            // Set the next person as active
+            peopleIndex += 1;
+            currentPerson = selectablePeople[peopleIndex];
+            currentPerson.SelectPerson();
+            TransformMarker();
+
+
         }
 
         void EndGame() {

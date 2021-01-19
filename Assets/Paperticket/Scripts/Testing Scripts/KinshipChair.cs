@@ -20,8 +20,9 @@ namespace Paperticket {
         [Space(5)]
         [SerializeField] bool debugging;
         [Space(5)]
-        [SerializeField] UnityEvent2 OnSeated;
-        [SerializeField] UnityEvent2 OnEmptied;
+        [SerializeField] UnityEvent2 OnHover;
+        //[SerializeField] UnityEvent2 OnSeated;
+        //[SerializeField] UnityEvent2 OnEmptied;
 
         [Header("LIVE VARIABLES")]
         [Space(15)]
@@ -60,32 +61,40 @@ namespace Paperticket {
         public virtual void HoverOn() { HoverOn(null); }
         public virtual void HoverOn ( XRBaseInteractor interactor ) {
             if (!Active) return;
+            if (debugging) Debug.Log("[KinshipChair] Hover on!");
+
+            if (OnHover != null) OnHover.Invoke();
 
             mat.SetColor("_Color", Color.cyan);
-            if (debugging) Debug.Log("[KinshipChair] Hover on!");
         }
 
         public virtual void HoverOff() { HoverOff(null); }
         public virtual void HoverOff( XRBaseInteractor interactor ) {
             if (!Active) return;
+            if (debugging) Debug.Log("[KinshipChair] Hover off!");
 
             mat.SetColor("_Color", defaultColor);
-            if (debugging) Debug.Log("[KinshipChair] Hover off!");
         }
 
         public virtual void Select() { Select(null); }
         public virtual void Select( XRBaseInteractor interactor ) {
             if (!Active) return;
-                
+            if (debugging) Debug.Log("[KinshipChair] Selected!");
+
             KinshipGame.SetPersonToChair(this);
+
         }
 
         public void ResetChair() {
+            if (debugging) Debug.Log("[KinshipChair] Reset!");
+
             Active = true;
             HoverOff();
         }
 
         public void DisableChair() {
+            if (debugging) Debug.Log("[KinshipChair] Disabled!");
+
             HoverOff();
             Active = false;
         }

@@ -12,8 +12,10 @@ namespace Paperticket {
 
         [Header("CONTROLS")]
         [Space(10)]
-        [SerializeField] Vector3 seatOffset;
+        [SerializeField] Vector3 seatOffset = Vector3.zero;
         [Space(5)]
+        [SerializeField] bool debugging = false;
+        [Space(15)]
         [SerializeField] UnityEvent2 OnSelected;
         [SerializeField] UnityEvent2 OnSeated;
         [SerializeField] UnityEvent2 OnReset;
@@ -42,10 +44,14 @@ namespace Paperticket {
         }
 
         public void SelectPerson() {
+            if (debugging) Debug.Log("[KinshipPerson] Select Person called");
+
             if (OnSelected != null) OnSelected.Invoke();
         }
 
         public void SeatPerson (Transform chairTransform ) {
+            if (debugging) Debug.Log("[KinshipPerson] Seat Person called");
+
             transform.position = chairTransform.position;
             transform.rotation = chairTransform.rotation;
             transform.Translate(seatOffset, Space.Self);
@@ -54,6 +60,8 @@ namespace Paperticket {
         }
 
         public void ResetPerson() {
+            if (debugging) Debug.Log("[KinshipPerson] Reset Person called");
+
             transform.position = startPos;
             transform.rotation = startRot;
 
@@ -61,10 +69,14 @@ namespace Paperticket {
         }
         
         public void WrongChoice() {
+            if (debugging) Debug.Log("[KinshipPerson] Wrong Choice called");
+
             if (OnWrongChoice != null) OnWrongChoice.Invoke();
         }
 
         public void Finish() {
+            if (debugging) Debug.Log("[KinshipPerson] Finish called");
+
             if (OnFinish != null) OnFinish.Invoke();
         }
 

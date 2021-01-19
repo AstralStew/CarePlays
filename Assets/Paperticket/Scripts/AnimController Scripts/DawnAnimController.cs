@@ -14,8 +14,10 @@ namespace Paperticket {
         [SerializeField] bool randomiseDelay = false;
 
         public override void OnEnable() {
-            if (startDelay <= 0) SetAnimation((int)startingPose);
-            else StartCoroutine(SetAfterDelay());
+            if (startDelay <= 0) {
+                animator.enabled = true;
+                SetAnimation((int)startingPose);
+            } else StartCoroutine(SetAfterDelay());
         }
 
         IEnumerator SetAfterDelay() {
@@ -26,6 +28,7 @@ namespace Paperticket {
                 yield return new WaitForSeconds(startDelay);
             }
 
+            animator.enabled = true;
             SetAnimation((int)startingPose);
         }
 

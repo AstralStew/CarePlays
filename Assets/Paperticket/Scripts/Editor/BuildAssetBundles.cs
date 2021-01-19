@@ -16,7 +16,7 @@ public class BuildAssetBundles : Editor {
         Debug.LogWarning("[BuildBundles] Building out Android asset bundles...");
 
         BuildAssetBundleOptions buildAssetBundleOptions = BuildAssetBundleOptions.UncompressedAssetBundle;
-        string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/Android Asset Bundles/";
+        string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/CarePlaysVR/Android Asset Bundles/";
 
         BuildBundles(buildAssetBundleOptions, assetBundleDirectory, BuildTarget.Android);
     
@@ -28,7 +28,7 @@ public class BuildAssetBundles : Editor {
         Debug.LogWarning("[BuildBundles] Building out PC asset bundles...");
 
         BuildAssetBundleOptions buildAssetBundleOptions = BuildAssetBundleOptions.ChunkBasedCompression;
-        string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/PC Asset Bundles/"; 
+        string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/CarePlaysVR/PC Asset Bundles/"; 
         
 
         BuildBundles(buildAssetBundleOptions, assetBundleDirectory, BuildTarget.StandaloneWindows);

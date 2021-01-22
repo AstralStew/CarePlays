@@ -404,6 +404,22 @@ public class CrossSceneEventHelper : MonoBehaviour {
         StartCoroutine(PTUtilities.instance.FadeAudioTo(source, volume, duration));
     }
 
+    Coroutine mixerFadeCo;
+    public void FadeAudioMasterIn( float duration ) {
+        if (mixerFadeCo != null) StopCoroutine(mixerFadeCo);
+        mixerFadeCo = StartCoroutine(PTUtilities.instance.FadeAudioMixerTo(PTUtilities.instance.audioMaster, 1, duration));
+    }
+
+    public void FadeAudioMasterOut( float duration ) {
+        if (mixerFadeCo != null) StopCoroutine(mixerFadeCo);
+        mixerFadeCo = StartCoroutine(PTUtilities.instance.FadeAudioMixerTo(PTUtilities.instance.audioMaster, 0, duration));
+    }
+
+    public void FadeAudioMaster (float volume, float duration ) {
+        if (mixerFadeCo != null) StopCoroutine(mixerFadeCo);
+        mixerFadeCo = StartCoroutine(PTUtilities.instance.FadeAudioMixerTo(PTUtilities.instance.audioMaster, volume, duration));
+    }
+
     #endregion
 
 

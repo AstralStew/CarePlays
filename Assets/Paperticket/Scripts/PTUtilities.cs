@@ -22,7 +22,7 @@ namespace Paperticket {
 
         public static PTUtilities instance = null;
 
-        public AudioMixer _ResonanceMaster;
+        public AudioMixer audioMaster;
 
         public XRRig playerRig;
 
@@ -911,8 +911,6 @@ namespace Paperticket {
 
         bool fadingAudioListener;
         Coroutine fadeAudioListenerCoroutine;
-        bool fadingResonanceListener;
-        Coroutine fadeResonanceListenerCoroutine;
 
         /// <summary>
         /// Fades the volume of the Audio Listener to the target value over the duration
@@ -926,6 +924,7 @@ namespace Paperticket {
             fadeAudioListenerCoroutine = StartCoroutine(FadeAudioListenerTo(volume, duration));
 
         }
+
 
         // Helper coroutine for fading audio listener volume
         IEnumerator FadeAudioListenerTo( float targetVolume, float duration ) {
@@ -949,24 +948,22 @@ namespace Paperticket {
             fadingAudioListener = false;
         }
 
-        IEnumerator FadeResonanceListenerTo( float targetVolume, float duration ) {
-            fadingResonanceListener = true;
+        public IEnumerator FadeAudioMixerTo( AudioMixer mixer, float targetVolume, float duration ) {
 
-            float currentDB = 0; _ResonanceMaster.GetFloat("ResonanceMasterVolume", out currentDB);
+            mixer.GetFloat("MasterVolume", out float currentDB);
             float targetDB = (targetVolume - 1) * 80;
 
-            if (_Debug) Debug.Log("FadeAudioListenerTo Starting, currentDB = " + currentDB);
+            if (_Debug) Debug.Log("Fading mixer '"+mixer.name+"', currentDB = " + currentDB);
 
             for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
                 float newDB = Mathf.Lerp(currentDB, targetDB, t);
-                _ResonanceMaster.SetFloat("ResonanceMasterVolume", newDB);
-                if (_Debug) Debug.Log("Resonance Master Volume = " + newDB);
+                mixer.SetFloat("MasterVolume", newDB);
+                if (_Debug) Debug.Log("Master Volume = " + newDB);
                 yield return null;
             }
-            _ResonanceMaster.SetFloat("ResonanceMasterVolume", targetDB);
+            audioMaster.SetFloat("MasterVolume", targetDB);
 
-            if (_Debug) Debug.Log("FadeAudioListenerTo Finished");
-            fadingResonanceListener = false;
+            if (_Debug) Debug.Log("Finished fading mixer '"+mixer.name+"', newDB = "+targetDB);
         }
 
     }

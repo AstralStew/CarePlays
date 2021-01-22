@@ -2865,6 +2865,26 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Arguments:
+        - m_ObjectArgument: {fileID: 788855891}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine.CoreModule
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: TeleportPlayer
+        m_Modes: 02000000
+      - m_Arguments:
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
           m_IntArgument: 0
@@ -2890,26 +2910,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 1760068396}
-        m_MethodName: SetControllerBeam
-        m_Modes: 06000000
-      - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 1
           m_Vector2Argument: {x: 0, y: 0}
           m_Vector2IntArgument: {x: 0, y: 0}
@@ -2923,6 +2923,26 @@ MonoBehaviour:
         m_CallState: 2
         m_Target: {fileID: 1934923452}
         m_MethodName: SetActive
+        m_Modes: 06000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: SetControllerBeam
         m_Modes: 06000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -2938,7 +2958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 5
+  timeBeforeEvent: 4
   eventBehaviour: 0
   debug: 0
   OneTimeUse: 1
@@ -3903,6 +3923,7 @@ GameObject:
   - component: {fileID: 744948303}
   - component: {fileID: 744948306}
   - component: {fileID: 744948309}
+  - component: {fileID: 744948310}
   - component: {fileID: 744948307}
   - component: {fileID: 744948304}
   - component: {fileID: 744948308}
@@ -4124,6 +4145,26 @@ MonoBehaviour:
         m_Target: {fileID: 1760068396}
         m_MethodName: FadeHeadsetIn
         m_Modes: 04000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0.75
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: FadeAudioMasterIn
+        m_Modes: 04000000
       - m_Arguments: []
         m_CallState: 2
         m_Target: {fileID: 1934923455}
@@ -4145,7 +4186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugging: 0
   videoController: {fileID: 1934923455}
-  videoTimeBeforeEvent: 56
+  videoTimeBeforeEvent: 54.25
   OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
@@ -4296,7 +4337,69 @@ MonoBehaviour:
         m_MethodName: SetActive
         m_Modes: 06000000
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: b19fb65fac751da4591179188911a9e7,
+        - m_ObjectArgument: {fileID: 8300000, guid: f1345bda9acf4f3438347138758fa094,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1872001690}
+        m_MethodName: PlayOneShot
+        m_Modes: 02000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &744948310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744948302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugging: 0
+  videoController: {fileID: 1934923455}
+  videoTimeBeforeEvent: 51.75
+  OneTimeUse: 1
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 2036722730}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 8300000, guid: 41a3d47df3c6aeb4f8bff0f7ddab9e29,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -4960,6 +5063,7 @@ GameObject:
   - component: {fileID: 954952644}
   - component: {fileID: 954952646}
   - component: {fileID: 954952645}
+  - component: {fileID: 954952647}
   m_Layer: 0
   m_Name: Face
   m_TagString: Untagged
@@ -5028,6 +5132,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954952643}
   m_Mesh: {fileID: 3621554888825754127, guid: a0cd94bee0ff1104f86d5b64c2452699, type: 3}
+--- !u!95 &954952647
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954952643}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f77f149ad46ddc4e8c90b089cb6a8b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &969913179
 GameObject:
   m_ObjectHideFlags: 0
@@ -5494,6 +5617,27 @@ MonoBehaviour:
         m_Target: {fileID: 2109941938}
         m_MethodName: PlayOneShot
         m_Modes: 02000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Paperticket.RyanAnimController+RyanFaceAnimations,
+            Assembly-CSharp
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1252210392}
+        m_MethodName: SetFaceAnimation
+        m_Modes: 07000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &993779468
@@ -5534,7 +5678,7 @@ MonoBehaviour:
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         m_CallState: 2
         m_Target: {fileID: 2307143015159030886}
-        m_MethodName: PlayAnimationOnce
+        m_MethodName: SetAnimation
         m_Modes: 07000000
       - m_Arguments:
         - m_ObjectArgument: {fileID: 0}
@@ -5555,7 +5699,7 @@ MonoBehaviour:
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         m_CallState: 2
         m_Target: {fileID: 1252210392}
-        m_MethodName: PlayAnimationOnce
+        m_MethodName: SetAnimation
         m_Modes: 07000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -5598,6 +5742,48 @@ MonoBehaviour:
         m_Target: {fileID: 42078719}
         m_MethodName: SetActive
         m_Modes: 06000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Paperticket.TaliaAnimController+TaliaAnimations,
+            Assembly-CSharp
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 2307143015159030886}
+        m_MethodName: SetAnimation
+        m_Modes: 07000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Paperticket.RyanAnimController+RyanAnimations,
+            Assembly-CSharp
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1252210392}
+        m_MethodName: SetAnimation
+        m_Modes: 07000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &993779470
@@ -5659,6 +5845,27 @@ MonoBehaviour:
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         m_CallState: 2
         m_Target: {fileID: 2307143015159030886}
+        m_MethodName: SetFaceAnimation
+        m_Modes: 07000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Paperticket.RyanAnimController+RyanFaceAnimations,
+            Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1252210392}
         m_MethodName: SetFaceAnimation
         m_Modes: 07000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
@@ -5968,6 +6175,26 @@ MonoBehaviour:
         m_CallState: 2
         m_Target: {fileID: 1760068396}
         m_MethodName: FadeHeadsetToBlack
+        m_Modes: 04000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: FadeAudioMasterOut
         m_Modes: 04000000
       - m_Arguments:
         - m_ObjectArgument: {fileID: 0}
@@ -7484,7 +7711,7 @@ MonoBehaviour:
   startingPose: 4
   startDelay: 0
   randomiseDelay: 0
-  faceAnimator: {fileID: 0}
+  faceAnimator: {fileID: 954952647}
   startingFace: 0
 --- !u!95 &1252210393
 Animator:
@@ -12810,7 +13037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2036722731
 Transform:
   m_ObjectHideFlags: 0

@@ -51,7 +51,7 @@ public class BuildAssetBundles : Editor {
     [MenuItem("Paperticket/Build Asset Bundles/Open Bundle Directory...")]
     public static void OpenBundleDirectory() {
 
-        string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/";
+        string assetBundleDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/CarePlaysVR/";
 
         assetBundleDirectory = assetBundleDirectory.Replace(@"/", @"\");   // explorer doesn't like front slashes
         System.Diagnostics.Process.Start("explorer.exe", "/select," + assetBundleDirectory);

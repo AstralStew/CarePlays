@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905b27da49bdab94487fa5b6db64671b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ResonanceMaster: {fileID: 24100000, guid: f175a44f6bb1dac4cad2f5d1318b74d8, type: 2}
+  audioMaster: {fileID: 24100000, guid: f175a44f6bb1dac4cad2f5d1318b74d8, type: 2}
   playerRig: {fileID: 90448138}
   headGfx: {fileID: 1653417250}
   _Debug: 0
@@ -407,8 +407,8 @@ MonoBehaviour:
   FloatKeys: []
   debugging: 1
   frameDebugging: 0
-  loadDebugBundles: 1
-  debugBundles: 0c0000000d000000
+  loadDebugBundles: 0
+  debugBundles: 0500000006000000
   loadedBundles: []
   finishedInitialising: 0
 --- !u!4 &773205471
@@ -1338,8 +1338,8 @@ MonoBehaviour:
   - sceneName: Induction07 - Finale
     careScene: 11
     requiredBundles: 1800000019000000
-  loadFirstScene: 0
-  firstScene: 5
+  loadFirstScene: 1
+  firstScene: 0
   debugging: 1
   IN01HonestyComplete: 0
   IN01ChoiceComplete: 1

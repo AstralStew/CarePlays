@@ -15,7 +15,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.8254717, g: 0.8651372, b: 1, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.001
@@ -528,8 +528,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.05
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -593,8 +594,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 1
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -633,8 +635,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.5
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -657,6 +660,26 @@ MonoBehaviour:
         m_CallState: 2
         m_Target: {fileID: 399674544}
         m_MethodName: FadeHeadsetIn
+        m_Modes: 04000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0.75
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 399674544}
+        m_MethodName: FadeAudioMasterIn
         m_Modes: 04000000
       - m_Arguments:
         - m_ObjectArgument: {fileID: 1598749745}
@@ -1040,8 +1063,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.05
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -1869,8 +1893,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 1.1
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 1
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -2118,8 +2143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.05
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -3258,8 +3284,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.05
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -4617,7 +4644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1754529105
 Transform:
   m_ObjectHideFlags: 0
@@ -4980,6 +5007,26 @@ MonoBehaviour:
         m_MethodName: FadeHeadsetOut
         m_Modes: 04000000
       - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 399674544}
+        m_MethodName: FadeAudioMasterOut
+        m_Modes: 04000000
+      - m_Arguments:
         - m_ObjectArgument: {fileID: 8300000, guid: 19bfdedb7f9016d4f86b42f75d53bd1a,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
@@ -5096,8 +5143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 1.1
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 1
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -5198,8 +5246,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.05
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -7072,6 +7121,26 @@ MonoBehaviour:
         m_CallState: 2
         m_Target: {fileID: 399674544}
         m_MethodName: FadeHeadsetOut
+        m_Modes: 04000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 399674544}
+        m_MethodName: FadeAudioMasterOut
         m_Modes: 04000000
       - m_Arguments:
         - m_ObjectArgument: {fileID: 8300000, guid: 19bfdedb7f9016d4f86b42f75d53bd1a,

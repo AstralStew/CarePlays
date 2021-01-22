@@ -197,8 +197,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.1
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -601,8 +602,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.3
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -886,8 +888,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.1
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -1029,6 +1032,26 @@ MonoBehaviour:
         m_Target: {fileID: 1760068396}
         m_MethodName: FadeHeadsetIn
         m_Modes: 04000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0.75
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: FadeAudioMasterIn
+        m_Modes: 04000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &544593976
@@ -1139,8 +1162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 2.85
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -1240,8 +1264,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 2.5
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -1301,8 +1326,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.3
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -1673,8 +1699,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.1
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -2035,8 +2062,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 5
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -2075,8 +2103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 4
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -2115,8 +2144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 2
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -2201,7 +2231,7 @@ MonoBehaviour:
         m_MethodName: SetNextVideo
         m_Modes: 05000000
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: 837933bac6217374e907bc70580d3b89,
+        - m_ObjectArgument: {fileID: 8300000, guid: e0382b000024c5c4a857ca6fa6d63cef,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -2236,8 +2266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.05
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -2809,6 +2840,26 @@ MonoBehaviour:
         m_Target: {fileID: 1760068396}
         m_MethodName: FadeHeadsetIn
         m_Modes: 04000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0.75
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: FadeAudioMasterIn
+        m_Modes: 04000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1136352396
@@ -2852,6 +2903,26 @@ MonoBehaviour:
         m_Modes: 04000000
       - m_Arguments:
         - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0.75
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: FadeAudioMasterOut
+        m_Modes: 04000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2885,8 +2956,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 1.1
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -3085,8 +3157,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.05
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -3220,8 +3293,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 5
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -3494,8 +3568,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 4.5
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -3534,8 +3609,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.3
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -3590,8 +3666,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.05
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -4394,8 +4471,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 17.5
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -4434,8 +4512,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.3
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -4504,9 +4583,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 0.5
-  OneTimeUse: 1
+  timeBeforeEvent: 1.1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -4753,8 +4833,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.1
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -5210,8 +5291,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.05
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -5697,9 +5779,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 4.35
-  OneTimeUse: 1
+  timeBeforeEvent: 7.35
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -5757,9 +5840,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 4
-  OneTimeUse: 1
+  timeBeforeEvent: 7
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -5819,8 +5903,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 2
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -5844,6 +5929,26 @@ MonoBehaviour:
         m_Target: {fileID: 1760068396}
         m_MethodName: FadeHeadsetToBlack
         m_Modes: 04000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Single, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: FadeAudioMasterOut
+        m_Modes: 04000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2111352551
@@ -5859,8 +5964,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.75
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -5990,8 +6096,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeEvent: 0.01
-  OneTimeUse: 1
+  eventBehaviour: 0
   debug: 0
+  OneTimeUse: 1
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:

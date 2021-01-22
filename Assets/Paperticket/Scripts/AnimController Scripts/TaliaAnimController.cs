@@ -42,31 +42,35 @@ namespace Paperticket {
 
         public void SetAnimation (TaliaAnimations taliaAnimations ) {
 
+            if (backToStartPoseCo != null) StopCoroutine(backToStartPoseCo);
+
             SetAnimation((int)taliaAnimations);
 
         }
 
 
-        public void PlayAnimationOnce (TaliaAnimations taliaAnimations ) {
+        public void PlayAnimationOnce (TaliaAnimations taliaAnimations, float waitTime ) {
 
             SetAnimation((int)taliaAnimations);
-            if (backToStartPoseCo != null) StopCoroutine(SetBackToStartingPose());
-            backToStartPoseCo = StartCoroutine(SetBackToStartingPose());
+            if (backToStartPoseCo != null) StopCoroutine(backToStartPoseCo);
+            backToStartPoseCo = StartCoroutine(SetBackToStartingPose(waitTime));
 
         }
 
 
         public void SetFaceAnimation( TaliaFaceAnimations taliaFaceAnimation ) {
 
+            if (backToStartFaceCo != null) StopCoroutine(backToStartFaceCo);
+
             faceAnimator.SetInteger("animationIndex", (int)taliaFaceAnimation);
             currentFaceIndex = (int)taliaFaceAnimation;
         }
 
-        public void PlayFaceAnimationOnce( TaliaFaceAnimations taliaFaceAnimation ) {
+        public void PlayFaceAnimationOnce( TaliaFaceAnimations taliaFaceAnimation, float waitTime ) {
 
             SetFaceAnimation(taliaFaceAnimation);
-            if (backToStartFaceCo != null) StopCoroutine(SetBackToStartingFace());
-            backToStartFaceCo = StartCoroutine(SetBackToStartingFace());
+            if (backToStartFaceCo != null) StopCoroutine(backToStartFaceCo);
+            backToStartFaceCo = StartCoroutine(SetBackToStartingFace(waitTime));
 
         }
 
@@ -76,16 +80,16 @@ namespace Paperticket {
         #region Internal coroutines
 
         Coroutine backToStartPoseCo;
-        IEnumerator SetBackToStartingPose() {
-            yield return new WaitForSeconds(0.01f);
+        IEnumerator SetBackToStartingPose( float waitTime ) {
+            yield return new WaitForSeconds(waitTime);
             SetAnimation((int)startingPose);
             backToStartPoseCo = null;
         }
 
         Coroutine backToStartFaceCo;
-        IEnumerator SetBackToStartingFace() {
+        IEnumerator SetBackToStartingFace( float waitTime ) {
 
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(waitTime);
             SetFaceAnimation(startingFace);
             backToStartFaceCo = null;
         }

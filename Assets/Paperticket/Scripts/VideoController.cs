@@ -161,6 +161,12 @@ namespace Paperticket {
         // Plays the video if it's not already playing 
         public void PlayVideo() {
 
+            // Cancel if there is no video asssigned yet
+            if (!videoLoaded || videoEnded) {
+                if (debugging) Debug.LogWarning("[VideoController] Cannot play video! The video has ended, or no video has been loaded yet.");
+                return;
+            }
+
             // If the video hasn't started yet...
             if (!videoStarted) {
                 videoStarted = true;
@@ -175,20 +181,22 @@ namespace Paperticket {
                     externalAudioSource.Play();
                 }
 
-                // If the video hasn't ended yet...
-            } else if (!videoEnded) {
+            // If the video hasn't ended yet...
+            } else {
 
                 // If we aren't playing, play the video
                 if (!playingVideo) {
-                    videoPlayer.Play();
-                    if (debugging) Debug.Log("[VideoController] Were we interrupted? Playing the video again");
-                }
 
-                // Force the external audio time to match the video time
-                if (externalAudio) {
-                    externalAudioSource.time = (float)videoPlayer.time;
-                    // Also, play the audio If not playing
-                    if (!externalAudioSource.isPlaying) externalAudioSource.Play();
+                    videoPlayer.Play();
+                    if (debugging) Debug.Log("[VideoController] Was the video interrupted somehow? Playing the video again");                
+
+                    // Force the external audio time to match the video time
+                    if (externalAudio) {
+                        externalAudioSource.time = (float)videoPlayer.time;
+                        // Also, play the audio If not playing
+                        if (!externalAudioSource.isPlaying) externalAudioSource.Play();
+                    }
+
                 }
             }
         }

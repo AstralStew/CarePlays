@@ -41,54 +41,60 @@ namespace Paperticket {
 
         public void SetAnimation( RyanAnimations ryanAnimations ) {
 
+            if (backToStartPoseCo != null) StopCoroutine(backToStartPoseCo);
+
             SetAnimation((int)ryanAnimations);
 
         }
 
-        public void PlayAnimationOnce( RyanAnimations ryanAnimations ) {
+        public void PlayAnimationOnce( RyanAnimations ryanAnimations, float waitTime ) {
 
             SetAnimation((int)ryanAnimations);
-            if (backToStartPoseCo != null) StopCoroutine(SetBackToStartingPose());
-            backToStartPoseCo = StartCoroutine(SetBackToStartingPose());
+            if (backToStartPoseCo != null) StopCoroutine(backToStartPoseCo);
+            backToStartPoseCo = StartCoroutine(SetBackToStartingPose(waitTime));
 
         }
 
 
         public void SetFaceAnimation( RyanFaceAnimations ryanFaceAnimation ) {
 
+            if (backToStartFaceCo != null) StopCoroutine(backToStartFaceCo);
+
             faceAnimator.SetInteger("animationIndex", (int)ryanFaceAnimation);
             currentFaceIndex = (int)ryanFaceAnimation;
         }
 
-        public void PlayFaceAnimationOnce( RyanFaceAnimations ryanFaceAnimation ) {
+        public void PlayFaceAnimationOnce( RyanFaceAnimations ryanFaceAnimation, float waitTime ) {
 
             SetFaceAnimation(ryanFaceAnimation);
-            if (backToStartFaceCo != null) StopCoroutine(SetBackToStartingFace());
-            backToStartFaceCo = StartCoroutine(SetBackToStartingFace());
+            if (backToStartFaceCo != null) StopCoroutine(backToStartFaceCo);
+            backToStartFaceCo = StartCoroutine(SetBackToStartingFace(waitTime));
 
         }
 
 
         #endregion
-
+        
 
 
         #region Internal coroutines
 
         Coroutine backToStartPoseCo;
-        IEnumerator SetBackToStartingPose() {
-            yield return new WaitForSeconds(0.01f);
+        IEnumerator SetBackToStartingPose( float waitTime ) {
+            yield return new WaitForSeconds(waitTime);
             SetAnimation((int)startingPose);
             backToStartPoseCo = null;
         }
 
         Coroutine backToStartFaceCo;
-        IEnumerator SetBackToStartingFace() {
+        IEnumerator SetBackToStartingFace( float waitTime ) {
 
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(waitTime);
             SetFaceAnimation(startingFace);
             backToStartFaceCo = null;
         }
+
+
 
 
         IEnumerator SetAfterDelay() {
@@ -114,6 +120,7 @@ namespace Paperticket {
             faceAnimator.enabled = true;
             SetFaceAnimation(startingFace);
         }
+
 
         #endregion
 

@@ -1,0 +1,12 @@
+
+cd D:/Program Files/Unity Installs/2019.4.11f1/Editor/Data/PlaybackEngines/AndroidPlayer\SDK\platform-tools
+
+
+
+ adb logcat -s Unity
+
+
+ adb logcat -s Unity ActivityManager PackageManager dalvikvm DEBUG
+
+
+ adb logcat -c

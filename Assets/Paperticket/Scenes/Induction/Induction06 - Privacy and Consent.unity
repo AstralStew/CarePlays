@@ -8493,7 +8493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1934923453}
-  requiredBundle: 0
+  requiredBundle: 22
   currentVideoName: IN06a_PrivacyPreamble
   autoLoad: 1
   autoPlay: 1

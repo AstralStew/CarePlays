@@ -8,8 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Signs_Atlas
-  m_Shader: {fileID: 4800000, guid: 0daa94f23f43f498b822cfbfc22c6689, type: 3}
-  m_ShaderKeywords: _CELPRIMARYMODE_SINGLE _SPECULARHIGHLIGHTS_OFF _UNITYSHADOWMODE_NONE
+  m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
+  m_ShaderKeywords: _CELPRIMARYMODE_SINGLE _SPECULARHIGHLIGHTS_OFF _TEXTUREBLENDINGMODE_MULTIPLY
+    _UNITYSHADOWMODE_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -106,6 +107,7 @@ Material:
     - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _Surface: 0
+    - _TextureBlendingMode: 0
     - _TextureImpact: 1
     - _UnityShadowMode: 0
     - _UnityShadowPower: 0.166

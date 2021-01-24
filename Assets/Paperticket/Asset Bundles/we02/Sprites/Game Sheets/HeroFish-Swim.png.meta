@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: 52dffcdf4270d854fa09e452053cd9ec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 231803637254731695
+    second: HeroFish-Swim_0
+  - first:
+      213: 7226425142616936059
+    second: HeroFish-Swim_1
+  - first:
+      213: -5812786984303197340
+    second: HeroFish-Swim_2
+  - first:
+      213: 7629338448967514588
+    second: HeroFish-Swim_3
+  - first:
+      213: -3661564650196114843
+    second: HeroFish-Swim_4
+  - first:
+      213: -2395030910071946844
+    second: HeroFish-Swim_5
+  - first:
+      213: 5760320450819865997
+    second: HeroFish-Swim_6
+  - first:
+      213: 592319318790449412
+    second: HeroFish-Swim_7
+  - first:
+      213: -6306049284090268368
+    second: HeroFish-Swim_8
+  - first:
+      213: 5532336811196450080
+    second: HeroFish-Swim_9
+  - first:
+      213: 8918042620168739684
+    second: HeroFish-Swim_10
+  - first:
+      213: 3395432755682552593
+    second: HeroFish-Swim_11
+  - first:
+      213: -964956950719948089
+    second: HeroFish-Swim_12
+  - first:
+      213: 7240240022510190595
+    second: HeroFish-Swim_13
+  - first:
+      213: 1707829036403307468
+    second: HeroFish-Swim_14
+  - first:
+      213: -536402805391942272
+    second: HeroFish-Swim_15
+  - first:
+      213: 1492448767991703165
+    second: HeroFish-Swim_16
+  - first:
+      213: 4663813660860659766
+    second: HeroFish-Swim_17
+  - first:
+      213: -7644242925102000706
+    second: HeroFish-Swim_18
+  - first:
+      213: 7056370825371656345
+    second: HeroFish-Swim_19
+  - first:
+      213: -2955118655289116881
+    second: HeroFish-Swim_20
+  - first:
+      213: 3347359090071912511
+    second: HeroFish-Swim_21
+  - first:
+      213: -6865412847039346722
+    second: HeroFish-Swim_22
+  - first:
+      213: -148648346461202486
+    second: HeroFish-Swim_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HeroFish-Swim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa736301e28873300800000000000000
+      internalID: 231803637254731695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e42a5416b694460800000000000000
+      internalID: 7226425142616936059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46308950905d45fa0800000000000000
+      internalID: -5812786984303197340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd930f9b5ead0e960800000000000000
+      internalID: 7629338448967514588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 730
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 562eee6b9528f2dc0800000000000000
+      internalID: -3661564650196114843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 730
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1c413a31423ced0800000000000000
+      internalID: -2395030910071946844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_6
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 730
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d39873ee4c0ff40800000000000000
+      internalID: 5760320450819865997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_7
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 730
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4092b1e3847583800800000000000000
+      internalID: 592319318790449412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1460
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03571b546996c78a0800000000000000
+      internalID: -6306049284090268368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_9
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1460
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0258e29a40fc6cc40800000000000000
+      internalID: 5532336811196450080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_10
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1460
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46b93f2638043cb70800000000000000
+      internalID: 8918042620168739684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_11
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1460
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11b2f2df9100f1f20800000000000000
+      internalID: 3395432755682552593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2190
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca1bc014c8cb92f0800000000000000
+      internalID: -964956950719948089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2190
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3004946a0ff7a7460800000000000000
+      internalID: 7240240022510190595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_14
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2190
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc3baebc57d63b710800000000000000
+      internalID: 1707829036403307468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_15
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2190
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d17109d705e88f0800000000000000
+      internalID: -536402805391942272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2920
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d766d954f3e36b410800000000000000
+      internalID: 1492448767991703165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2920
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638b63a80d139b040800000000000000
+      internalID: 4663813660860659766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_18
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2920
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb590808f813ae590800000000000000
+      internalID: -7644242925102000706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_19
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2920
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99025b121e34de160800000000000000
+      internalID: 7056370825371656345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3650
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27bc5a6d3f4df6d0800000000000000
+      internalID: -2955118655289116881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_21
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3650
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f30496b7b55347e20800000000000000
+      internalID: 3347359090071912511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_22
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3650
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed701dfd36729b0a0800000000000000
+      internalID: -6865412847039346722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Swim_23
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3650
+        width: 500
+        height: 730
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac71bb0dd15efedf0800000000000000
+      internalID: -148648346461202486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 568a3d40760359d4c94eacc2e228f523
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: we02
+  assetBundleVariant: 

@@ -1,0 +1,428 @@
+fileFormatVersion: 2
+guid: 0c85d8e9d12c1cc4dbec00e20f5d387c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5564296010763658665
+    second: HeroFish-Shock_0
+  - first:
+      213: 2049315662385001632
+    second: HeroFish-Shock_1
+  - first:
+      213: -6172444494717452201
+    second: HeroFish-Shock_2
+  - first:
+      213: 4784753390609902962
+    second: HeroFish-Shock_3
+  - first:
+      213: 4608954533910199607
+    second: HeroFish-Shock_4
+  - first:
+      213: -7571154411272576811
+    second: HeroFish-Shock_5
+  - first:
+      213: 1458311286839826947
+    second: HeroFish-Shock_6
+  - first:
+      213: 7322782595809332972
+    second: HeroFish-Shock_7
+  - first:
+      213: -4200300840826362821
+    second: HeroFish-Shock_8
+  - first:
+      213: 8492651843252797578
+    second: HeroFish-Shock_9
+  - first:
+      213: 1658969372863939423
+    second: HeroFish-Shock_10
+  - first:
+      213: -8431659964821957235
+    second: HeroFish-Shock_11
+  - first:
+      213: -246988067196102587
+    second: HeroFish-Shock_12
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HeroFish-Shock_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a5e0baadb9583d40800000000000000
+      internalID: 5564296010763658665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_1
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 0
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a43a19bcb1a07c10800000000000000
+      internalID: 2049315662385001632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_2
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 0
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7500d806f62175aa0800000000000000
+      internalID: -6172444494717452201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 920
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27d2629abdbd66240800000000000000
+      internalID: 4784753390609902962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_4
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 920
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73db4a3babb46ff30800000000000000
+      internalID: 4608954533910199607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_5
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 920
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d067783d2bdde690800000000000000
+      internalID: -7571154411272576811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1840
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30ad7009366fc3410800000000000000
+      internalID: 1458311286839826947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_7
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1840
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceec0ae19ffbf9560800000000000000
+      internalID: 7322782595809332972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_8
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1840
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3425c0b3a885b5c0800000000000000
+      internalID: -4200300840826362821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2760
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a80462efad5fbd570800000000000000
+      internalID: 8492651843252797578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_10
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 2760
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53cec2ead7d50710800000000000000
+      internalID: 1658969372863939423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_11
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 2760
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8597e15fe9bcfa80800000000000000
+      internalID: -8431659964821957235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroFish-Shock_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3680
+        width: 730
+        height: 920
+      alignment: 9
+      pivot: {x: 0.49, y: 0.86}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 548140759a5829cf0800000000000000
+      internalID: -246988067196102587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f3aea1e8d59739e4fb6df22739d0bf3f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: we02
+  assetBundleVariant: 

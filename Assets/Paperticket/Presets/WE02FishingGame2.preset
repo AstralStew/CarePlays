@@ -1,0 +1,679 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WE02FishingGame2
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: d984deb57aeb0e843b116383eb9f768b,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rodTarget
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fishingRod
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: playerFish
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fishSprite
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundSprite
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeSprite
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectSprites
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fishingLine
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: autostart
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocitySensitivity
+    value: 0.8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[0].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[0].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[0].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[0].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[1].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[1].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[1].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[1].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[1].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_Curve.Array.data[1].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSensitivity.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelSpeed
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rodMaxDistance
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rodBlendWeightMultiplier
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[0].value
+    value: 5.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[0].inSlope
+    value: -17.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[0].outSlope
+    value: -17.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[0].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[0].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[1].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[1].value
+    value: -12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[1].inSlope
+    value: -17.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[1].outSlope
+    value: -17.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[1].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_Curve.Array.data[1].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsHeightCurve.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].time
+    value: 0.24
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].value
+    value: -0.48
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].inSlope
+    value: 0.01294048
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].outSlope
+    value: Infinity
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].tangentMode
+    value: 97
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].weightedMode
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].outWeight
+    value: 0.4299077
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].time
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].value
+    value: -0.48
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].inSlope
+    value: 20.01583
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].outSlope
+    value: -2.6000001
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].tangentMode
+    value: 65
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].weightedMode
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].inWeight
+    value: 0.22926699
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].outWeight
+    value: 0.13378294
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].time
+    value: 0.45
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].value
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].inSlope
+    value: -2.6000001
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].outSlope
+    value: -2.2222223
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].tangentMode
+    value: 69
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].weightedMode
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].inWeight
+    value: 0.42714977
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].outWeight
+    value: 0.34238458
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].time
+    value: 0.9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].value
+    value: -2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].inSlope
+    value: -2.2222223
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].outSlope
+    value: 553.25226
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].tangentMode
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].weightedMode
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].inWeight
+    value: 0.01034125
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fadeHeightCurve.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key0.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key0.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key0.b
+    value: 0.376
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key0.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key1.r
+    value: 0.08627451
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key1.g
+    value: 0.058823533
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key1.b
+    value: 0.9333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key1.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key2.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key2.g
+    value: 0.40163708
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key2.b
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key2.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key3.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key3.g
+    value: 0.5808451
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key3.b
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key3.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key4.r
+    value: 0.29800004
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key4.g
+    value: 0.7225207
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key4.b
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key4.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key5.r
+    value: 0.7877358
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key5.g
+    value: 0.9936346
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key5.b
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key5.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key6.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key6.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key6.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key6.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key7.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key7.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key7.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.key7.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.ctime0
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.ctime1
+    value: 8311
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.ctime2
+    value: 29875
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.ctime3
+    value: 45319
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.ctime4
+    value: 60537
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.ctime5
+    value: 65535
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.ctime6
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.ctime7
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.atime0
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.atime1
+    value: 65535
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.atime2
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.atime3
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.atime4
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.atime5
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.atime6
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.atime7
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.m_Mode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.m_NumColorKeys
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backgroundColors.m_NumAlphaKeys
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fishHeight
+    value: -0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fishToLineOffset.x
+    value: 0.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fishToLineOffset.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fishToLineOffset.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lineStartSpeed
+    value: 0.02
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lineEndMaxDelta
+    value: 0.8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lineEndSmoothTime
+    value: 0.6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameActive
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PlayerControl
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelVelocity
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reelTotal
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rodDistance
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: targetLineX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lineStartX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lineEndX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progress
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: impeded
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: debugging
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: debugScroll
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: debugScrollSpeed
+    value: 1.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: externalSpeedMod
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: externalCheckRate
+    value: 0.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: externalCheckTimer
+    value: 0
+    objectReference: {fileID: 0}

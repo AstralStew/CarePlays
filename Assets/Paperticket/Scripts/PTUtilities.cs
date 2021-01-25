@@ -32,22 +32,20 @@ namespace Paperticket {
 
         [Header("Controls")]
         
-        //[SerializeField] Vector3 velocityTest;
-        //[SerializeField] float velocitySensitivity;
-        //[SerializeField] Vector3 angularTest;
-        //[SerializeField] float angularSensitivity;
-        //[SerializeField] Vector3 accelerationTest;
-        //[SerializeField] float accelerationSensitivity;
-        //[SerializeField] Vector3 angularAccelerationTest;
-        //[SerializeField] float angularAccelerationSensitivity;
-
-        public bool _Debug;
-
         [Space(10)]
 
         [SerializeField] AnimationCurve shakeTransformCurve;
 
-        
+        public AnimationCurve easeInCurve;
+        public AnimationCurve easeOutCurve;
+
+        [Space(5)]
+
+        //[SerializeField] AnimationCurve audioMixerRolloff;
+
+        [SerializeField] bool _Debug;
+
+
 
         [Header("Read Only")]
 

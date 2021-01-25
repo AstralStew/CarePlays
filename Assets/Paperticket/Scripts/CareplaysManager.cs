@@ -8,9 +8,9 @@ namespace Paperticket {
     #region public enums
     public enum AssetBundles { desert, menu, menuscene, we01, we01scene, we02, we02scene, we03, we03scene, we04, we04scene,
                                 characters, in01, in01scene, in02, in02scene, in03, in03scene, in04, in04scene, in05,
-                                 in05scene, in06, in06scene, in07, in07scene}
+                                 in05scene, in06, in06scene }
     public enum CareScene { DesertMenu, WE01_Onboarding, WE02_Jetty, WE03_Dawn, WE04_Finale, IN01_Modules, IN02_Choice, 
-                             IN03_Reporting, IN04_Cigarette, IN05_Family, IN06_Privacy, IN07_Finale }
+                             IN03_Reporting, IN04_Cigarette, IN05_Family, IN06_Privacy }
     #endregion
 
     public class CareplaysManager : MonoBehaviour {

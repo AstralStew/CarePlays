@@ -38,7 +38,6 @@ public class CrossSceneEventHelper : MonoBehaviour {
                 CareplaysManager.instance.IN01PrivacyComplete = true;
                 CareplaysManager.instance.IN01VideoIndex += 1;
                 break;
-            case CareScene.IN07_Finale:
             case CareScene.IN01_Modules:
             case CareScene.DesertMenu:
             case CareScene.WE01_Onboarding:
@@ -185,7 +184,7 @@ public class CrossSceneEventHelper : MonoBehaviour {
         StartCoroutine(PTUtilities.instance.ShakeTransform(target, shakeAmount, duration));
     }
 
-    public enum CurveType { Constant, Linear, EaseInOut }
+    public enum CurveType { Constant, Linear, EaseInOut, EaseIn, EaseOut }
 
     public void MoveTransformViaCurve( Transform target, CurveType curveType, Vector3 moveAmount, float duration ) {
 
@@ -200,6 +199,12 @@ public class CrossSceneEventHelper : MonoBehaviour {
                 break;
             case CurveType.EaseInOut:
                 curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+                break;
+            case CurveType.EaseIn:
+                curve = PTUtilities.instance.easeInCurve;
+                break;
+            case CurveType.EaseOut:
+                curve = PTUtilities.instance.easeOutCurve;
                 break;
             default:
                 Debug.LogError("[{0}] ERROR -> Bad CurveType recieved in MoveTransformViaCurve!!");
@@ -224,6 +229,12 @@ public class CrossSceneEventHelper : MonoBehaviour {
             case CurveType.EaseInOut:
                 curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
                 break;
+            case CurveType.EaseIn:
+                curve = PTUtilities.instance.easeInCurve;
+                break;
+            case CurveType.EaseOut:
+                curve = PTUtilities.instance.easeOutCurve;
+                break;
             default:
                 Debug.LogError("[{0}] ERROR -> Bad CurveType recieved in ScaleTransformViaCurve!!");
                 break;
@@ -246,6 +257,12 @@ public class CrossSceneEventHelper : MonoBehaviour {
                 break;
             case CurveType.EaseInOut:
                 curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+                break;
+            case CurveType.EaseIn:
+                curve = PTUtilities.instance.easeInCurve;
+                break;
+            case CurveType.EaseOut:
+                curve = PTUtilities.instance.easeOutCurve;
                 break;
             default:
                 Debug.LogError("[{0}] ERROR -> Bad CurveType recieved in RotateTransformViaCurve!!");

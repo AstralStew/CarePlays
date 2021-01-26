@@ -12,6 +12,7 @@ namespace Paperticket {
 
 
         [Header("CONTROLS")]
+
         [Tooltip("WARNING - > Make sure this matches the Bundle Version in Player Settings for every new build!")]
         [SerializeField] int _bundleIdentifier = 1;
 
@@ -43,10 +44,10 @@ namespace Paperticket {
             get {
 
                 if (Application.platform == RuntimePlatform.WindowsEditor) {
-                    return "main." + _bundleIdentifier + ".com.WorkForcePlus.CarePlaysVR" + ".obb";
+                    return "main." + _bundleIdentifier + "." + Application.identifier + ".obb";
 
                 } else if (Application.platform == RuntimePlatform.WindowsPlayer) {
-                    return "main." + _bundleIdentifier + ".com.WorkForcePlus.CarePlaysVR" + ".obb";
+                    return "main." + _bundleIdentifier + "." + Application.identifier + ".obb";
 
                 } else if (Application.platform == RuntimePlatform.Android) {
                     return "main." + _bundleIdentifier + "." + Application.identifier + ".obb";

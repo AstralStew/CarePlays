@@ -455,8 +455,8 @@ MonoBehaviour:
   FloatKeys: []
   debugging: 1
   frameDebugging: 0
-  loadDebugBundles: 1
-  debugBundles: 1600000017000000
+  loadDebugBundles: 0
+  debugBundles: 05000000060000000b000000
   loadedBundles: []
   finishedInitialising: 0
 --- !u!4 &773205471
@@ -1383,7 +1383,7 @@ MonoBehaviour:
   - sceneName: Induction06 - Privacy and Consent
     careScene: 10
     requiredBundles: 1600000017000000
-  loadFirstScene: 0
+  loadFirstScene: 1
   firstScene: 0
   debugging: 1
   IN01HonestyComplete: 0
@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891529374}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
@@ -1640,7 +1640,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891529374}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 

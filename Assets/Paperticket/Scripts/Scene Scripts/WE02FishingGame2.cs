@@ -12,17 +12,18 @@ namespace Paperticket {
 
         [Header("REFERENCES")]
 
-        [SerializeField] Transform rodTarget;
-        [SerializeField] SkinnedMeshRenderer fishingRod;
-        [SerializeField] AudioSource reelHandle;
+        [SerializeField] Transform rodTarget = null;
+        [SerializeField] SkinnedMeshRenderer fishingRod = null;
+        [SerializeField] AudioSource reelHandle = null;
+        [SerializeField] Transform playerStartPos = null;
 
         [Space(15)]
-        [SerializeField] Transform playerFish;
-        [SerializeField] SpriteRenderer fishSprite;
-        [SerializeField] Transform objectSprites;
-        [SerializeField] LineRenderer fishingLine;
+        [SerializeField] Transform playerFish = null;
+        [SerializeField] SpriteRenderer fishSprite = null;
+        [SerializeField] Transform objectSprites = null;
+        [SerializeField] LineRenderer fishingLine = null;
 
-        Transform playerRig;
+        Transform playerRig = null;
         //Transform playerHead;
 
         [Header("GENERAL CONTROLS")]
@@ -285,7 +286,7 @@ namespace Paperticket {
         void CalculateTarget() {
             if (!Application.isPlaying) return;
 
-            rodDistance = playerRig.InverseTransformPoint(rodTarget.position).x;
+            rodDistance = playerStartPos.InverseTransformPoint(rodTarget.position).x;
 
             //headDistance = playerRig.InverseTransformPoint(playerHead.position).x;
 

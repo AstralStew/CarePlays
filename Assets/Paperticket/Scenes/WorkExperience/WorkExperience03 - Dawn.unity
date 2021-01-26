@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 0.1
+  timeBeforeEvent: 0
   eventBehaviour: 0
   debug: 0
   OneTimeUse: 1
@@ -221,7 +221,7 @@ MonoBehaviour:
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: CrossSceneEventHelper+CurveType, Assembly-CSharp
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 0.1
+  timeBeforeEvent: 0
   eventBehaviour: 0
   debug: 0
   OneTimeUse: 1
@@ -912,7 +912,7 @@ MonoBehaviour:
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: CrossSceneEventHelper+CurveType, Assembly-CSharp
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1169,26 +1169,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-          m_Vector2Argument: {x: 0, y: 0}
-          m_Vector2IntArgument: {x: 0, y: 0}
-          m_Vector3Argument: {x: 0, y: 0, z: 0}
-          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
-          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
-          m_LayerMaskArgument:
-            serializedVersion: 2
-            m_Bits: 0
-          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
-        m_CallState: 2
-        m_Target: {fileID: 1371809451}
-        m_MethodName: SetActive
-        m_Modes: 06000000
-      - m_Arguments:
         - m_ObjectArgument: {fileID: 8300000, guid: 2fd16c3916525b04abd0b7b86f53e21e,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
@@ -1246,7 +1226,27 @@ MonoBehaviour:
             m_Bits: 0
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         m_CallState: 2
-        m_Target: {fileID: 645670582}
+        m_Target: {fileID: 1371809451}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1569206181}
         m_MethodName: SetActive
         m_Modes: 06000000
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 0.1
+  timeBeforeEvent: 0
   eventBehaviour: 0
   debug: 0
   OneTimeUse: 1
@@ -1723,7 +1723,7 @@ MonoBehaviour:
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: CrossSceneEventHelper+CurveType, Assembly-CSharp
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3348,13 +3348,13 @@ Transform:
   m_GameObject: {fileID: 1229266437}
   m_LocalRotation: {x: -0.65704215, y: -0.17922401, z: -0.1926956, w: 0.70642966}
   m_LocalPosition: {x: -0.0146, y: 0.1176, z: -0.0993}
-  m_LocalScale: {x: -0.111111104, y: 0.1111111, z: 0.1111111}
+  m_LocalScale: {x: -0.11372221, y: 0.113722205, z: 0.113722205}
   m_Children: []
   m_Father: {fileID: 129579024}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1229266439
-SphereCollider:
+--- !u!136 &1229266439
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3363,8 +3363,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.05
+  m_Height: 0.33
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1229266440
 Rigidbody:
@@ -4832,7 +4833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 0.1
+  timeBeforeEvent: 0
   eventBehaviour: 0
   debug: 0
   OneTimeUse: 1
@@ -4857,7 +4858,7 @@ MonoBehaviour:
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: CrossSceneEventHelper+CurveType, Assembly-CSharp
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5360,6 +5361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1994455532}
   - component: {fileID: 1994455533}
+  - component: {fileID: 1994455534}
   m_Layer: 0
   m_Name: '[VE] During second video'
   m_TagString: Untagged
@@ -5382,6 +5384,67 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1994455533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994455531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e01895552e41bf44b06fe014c4d59f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugging: 0
+  videoController: {fileID: 1934923455}
+  videoTimeBeforeEvent: 3
+  OneTimeUse: 1
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 645670582}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1569206181}
+        m_MethodName: SetActive
+        m_Modes: 06000000
+    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1994455534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

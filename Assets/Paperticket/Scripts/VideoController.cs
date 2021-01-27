@@ -77,10 +77,13 @@ namespace Paperticket {
         [SerializeField] bool debugging = true;
         [Space(10)]
         public float currentVideoTime = 0;                // in seconds
+        public float currentSpeed = 1;
         [SerializeField] private long currentFrames = 0;
         [SerializeField] private long endFrames = 0;
 
-        
+
+        #region Enable and Update
+
 
         // Use this for initialization
         void OnEnable() {
@@ -115,7 +118,8 @@ namespace Paperticket {
                 // The current time of the video playthrough
                 currentVideoTime = (float)videoPlayer.time;
                 currentFrames = videoPlayer.frame;
-            
+                currentSpeed = videoPlayer.playbackSpeed;
+
             }            
 
             if (!videoPlayer.isLooping && videoStarted && !videoEnded && (videoPlayer.frame >= endFrames)) {
@@ -124,10 +128,11 @@ namespace Paperticket {
 
         }
 
+        #endregion
 
-                     
+
         #region PUBLIC VIDEO FUNCTIONS
-               
+
 
         //-----------------------------------------------------------
         // PUBLIC VIDEO CONTROLS
@@ -227,10 +232,7 @@ namespace Paperticket {
                 float newTime = Mathf.Clamp((float)videoPlayer.time + timeStep, 0f, totalTime - 10f);
 
                 videoPlayer.time = newTime;
-
-                if (externalAudio) {
-                    externalAudioSource.time = newTime;
-                }
+                if (externalAudio) externalAudioSource.time = newTime;
             }
         }
 
@@ -258,9 +260,19 @@ namespace Paperticket {
             videoEnded = true;
         }
 
+        public void SetSpeed( float playbackSpeed ) {
+            if (!playingVideo) return;
+
+            if (debugging) Debug.Log("[VideoController] Setting the video speed to: " + playbackSpeed);
+
+            videoPlayer.playbackSpeed = Mathf.Max(0, playbackSpeed);
+            if (externalAudio) externalAudioSource.pitch = Mathf.Max(0, playbackSpeed);
+
+        }
+
         public void SyncExternalAudio() {
             if (!externalAudio) {
-                Debug.LogWarning("[VideoController] Not using external audio, ignoring Sync External Audio");
+                if (debugging) Debug.LogWarning("[VideoController] Not using external audio, ignoring Sync External Audio");
                 return;
             }
             externalAudioSource.time = (float)videoPlayer.time;

@@ -2205,8 +2205,8 @@ MonoBehaviour:
   initialRotation: {x: 0, y: 0, z: 0}
   rePrepareOnError: 1
   rePrepareDelay: 0.5
-  externalAudio: 0
-  externalAudioSource: {fileID: 0}
+  externalAudio: 1
+  externalAudioSource: {fileID: 1141337852}
   earlyFinishDuration: 0.5
   pauseVideoOnFinish: 1
   _UseFinishEvents: 1
@@ -2713,6 +2713,7 @@ MonoBehaviour:
   videoEnded: 0
   debugging: 1
   currentVideoTime: 0
+  currentSpeed: 1
   currentFrames: 0
   endFrames: 0
   videoBundle: {fileID: 0}
@@ -3000,7 +3001,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: YES
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3111,7 +3112,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: UNSURE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

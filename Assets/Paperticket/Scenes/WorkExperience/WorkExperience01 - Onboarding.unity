@@ -21,9 +21,9 @@ RenderSettings:
   m_FogDensity: 0.001
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.086500466, g: 0.09305898, b: 0.09989874, a: 1}
-  m_AmbientEquatorColor: {r: 0.07618539, g: 0.086500466, b: 0.09305898, a: 1}
-  m_AmbientGroundColor: {r: 0.046665095, g: 0.042311423, b: 0.035601325, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0.36477977, b: 0.5471698, a: 1}
+  m_AmbientEquatorColor: {r: 0.5411765, g: 0.08428158, b: 0, a: 1}
+  m_AmbientGroundColor: {r: 0.066037714, g: 0.010527751, b: 0, a: 1}
   m_AmbientIntensity: 0.4
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -13222,6 +13222,7 @@ MonoBehaviour:
   videoEnded: 0
   debugging: 0
   currentVideoTime: 0
+  currentSpeed: 1
   currentFrames: 0
   endFrames: 0
   videoBundle: {fileID: 0}

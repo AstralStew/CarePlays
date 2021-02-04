@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +14,8 @@ namespace Paperticket {
 
         [Header("CONTROLS")]
 
-        [Tooltip("WARNING - > Make sure this matches the Bundle Version in Player Settings for every new build!")]
-        [SerializeField] int _bundleIdentifier = 1;
-
         [SerializeField] bool autoloadMainBundle = true;
+        [SerializeField] Environment.SpecialFolder editorBundleLocation = Environment.SpecialFolder.MyDocuments;
         
         #region Expansion Paths
 
@@ -24,8 +23,7 @@ namespace Paperticket {
             get {
 
                 if (Application.platform == RuntimePlatform.WindowsEditor) {
-                    return System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/Paperticket Studios/CarePlaysVR/PC Asset Bundles/";
-                    //return "D:/Paperticket Studios/PROJECTS/BUILDS/CarePlaysVR/EXEs/Asset Bundles/" + _ExpansionFileName;
+                    return Environment.GetFolderPath(editorBundleLocation) + "/Paperticket Studios/CarePlaysVR/PC Asset Bundles/";
 
                 } else if (Application.platform == RuntimePlatform.WindowsPlayer) {
                     return Application.dataPath + "/Asset Bundles/";
@@ -44,13 +42,13 @@ namespace Paperticket {
             get {
 
                 if (Application.platform == RuntimePlatform.WindowsEditor) {
-                    return "main." + _bundleIdentifier + "." + Application.identifier + ".obb";
+                    return "main." + bundleVersion + "." + Application.identifier + ".obb";
 
                 } else if (Application.platform == RuntimePlatform.WindowsPlayer) {
-                    return "main." + _bundleIdentifier + "." + Application.identifier + ".obb";
+                    return "main." + bundleVersion + "." + Application.identifier + ".obb";
 
                 } else if (Application.platform == RuntimePlatform.Android) {
-                    return "main." + _bundleIdentifier + "." + Application.identifier + ".obb";
+                    return "main." + bundleVersion + "." + Application.identifier + ".obb";
 
                 } else {
                     Debug.LogError("[DataUtilities] Bad platform for ExpansionFileName!");
@@ -91,6 +89,7 @@ namespace Paperticket {
         public List<AssetBundle> loadedBundles = null;
         [Space(20)]
         public bool finishedInitialising;
+        int bundleVersion = 0;
 
         void Awake() {
 
@@ -104,8 +103,13 @@ namespace Paperticket {
             // Load the player's progress
             if (loadProgressOnStart) LoadPlayerProgress();
 
-            // Load and save a reference to the expansion asset bundle    
-            if (debugging) Debug.Log("[DataUtilities] Attempting to grab ExpansionAssetBundle from: " + ExpansionFilePath + ExpansionFileName);
+            // Set bundle version and display start debug message if applicable  
+            bundleVersion = int.Parse(Application.version.Replace(".", ""));
+            if (debugging) Debug.Log("[DataUtilities] Careplays Version Information -" + "\n" +
+                                            "Application identifier = " + Application.identifier + "\n" +
+                                            "Application version = " + Application.version + "\n" +
+                                            "Bundle version = " + bundleVersion + "\n" +
+                                            "Expansion File Path = " + ExpansionFilePath);
 
             // Load debug bundles if necessary
             if (loadDebugBundles) {
@@ -117,6 +121,8 @@ namespace Paperticket {
             // If checked, load the main bundle
             if (autoloadMainBundle) LoadMainBundle();
             else finishedInitialising = true;
+
+
 
 
 

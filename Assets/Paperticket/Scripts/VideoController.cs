@@ -263,20 +263,13 @@ namespace Paperticket {
         public void SetSpeed( float playbackSpeed ) {
             if (!playingVideo) return;
 
-            if (debugging) Debug.Log("[VideoController] Setting the video speed to: " + playbackSpeed);
+            //if (debugging) Debug.Log("[VideoController] Setting the video speed to: " + playbackSpeed);
 
             videoPlayer.playbackSpeed = Mathf.Max(0, playbackSpeed);
             if (externalAudio) externalAudioSource.pitch = Mathf.Max(0, playbackSpeed);
 
         }
 
-        public void SyncExternalAudio() {
-            if (!externalAudio) {
-                if (debugging) Debug.LogWarning("[VideoController] Not using external audio, ignoring Sync External Audio");
-                return;
-            }
-            externalAudioSource.time = (float)videoPlayer.time;
-        }
 
 
         #endregion
@@ -303,6 +296,15 @@ namespace Paperticket {
 
             initialRotation = rotation;
 
+        }
+
+
+        public void SyncExternalAudio() {
+            if (!externalAudio) {
+                if (debugging) Debug.LogWarning("[VideoController] Not using external audio, ignoring Sync External Audio");
+                return;
+            }
+            externalAudioSource.time = (float)videoPlayer.time;
         }
 
         #endregion

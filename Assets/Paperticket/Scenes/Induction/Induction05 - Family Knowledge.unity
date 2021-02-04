@@ -12972,7 +12972,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: f4a8904431417f64f928689992f1b4d3,
+        - m_ObjectArgument: {fileID: 8300000, guid: bb1865f59ab7cf440847474222457dfe,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -21394,7 +21394,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: 02da1b335be21d744a081cbdde714b75,
+        - m_ObjectArgument: {fileID: 8300000, guid: 94ff93190e3296f409a5f35ccca76eed,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -24286,7 +24286,7 @@ MonoBehaviour:
         m_MethodName: FadeHeadsetIn
         m_Modes: 04000000
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: fb3448189ef30db49896cce327c26c5d,
+        - m_ObjectArgument: {fileID: 8300000, guid: 95cb367f548560b4faa1ed4259785823,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -26488,7 +26488,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: 85fd72e829b83e94fa7ecaccbec3500c,
+        - m_ObjectArgument: {fileID: 8300000, guid: 972125f797f735042bc2bf1a056b33a8,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -62499,7 +62499,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: 354419148ee6406439d68df4565c9a32,
+        - m_ObjectArgument: {fileID: 8300000, guid: edf223825ae0b264685b8382509b5793,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -67130,7 +67130,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: ebd8d44be82d6934e8a3c56db624f175,
+        - m_ObjectArgument: {fileID: 8300000, guid: c81e333bf16c26c4d9fe7dd6d527e961,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0

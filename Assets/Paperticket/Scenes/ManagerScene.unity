@@ -99,7 +99,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -455,8 +455,8 @@ MonoBehaviour:
   FloatKeys: []
   debugging: 1
   frameDebugging: 0
-  loadDebugBundles: 0
-  debugBundles: 1200000013000000
+  loadDebugBundles: 1
+  debugBundles: 090000000a000000
   loadedBundles: []
   finishedInitialising: 0
 --- !u!4 &773205471
@@ -1383,7 +1383,7 @@ MonoBehaviour:
   - sceneName: Induction06 - Privacy and Consent
     careScene: 10
     requiredBundles: 1600000017000000
-  loadFirstScene: 1
+  loadFirstScene: 0
   firstScene: 0
   debugging: 1
   IN01HonestyComplete: 0

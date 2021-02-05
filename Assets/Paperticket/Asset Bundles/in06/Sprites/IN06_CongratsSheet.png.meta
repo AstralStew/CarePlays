@@ -1,0 +1,524 @@
+fileFormatVersion: 2
+guid: 43f3e28eb847444439dbaee8fa031240
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1388058077220227675
+    second: PhoneCongrats_0
+  - first:
+      213: 5368995642190345082
+    second: PhoneCongrats_1
+  - first:
+      213: 3546004787435547701
+    second: PhoneCongrats_2
+  - first:
+      213: -2598422383959435705
+    second: PhoneCongrats_3
+  - first:
+      213: -2526966138756443236
+    second: PhoneCongrats_4
+  - first:
+      213: 8110031481153282535
+    second: PhoneCongrats_5
+  - first:
+      213: 4774970356377135659
+    second: PhoneCongrats_6
+  - first:
+      213: -3647992551754265630
+    second: PhoneCongrats_7
+  - first:
+      213: -5933648345547905434
+    second: PhoneCongrats_8
+  - first:
+      213: -5684776183958128095
+    second: PhoneCongrats_9
+  - first:
+      213: -1751455591452817390
+    second: PhoneCongrats_10
+  - first:
+      213: 8815240102571415843
+    second: PhoneCongrats_11
+  - first:
+      213: -8495485900947963504
+    second: PhoneCongrats_12
+  - first:
+      213: -738680481827291166
+    second: PhoneCongrats_13
+  - first:
+      213: -3276891418865670150
+    second: PhoneCongrats_14
+  - first:
+      213: 4057629603111162135
+    second: PhoneCongrats_15
+  - first:
+      213: -8159017376171116508
+    second: PhoneCongrats_16
+  - first:
+      213: 4821820314105802570
+    second: PhoneCongrats_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PhoneCongrats_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a53da37880acbce0800000000000000
+      internalID: -1388058077220227675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_1
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 0
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7330652711828a40800000000000000
+      internalID: 5368995642190345082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_2
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 0
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c2eee0190f53130800000000000000
+      internalID: 3546004787435547701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_3
+      rect:
+        serializedVersion: 2
+        x: 3510
+        y: 0
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7469cabdb9c80fbd0800000000000000
+      internalID: -2598422383959435705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1252
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c935bfb6fa96eecd0800000000000000
+      internalID: -2526966138756443236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_5
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1252
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1606fc9ae9c8070800000000000000
+      internalID: 8110031481153282535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_6
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1252
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a21e08d3a144240800000000000000
+      internalID: 4774970356377135659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_7
+      rect:
+        serializedVersion: 2
+        x: 3510
+        y: 1252
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb8a612a1abf5dc0800000000000000
+      internalID: -3647992551754265630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2504
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666688d744277ada0800000000000000
+      internalID: -5933648345547905434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_9
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 2504
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a339f0e2e9b11b0800000000000000
+      internalID: -5684776183958128095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_10
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 2504
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218459f4b6491b7e0800000000000000
+      internalID: -1751455591452817390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_11
+      rect:
+        serializedVersion: 2
+        x: 3510
+        y: 2504
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3291c8b0b26065a70800000000000000
+      internalID: 8815240102571415843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3756
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09148a78598f91a80800000000000000
+      internalID: -8495485900947963504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_13
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 3756
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ef7b26f30eafb5f0800000000000000
+      internalID: -738680481827291166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_14
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 3756
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af76cf2cd942682d0800000000000000
+      internalID: -3276891418865670150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_15
+      rect:
+        serializedVersion: 2
+        x: 3510
+        y: 3756
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711dc8330a89f4830800000000000000
+      internalID: 4057629603111162135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5008
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428b419bce855ce80800000000000000
+      internalID: -8159017376171116508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneCongrats_17
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 5008
+        width: 1170
+        height: 1252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4fe901570c8ae240800000000000000
+      internalID: 4821820314105802570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

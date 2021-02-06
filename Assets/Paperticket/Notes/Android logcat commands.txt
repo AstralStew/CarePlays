@@ -10,3 +10,16 @@ cd D:/Program Files/Unity Installs/2019.4.11f1/Editor/Data/PlaybackEngines/Andro
 
 
  adb logcat -c
+
+ cls
+
+
+
+
+
+
+ <linker>
+    <assembly fullname="UnityEngine">
+        <type fullname="UnityEngine.Collider" preserve="all"/>
+    </assembly>
+</linker>

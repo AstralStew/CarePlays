@@ -20,6 +20,7 @@ namespace Paperticket {
         [Space(5)]
         [SerializeField] UnityEvent2 onEvent = null;
 
+        Coroutine waitCo;
 
         public void ToggleLock(bool toggle) {
             locked = toggle;
@@ -30,17 +31,34 @@ namespace Paperticket {
         public void SendEvent(bool lockEvent ) {
             if (locked || onEvent == null) return;
 
-            if (timeBeforeEvent > 0) StartCoroutine(WaitForEvent());
-            else onEvent.Invoke();
+            if (timeBeforeEvent > 0) {
 
-            if (lockEvent) locked = true;
+                if (waitCo != null) {
+                    Debug.LogWarning("[LockableEvent] Already waiting to send event, cancelling...");
+                    return;
+                }
 
-            if (debugging) Debug.Log("[LockableEvent] Sending event! Event status: " + (locked ? "locked" : "unlocked"));
+                waitCo = StartCoroutine(WaitForEvent(lockEvent));
+
+            } else {
+
+                onEvent.Invoke();
+                if (lockEvent) locked = true;
+
+                if (debugging) Debug.Log("[LockableEvent] Sending event! Event status: " + (locked ? "locked" : "unlocked"));
+            }
         }
 
-        IEnumerator WaitForEvent() {
+
+        IEnumerator WaitForEvent(bool lockEvent) {
+
             yield return new WaitForSeconds(timeBeforeEvent);
+
             onEvent.Invoke();
+            if (lockEvent) locked = true;
+            waitCo = null;
+
+            if (debugging) Debug.Log("[LockableEvent] Sending event! Event status: " + (locked ? "locked" : "unlocked"));           
         }
     }
 

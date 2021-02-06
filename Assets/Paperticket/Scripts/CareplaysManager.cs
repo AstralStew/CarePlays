@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Paperticket {
 
@@ -19,12 +20,17 @@ namespace Paperticket {
 
 
         [Header("CONTROLS")]
-
-        public List<CareSceneInfo> careSceneManifest = null;
-
-        [Space(10)]
-        [SerializeField] bool loadFirstScene;
+        [SerializeField] bool loadFirstScene = true;
         public CareScene firstScene = CareScene.DesertMenu;
+        [Space(10)]
+        public List<CareSceneInfo> careSceneManifest = null;
+        [Space(20)]
+        [SerializeField] UnityEvent2 startLoading;
+        [SerializeField] UnityEvent2 finishLoading;
+
+        //[SerializeField] GameObject LoadingGraphic = null;
+        //[SerializeField] [Min(0)] float loadingGraphicDelay = 2f;
+        //SpriteRenderer[] loadingSprites = null;
 
         [Space(10)] 
         [SerializeField] bool debugging = false;
@@ -39,6 +45,10 @@ namespace Paperticket {
         public bool IN01ReportComplete = false;
         public int IN01VideoIndex = 0;
 
+        Coroutine loadingCareSceneCo = null;
+        //Coroutine watchingLoadTimeCo = null;
+        //bool loadGfxActive = false;
+
         void Awake() {
             StartCoroutine(Initialising());          
 
@@ -49,7 +59,14 @@ namespace Paperticket {
 
         public void LoadCareScene( CareScene careScene ) {
             if (debugging) Debug.Log("[CareplaysManager] Attempting to load CareScene '"+careScene.ToString()+"'...");
-            StartCoroutine(LoadingCareScene(careScene));
+
+            // Unload the current scene and old bundles, load the next set
+            if (loadingCareSceneCo != null) StopCoroutine(loadingCareSceneCo);
+            loadingCareSceneCo = StartCoroutine(LoadingCareScene(careScene));
+
+            //// Watch the loading times and display loading graphics if necessary
+            //if (watchingLoadTimeCo != null) StopCoroutine(watchingLoadTimeCo);
+            //watchingLoadTimeCo = StartCoroutine(WatchingLoadTime());
         }
 
         #endregion
@@ -103,6 +120,9 @@ namespace Paperticket {
                                      "CareScene name = " + newSceneName + "\n" +
                                      "Required bundles = " + newBundles.ToString());
 
+            // Send an event to signify that loading has started
+            if (startLoading != null) startLoading.Invoke();
+
             // Unload the current active scene            
             if (SceneUtilities.instance.SceneCount > 1) {
                 if (debugging) Debug.Log("[CareplaysManager] Unloading the active scene...");
@@ -134,8 +154,23 @@ namespace Paperticket {
             if (debugging) Debug.Log("[CareplaysManager] Loading the new scene...");
             SceneUtilities.instance.LoadScene(newSceneName, true);
             yield return new WaitUntil(() => SceneUtilities.instance.CheckSceneLoaded(newSceneName));
+
+            // Send an event to signify that loading has finished
+            if (finishLoading != null) finishLoading.Invoke();
+
+
+            loadingCareSceneCo = null;
         }
 
+
+        //IEnumerator WatchingLoadTime() {
+            
+        //    yield return new WaitForSeconds(loadingGraphicDelay);
+        //    loadGfxActive = true;
+
+
+
+        //}
 
 
         #endregion

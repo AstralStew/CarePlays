@@ -17,48 +17,57 @@ namespace Paperticket {
     public enum Hand { Left, Right }
 
     public class PTUtilities : MonoBehaviour {
-
-        [Header("References")]
+        //enum Handedness { Left, Right, Both }
 
         public static PTUtilities instance = null;
 
-        public AudioMixer audioMaster;
-
+        [Header("REFERENCES")]
         public XRRig playerRig;
-
         public SpriteRenderer headGfx;
 
 
-
-        [Header("Controls")]
-        
+        [Header("CONTROLS")]        
         [Space(10)]
-
-        [SerializeField] AnimationCurve shakeTransformCurve;
-
-        public AnimationCurve easeInCurve;
-        public AnimationCurve easeOutCurve;
-
+        public string masterMixerName = "CareplaysMaster";
         [Space(5)]
-
+        [SerializeField] AnimationCurve shakeTransformCurve = AnimationCurve.Linear(0, 0, 1, 1);
+        [Space(5)]
+        public AnimationCurve easeInCurve = AnimationCurve.Linear(0,0,1,1);
+        public AnimationCurve easeOutCurve = AnimationCurve.Linear(0, 0, 1, 1);
+        [Space(5)]
         //[SerializeField] AnimationCurve audioMixerRolloff;
-
-        [SerializeField] bool _Debug;
-
+        [SerializeField] bool _Debug = false;
 
 
-        [Header("Read Only")]
 
-        public Transform headProxy;
-        public XRController rightController;
-        public XRController leftController;
-        XRRayInteractor rightRayInteractor;
-        XRInteractorLineVisual rightRayVisual;
+        [Header("LIVE VARIABLES")]
+        [Space(10)]
+        public Transform headProxy = null;
+        [Space(5)]
+        public XRController leftController = null;
+        public XRController rightController = null;
+        [Space(5)]
+        XRRayInteractor rightRayInteractor = null;
+        XRInteractorLineVisual rightRayVisual = null;
+        [Space(5)]
+        public bool ControllerTriggerButton;
+        public bool ControllerPrimaryButton;
+        [Space(5)]
+        public Vector3 ControllerVelocity;
+        public Vector3 ControllerAngularVelocity;
+        public Vector3 ControllerAcceleration;
+        public Vector3 ControllerAngularAcceleration;
+        [Space(5)]
+        [SerializeField] AudioMixer audioMaster = null;
 
 
-        enum Handedness { Left, Right, Both }
+        [HideInInspector] public bool SetupComplete;        
 
-        
+
+
+        #region Public variables
+
+
         public Vector3 HeadsetPosition() {
             return headProxy.position;
         }
@@ -74,32 +83,17 @@ namespace Paperticket {
             return new Vector3(0, headProxy.rotation.eulerAngles.y, 0);
         }
 
-        public bool ControllerTriggerButton;
-        public bool ControllerPrimaryButton;
-        public Vector3 ControllerVelocity;
-        public Vector3 ControllerAngularVelocity;
-        public Vector3 ControllerAcceleration;
-        public Vector3 ControllerAngularAcceleration;
-        
-        [HideInInspector] public bool SetupComplete;
-
-
         public bool ControllerBeamActive {
-            get { 
-                return rightRayInteractor.enabled; 
+            get {
+                return rightRayInteractor.enabled;
             }
             set {
                 rightRayInteractor.enabled = value;
-                rightRayVisual.enabled = value; 
+                rightRayVisual.enabled = value;
             }
         }
 
-
-
-
-
-
-
+        #endregion
 
 
 
@@ -172,6 +166,22 @@ namespace Paperticket {
             if (_Debug) Debug.Log("[PTUtilities] Right Ray Visual found!");
 
 
+            // Grab the audio mixer after the Main bundle has been loaded
+            while (audioMaster == null) {
+                if (_Debug) Debug.Log("[PTUtilities] Looking for Audio Master mixer object...");
+                if (DataUtilities.instance.finishedInitialising) {
+
+                    // Load the asset from the Main bundle and wait until it's finished
+                    var assetLoadRequest = DataUtilities.instance.mainBundle.LoadAssetAsync<AudioMixer>(masterMixerName);
+                    yield return assetLoadRequest;
+
+                    // Save the asset as an audio mixer
+                    audioMaster = assetLoadRequest.asset as AudioMixer;
+                } 
+                yield return null;
+            }
+            if (_Debug) Debug.Log("[PTUtilities] Audio Master mixer found!");
+
             // Finish setup
             SetupComplete = true;
             if (_Debug) Debug.Log("[PTUtilities] Setup complete!");
@@ -215,7 +225,8 @@ namespace Paperticket {
         bool lastTriggerState;
         bool lastPrimaryState;
         void Update() {
-            if (!SetupComplete) return;
+            if (!SetupComplete) return;            
+
 
             if (rightController.inputDevice.TryGetFeatureValue(CommonUsages.triggerButton, out ControllerTriggerButton) && ControllerTriggerButton) {                
                 if (!lastTriggerState) {
@@ -946,22 +957,49 @@ namespace Paperticket {
             fadingAudioListener = false;
         }
 
-        public IEnumerator FadeAudioMixerTo( AudioMixer mixer, float targetVolume, float duration ) {
 
-            mixer.GetFloat("MasterVolume", out float currentDB);
-            float targetDB = (targetVolume - 1) * 80;
+        public IEnumerator FadeAudioMasterTo( float targetVolume, float duration ) {
 
-            if (_Debug) Debug.Log("Fading mixer '"+mixer.name+"', currentDB = " + currentDB);
+            if (_Debug) Debug.Log("Fading master volume...");
+
+            yield return FadeAudioMixerTo(audioMaster, "MasterVolume", targetVolume, duration);
+
+            if (_Debug) Debug.Log("Finished fading master volume...");
+
+            //audioMaster.GetFloat("MasterVolume", out float currentDB);
+            //float targetDB = (targetVolume - 1) * 80;
+
+            //if (_Debug) Debug.Log("Fading Master audio mixer, currentDB = "+currentDB+", targetDB = " + targetDB);
+
+            //for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+            //    float newDB = Mathf.Lerp(currentDB, targetDB, t);
+            //    audioMaster.SetFloat("MasterVolume", newDB);
+            //    if (_Debug) Debug.Log("MasterVolume = " + newDB);
+            //    yield return null;
+            //}
+            //audioMaster.SetFloat("MasterVolume", targetDB);
+
+            //if (_Debug) Debug.Log("Finished fading Master audio mixer, newDB = " + targetDB);
+
+        }
+
+
+        public IEnumerator FadeAudioMixerTo( AudioMixer mixer, string floatName, float targetValue, float duration ) {
+
+            mixer.GetFloat(floatName, out float currentDB);
+            float targetDB = (targetValue - 1) * 80;
+
+            if (_Debug) Debug.Log("Fading mixer '"+mixer.name+"', currentDB = "+currentDB+", targetDB = "+targetDB);
 
             for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
                 float newDB = Mathf.Lerp(currentDB, targetDB, t);
-                mixer.SetFloat("MasterVolume", newDB);
-                if (_Debug) Debug.Log("Master Volume = " + newDB);
+                mixer.SetFloat(floatName, newDB);
+                if (_Debug) Debug.Log(floatName + " = " + newDB);
                 yield return null;
             }
-            audioMaster.SetFloat("MasterVolume", targetDB);
+            audioMaster.SetFloat(floatName, targetDB);
 
-            if (_Debug) Debug.Log("Finished fading mixer '"+mixer.name+"', newDB = "+targetDB);
+            if (_Debug) Debug.Log("Finished fading mixer '"+mixer.name+"', newDB = "+ targetDB);
         }
 
     }

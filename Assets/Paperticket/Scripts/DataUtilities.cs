@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +14,7 @@ namespace Paperticket {
         [Header("CONTROLS")]
 
         [SerializeField] bool autoloadMainBundle = true;
-        [SerializeField] Environment.SpecialFolder editorBundleLocation = Environment.SpecialFolder.MyDocuments;
+        [SerializeField] System.Environment.SpecialFolder editorBundleLocation = System.Environment.SpecialFolder.MyDocuments;
         
         #region Expansion Paths
 
@@ -23,7 +22,7 @@ namespace Paperticket {
             get {
 
                 if (Application.platform == RuntimePlatform.WindowsEditor) {
-                    return Environment.GetFolderPath(editorBundleLocation) + "/Paperticket Studios/CarePlaysVR/PC Asset Bundles/";
+                    return System.Environment.GetFolderPath(editorBundleLocation) + "/Paperticket Studios/CarePlaysVR/PC Asset Bundles/";
 
                 } else if (Application.platform == RuntimePlatform.WindowsPlayer) {
                     return Application.dataPath + "/Asset Bundles/";
@@ -167,9 +166,7 @@ namespace Paperticket {
             StartCoroutine(UnloadingAllAssetBundles(unloadAllLoadedObjects));
         }
 
-
-
-
+        
 
         #endregion
 
@@ -203,6 +200,18 @@ namespace Paperticket {
             return null;
         }
 
+        public AssetBundle mainBundle {
+            get {
+                foreach (AssetBundle bundle in loadedBundles) {
+                    if (bundle.name == "main") {
+                        return bundle;
+                    }
+                }
+                Debug.LogError("[DataUtilities] ERROR -> Main bundle could not be found! Something has gone terribly wrong!");
+                return null;
+            }
+        }
+
 
         public AssetBundles[] GetLoadedBundles () {
             List<AssetBundles> bundleList = new List<AssetBundles>();            
@@ -217,9 +226,32 @@ namespace Paperticket {
             else return null;
         }
 
+               
+
+        //public Object LoadObjectFromBundle( AssetBundles assetBundle, string objectName) {
+
+        //    // Make sure the bundle is loaded  
+        //    if (!isBundleLoaded(assetBundle)) {
+        //        Debug.LogWarning("[DataUtilties] ERROR -> Cannot load object '"+objectName+"'! Bundle '"+assetBundle.ToString()+"'is not loaded!");
+        //        return null;
+        //    }
+                                  
+        //    AssetBundle bundle = GetAssetBundle(assetBundle); //_ExpansionAssetBundle;
+        //    while (bundle == null) {
+        //        if (debugging) Debug.Log("[DataUtilties] Attempting to get asset bundle '" + assetBundle.ToString() + "'");
+        //        bundle = GetAssetBundle(assetBundle); //_ExpansionAssetBundle;
+        //        yield return null;
+        //    }
+        //    if (debugging) Debug.Log("[DataUtilties] Got the asset bundle '" + bundle + "'");
+        //    // Load the video clip from the asset bundle and wait until it's finished
+        //    var assetLoadRequest = bundle.LoadAssetAsync(objectName);
+        //    yield return assetLoadRequest;
+
+        //    // Treat the video as a VideoClip and give to the video player
+        //    return assetLoadRequest.asset;
 
 
-
+        //}
 
 
 

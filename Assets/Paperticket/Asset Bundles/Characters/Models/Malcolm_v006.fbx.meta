@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fddf6dfcebb600e459891c3a99eb2271
+guid: 6660117e2389f7544b0c8560ead9b298
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -445,5 +445,5 @@ ModelImporter:
   avatarSetup: 0
   additionalBone: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: characters
   assetBundleVariant: 

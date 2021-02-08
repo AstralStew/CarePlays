@@ -2062,8 +2062,8 @@ MonoBehaviour:
   FloatKeys: []
   debugging: 1
   frameDebugging: 0
-  loadDebugBundles: 0
-  debugBundles: 0c0000000d000000
+  loadDebugBundles: 1
+  debugBundles: 1400000015000000
   loadedBundles: []
   finishedInitialising: 0
 --- !u!4 &773205471

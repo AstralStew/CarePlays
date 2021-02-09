@@ -32,6 +32,7 @@ public class ButtonInteractable : MonoBehaviour {
     [Header("CONTROLS")]
 
     [Space(10)]
+    [SerializeField] protected TimeScale timeScale = 0;
     [SerializeField] protected bool oneUse = false;
     protected bool used = false;
     [Space(10)]
@@ -103,13 +104,13 @@ public class ButtonInteractable : MonoBehaviour {
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
             switch (rendererType) {
                 case RendererType.Mesh:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, usedColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, usedColor, fadeTime, timeScale));
                     break;
                 case RendererType.Sprite:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, usedColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, usedColor, fadeTime, timeScale));
                     break;
                 case RendererType.Image:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, usedColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, usedColor, fadeTime, timeScale));
                     break;
                 case RendererType.Generic:
                 default:
@@ -130,13 +131,13 @@ public class ButtonInteractable : MonoBehaviour {
         if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
         switch (rendererType) {
             case RendererType.Mesh:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, hoveredColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, hoveredColor, fadeTime, timeScale));
                     break;
             case RendererType.Sprite:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, hoveredColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, hoveredColor, fadeTime, timeScale));
                 break;
             case RendererType.Image:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, hoveredColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, hoveredColor, fadeTime, timeScale));
                     break;
             case RendererType.Generic:
             default:
@@ -154,13 +155,13 @@ public class ButtonInteractable : MonoBehaviour {
         if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
         switch (rendererType) {
             case RendererType.Mesh:
-                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, fadeTime));
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, fadeTime, timeScale));
                 break;
             case RendererType.Sprite:
-                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, fadeTime));
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, fadeTime, timeScale));
                 break;
             case RendererType.Image:
-                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, defaultColor, fadeTime));
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, defaultColor, fadeTime, timeScale));
                 break;
             case RendererType.Generic:
             default:
@@ -179,13 +180,13 @@ public class ButtonInteractable : MonoBehaviour {
         if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
         switch (rendererType) {
             case RendererType.Mesh:
-                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, selectedColor, fadeTime));
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, selectedColor, fadeTime, timeScale));
                 break;
             case RendererType.Sprite:
-                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, selectedColor, fadeTime));
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, selectedColor, fadeTime, timeScale));
                 break;
             case RendererType.Image:
-                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, selectedColor, fadeTime));
+                fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, selectedColor, fadeTime, timeScale));
                 break;
             case RendererType.Generic:
             default:
@@ -210,13 +211,13 @@ public class ButtonInteractable : MonoBehaviour {
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
             switch (rendererType) {
                 case RendererType.Mesh:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, duration));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, duration, timeScale));
                     break;
                 case RendererType.Sprite:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, duration));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, duration, timeScale));
                     break;
                 case RendererType.Image:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, defaultColor, duration));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, defaultColor, duration, timeScale));
                     break;
                 case RendererType.Generic:
                 default:
@@ -231,13 +232,13 @@ public class ButtonInteractable : MonoBehaviour {
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
             switch (rendererType) {
                 case RendererType.Mesh:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(meshRend, 0, duration));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(meshRend, 0, duration, timeScale));
                     break;
                 case RendererType.Sprite:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(spriteRend, 0, duration));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(spriteRend, 0, duration, timeScale));
                     break;
                 case RendererType.Image:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(imageRenderer, 0, duration));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeAlphaTo(imageRenderer, 0, duration, timeScale));
                     break;
                 case RendererType.Generic:
                 default:
@@ -263,13 +264,13 @@ public class ButtonInteractable : MonoBehaviour {
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
             switch (rendererType) {
                 case RendererType.Mesh:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, usedColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, usedColor, fadeTime, timeScale));
                     break;
                 case RendererType.Sprite:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, usedColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, usedColor, fadeTime, timeScale));
                     break;
                 case RendererType.Image:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, usedColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, usedColor, fadeTime, timeScale));
                     break;
                 case RendererType.Generic:
                 default:
@@ -280,13 +281,13 @@ public class ButtonInteractable : MonoBehaviour {
             if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
             switch (rendererType) {
                 case RendererType.Mesh:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(meshRend, defaultColor, fadeTime, timeScale));
                     break;
                 case RendererType.Sprite:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(spriteRend, defaultColor, fadeTime, timeScale));
                     break;
                 case RendererType.Image:
-                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, defaultColor, fadeTime));
+                    fadingCoroutine = StartCoroutine(PTUtilities.instance.FadeColorTo(imageRenderer, defaultColor, fadeTime, timeScale));
                     break;
                 case RendererType.Generic:
                 default:

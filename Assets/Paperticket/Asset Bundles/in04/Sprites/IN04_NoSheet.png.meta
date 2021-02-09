@@ -38,6 +38,9 @@ TextureImporter:
   - first:
       213: -65399011614880852
     second: Cigarette-No_11
+  - first:
+      213: -2010268328865043650
+    second: IN04_NoSheet_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -362,10 +365,31 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: IN04_NoSheet_0
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3be7c21b971a14e0800000000000000
+      internalID: -2010268328865043650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c7d38438a5fc7cb4492390821e398508
     internalID: 0
     vertices: []
     indices: 

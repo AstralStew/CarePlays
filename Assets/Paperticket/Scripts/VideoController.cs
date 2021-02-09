@@ -193,13 +193,13 @@ namespace Paperticket {
                 if (!playingVideo) {
 
                     videoPlayer.Play();
-                    if (debugging) Debug.Log("[VideoController] Was the video interrupted somehow? Playing the video again");                
+                    if (debugging) Debug.Log("[VideoController] Playing the video again (was the video interrupted somehow?)");                
 
                     // Force the external audio time to match the video time
                     if (externalAudio) {
                         externalAudioSource.time = (float)videoPlayer.time;
                         // Also, play the audio If not playing
-                        if (!externalAudioSource.isPlaying) externalAudioSource.Play();
+                        externalAudioSource.Play();
                     }
 
                 }

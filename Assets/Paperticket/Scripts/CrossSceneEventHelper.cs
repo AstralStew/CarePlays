@@ -2,8 +2,8 @@
 using UnityEngine;
 using TMPro;
 using Paperticket;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 public class CrossSceneEventHelper : MonoBehaviour {
 
@@ -127,20 +127,19 @@ public class CrossSceneEventHelper : MonoBehaviour {
     Coroutine headFadeCo;
     public void FadeHeadsetColor( Color color, float duration ) {
         if (headFadeCo != null) StopCoroutine(headFadeCo);
-        headFadeCo = StartCoroutine(PTUtilities.instance.FadeColorTo(PTUtilities.instance.headGfx, color, duration));
+        headFadeCo = StartCoroutine(PTUtilities.instance.FadeColorTo(PTUtilities.instance.headGfx, color, duration, TimeScale.Scaled));
     }
 
     public void FadeHeadsetIn( float duration ) {
         if (headFadeCo != null) StopCoroutine(headFadeCo);
-        headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 0f, duration));
+        headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 0f, duration, TimeScale.Scaled));
     }
 
     public void FadeHeadsetOut( float duration ) {
         if (headFadeCo != null) StopCoroutine(headFadeCo);
-        headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 1f, duration));
+        headFadeCo = StartCoroutine(PTUtilities.instance.FadeAlphaTo(PTUtilities.instance.headGfx, 1f, duration, TimeScale.Scaled));
     }
-
-
+       
 
     public void FadeHeadsetToBlack( float duration ) {
         FadeHeadsetColor(Color.black, duration);
@@ -149,6 +148,16 @@ public class CrossSceneEventHelper : MonoBehaviour {
     public void FadeHeadsetToWhite( float duration ) {
         FadeHeadsetColor(Color.white, duration);
     }
+
+
+    public void UnscaledFadeHeadsetColor( Color color, float duration ) {
+        if (headFadeCo != null) StopCoroutine(headFadeCo);
+        headFadeCo = StartCoroutine(PTUtilities.instance.FadeColorTo(PTUtilities.instance.headGfx, color, duration, TimeScale.Unscaled));
+    }
+
+
+
+
 
     public void TeleportPlayer( Vector3 worldPosition, Vector3 forwardDirection ) {
         PTUtilities.instance.TeleportPlayer(worldPosition, forwardDirection);
@@ -181,7 +190,7 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
 
     public void ShakeTransform( Transform target, Vector3 shakeAmount, float duration) {
-        StartCoroutine(PTUtilities.instance.ShakeTransform(target, shakeAmount, duration));
+        StartCoroutine(PTUtilities.instance.ShakeTransform(target, shakeAmount, duration, TimeScale.Scaled));
     }
 
     public enum CurveType { Constant, Linear, EaseInOut, EaseIn, EaseOut }
@@ -211,7 +220,7 @@ public class CrossSceneEventHelper : MonoBehaviour {
                 break;
         }
 
-        StartCoroutine(PTUtilities.instance.MoveTransformViaCurve (target, curve, moveAmount, duration));
+        StartCoroutine(PTUtilities.instance.MoveTransformViaCurve (target, curve, moveAmount, duration, TimeScale.Scaled));
         
     }
 
@@ -240,7 +249,7 @@ public class CrossSceneEventHelper : MonoBehaviour {
                 break;
         }
 
-        StartCoroutine(PTUtilities.instance.ScaleTransformViaCurve(target, curve, scaleAmount, duration));
+        StartCoroutine(PTUtilities.instance.ScaleTransformViaCurve(target, curve, scaleAmount, duration, TimeScale.Scaled));
 
     }
 
@@ -269,10 +278,98 @@ public class CrossSceneEventHelper : MonoBehaviour {
                 break;
         }
 
-        StartCoroutine(PTUtilities.instance.RotateTransformViaCurve(target, curve, rotateAmount, duration));
+        StartCoroutine(PTUtilities.instance.RotateTransformViaCurve(target, curve, rotateAmount, duration, TimeScale.Scaled));
 
     }
 
+
+
+    public void UnscaledMoveTransformViaCurve( Transform target, CurveType curveType, Vector3 moveAmount, float duration ) {
+
+        AnimationCurve curve = new AnimationCurve();
+
+        switch (curveType) {
+            case CurveType.Constant:
+                curve = AnimationCurve.Constant(0, 1, 1);
+                break;
+            case CurveType.Linear:
+                curve = AnimationCurve.Linear(0, 0, 1, 1);
+                break;
+            case CurveType.EaseInOut:
+                curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+                break;
+            case CurveType.EaseIn:
+                curve = PTUtilities.instance.easeInCurve;
+                break;
+            case CurveType.EaseOut:
+                curve = PTUtilities.instance.easeOutCurve;
+                break;
+            default:
+                Debug.LogError("[{0}] ERROR -> Bad CurveType recieved in MoveTransformViaCurve!!");
+                break;
+        }
+
+        StartCoroutine(PTUtilities.instance.MoveTransformViaCurve(target, curve, moveAmount, duration, TimeScale.Unscaled));
+
+    }
+
+    public void UnscaledScaleTransformViaCurve( Transform target, CurveType curveType, Vector3 scaleAmount, float duration ) {
+
+        AnimationCurve curve = new AnimationCurve();
+
+        switch (curveType) {
+            case CurveType.Constant:
+                curve = AnimationCurve.Constant(0, 1, 1);
+                break;
+            case CurveType.Linear:
+                curve = AnimationCurve.Linear(0, 0, 1, 1);
+                break;
+            case CurveType.EaseInOut:
+                curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+                break;
+            case CurveType.EaseIn:
+                curve = PTUtilities.instance.easeInCurve;
+                break;
+            case CurveType.EaseOut:
+                curve = PTUtilities.instance.easeOutCurve;
+                break;
+            default:
+                Debug.LogError("[{0}] ERROR -> Bad CurveType recieved in ScaleTransformViaCurve!!");
+                break;
+        }
+
+        StartCoroutine(PTUtilities.instance.ScaleTransformViaCurve(target, curve, scaleAmount, duration, TimeScale.Unscaled));
+
+    }
+
+    public void UnscaledRotateTransformViaCurve( Transform target, CurveType curveType, Vector3 rotateAmount, float duration ) {
+
+        AnimationCurve curve = new AnimationCurve();
+
+        switch (curveType) {
+            case CurveType.Constant:
+                curve = AnimationCurve.Constant(0, 1, 1);
+                break;
+            case CurveType.Linear:
+                curve = AnimationCurve.Linear(0, 0, 1, 1);
+                break;
+            case CurveType.EaseInOut:
+                curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+                break;
+            case CurveType.EaseIn:
+                curve = PTUtilities.instance.easeInCurve;
+                break;
+            case CurveType.EaseOut:
+                curve = PTUtilities.instance.easeOutCurve;
+                break;
+            default:
+                Debug.LogError("[{0}] ERROR -> Bad CurveType recieved in RotateTransformViaCurve!!");
+                break;
+        }
+
+        StartCoroutine(PTUtilities.instance.RotateTransformViaCurve(target, curve, rotateAmount, duration, TimeScale.Unscaled));
+
+    }
 
 
 
@@ -289,6 +386,9 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
 
 
+    public void SetTimeScale (float timeScale ) {
+        PTUtilities.instance.TimeScale = timeScale;
+    }
 
 
     #endregion
@@ -299,22 +399,22 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
     #region Mesh calls
     public void FadeMeshIn( MeshRenderer mesh, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 1, duration));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 1, duration, TimeScale.Scaled));
     }
     public void FadeMeshOut( MeshRenderer mesh, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 0, duration));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, 0, duration, TimeScale.Scaled));
     }
     public void FadeMesh( MeshRenderer mesh, float alpha, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, alpha, duration));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, alpha, duration, TimeScale.Scaled));
     }
     public void FadeMeshColor( MeshRenderer mesh, Color color, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeColorTo(mesh, color, duration));
+        StartCoroutine(PTUtilities.instance.FadeColorTo(mesh, color, duration, TimeScale.Scaled));
     }
 
-    public void SetMeshAlpha (MeshRenderer mesh, float alpha ) {
+    public void SetMeshAlpha( MeshRenderer mesh, float alpha ) {
 
         Material mat = mesh.material;
-        
+
         string propertyName = mat.HasProperty("_BaseColor") ? "_BaseColor" : mat.HasProperty("_Color") ? "_Color" : "";
         if (propertyName == "") {
             Debug.LogError("[CrossSceneEventHelper] ERROR -> Could not find property name of material! Cancelling set mesh alpha.");
@@ -328,9 +428,19 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
         if (alpha == 0) mesh.enabled = false;
         else mesh.enabled = true;
-        
+
 
     }
+
+
+
+    public void UnscaledFadeMesh( MeshRenderer mesh, float alpha, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(mesh, alpha, duration, TimeScale.Unscaled));
+    }
+    public void UnscaledFadeMeshColor( MeshRenderer mesh, Color color, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeColorTo(mesh, color, duration, TimeScale.Unscaled));
+    }
+
 
     #endregion
 
@@ -340,36 +450,53 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
 
     public void FadeSpriteIn( SpriteRenderer sprite ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 1, 1.5f));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 1, 1.5f, TimeScale.Scaled));
     }
     public void FadeSpriteOut( SpriteRenderer sprite ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 0, 1.5f));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 0, 1.5f, TimeScale.Scaled));
     }
     public void FadeSprite( SpriteRenderer sprite, float alpha, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, alpha, duration));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, alpha, duration, TimeScale.Scaled));
     }
     public void FadeSpriteColor( SpriteRenderer sprite, Color color, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeColorTo(sprite, color, duration));
+        StartCoroutine(PTUtilities.instance.FadeColorTo(sprite, color, duration, TimeScale.Scaled));
+    }
+
+
+    public void UnscaledFadeSprite( SpriteRenderer sprite, float alpha, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, alpha, duration, TimeScale.Unscaled));
+    }
+    public void UnscaledFadeSpriteColor( SpriteRenderer sprite, Color color, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeColorTo(sprite, color, duration, TimeScale.Unscaled));
     }
 
 
     #endregion
 
-    
+
     #region Text calls
-       
+
     public void FadeTextIn( TextMeshPro text ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, 1, 1.5f));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, 1, 1.5f, TimeScale.Scaled));
     }
 
     public void FadeTextOut( TextMeshPro text ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, 0, 1.5f));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, 0, 1.5f, TimeScale.Scaled));
     }
     public void FadeText( TextMeshPro text, float alpha, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, alpha, duration));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, alpha, duration, TimeScale.Scaled));
     }
     public void FadeTextColor( TextMeshPro text, Color color, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeColorTo(text, color, duration));
+        StartCoroutine(PTUtilities.instance.FadeColorTo(text, color, duration, TimeScale.Scaled));
+    }
+
+
+
+    public void UnscaledFadeText( TextMeshPro text, float alpha, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(text, alpha, duration, TimeScale.Unscaled));
+    }
+    public void UnscaledFadeTextColor( TextMeshPro text, Color color, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeColorTo(text, color, duration, TimeScale.Unscaled));
     }
 
     #endregion
@@ -379,27 +506,40 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
 
     public void FadeImageIn( Image image, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(image, 1, duration));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(image, 1, duration, TimeScale.Scaled));
     }
     public void FadeImageOut( Image image, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(image, 0, duration));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(image, 0, duration, TimeScale.Scaled));
     }
     public void FadeImage( Image image, float alpha, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeAlphaTo(image, alpha, duration));
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(image, alpha, duration, TimeScale.Scaled));
     }
     public void FadeImageColor( Image image, Color color, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeColorTo(image, color, duration));
+        StartCoroutine(PTUtilities.instance.FadeColorTo(image, color, duration, TimeScale.Scaled));
+    }
+
+
+    public void UnscaledFadeImage( Image image, float alpha, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(image, alpha, duration, TimeScale.Unscaled));
+    }
+    public void UnscaledFadeImageColor( Image image, Color color, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeColorTo(image, color, duration, TimeScale.Unscaled));
     }
 
 
     #endregion
-         
+
 
     #region Volume calls
 
 
     public void FadePostVolume( Volume volume, float targetWeight, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadePostVolumeTo(volume, targetWeight, duration));
+        StartCoroutine(PTUtilities.instance.FadePostVolumeTo(volume, targetWeight, duration, TimeScale.Scaled));
+    }
+
+
+    public void UnscaledFadePostVolume( Volume volume, float targetWeight, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadePostVolumeTo(volume, targetWeight, duration, TimeScale.Unscaled));
     }
 
 
@@ -409,32 +549,82 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
 
     #region Audio calls
-         
+
+    public void PlayAudioClip( AudioClip clip, float volume ) {
+        PTUtilities.instance.PlayAudioClip(clip, volume);
+    }
+
+    public void PlayAudioClip( AudioClip clip, Vector3 worldPosition, float volume ) {
+        AudioSource.PlayClipAtPoint(clip, worldPosition, volume);
+
+    }
+
+    public void PlayAudioClip( AudioClip clip, Transform worldPosition, float volume ) {
+        AudioSource.PlayClipAtPoint(clip, worldPosition.position, volume);
+
+
+
+    }
+
+    public void PlayAudioClip(AudioClip clip, Transform worldPosition, float volume, float minDistance, float maxDistance ) {
+
+        AudioSource tempAudio = new GameObject("[tempaudio]", typeof(AudioSource)).GetComponent<AudioSource>();
+        tempAudio.transform.position = worldPosition.position;
+
+        tempAudio.clip = clip;
+        tempAudio.spatialBlend = 1.0f;
+        tempAudio.volume = volume;
+        tempAudio.minDistance = minDistance;
+        tempAudio.maxDistance = maxDistance;
+
+        tempAudio.Play();
+
+        Destroy(tempAudio.gameObject, clip.length);
+
+    }
+
+
+
     public void FadeAudioSourceIn( AudioSource source ) {
-        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, 1f, 0.5f));
+        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, 1f, 0.5f, TimeScale.Scaled));
     }
 
     public void FadeAudioSourceOut( AudioSource source ) {
-        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, 0f, 0.5f));
+        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, 0f, 0.5f, TimeScale.Scaled));
     }
     public void FadeAudioSource( AudioSource source, float volume, float duration ) {
-        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, volume, duration));
+        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, volume, duration, TimeScale.Scaled));
     }
+
+
+    public void UnscaledFadeAudioSource( AudioSource source, float volume, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAudioTo(source, volume, duration, TimeScale.Unscaled));
+    }
+
+
+
 
     Coroutine mixerFadeCo;
     public void FadeAudioMasterIn( float duration ) {
         if (mixerFadeCo != null) StopCoroutine(mixerFadeCo);
-        mixerFadeCo = StartCoroutine(PTUtilities.instance.FadeAudioMasterTo(1, duration));
+        mixerFadeCo = StartCoroutine(PTUtilities.instance.FadeAudioMasterTo(1, duration, TimeScale.Scaled));
     }
 
     public void FadeAudioMasterOut( float duration ) {
         if (mixerFadeCo != null) StopCoroutine(mixerFadeCo);
-        mixerFadeCo = StartCoroutine(PTUtilities.instance.FadeAudioMasterTo(0, duration));
+        mixerFadeCo = StartCoroutine(PTUtilities.instance.FadeAudioMasterTo(0, duration, TimeScale.Scaled));
     }
 
     public void FadeAudioMaster (float volume, float duration ) {
         if (mixerFadeCo != null) StopCoroutine(mixerFadeCo);
-        mixerFadeCo = StartCoroutine(PTUtilities.instance.FadeAudioMasterTo(volume, duration));
+        mixerFadeCo = StartCoroutine(PTUtilities.instance.FadeAudioMasterTo(volume, duration, TimeScale.Scaled));
+    }
+
+
+
+    public void UnscaledFadeAudioMaster( float volume, float duration ) {
+        if (mixerFadeCo != null) StopCoroutine(mixerFadeCo);
+        mixerFadeCo = StartCoroutine(PTUtilities.instance.FadeAudioMasterTo(volume, duration, TimeScale.Unscaled));
     }
 
     #endregion

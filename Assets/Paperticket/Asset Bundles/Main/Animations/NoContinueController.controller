@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: YesExitController
+  m_Name: NoContinueController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: animationIndex
@@ -100,7 +100,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 41f64f83dd7009f4d9a8a20ce282e5e5, type: 2}
+  m_Motion: {fileID: 7400000, guid: f46b3aa5b9ac7fe4ca56bd53e517cf81, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -128,7 +128,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0f23ef92e827b0b4d8c401b08676dacb, type: 2}
+  m_Motion: {fileID: 7400000, guid: 03c441c0c0acc17458e4cd89bb085b48, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -207,7 +207,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d76a681005c68a34891d591d846d19da, type: 2}
+  m_Motion: {fileID: 7400000, guid: 63a10b87af6e98b46b6f835c9a3f5c5b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

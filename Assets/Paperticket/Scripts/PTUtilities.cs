@@ -13,6 +13,7 @@ using UnityEngine.Events;
 
 namespace Paperticket {
 
+    public enum TimeScale { Scaled, Unscaled }
     public enum GameEventOption { OnButtonDown, OnButtonUp, OnTriggerPress, OnTriggerUp }
     public enum Hand { Left, Right }
 
@@ -22,8 +23,9 @@ namespace Paperticket {
         public static PTUtilities instance = null;
 
         [Header("REFERENCES")]
-        public XRRig playerRig;
-        public SpriteRenderer headGfx;
+        public XRRig playerRig = null;
+        public SpriteRenderer headGfx = null;
+        public AudioSource globalAudioSource = null;
 
 
         [Header("CONTROLS")]        
@@ -50,18 +52,19 @@ namespace Paperticket {
         XRRayInteractor rightRayInteractor = null;
         XRInteractorLineVisual rightRayVisual = null;
         [Space(5)]
-        public bool ControllerTriggerButton;
-        public bool ControllerPrimaryButton;
+        public bool ControllerTriggerButton = false;
+        public bool ControllerPrimaryButton = false;
+        public bool ControllerMenuButton = false;
         [Space(5)]
-        public Vector3 ControllerVelocity;
-        public Vector3 ControllerAngularVelocity;
-        public Vector3 ControllerAcceleration;
-        public Vector3 ControllerAngularAcceleration;
+        public Vector3 ControllerVelocity = Vector3.zero;
+        public Vector3 ControllerAngularVelocity = Vector3.zero;
+        public Vector3 ControllerAcceleration = Vector3.zero;
+        public Vector3 ControllerAngularAcceleration = Vector3.zero;
         [Space(5)]
         [SerializeField] AudioMixer audioMaster = null;
 
 
-        [HideInInspector] public bool SetupComplete;        
+        [HideInInspector] public bool SetupComplete = false;        
 
 
 
@@ -93,8 +96,26 @@ namespace Paperticket {
             }
         }
 
+        public float TimeScale {
+            get {
+                return Time.timeScale;
+            }
+            set {
+                Time.timeScale = value;
+                Time.fixedDeltaTime = fixedTimeScaleDefault * Time.timeScale;
+                if (_Debug) Debug.Log("[PTUtilities] Time scale set to: " + Time.timeScale + "\n Fixed Deltatime set to: "+Time.fixedDeltaTime);
+            }
+        }
+
+        float fixedTimeScaleDefault = 0;
+
+
         #endregion
 
+
+
+
+        #region Startup 
 
 
         void Awake() {
@@ -182,11 +203,19 @@ namespace Paperticket {
             }
             if (_Debug) Debug.Log("[PTUtilities] Audio Master mixer found!");
 
+            // Grab the original fixed delta time for hen we are applying changes to time scale
+            fixedTimeScaleDefault = Time.fixedDeltaTime;
+
             // Finish setup
             SetupComplete = true;
             if (_Debug) Debug.Log("[PTUtilities] Setup complete!");
         }
 
+
+        #endregion
+
+
+        #region Update methods
 
         void FixedUpdate() {
             if (!SetupComplete) return;
@@ -224,6 +253,7 @@ namespace Paperticket {
 
         bool lastTriggerState;
         bool lastPrimaryState;
+        bool lastMenuState;
         void Update() {
             if (!SetupComplete) return;            
 
@@ -245,13 +275,26 @@ namespace Paperticket {
             }
             lastPrimaryState = ControllerPrimaryButton;
 
+
+            if (leftController.inputDevice.TryGetFeatureValue(CommonUsages.menuButton, out ControllerMenuButton) && ControllerMenuButton) {
+                if (!lastMenuState) {
+                    // send event          
+                    if (_Debug) Debug.Log("[PTUtilities] Menu button was just pressed.");
+                }
+            }
+            lastMenuState = ControllerMenuButton;
+
         }
+
+        #endregion
 
 
 
         /// --------------------------------------- PUBLIC CALLS --------------------------------------- \\\
         // A list of general calls that perform common actions in the project
 
+
+        #region Public calls
 
         /// <summary>
         /// Teleport the player to the specified position and rotation, taking into account camera position/rotation in rig
@@ -520,8 +563,25 @@ namespace Paperticket {
 
 
 
-       
 
+        Coroutine playingGlobalAudioCo = null;
+        public void PlayAudioClip(AudioClip clip, float volume) {
+            if (playingGlobalAudioCo != null) StopCoroutine(playingGlobalAudioCo);
+
+            if (!globalAudioSource.gameObject.activeSelf) {
+                globalAudioSource.gameObject.SetActive(true);
+            }
+            globalAudioSource.PlayOneShot(clip, volume);
+
+            playingGlobalAudioCo = StartCoroutine(TurningOffGlobalAudio(clip.length));
+        }
+        IEnumerator TurningOffGlobalAudio(float timeToWait) {
+            yield return new WaitForSeconds(timeToWait);
+            globalAudioSource.gameObject.SetActive(false);
+        }
+
+
+        #endregion
 
 
 
@@ -529,8 +589,10 @@ namespace Paperticket {
         // --------------------------------------- UTILITIES --------------------------------------- \\
         // The generalised helper ienumerators which change each setting over time
 
+        #region Utilities
+
         // Helper coroutine for fading the alpha of a sprite
-        public IEnumerator FadeAlphaTo( SpriteRenderer sprite, float targetAlpha, float duration ) {
+        public IEnumerator FadeAlphaTo( SpriteRenderer sprite, float targetAlpha, float duration, TimeScale timeScale) {
 
             if (sprite.color.a != targetAlpha) {
 
@@ -541,7 +603,7 @@ namespace Paperticket {
                 }
 
                 float alpha = sprite.color.a;
-                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                     sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, Mathf.Lerp(alpha, targetAlpha, t));
                     yield return null;
                 }
@@ -560,7 +622,7 @@ namespace Paperticket {
 
         }
         // Helper coroutine for fading the alpha of text
-        public IEnumerator FadeAlphaTo( TextMeshPro textmesh, float targetAlpha, float duration ) {
+        public IEnumerator FadeAlphaTo( TextMeshPro textmesh, float targetAlpha, float duration, TimeScale timeScale ) {
 
             if (textmesh.color.a != targetAlpha) {
 
@@ -571,7 +633,7 @@ namespace Paperticket {
                 }
 
                 float alpha = textmesh.color.a;
-                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                     textmesh.color = new Color(textmesh.color.r, textmesh.color.g, textmesh.color.b, Mathf.Lerp(alpha, targetAlpha, t));
                     yield return null;
                 }
@@ -590,7 +652,7 @@ namespace Paperticket {
 
         }
         // Helper coroutine for fading the alpha of mesh renderer
-        public IEnumerator FadeAlphaTo( MeshRenderer mRenderer, float targetAlpha, float duration ) {
+        public IEnumerator FadeAlphaTo( MeshRenderer mRenderer, float targetAlpha, float duration, TimeScale timeScale ) {
 
             Material mat = mRenderer.material;
 
@@ -611,7 +673,7 @@ namespace Paperticket {
                 }
 
                 float alpha = col.a;
-                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                     Color newColor = new Color(col.r, col.g, col.b, Mathf.Lerp(alpha, targetAlpha, t));
                     mat.SetColor(propertyName, newColor);
                     yield return null;
@@ -631,7 +693,7 @@ namespace Paperticket {
             }
         }
         // Helper coroutine for fading the alpha of an image
-        public IEnumerator FadeAlphaTo( Image image, float targetAlpha, float duration ) {
+        public IEnumerator FadeAlphaTo( Image image, float targetAlpha, float duration, TimeScale timeScale ) {
 
             if (image.color.a != targetAlpha) {
 
@@ -642,7 +704,7 @@ namespace Paperticket {
                 }
 
                 float alpha = image.color.a;
-                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                     image.color = new Color(image.color.r, image.color.g, image.color.b, Mathf.Lerp(alpha, targetAlpha, t));
                     yield return null;
                 }
@@ -661,8 +723,9 @@ namespace Paperticket {
 
         }
 
+
         // Helper coroutine for fading the color of a sprite
-        public IEnumerator FadeColorTo( SpriteRenderer sprite, Color targetColor, float duration ) {
+        public IEnumerator FadeColorTo( SpriteRenderer sprite, Color targetColor, float duration, TimeScale timeScale ) {
 
             if (sprite.color != targetColor) {
 
@@ -673,7 +736,7 @@ namespace Paperticket {
                 }
 
                 Color color = sprite.color;
-                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                     sprite.color = Color.Lerp(color, targetColor, t);
                     yield return null;
                 }
@@ -692,7 +755,7 @@ namespace Paperticket {
 
         }
         // Helper coroutine for fading the color of a sprite
-        public IEnumerator FadeColorTo( MeshRenderer mRenderer, Color targetColor, float duration ) {
+        public IEnumerator FadeColorTo( MeshRenderer mRenderer, Color targetColor, float duration, TimeScale timeScale ) {
 
             Material mat = mRenderer.material;
 
@@ -712,7 +775,7 @@ namespace Paperticket {
 
 
                 Color color = mat.GetColor(propertyName);
-                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                     Color newColor = Color.Lerp(color, targetColor, t);
                     mat.SetColor(propertyName, newColor);
                     yield return null;
@@ -731,9 +794,8 @@ namespace Paperticket {
             }
 
         }
-
         // Helper coroutine for fading the color of a text mesh
-        public IEnumerator FadeColorTo( TextMeshPro textMesh, Color targetColor, float duration ) {
+        public IEnumerator FadeColorTo( TextMeshPro textMesh, Color targetColor, float duration, TimeScale timeScale ) {
 
             if (textMesh.color != targetColor) {
 
@@ -744,7 +806,7 @@ namespace Paperticket {
                 }
 
                 Color color = textMesh.color;
-                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                     textMesh.color = Color.Lerp(color, targetColor, t);
                     yield return null;
                 }
@@ -763,7 +825,7 @@ namespace Paperticket {
 
         }
         // Helper coroutine for fading the color of an image
-        public IEnumerator FadeColorTo( Image image, Color targetColor, float duration ) {
+        public IEnumerator FadeColorTo( Image image, Color targetColor, float duration, TimeScale timeScale ) {
 
             if (image.color != targetColor) {
 
@@ -774,7 +836,7 @@ namespace Paperticket {
                 }
 
                 Color color = image.color;
-                for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+                for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                     image.color = Color.Lerp(color, targetColor, t);
                     yield return null;
                 }
@@ -795,14 +857,14 @@ namespace Paperticket {
 
 
         // Helper coroutine for fading volume weight
-        public IEnumerator FadePostVolumeTo( Volume volume, float targetWeight, float duration ) {
+        public IEnumerator FadePostVolumeTo( Volume volume, float targetWeight, float duration, TimeScale timeScale ) {
             float weight = volume.weight;
             targetWeight = Mathf.Clamp01(targetWeight);
 
             if (!volume.enabled) volume.enabled = true;
 
 
-            for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+            for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                 float newWeight = Mathf.Lerp(weight, targetWeight, t);
                 volume.weight = newWeight;
                 yield return null;
@@ -813,17 +875,15 @@ namespace Paperticket {
             }
         }
 
-
-
-
+               
 
         // Helper coroutine for fading audio source volume
-        public IEnumerator FadeAudioTo( AudioSource audio, float targetVolume, float duration ) {
+        public IEnumerator FadeAudioTo( AudioSource audio, float targetVolume, float duration, TimeScale timeScale ) {
             float volume = audio.volume;
             if (!audio.isPlaying) {
                 audio.Play();
             }
-            for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+            for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                 float newVolume = Mathf.Lerp(volume, targetVolume, t);
                 audio.volume = newVolume;
                 yield return null;
@@ -834,27 +894,56 @@ namespace Paperticket {
             }
 
         }
+        // Helper coroutine for fading the master audio mixer volume
+        public IEnumerator FadeAudioMasterTo( float targetVolume, float duration, TimeScale timeScale ) {
 
-        public IEnumerator ShakeTransform (Transform target, Vector3 shakeAmount, float duration ) {
-            
-            float t = 0;
-            Vector3 initialPos = target.localPosition;
-            //float curveTime = shakeTransformCurve.keys[shakeTransformCurve.length - 1].time;
+            if (_Debug) Debug.Log("Fading master volume...");
 
-            if (_Debug) Debug.Log("[PTUtilities] Shaking transform " + target.name);
+            yield return FadeAudioMixerTo(audioMaster, "MasterVolume", targetVolume, duration, timeScale);
 
-            while (t < duration) {
-                yield return null;
-                target.localPosition = initialPos + (shakeAmount * shakeTransformCurve.Evaluate(t / duration));
-                t += Time.deltaTime;
-            }
-            target.localPosition = initialPos;
+            if (_Debug) Debug.Log("Finished fading master volume...");
 
-            if (_Debug) Debug.Log("[PTUtilities] Finished shaking " + target.name);
+            //audioMaster.GetFloat("MasterVolume", out float currentDB);
+            //float targetDB = (targetVolume - 1) * 80;
+
+            //if (_Debug) Debug.Log("Fading Master audio mixer, currentDB = "+currentDB+", targetDB = " + targetDB);
+
+            //for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
+            //    float newDB = Mathf.Lerp(currentDB, targetDB, t);
+            //    audioMaster.SetFloat("MasterVolume", newDB);
+            //    if (_Debug) Debug.Log("MasterVolume = " + newDB);
+            //    yield return null;
+            //}
+            //audioMaster.SetFloat("MasterVolume", targetDB);
+
+            //if (_Debug) Debug.Log("Finished fading Master audio mixer, newDB = " + targetDB);
 
         }
 
-        public IEnumerator MoveTransformViaCurve( Transform target, AnimationCurve animCurve, Vector3 moveAmount, float duration ) {
+        // Helper coroutine for fading an audio mixer parametre
+        public IEnumerator FadeAudioMixerTo( AudioMixer mixer, string floatName, float targetValue, float duration, TimeScale timeScale ) {
+
+            mixer.GetFloat(floatName, out float currentDB);
+            float targetDB = (targetValue - 1) * 80;
+
+            if (_Debug) Debug.Log("Fading mixer '" + mixer.name + "', currentDB = " + currentDB + ", targetDB = " + targetDB);
+
+            for (float t = 0.0f; t < 1.0f; t += timeScale==0?Time.deltaTime:Time.unscaledDeltaTime / duration) {
+                float newDB = Mathf.Lerp(currentDB, targetDB, t);
+                mixer.SetFloat(floatName, newDB);
+                if (_Debug) Debug.Log(floatName + " = " + newDB);
+                yield return null;
+            }
+            audioMaster.SetFloat(floatName, targetDB);
+
+            if (_Debug) Debug.Log("Finished fading mixer '" + mixer.name + "', newDB = " + targetDB);
+        }
+
+
+
+
+        // Helper coroutine for moving a transform
+        public IEnumerator MoveTransformViaCurve( Transform target, AnimationCurve animCurve, Vector3 moveAmount, float duration, TimeScale timeScale ) {
 
             float t = 0;
             Vector3 initialPos = target.localPosition;
@@ -865,15 +954,33 @@ namespace Paperticket {
             while (t < duration) {
                 yield return null;
                 target.localPosition = initialPos + (moveAmount * animCurve.Evaluate(t / duration));
-                t += Time.deltaTime;
+                t += timeScale==0?Time.deltaTime:Time.unscaledDeltaTime;
             }
             target.localPosition = initialPos + moveAmount;
 
             if (_Debug) Debug.Log("[PTUtilities] Finished moving " + target.name);
 
-        }
+        }  
+        // Helper coroutine for rotating a transform
+        public IEnumerator RotateTransformViaCurve( Transform target, AnimationCurve animCurve, Vector3 rotateAmount, float duration, TimeScale timeScale ) {
 
-        public IEnumerator ScaleTransformViaCurve( Transform target, AnimationCurve animCurve, Vector3 scaleAmount, float duration ) {
+            float t = 0;
+            Vector3 initialRot = target.localRotation.eulerAngles;
+
+            if (_Debug) Debug.Log("[PTUtilities] Rotating transform " + target.name);
+
+            while (t < duration) {
+                yield return null;
+                target.localRotation = Quaternion.Euler(initialRot + (rotateAmount * animCurve.Evaluate(t / duration)));
+                t += timeScale == 0 ? Time.deltaTime : Time.unscaledDeltaTime;
+            }
+            target.localRotation = Quaternion.Euler(initialRot + rotateAmount);
+
+            if (_Debug) Debug.Log("[PTUtilities] Finished rotating " + target.name);
+
+        }
+        // Helper coroutine for scaling a transform
+        public IEnumerator ScaleTransformViaCurve( Transform target, AnimationCurve animCurve, Vector3 scaleAmount, float duration, TimeScale timeScale ) {
 
             float t = 0;
             Vector3 initialScale = target.localScale;
@@ -886,37 +993,42 @@ namespace Paperticket {
                 yield return null;
                 //target.localScale = initialScale + Vector3.Scale(initialScale, scaleAmount) * animCurve.Evaluate(t / duration);
                 target.localScale = Vector3.Lerp(initialScale, finalScale, animCurve.Evaluate(t / duration));
-                t += Time.deltaTime;
+                t += timeScale==0?Time.deltaTime:Time.unscaledDeltaTime;
             }
             target.localScale = finalScale;
 
             if (_Debug) Debug.Log("[PTUtilities] Finished scaling " + target.name);
 
         }
-
-
-        public IEnumerator RotateTransformViaCurve ( Transform target, AnimationCurve animCurve, Vector3 rotateAmount, float duration) {
+        
+        // Helper coroutine for shaking a transform (should be deprecated really)
+        public IEnumerator ShakeTransform( Transform target, Vector3 shakeAmount, float duration, TimeScale timeScale ) {
 
             float t = 0;
-            Vector3 initialRot = target.localRotation.eulerAngles;
+            Vector3 initialPos = target.localPosition;
+            //float curveTime = shakeTransformCurve.keys[shakeTransformCurve.length - 1].time;
 
-            if (_Debug) Debug.Log("[PTUtilities] Rotating transform " + target.name);
+            if (_Debug) Debug.Log("[PTUtilities] Shaking transform " + target.name);
 
             while (t < duration) {
                 yield return null;
-                target.localRotation = Quaternion.Euler (initialRot + (rotateAmount * animCurve.Evaluate(t / duration)));
-                t += Time.deltaTime;
+                target.localPosition = initialPos + (shakeAmount * shakeTransformCurve.Evaluate(t / duration));
+                t += timeScale == 0 ? Time.deltaTime : Time.unscaledDeltaTime;
             }
-            target.localRotation = Quaternion.Euler(initialRot + rotateAmount);
+            target.localPosition = initialPos;
 
-            if (_Debug) Debug.Log("[PTUtilities] Finished rotating " + target.name);
+            if (_Debug) Debug.Log("[PTUtilities] Finished shaking " + target.name);
 
         }
 
+               
+
+        #endregion
 
 
+        // Universal ienumerators of which only one copy must be kept
 
-        // Fading audio
+        #region Universal utilities
 
         bool fadingAudioListener;
         Coroutine fadeAudioListenerCoroutine;
@@ -958,51 +1070,11 @@ namespace Paperticket {
         }
 
 
-        public IEnumerator FadeAudioMasterTo( float targetVolume, float duration ) {
 
-            if (_Debug) Debug.Log("Fading master volume...");
-
-            yield return FadeAudioMixerTo(audioMaster, "MasterVolume", targetVolume, duration);
-
-            if (_Debug) Debug.Log("Finished fading master volume...");
-
-            //audioMaster.GetFloat("MasterVolume", out float currentDB);
-            //float targetDB = (targetVolume - 1) * 80;
-
-            //if (_Debug) Debug.Log("Fading Master audio mixer, currentDB = "+currentDB+", targetDB = " + targetDB);
-
-            //for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
-            //    float newDB = Mathf.Lerp(currentDB, targetDB, t);
-            //    audioMaster.SetFloat("MasterVolume", newDB);
-            //    if (_Debug) Debug.Log("MasterVolume = " + newDB);
-            //    yield return null;
-            //}
-            //audioMaster.SetFloat("MasterVolume", targetDB);
-
-            //if (_Debug) Debug.Log("Finished fading Master audio mixer, newDB = " + targetDB);
-
-        }
-
-
-        public IEnumerator FadeAudioMixerTo( AudioMixer mixer, string floatName, float targetValue, float duration ) {
-
-            mixer.GetFloat(floatName, out float currentDB);
-            float targetDB = (targetValue - 1) * 80;
-
-            if (_Debug) Debug.Log("Fading mixer '"+mixer.name+"', currentDB = "+currentDB+", targetDB = "+targetDB);
-
-            for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration) {
-                float newDB = Mathf.Lerp(currentDB, targetDB, t);
-                mixer.SetFloat(floatName, newDB);
-                if (_Debug) Debug.Log(floatName + " = " + newDB);
-                yield return null;
-            }
-            audioMaster.SetFloat(floatName, targetDB);
-
-            if (_Debug) Debug.Log("Finished fading mixer '"+mixer.name+"', newDB = "+ targetDB);
-        }
+        #endregion
 
     }
+
 
     [Serializable]
     public class ProgressEvent  {
@@ -1018,7 +1090,6 @@ namespace Paperticket {
         }
 
     }
-
 
 }
 

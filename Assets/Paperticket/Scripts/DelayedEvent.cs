@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace Paperticket {
     public class DelayedEvent : MonoBehaviour {
         
         [System.Serializable] enum EventBehaviour { OneTimeUse, ResendOnEnable, Looping }
+        [System.Serializable] enum TimeBehaviour { Scaled, Unscaled }
 
         [Header("CONTROLS")]
         [SerializeField] float timeBeforeEvent = 0;
         [SerializeField] EventBehaviour eventBehaviour = 0;
+        [SerializeField] TimeBehaviour timeBehaviour = 0;
         [Space(5)]
         [SerializeField] bool debug = false;
-
-        [Header("[deprecated]")]
-        [Space(5)]
-        [SerializeField] bool OneTimeUse = true;
-
+        
         float timeToChange = 0;
         bool disabled = false;
 
@@ -28,7 +23,10 @@ namespace Paperticket {
         // Start is called before the first frame update
         void OnEnable() {
             disabled = false;
-            timeToChange = Time.time + timeBeforeEvent;
+
+            if (timeBehaviour == TimeBehaviour.Scaled) timeToChange = Time.time + timeBeforeEvent;
+            else timeToChange = Time.unscaledTime + timeBeforeEvent;
+
         }
 
         // Update is called once per frame
@@ -36,7 +34,8 @@ namespace Paperticket {
             if (disabled) return;
 
             // Wait for the required time to pass
-            if (Time.time > timeToChange) {
+            if (timeBehaviour == TimeBehaviour.Scaled && Time.time > timeToChange ||
+                timeBehaviour == TimeBehaviour.Unscaled && Time.unscaledTime > timeToChange) {
 
                 // Trigger the event
                 if (OnEventTriggered != null) {
@@ -69,7 +68,8 @@ namespace Paperticket {
                     case EventBehaviour.Looping:
                         // Immediately reset the timer and keep going
                         if (debug) Debug.Log("[TimedEvent] Looping. Resetting timer and starting again.");
-                        timeToChange = Time.time + timeBeforeEvent;
+                        if (timeBehaviour == TimeBehaviour.Scaled) timeToChange = Time.time + timeBeforeEvent;
+                        else timeToChange = Time.unscaledTime + timeBeforeEvent;
                         break;
                    
                     default:

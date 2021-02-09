@@ -38,6 +38,9 @@ TextureImporter:
   - first:
       213: 4872108002494941154
     second: Cigarette-Unsure_11
+  - first:
+      213: 3020753290234079088
+    second: Cigarette-Unsure_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -362,10 +365,31 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Cigarette-Unsure_12
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077ae72ec1fdbe920800000000000000
+      internalID: 3020753290234079088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: feac725a43d90f646b2fc10fe8f3b5db
     internalID: 0
     vertices: []
     indices: 

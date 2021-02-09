@@ -38,6 +38,18 @@ TextureImporter:
   - first:
       213: -8537606738740379181
     second: IN03_WaitSheet_11
+  - first:
+      213: -7539323977150861920
+    second: IN03_WaitSheet_12
+  - first:
+      213: -1136021948670826998
+    second: IN03_WaitSheet_13
+  - first:
+      213: -3024124280595919051
+    second: IN03_WaitSheet_14
+  - first:
+      213: -333486081423153722
+    second: IN03_WaitSheet_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -362,10 +374,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: IN03_WaitSheet_12
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 600
+        width: 350
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad665fa9c0fe5790800000000000000
+      internalID: -7539323977150861920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IN03_WaitSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 600
+        width: 350
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06ad6c7e0a0c30f0800000000000000
+      internalID: -1136021948670826998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IN03_WaitSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 600
+        width: 350
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f42724df62806d0800000000000000
+      internalID: -3024124280595919051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IN03_WaitSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 350
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c56c330d283f5bf0800000000000000
+      internalID: -333486081423153722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 88a3c783fb46ab641b514e6433872601
     internalID: 0
     vertices: []
     indices: 

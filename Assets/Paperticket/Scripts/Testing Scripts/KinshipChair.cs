@@ -7,31 +7,35 @@ using UnityEngine.Events;
 namespace Paperticket {
     public class KinshipChair : MonoBehaviour {
 
-        protected XRBaseInteractable baseInteractable;
+        protected XRBaseInteractable baseInteractable = null;
 
         [Header("REFERENCES")]
-        [SerializeField] IN04KinshipGame KinshipGame;
-        public Transform attachPoint;
+        [SerializeField] IN04KinshipGame KinshipGame = null;
+        public Transform attachPoint = null;
 
         [Header("CONTROLS")]
         [Space(10)]
         public bool CanSeatMalcolm = false;
         public bool IsExtraSeat = false;
         [Space(5)]
-        [SerializeField] bool debugging;
+        public string[] matColorNames = null;
+        public Color hoverColor = Color.cyan;
         [Space(5)]
-        [SerializeField] UnityEvent2 OnHover;
-        //[SerializeField] UnityEvent2 OnSeated;
-        //[SerializeField] UnityEvent2 OnEmptied;
+        public string[] matFloatNames = null;
+        public float[] matFloatParas = null;
+        [Space(5)]
+        [SerializeField] bool debugging = false;
+        [Space(5)]
+        [SerializeField] UnityEvent2 OnHover = null;
 
         [Header("LIVE VARIABLES")]
         [Space(15)]
-
         public bool Active = false;
 
 
-        Material mat;
-        Color defaultColor;
+        Material mat = null;
+        Color[] defaultColors = null;
+        float[] defaultFloatParas = null;
 
         // Start is called before the first frame update
         void Awake() {
@@ -54,7 +58,18 @@ namespace Paperticket {
                 gameObject.SetActive(false);
             }
             mat = mesh.material;
-            defaultColor = mat.GetColor("_Color");
+
+            defaultColors = new Color[matColorNames.Length];
+            for (int i = 0; i < defaultColors.Length; i++) {
+                defaultColors[i] = mat.GetColor(matColorNames[i]);
+            }
+
+            defaultFloatParas = new float[matFloatNames.Length];
+            for (int i = 0; i < matFloatNames.Length; i++) {
+                defaultFloatParas[i] = mat.GetFloat(matFloatNames[i]);
+            }
+
+            //defaultColor = mat.GetColor("_Color");
 
         }
 
@@ -65,7 +80,15 @@ namespace Paperticket {
 
             if (OnHover != null) OnHover.Invoke();
 
-            mat.SetColor("_Color", Color.cyan);
+            for (int i = 0; i < matColorNames.Length; i++) {
+                mat.SetColor(matColorNames[i], hoverColor);
+            }
+            
+            for (int i = 0; i < matFloatNames.Length; i++) {
+                mat.SetFloat(matFloatNames[i], matFloatParas[i]);
+            }
+
+            //mat.SetColor("_Color", hoverColor);
         }
 
         public virtual void HoverOff() { HoverOff(null); }
@@ -73,7 +96,15 @@ namespace Paperticket {
             if (!Active) return;
             if (debugging) Debug.Log("[KinshipChair] Hover off!");
 
-            mat.SetColor("_Color", defaultColor);
+            for (int i = 0; i < matColorNames.Length; i++) {
+                mat.SetColor(matColorNames[i], defaultColors[i]);
+            }
+
+            for (int i = 0; i < matFloatNames.Length; i++) {
+                mat.SetFloat(matFloatNames[i], defaultFloatParas[i]);
+            }
+
+            //mat.SetColor("_Color", defaultColor);
         }
 
         public virtual void Select() { Select(null); }

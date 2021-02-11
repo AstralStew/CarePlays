@@ -7,7 +7,7 @@ namespace Paperticket {
         public enum TaliaAnimations { T_Pose, Standing_Idle, Acknowledging, Head_Nod, Talking_1, Talking_2, Clap_Knows_Some_Things, Clap_Out,
                                         Stand_To_Sit, Sitting_Idle, Sit_To_Stand }
 
-        public enum TaliaFaceAnimations { IdleBlink, GrinBlink, TalkingBlink, Smug }
+        public enum TaliaFaceAnimations { IdleBlink, GrinBlink, TalkingBlink, Smug, SmugTalking }
 
 
         [Header("BODY CONTROLS")]

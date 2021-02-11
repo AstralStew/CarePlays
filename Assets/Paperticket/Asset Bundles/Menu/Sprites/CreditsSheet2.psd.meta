@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: 143b956ddaade704bade1ed44be82e16
+guid: 07bbec38f6cb3c4459236350ad5bb3c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5185939459070071682
-    second: IN06_PhoneBGSprite_0
+      213: 1595928402905242463
+    second: CreditsSheet2_0
   - first:
-      213: -20072891769743763
-    second: IN06_PhoneBGSprite_1
+      213: 8308388255391069401
+    second: CreditsSheet2_1
+  - first:
+      213: 1223303166499567000
+    second: CreditsSheet2_2
+  - first:
+      213: -8854983276284980630
+    second: CreditsSheet2_3
+  - first:
+      213: -6613376501863429716
+    second: CreditsSheet2_4
+  - first:
+      213: -1304972185510918495
+    second: CreditsSheet2_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,7 +65,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -105,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IN06_PhoneBGSprite_0
+      name: CreditsSheet2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1702
-        width: 1053
-        height: 76
+        x: 51
+        y: 342
+        width: 699
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2839d84367828f740800000000000000
-      internalID: 5185939459070071682
+      spriteID: f5b9f164d60e52610800000000000000
+      internalID: 1595928402905242463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IN06_PhoneBGSprite_1
+      name: CreditsSheet2_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1053
-        height: 1702
+        x: 960
+        y: 550
+        width: 607
+        height: 452
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +152,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d661370bfcfa8bff0800000000000000
-      internalID: -20072891769743763
+      spriteID: 9d4bc9a39135d4370800000000000000
+      internalID: 8308388255391069401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CreditsSheet2_2
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 144
+        width: 408
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89531d3afbb0af010800000000000000
+      internalID: 1223303166499567000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CreditsSheet2_3
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 0
+        width: 780
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62520d30a7cc1580800000000000000
+      internalID: -8854983276284980630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CreditsSheet2_4
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 6
+        width: 600
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9c3885c119834a0800000000000000
+      internalID: -6613376501863429716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CreditsSheet2_5
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 648
+        width: 765
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a64bd816bec3ede0800000000000000
+      internalID: -1304972185510918495
       vertices: []
       indices: 
       edges: []
@@ -157,8 +253,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDRemoveMatte: 1
+  pSDShowRemoveMatteOption: 1
   userData: 
-  assetBundleName: in06
+  assetBundleName: 
   assetBundleVariant: 

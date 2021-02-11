@@ -1,34 +1,7 @@
 fileFormatVersion: 2
-guid: 5b9b8213c54b8db498282f58083e9560
+guid: d64efb37291de6647939b685b579753c
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -8247521864509690749
-    second: TaliaFaceSprites_0
-  - first:
-      213: 2673109820315678073
-    second: TaliaFaceSprites_1
-  - first:
-      213: -7325592223332225175
-    second: TaliaFaceSprites_2
-  - first:
-      213: 2770586760640684828
-    second: TaliaFaceSprites_3
-  - first:
-      213: -2120561752557932631
-    second: TaliaFaceSprites_4
-  - first:
-      213: 3212358834461858010
-    second: TaliaFaceSprites_5
-  - first:
-      213: 7769363242714013972
-    second: TaliaFaceSprites_6
-  - first:
-      213: 7116958645965772901
-    second: TaliaFaceSprites_7
-  - first:
-      213: -4794436931242170343
-    second: TaliaFaceSprites_8
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,13 +34,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
-  nPOTScale: 2
+    wrapU: -1
+    wrapV: -1
+    wrapW: -1
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -128,7 +101,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d33b9b596e1964e49b310f7b54b914a1
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -139,5 +112,5 @@ TextureImporter:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 
-  assetBundleName: characters
+  assetBundleName: 
   assetBundleVariant: 

@@ -7,9 +7,13 @@ using UnityEngine.Rendering;
 
 public class CrossSceneEventHelper : MonoBehaviour {
 
+    [System.Serializable]
+    public enum TrackingType { Head, LeftController, RightController, BetweenControllers }
+
+
 
     #region Careplays calls
-    
+
     public void LoadCareScene( CareScene sceneToLoad ) {
         Debug.LogWarning("[CrossSceneEventHelper] Attempting to load new care scene: " + sceneToLoad.ToString());
         CareplaysManager.instance.LoadCareScene(sceneToLoad);
@@ -112,6 +116,10 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
     public void SetControllerBeam( bool toggle ) {
         PTUtilities.instance.ControllerBeamActive = toggle;
+    }
+
+    public void SetControllerInteractionLayers (LayerMask layerMask ) {
+        PTUtilities.instance.ControllerBeamLayerMask = layerMask;
     }
 
 
@@ -455,6 +463,14 @@ public class CrossSceneEventHelper : MonoBehaviour {
     public void FadeSpriteOut( SpriteRenderer sprite ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 0, 1.5f, TimeScale.Scaled));
     }
+
+    public void FadeSpriteIn( SpriteRenderer sprite, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 1, duration, TimeScale.Scaled));
+    }
+    public void FadeSpriteOut( SpriteRenderer sprite, float duration ) {
+        StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, 0, duration, TimeScale.Scaled));
+    }
+
     public void FadeSprite( SpriteRenderer sprite, float alpha, float duration ) {
         StartCoroutine(PTUtilities.instance.FadeAlphaTo(sprite, alpha, duration, TimeScale.Scaled));
     }
@@ -554,22 +570,22 @@ public class CrossSceneEventHelper : MonoBehaviour {
         PTUtilities.instance.PlayAudioClip(clip, volume);
     }
 
+
     public void PlayAudioClip( AudioClip clip, Vector3 worldPosition, float volume ) {
         AudioSource.PlayClipAtPoint(clip, worldPosition, volume);
 
     }
 
     public void PlayAudioClip( AudioClip clip, Transform worldPosition, float volume ) {
-        AudioSource.PlayClipAtPoint(clip, worldPosition.position, volume);
-
-
-
+        PlayAudioClip(clip, worldPosition.position, volume);
     }
 
-    public void PlayAudioClip(AudioClip clip, Transform worldPosition, float volume, float minDistance, float maxDistance ) {
+
+
+    public void PlayAudioClip( AudioClip clip, Vector3 worldPosition, float volume, float minDistance, float maxDistance ) {
 
         AudioSource tempAudio = new GameObject("[tempaudio]", typeof(AudioSource)).GetComponent<AudioSource>();
-        tempAudio.transform.position = worldPosition.position;
+        tempAudio.transform.position = worldPosition;
 
         tempAudio.clip = clip;
         tempAudio.spatialBlend = 1.0f;
@@ -580,8 +596,41 @@ public class CrossSceneEventHelper : MonoBehaviour {
         tempAudio.Play();
 
         Destroy(tempAudio.gameObject, clip.length);
+    }
+
+    public void PlayAudioClip(AudioClip clip, Transform worldPosition, float volume, float minDistance, float maxDistance ) {
+        PlayAudioClip(clip, worldPosition.position, volume, minDistance, maxDistance);
+    }
+
+    public void PlayAudioClip( AudioClip clip, TrackingType trackingType, float volume, float minDistance, float maxDistance ) {
+
+        Vector3 position;
+        switch (trackingType) {
+            case TrackingType.Head:
+                position = PTUtilities.instance.HeadsetPosition();
+                break;
+            case TrackingType.LeftController:
+                position = PTUtilities.instance.leftController.transform.position;
+                break;
+            case TrackingType.RightController:
+                position = PTUtilities.instance.rightController.transform.position;
+                break;
+            case TrackingType.BetweenControllers:
+                position = PTUtilities.instance.rightController.transform.position + 
+                                                (PTUtilities.instance.leftController.transform.position -
+                                                    PTUtilities.instance.rightController.transform.position) / 2f;
+                break;
+            default:
+                Debug.LogError("[CrossSceneEventHelper] ERROR -> Bad TrackingType passed into PlayAudioClip! Cancelling.");
+                return;
+        }
+
+        PlayAudioClip(clip, position, volume, minDistance, maxDistance);
 
     }
+
+
+
 
 
 

@@ -96,6 +96,15 @@ namespace Paperticket {
             }
         }
 
+        public LayerMask ControllerBeamLayerMask {
+            get {
+                return rightRayInteractor.raycastMask;
+            }
+            set {
+                rightRayInteractor.raycastMask = value;
+            }
+        }
+
         public float TimeScale {
             get {
                 return Time.timeScale;
@@ -880,9 +889,9 @@ namespace Paperticket {
         // Helper coroutine for fading audio source volume
         public IEnumerator FadeAudioTo( AudioSource audio, float targetVolume, float duration, TimeScale timeScale ) {
             float volume = audio.volume;
-            if (!audio.isPlaying) {
-                audio.Play();
-            }
+            if (!audio.enabled) audio.enabled = true;
+            if (!audio.isPlaying) audio.Play();
+        
             for (float t = 0.0f; t < 1.0f; t += (timeScale==0?Time.deltaTime:Time.unscaledDeltaTime) / duration) {
                 float newVolume = Mathf.Lerp(volume, targetVolume, t);
                 audio.volume = newVolume;
@@ -890,7 +899,8 @@ namespace Paperticket {
             }
             audio.volume = targetVolume;
             if (targetVolume == 0) {
-                audio.Pause();
+                audio.Stop();
+                audio.enabled = false;
             }
 
         }

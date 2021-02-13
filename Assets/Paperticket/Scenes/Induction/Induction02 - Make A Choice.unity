@@ -1277,7 +1277,7 @@ MonoBehaviour:
             m_Bits: 0
           m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
         m_CallState: 2
-        m_Target: {fileID: 2048265094}
+        m_Target: {fileID: 972945476}
         m_MethodName: PlayAnimationOnce
         m_Modes: 03000000
       - m_Arguments:
@@ -1969,7 +1969,7 @@ MonoBehaviour:
         m_MethodName: FadeSprite
         m_Modes: 020000000400000004000000
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: da2dd4b05131b214a9f3f42b030d3243,
+        - m_ObjectArgument: {fileID: 8300000, guid: 02d3e85c17d2633468295c1943129521,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -2363,7 +2363,7 @@ MonoBehaviour:
         m_MethodName: FadeSprite
         m_Modes: 020000000400000004000000
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: da2dd4b05131b214a9f3f42b030d3243,
+        - m_ObjectArgument: {fileID: 8300000, guid: 0bace7ff908d41c4993d828b06908665,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -4327,7 +4327,7 @@ MonoBehaviour:
         m_MethodName: FadeSprite
         m_Modes: 020000000400000004000000
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: da2dd4b05131b214a9f3f42b030d3243,
+        - m_ObjectArgument: {fileID: 8300000, guid: 02d3e85c17d2633468295c1943129521,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0
@@ -8421,7 +8421,7 @@ MonoBehaviour:
         m_MethodName: FadeSprite
         m_Modes: 020000000400000004000000
       - m_Arguments:
-        - m_ObjectArgument: {fileID: 8300000, guid: da2dd4b05131b214a9f3f42b030d3243,
+        - m_ObjectArgument: {fileID: 8300000, guid: 0bace7ff908d41c4993d828b06908665,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine.AudioModule
           m_IntArgument: 0

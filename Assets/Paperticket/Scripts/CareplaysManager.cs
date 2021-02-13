@@ -44,6 +44,8 @@ namespace Paperticket {
         public bool IN01PrivacyComplete = false;
         public bool IN01ReportComplete = false;
         public int IN01VideoIndex = 0;
+        public int WE02VideoIndex = 0;
+        public int WE03VideoIndex = 0;
 
         Coroutine loadingCareSceneCo = null;
         //Coroutine watchingLoadTimeCo = null;

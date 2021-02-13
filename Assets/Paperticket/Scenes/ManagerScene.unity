@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeEvent: 3
+  timeBeforeEvent: 4.5
   eventBehaviour: 1
   timeBehaviour: 0
   debug: 0
@@ -1606,7 +1606,7 @@ MonoBehaviour:
   debugging: 1
   frameDebugging: 0
   loadDebugBundles: 1
-  debugBundles: 000000000100000002000000
+  debugBundles: 0700000008000000
   loadedBundles: []
   finishedInitialising: 0
 --- !u!4 &773205471
@@ -2660,8 +2660,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1785938587
+  m_SortingLayer: 1
   m_SortingOrder: 9
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -2895,10 +2895,12 @@ MonoBehaviour:
   debugging: 1
   IN01HonestyComplete: 0
   IN01ChoiceComplete: 0
-  IN01CulturalComplete: 0
+  IN01CulturalComplete: 1
   IN01PrivacyComplete: 0
-  IN01ReportComplete: 0
+  IN01ReportComplete: 1
   IN01VideoIndex: 0
+  WE02VideoIndex: 0
+  WE03VideoIndex: 0
 --- !u!1 &1889006377
 GameObject:
   m_ObjectHideFlags: 0

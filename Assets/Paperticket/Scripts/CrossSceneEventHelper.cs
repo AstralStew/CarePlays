@@ -54,14 +54,25 @@ public class CrossSceneEventHelper : MonoBehaviour {
         }
     }
 
-    public void ResetInduction() {
+    public void SetWE02VideoIndex(int index) {
+        CareplaysManager.instance.WE02VideoIndex = index;
+    }
+
+    public void SetWE03VideoIndex( int index ) {
+        CareplaysManager.instance.WE03VideoIndex = index;
+    }
+
+    public void ResetExperience() {
         CareplaysManager.instance.IN01ChoiceComplete = false;
         CareplaysManager.instance.IN01CulturalComplete = false;
         CareplaysManager.instance.IN01HonestyComplete = false;
         CareplaysManager.instance.IN01PrivacyComplete = false;
         CareplaysManager.instance.IN01ReportComplete = false;
         CareplaysManager.instance.IN01VideoIndex = 0;
+        CareplaysManager.instance.WE02VideoIndex = 0;
+        CareplaysManager.instance.WE03VideoIndex = 0;
     }
+
 
     #endregion
 

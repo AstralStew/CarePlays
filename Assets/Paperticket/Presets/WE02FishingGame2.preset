@@ -34,19 +34,19 @@ Preset:
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: reelHandle
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: playerStartPos
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: playerFish
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: fishSprite
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: backgroundSprite
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeSprite
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -60,6 +60,2513 @@ Preset:
   - target: {fileID: 0}
     propertyPath: autostart
     value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: startingProgress
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: externalSpeedMod
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: externalCheckRate
+    value: 0.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: externalFadeOut
+    value: 0.75
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.size
+    value: 15
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].name
+    value: Someone lost boot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].threshold
+    value: 0.073
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 8300000, guid: b6779491b22c08041a03c623ea57a45d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: UnityEngine.AudioClip, UnityEngine.AudioModule
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: PlayOneShot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[0].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].name
+    value: '[A] Crab ambience ON'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].threshold
+    value: 0.23
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[1].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].name
+    value: Use the bubbles
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].threshold
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 8300000, guid: fd9dd46446b1ba54da9d29f23dfb6e98, type: 3}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: UnityEngine.AudioClip, UnityEngine.AudioModule
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: PlayOneShot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[2].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].name
+    value: '[A] Crab ambience OFF'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].threshold
+    value: 0.32
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[3].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].name
+    value: '[A] Croc ambience ON'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].threshold
+    value: 0.57
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[4].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].name
+    value: Big croc be careful
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].threshold
+    value: 0.6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 8300000, guid: 11af8198c5193fd428b60ba48affb1dd, type: 3}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: UnityEngine.AudioClip, UnityEngine.AudioModule
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: PlayOneShot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[5].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].name
+    value: '[A] Croc ambience OFF'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].threshold
+    value: 0.685
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[6].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].name
+    value: Ah thats it
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].threshold
+    value: 0.7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 8300000, guid: cb42cf38bd63c2647a12ce8a1444ddc9, type: 3}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: UnityEngine.AudioClip, UnityEngine.AudioModule
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: PlayOneShot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[7].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].name
+    value: Hope you dont litter
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].threshold
+    value: 0.73
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 8300000, guid: b00e45338530e1941aac2807bf94fa09, type: 3}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: UnityEngine.AudioClip, UnityEngine.AudioModule
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: PlayOneShot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[8].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].name
+    value: Yeah keep reeling it in
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].threshold
+    value: 0.78
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 8300000, guid: 1c67f245e046aae41971c5d5d3666f7f, type: 3}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: UnityEngine.AudioClip, UnityEngine.AudioModule
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: PlayOneShot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[9].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].name
+    value: Keep reeling in
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].threshold
+    value: 0.87
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 8300000, guid: d0889bcb6605f9244adb189090113d6c, type: 3}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: UnityEngine.AudioClip, UnityEngine.AudioModule
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: PlayOneShot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[10].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].name
+    value: '[Section Toggle 1]'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].threshold
+    value: 0.125
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[11].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].name
+    value: '[Section Toggle 2]'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].threshold
+    value: 0.29
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[12].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].name
+    value: '[Section Toggle 3]'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].threshold
+    value: 0.44
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[13].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].name
+    value: '[Section Toggle 4]'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].threshold
+    value: 0.44
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_BoolArgument
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ObjectArgumentAssemblyTypeName
+    value: System.Boolean, mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector2IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3IntArgument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3IntArgument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector3IntArgument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_Vector4Argument.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_LayerMaskArgument.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.Array.data[0].m_ColorArgument.a
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Modes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Modes.Array.data[0]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: progressEvents.Array.data[14].progressEvent.m_TypeName
+    value: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: velocitySensitivity
@@ -147,7 +2654,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: reelSpeed
-    value: 4
+    value: 4.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: rodMaxDistance
@@ -156,6 +2663,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: rodBlendWeightMultiplier
     value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: handleRotateSpeed
+    value: 500
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: objectsHeightCurve.m_Curve.Array.size
@@ -167,15 +2678,15 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: objectsHeightCurve.m_Curve.Array.data[0].value
-    value: 5.25
+    value: 4.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: objectsHeightCurve.m_Curve.Array.data[0].inSlope
-    value: -17.25
+    value: -39.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: objectsHeightCurve.m_Curve.Array.data[0].outSlope
-    value: -17.25
+    value: -39.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: objectsHeightCurve.m_Curve.Array.data[0].tangentMode
@@ -199,15 +2710,15 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: objectsHeightCurve.m_Curve.Array.data[1].value
-    value: -12
+    value: -35
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: objectsHeightCurve.m_Curve.Array.data[1].inSlope
-    value: -17.25
+    value: -39.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: objectsHeightCurve.m_Curve.Array.data[1].outSlope
-    value: -17.25
+    value: -39.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: objectsHeightCurve.m_Curve.Array.data[1].tangentMode
@@ -239,134 +2750,6 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: fadeHeightCurve.m_Curve.Array.size
-    value: 4
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].time
-    value: 0.24
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].value
-    value: -0.48
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].inSlope
-    value: 0.01294048
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].outSlope
-    value: Infinity
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].tangentMode
-    value: 97
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].weightedMode
-    value: 3
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].inWeight
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[0].outWeight
-    value: 0.4299077
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].time
-    value: 0.25
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].value
-    value: -0.48
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].inSlope
-    value: 20.01583
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].outSlope
-    value: -2.6000001
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].tangentMode
-    value: 65
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].weightedMode
-    value: 3
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].inWeight
-    value: 0.22926699
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[1].outWeight
-    value: 0.13378294
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].time
-    value: 0.45
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].value
-    value: -1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].inSlope
-    value: -2.6000001
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].outSlope
-    value: -2.2222223
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].tangentMode
-    value: 69
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].weightedMode
-    value: 3
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].inWeight
-    value: 0.42714977
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[2].outWeight
-    value: 0.34238458
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].time
-    value: 0.9
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].value
-    value: -2
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].inSlope
-    value: -2.2222223
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].outSlope
-    value: 553.25226
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].tangentMode
-    value: 5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].weightedMode
-    value: 3
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].inWeight
-    value: 0.01034125
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: fadeHeightCurve.m_Curve.Array.data[3].outWeight
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -586,39 +2969,119 @@ Preset:
     value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: fadeSpriteZOffset
+    value: 1.3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: objectsZOffset
+    value: 1.4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: fishHeight
-    value: -0.25
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lineZOffset
+    value: 2.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lineYOffset
+    value: 3
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: fishToLineOffset.x
-    value: 0.1
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: fishToLineOffset.y
-    value: 0
+    value: 0.1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: fishToLineOffset.z
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: fishRotationMultiplier
+    value: 25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lineXMultiplier
+    value: 2.3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: lineStartSpeed
-    value: 0.02
+    value: 0.0115
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: lineEndMaxDelta
-    value: 0.8
+    value: 1.45
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: lineEndSmoothTime
-    value: 0.6
+    value: 0.45
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishProgress
+    value: 0.96
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishDuration
+    value: 0.7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishPlayerSpeed
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: SetActive
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+    value: UnityEngine.Object, UnityEngine
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: finishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: gameActive
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PlayerControl
+    propertyPath: playerControl
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -647,7 +3110,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: progress
-    value: 0
+    value: 0.6
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: impeded
@@ -666,14 +3129,14 @@ Preset:
     value: 1.2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: externalSpeedMod
-    value: 1
+    propertyPath: onKnockback.m_PersistentCalls.m_Calls.Array.size
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: externalCheckRate
-    value: 0.1
+    propertyPath: onBubbles.m_PersistentCalls.m_Calls.Array.size
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: externalCheckTimer
+    propertyPath: onCoral.m_PersistentCalls.m_Calls.Array.size
     value: 0
     objectReference: {fileID: 0}

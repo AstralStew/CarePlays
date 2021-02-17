@@ -48,8 +48,6 @@ namespace Paperticket {
                     return;
             }
         
-            //if (controller == XRNode.LeftHand) source.sourceTransform = PTUtilities.instance.leftController.transform;
-            //else source.sourceTransform = PTUtilities.instance.rightController.transform;
 
             source.weight = 1;
 
@@ -86,6 +84,28 @@ namespace Paperticket {
 
             constraint.constraintActive = true;
 
+
+        }
+
+        void OnEnable() {
+            OVRManager.InputFocusLost += QuestFocusLost;
+            OVRManager.InputFocusAcquired += QuestFocusAcquired;
+        }
+
+        void OnDisable() {
+            OVRManager.InputFocusLost -= QuestFocusLost;
+            OVRManager.InputFocusAcquired -= QuestFocusAcquired;
+        }
+
+
+        void QuestFocusLost() {
+            if (controller != controllerType.Head) {
+                constraint.constraintActive = false;
+            }
+        }
+
+        void QuestFocusAcquired() {
+            constraint.constraintActive = true;
         }
 
     }

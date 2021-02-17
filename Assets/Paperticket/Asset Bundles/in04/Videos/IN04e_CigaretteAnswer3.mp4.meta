@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b0a869cbdbeae87468ee8d6ffa622b06
+guid: 9d1799dddbc73154caf6a939432e2e30
 VideoClipImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -11,8 +11,17 @@ VideoClipImporter:
   encodeAlpha: 0
   flipVertical: 0
   flipHorizontal: 0
-  importAudio: 1
-  targetSettings: {}
+  importAudio: 0
+  targetSettings:
+    0:
+      enableTranscoding: 0
+      codec: 0
+      resizeFormat: 0
+      aspectRatio: 0
+      customWidth: 3840
+      customHeight: 1920
+      bitrateMode: 2
+      spatialQuality: 2
   userData: 
   assetBundleName: in04
   assetBundleVariant: 

@@ -133,6 +133,15 @@ public class CrossSceneEventHelper : MonoBehaviour {
         PTUtilities.instance.ControllerBeamLayerMask = layerMask;
     }
 
+    public void DoHaptics( Hand hand, float strength, float duration ) {
+
+        PTUtilities.instance.DoHaptics(hand, strength, duration);
+        //StartCoroutine(OculusUtilities.instance.DoingHaptics(strength, strength, duration, hand));
+
+    }
+
+
+
 
     public void MatchHeadsetTransform (Transform target ) {
 
@@ -194,10 +203,20 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
 
 
+    #region Oculus calls
+
+
+
+
+
+
+
+    #endregion
+
 
 
     #region General purpose calls
-    
+
 
     public void DestroyGameObject( GameObject objectToDestroy ) {
         Destroy(objectToDestroy);

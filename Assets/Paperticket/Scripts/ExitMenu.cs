@@ -12,6 +12,8 @@ namespace Paperticket {
         [Header("CONTROLS")]
         [Space(5)]
         [SerializeField] bool debugging = false;
+        [Space(5)]
+        [SerializeField] bool activateOnButton = true;
         [Space(15)]
         [SerializeField] UnityEvent2 OnEvent = null;
         [SerializeField] UnityEvent2 OffEvent = null;
@@ -32,20 +34,33 @@ namespace Paperticket {
         bool menuActive = false;
         bool lastMenuState = false;
 
-        void Update() {            
+        void OnEnable() {
+            OVRManager.InputFocusLost += FocusLost;
+            OVRManager.InputFocusAcquired += FocusAcquired;
+        }
+        void OnDisable() {
+            OVRManager.InputFocusLost -= FocusLost;
+            OVRManager.InputFocusAcquired -= FocusAcquired;
+        }
 
-            if (PTUtilities.instance.ControllerMenuButton && !lastMenuState) {
-                if (locked) {
-                    if (debugging) Debug.Log("[ExitMenu] Exit Menu is locked, ignoring menu button.");
-                    return;
+
+        void Update() {
+
+            if (activateOnButton) {
+                if (PTUtilities.instance.ControllerMenuButton && !lastMenuState) {
+                    if (!OVRManager.hasInputFocus) return;
+
+                    if (locked) {
+                        if (debugging) Debug.Log("[ExitMenu] Exit Menu is locked, ignoring menu button.");
+                        return;
+                    }
+
+                    if (!menuActive) ActivateMenu();
+                    else DeactivateMenu();
                 }
 
-                if (!menuActive) ActivateMenu();
-                else DeactivateMenu();
+                lastMenuState = PTUtilities.instance.ControllerMenuButton;
             }
-
-            lastMenuState = PTUtilities.instance.ControllerMenuButton;
-
         }
 
 
@@ -62,6 +77,9 @@ namespace Paperticket {
                 if (videoPlayingState) videoController.PauseVideo();
             }
 
+            // Turn this on after setting AudioSource.ignoreListenerPause to true on all menu sources
+            //AudioListener.pause = true;
+
 
             if (OnEvent != null) OnEvent.Invoke();
 
@@ -76,12 +94,29 @@ namespace Paperticket {
 
             if (videoController == null) Debug.LogWarning("[ExitMenu] WARNING -> No VideoController set! Cannot set VideoPlayingState.");
             else if (videoPlayingState) videoController.PlayVideo();
-            
+
+
+            // Turn this on after setting AudioSource.ignoreListenerPause to true on all menu sources
+            //AudioListener.pause = false;
 
 
             PTUtilities.instance.ControllerBeamActive = controllerBeamState;
 
             menuActive = false;
+        }
+
+
+
+        public void FocusAcquired() {           
+            if (activateOnButton) PTUtilities.instance.ControllerBeamActive = true;            
+            else DeactivateMenu();
+        }
+
+        public void FocusLost() {
+            if (!menuActive) {
+                ActivateMenu();
+            }            
+            PTUtilities.instance.ControllerBeamActive = false;
         }
 
 

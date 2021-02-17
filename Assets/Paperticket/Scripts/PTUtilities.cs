@@ -15,7 +15,7 @@ namespace Paperticket {
 
     public enum TimeScale { Scaled, Unscaled }
     public enum GameEventOption { OnButtonDown, OnButtonUp, OnTriggerPress, OnTriggerUp }
-    public enum Hand { Left, Right }
+    public enum Hand { Left, Right, Both }
 
     public class PTUtilities : MonoBehaviour {
         //enum Handedness { Left, Right, Both }
@@ -343,232 +343,108 @@ namespace Paperticket {
 
 
 
-        // Toggle VRTK settings 
+        //// Haptics
+        //bool leftHapticsActivated;
+        //Coroutine leftHapticsCo;
+        //bool rightHapticsActivated;
+        //Coroutine rightHapticsCo;
+        HapticCapabilities capabilities;
 
-        /// <summary>
-        /// Toggle the 3D model for the controller models
-        /// </summary>
-        /// <param name="toggle">True to enable, false to disable</param>
-        public void ToggleControllerModel( Hand hand, bool toggle ) {
+        //public void ToggleHaptics( Hand hand, bool toggle, float strength ) {
 
-            //GameObject modelAlias = null;
-            switch (hand) {
-                case Hand.Left:
-                    //VRTK_ObjectAppearance.ToggleRenderer(toggle, leftModelAlias);
-
-                    break;
-                case Hand.Right:
-                    //VRTK_ObjectAppearance.ToggleRenderer(toggle, rightModelAlias);
-
-                    break;
-                default:
-                    Debug.LogError("[PTUtilities] ERROR -> Bad hand choice, something's very wrong!");
-                    break;
-            }
-
-        }
-
-        /// <summary>
-        /// Toggle the 3D model for the controller models
-        /// </summary>
-        /// <param name="toggle">True to enable, false to disable</param>
-        /// <param name="ignoredModel">True to enable, false to disable</param>
-        public void ToggleControllerModel( Hand hand, bool toggle, GameObject ignoredModel ) {
-
-            //GameObject modelAlias = null;
-            switch (hand) {
-                case Hand.Left:
-                    //if (VRTK_SDKManager.instance.scriptAliasLeftController) {
-                    //    modelAlias = VRTK_DeviceFinder.GetModelAliasController(VRTK_DeviceFinder.GetControllerLeftHand());
-                    //    if (_Debug) Debug.Log("[PTUtilities] Setting left controller model to " + toggle);
-                    //} else {
-                    //    Debug.LogError("[PTUtilities] ERROR -> ScriptAliasLeftController is not bound in VRTK_SDKManager!");
-                    //}
-                    //VRTK_ObjectAppearance.ToggleRenderer(toggle, leftModelAlias, ignoredModel);
-                    break;
-                case Hand.Right:
-                    //if (VRTK_SDKManager.instance.scriptAliasRightController) {
-                    //    modelAlias = VRTK_DeviceFinder.GetModelAliasController(VRTK_DeviceFinder.GetControllerRightHand());
-                    //    if (_Debug) Debug.Log("[PTUtilities] Setting right controller model to " + toggle);
-                    //} else {
-                    //    Debug.LogError("[PTUtilities] ERROR -> ScriptAliasRightController is not bound in VRTK_SDKManager!");
-                    //}
-                    //VRTK_ObjectAppearance.ToggleRenderer(toggle, rightModelAlias, ignoredModel);
-                    break;
-                default:
-                    Debug.LogError("[PTUtilities] ERROR -> Bad hand choice, something's very wrong!");
-                    break;
-            }
-
-            //VRTK_ObjectAppearance.ToggleRenderer(toggle, modelAlias, ignoredModel);
-
-        }
-
-        /// <summary>
-        /// Toggle the renderer of the controller pointer beam
-        /// </summary>
-        /// <param name="toggle"> True to enable, false to disable</param>
-        //public void TogglePointerRenderer( Hand hand, bool toggle ) {
-
-        //    // Get the relevant pointer for the chosen hand
-        //    VRTK_StraightPointerRenderer pointer = null;
         //    switch (hand) {
         //        case Hand.Left:
-        //            pointer = leftScriptAlias.GetComponentInChildren<VRTK_StraightPointerRenderer>(true);
+        //            if (toggle) {
+        //                if (!leftHapticsActivated) {
+        //                    leftHapticsCo = StartCoroutine(RunningHaptics(hand, strength));
+        //                    leftHapticsActivated = true;
+        //                } else {
+        //                    if (_Debug) Debug.Log("[PTUTilities] Haptics already active! Ignoring call");
+        //                }
+        //            } else {
+        //                if (leftHapticsActivated) {
+        //                    StopCoroutine(leftHapticsCo);
+        //                    leftHapticsActivated = false;
+        //                } else {
+        //                    if (_Debug) Debug.Log("[PTUTilities] Haptics already inactive! Ignoring call");
+        //                }
+        //            }
 
         //            break;
         //        case Hand.Right:
-        //            pointer = rightScriptAlias.GetComponentInChildren<VRTK_StraightPointerRenderer>(true);
+        //            if (toggle) {
+        //                if (!rightHapticsActivated) {
+        //                    rightHapticsCo = StartCoroutine(RunningHaptics(hand, strength));
+        //                    rightHapticsActivated = true;
+        //                } else {
+        //                    if (_Debug) Debug.Log("[PTUTilities] Haptics already active! Ignoring call");
+        //                }
+        //            } else {
+        //                if (rightHapticsActivated) {
+        //                    StopCoroutine(rightHapticsCo);
+        //                    rightHapticsActivated = false;
+        //                } else {
+        //                    if (_Debug) Debug.Log("[PTUTilities] Haptics already inactive! Ignoring call");
+        //                }
+        //            }
 
         //            break;
         //        default:
-        //            Debug.LogError("[PTUtilities] ERROR -> Bad hand choice, something's very wrong!");
+        //            Debug.LogError("[PTUtilities] ERROR -> Bad hand choice in haptics, something's very wrong!");
         //            break;
-        //    }
-
-        //    if (toggle) {
-        //        pointer.gameObject.SetActive(true);
-        //        pointer.ResetPointerObjects();
-        //    } else {
-        //        pointer.gameObject.SetActive(false);
-        //    }
-
-
-        //}
-
-
-        // Haptics
-
-        bool leftHapticsActivated;
-        Coroutine leftHapticsCoroutine;
-        bool rightHapticsActivated;
-        Coroutine rightHapticsCoroutine;
-
-        public void ToggleControllerHaptics( Hand hand, bool toggle, float strength ) {
-
-            switch (hand) {
-                case Hand.Left:
-                    if (toggle) {
-                        if (!leftHapticsActivated) {
-                            leftHapticsCoroutine = StartCoroutine(RunningHaptics(hand, strength));
-                            leftHapticsActivated = true;
-                        } else {
-                            if (_Debug) Debug.Log("[PTUTilities] Haptics already active! Ignoring call");
-                        }
-                    } else {
-                        if (leftHapticsActivated) {
-                            StopCoroutine(leftHapticsCoroutine);
-                            leftHapticsActivated = false;
-                        } else {
-                            if (_Debug) Debug.Log("[PTUTilities] Haptics already inactive! Ignoring call");
-                        }
-                    }
-
-                    break;
-                case Hand.Right:
-                    if (toggle) {
-                        if (!rightHapticsActivated) {
-                            rightHapticsCoroutine = StartCoroutine(RunningHaptics(hand, strength));
-                            rightHapticsActivated = true;
-                        } else {
-                            if (_Debug) Debug.Log("[PTUTilities] Haptics already active! Ignoring call");
-                        }
-                    } else {
-                        if (rightHapticsActivated) {
-                            StopCoroutine(rightHapticsCoroutine);
-                            rightHapticsActivated = false;
-                        } else {
-                            if (_Debug) Debug.Log("[PTUTilities] Haptics already inactive! Ignoring call");
-                        }
-                    }
-
-                    break;
-                default:
-                    Debug.LogError("[PTUtilities] ERROR -> Bad hand choice in haptics, something's very wrong!");
-                    break;
-            }
-        }
-        IEnumerator RunningHaptics( Hand hand, float strength ) {
-            //VRTK_ControllerReference controllerReference = null;
-
-            switch (hand) {
-                case Hand.Left:
-                    //  controllerReference = VRTK_ControllerReference.GetControllerReference(SDK_BaseController.ControllerHand.Left);
-                    break;
-                case Hand.Right:
-                    //  controllerReference = VRTK_ControllerReference.GetControllerReference(SDK_BaseController.ControllerHand.Right);
-                    break;
-                default:
-                    Debug.LogError("[PTUtilities] ERROR -> Bad hand choice, something's very wrong!");
-                    break;
-            }
-
-            while (true) {
-                // VRTK_ControllerHaptics.TriggerHapticPulse(controllerReference, strength);
-                yield return null;
-            }
-
-        }
-
-
-        /// <summary>
-        /// Toggle the controller highlighter for the controller models
-        /// </summary>
-        /// <param name="toggle">True to enable, false to disable</param>
-        //public void ToggleControllerHighlight( Hand hand,  bool toggle, SDK_BaseController.ControllerElements highlightedElement, Color highlightColor, float fadeDuration) {
-
-        //   // VRTK_ControllerHighlighter controllerHighlighter = null;
-        //    GameObject modelAlias = null;
-        //    switch (hand) {
-        //        case Hand.Left:
-        //            //controllerHighlighter = leftScriptAlias.GetComponent<VRTK_ControllerHighlighter>();
-        //            modelAlias = leftModelAlias;
-
-        //            break;
-        //        case Hand.Right:
-        //           // controllerHighlighter = rightScriptAlias.GetComponent<VRTK_ControllerHighlighter>();
-        //            modelAlias = rightModelAlias;
-
-        //            break;
-        //        default:
-        //            Debug.LogError("[PTUtilities] ERROR -> Bad hand choice, something's very wrong!");
-        //            break;
-        //    }
-
-        //    if (toggle) {
-        //      //  controllerHighlighter.HighlightElement(highlightedElement, highlightColor, 0.05f);
-        //      //  VRTK_ObjectAppearance.SetOpacity(modelAlias, 0.5f, fadeDuration);
-        //    } else {
-        //      //  controllerHighlighter.UnhighlightController();
-        //     //   VRTK_ObjectAppearance.SetOpacity(modelAlias, 1f, fadeDuration);
         //    }
         //}
 
-        /// <summary>
-        /// Toggle the text on the controller models that designates left/right
-        /// </summary>
-        /// <param name="hand">The hand to toggle</param>
-        /// <param name="toggle">True to enable, false to disable</param>
-        public void ToggleControllerText( Hand hand, bool toggle ) {
+        public void DoHaptics( Hand hand, float strength, float duration ) {
+            if (_Debug) Debug.Log("[PTUTilities] Starting haptics on '"+hand.ToString()+"' hand(s). Strength = " + strength + ", duration = " + duration);
 
-            //controllerProxy.GetComponentInChildren<TextMeshPro>(true).gameObject.SetActive(toggle);
+            if (hand != Hand.Right) {
+                if (leftController.inputDevice.TryGetHapticCapabilities(out capabilities)) {
+                    if (capabilities.supportsImpulse) {
+                        uint channel = 0;
+                        leftController.inputDevice.SendHapticImpulse(channel, strength, duration);
+                    } else Debug.LogError("[PTUtilities] ERROR -> Left controller input device does not support haptic impulse :(");
+                } else Debug.LogError("[PTUtilities] ERROR -> Could not get HapticCapabilities of the Left controller input device :(");
+                //leftController.SendHapticImpulse(strength, duration);
+            }
 
-            //switch (hand) {
-            //    case Hand.Left:
-                    
-
-            //        break;
-            //    case Hand.Right:
-            //        rightScriptAlias.GetComponentInChildren<TextMeshPro>(true).gameObject.SetActive(toggle);
-
-            //        break;
-            //    default:
-            //        Debug.LogError("[PTUtilities] ERROR -> Bad hand choice in controller text, something's very wrong!");
-            //        break;
-            //}
+            if (hand != Hand.Left) {
+                if (rightController.inputDevice.TryGetHapticCapabilities(out capabilities)) {
+                    if (capabilities.supportsImpulse) {
+                        uint channel = 0;
+                        rightController.inputDevice.SendHapticImpulse(channel, strength, duration);
+                    } else Debug.LogError("[PTUtilities] ERROR -> Right controller input device does not support haptic impulse :(");
+                } else Debug.LogError("[PTUtilities] ERROR -> Could not get HapticCapabilities of the Right controller input device :(");
+                //rightController.SendHapticImpulse(strength, duration);
+            }
 
 
+           
         }
+
+        //public void RunHaptics( Hand hand, float strength, float duration) {
+        //    if (_Debug) Debug.Log("[PTUTilities] Starting haptics on " + (hand == Hand.Left ? "left" : "right") + " hand. Strength = " + strength + ", duration = " + duration);
+
+        //    if (hand == Hand.Left) {
+        //        if (leftHapticsCo != null) StopCoroutine(leftHapticsCo);
+        //        leftHapticsCo = StartCoroutine(RunningHaptics(hand, strength, duration));
+        //    } else {
+        //        if (rightHapticsCo != null) StopCoroutine(rightHapticsCo);
+        //        rightHapticsCo = StartCoroutine(RunningHaptics(hand, strength, duration));
+        //    }            
+        //}
+        //IEnumerator RunningHaptics( Hand hand, float strength, float duration ) {
+
+        //    if (hand == Hand.Left) leftController.SendHapticImpulse(strength, duration);
+        //    else rightController.SendHapticImpulse(strength, duration);
+
+        //    yield return new WaitForSeconds(duration);
+
+        //    if (hand == Hand.Left) leftHapticsCo = null;
+        //    else rightHapticsCo = null;
+
+        //}
+
 
 
 
@@ -941,7 +817,7 @@ namespace Paperticket {
             for (float t = 0.0f; t < 1.0f; t += timeScale==0?Time.deltaTime:Time.unscaledDeltaTime / duration) {
                 float newDB = Mathf.Lerp(currentDB, targetDB, t);
                 mixer.SetFloat(floatName, newDB);
-                if (_Debug) Debug.Log(floatName + " = " + newDB);
+                //if (_Debug) Debug.Log(floatName + " = " + newDB);
                 yield return null;
             }
             audioMaster.SetFloat(floatName, targetDB);
@@ -1103,3 +979,162 @@ namespace Paperticket {
 
 }
 
+
+
+
+
+
+
+// Toggle VRTK settings 
+
+///// <summary>
+///// Toggle the 3D model for the controller models
+///// </summary>
+///// <param name="toggle">True to enable, false to disable</param>
+//public void ToggleControllerModel( Hand hand, bool toggle ) {
+
+//    //GameObject modelAlias = null;
+//    switch (hand) {
+//        case Hand.Left:
+//            //VRTK_ObjectAppearance.ToggleRenderer(toggle, leftModelAlias);
+
+//            break;
+//        case Hand.Right:
+//            //VRTK_ObjectAppearance.ToggleRenderer(toggle, rightModelAlias);
+
+//            break;
+//        default:
+//            Debug.LogError("[PTUtilities] ERROR -> Bad hand choice, something's very wrong!");
+//            break;
+//    }
+
+//}
+
+///// <summary>
+///// Toggle the 3D model for the controller models
+///// </summary>
+///// <param name="toggle">True to enable, false to disable</param>
+///// <param name="ignoredModel">True to enable, false to disable</param>
+//public void ToggleControllerModel( Hand hand, bool toggle, GameObject ignoredModel ) {
+
+//    //GameObject modelAlias = null;
+//    switch (hand) {
+//        case Hand.Left:
+//            //if (VRTK_SDKManager.instance.scriptAliasLeftController) {
+//            //    modelAlias = VRTK_DeviceFinder.GetModelAliasController(VRTK_DeviceFinder.GetControllerLeftHand());
+//            //    if (_Debug) Debug.Log("[PTUtilities] Setting left controller model to " + toggle);
+//            //} else {
+//            //    Debug.LogError("[PTUtilities] ERROR -> ScriptAliasLeftController is not bound in VRTK_SDKManager!");
+//            //}
+//            //VRTK_ObjectAppearance.ToggleRenderer(toggle, leftModelAlias, ignoredModel);
+//            break;
+//        case Hand.Right:
+//            //if (VRTK_SDKManager.instance.scriptAliasRightController) {
+//            //    modelAlias = VRTK_DeviceFinder.GetModelAliasController(VRTK_DeviceFinder.GetControllerRightHand());
+//            //    if (_Debug) Debug.Log("[PTUtilities] Setting right controller model to " + toggle);
+//            //} else {
+//            //    Debug.LogError("[PTUtilities] ERROR -> ScriptAliasRightController is not bound in VRTK_SDKManager!");
+//            //}
+//            //VRTK_ObjectAppearance.ToggleRenderer(toggle, rightModelAlias, ignoredModel);
+//            break;
+//        default:
+//            Debug.LogError("[PTUtilities] ERROR -> Bad hand choice, something's very wrong!");
+//            break;
+//    }
+
+//    //VRTK_ObjectAppearance.ToggleRenderer(toggle, modelAlias, ignoredModel);
+
+//}
+
+///// <summary>
+///// Toggle the renderer of the controller pointer beam
+///// </summary>
+///// <param name="toggle"> True to enable, false to disable</param>
+////public void TogglePointerRenderer( Hand hand, bool toggle ) {
+
+////    // Get the relevant pointer for the chosen hand
+////    VRTK_StraightPointerRenderer pointer = null;
+////    switch (hand) {
+////        case Hand.Left:
+////            pointer = leftScriptAlias.GetComponentInChildren<VRTK_StraightPointerRenderer>(true);
+
+////            break;
+////        case Hand.Right:
+////            pointer = rightScriptAlias.GetComponentInChildren<VRTK_StraightPointerRenderer>(true);
+
+////            break;
+////        default:
+////            Debug.LogError("[PTUtilities] ERROR -> Bad hand choice, something's very wrong!");
+////            break;
+////    }
+
+////    if (toggle) {
+////        pointer.gameObject.SetActive(true);
+////        pointer.ResetPointerObjects();
+////    } else {
+////        pointer.gameObject.SetActive(false);
+////    }
+
+
+////}
+
+
+
+///// <summary>
+///// Toggle the controller highlighter for the controller models
+///// </summary>
+///// <param name="toggle">True to enable, false to disable</param>
+////public void ToggleControllerHighlight( Hand hand,  bool toggle, SDK_BaseController.ControllerElements highlightedElement, Color highlightColor, float fadeDuration) {
+
+////   // VRTK_ControllerHighlighter controllerHighlighter = null;
+////    GameObject modelAlias = null;
+////    switch (hand) {
+////        case Hand.Left:
+////            //controllerHighlighter = leftScriptAlias.GetComponent<VRTK_ControllerHighlighter>();
+////            modelAlias = leftModelAlias;
+
+////            break;
+////        case Hand.Right:
+////           // controllerHighlighter = rightScriptAlias.GetComponent<VRTK_ControllerHighlighter>();
+////            modelAlias = rightModelAlias;
+
+////            break;
+////        default:
+////            Debug.LogError("[PTUtilities] ERROR -> Bad hand choice, something's very wrong!");
+////            break;
+////    }
+
+////    if (toggle) {
+////      //  controllerHighlighter.HighlightElement(highlightedElement, highlightColor, 0.05f);
+////      //  VRTK_ObjectAppearance.SetOpacity(modelAlias, 0.5f, fadeDuration);
+////    } else {
+////      //  controllerHighlighter.UnhighlightController();
+////     //   VRTK_ObjectAppearance.SetOpacity(modelAlias, 1f, fadeDuration);
+////    }
+////}
+
+///// <summary>
+///// Toggle the text on the controller models that designates left/right
+///// </summary>
+///// <param name="hand">The hand to toggle</param>
+///// <param name="toggle">True to enable, false to disable</param>
+//public void ToggleControllerText( Hand hand, bool toggle ) {
+
+//    //controllerProxy.GetComponentInChildren<TextMeshPro>(true).gameObject.SetActive(toggle);
+
+//    //switch (hand) {
+//    //    case Hand.Left:
+
+
+//    //        break;
+//    //    case Hand.Right:
+//    //        rightScriptAlias.GetComponentInChildren<TextMeshPro>(true).gameObject.SetActive(toggle);
+
+//    //        break;
+//    //    default:
+//    //        Debug.LogError("[PTUtilities] ERROR -> Bad hand choice in controller text, something's very wrong!");
+//    //        break;
+//    //}
+
+
+//}

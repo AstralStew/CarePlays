@@ -61901,7 +61901,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1326131118}
-  - component: {fileID: 1326131122}
   - component: {fileID: 1326131121}
   - component: {fileID: 1326131120}
   - component: {fileID: 1326131119}
@@ -62144,27 +62143,6 @@ MonoBehaviour:
         m_Target: {fileID: 748428917}
         m_MethodName: FadeAudioMasterIn
         m_Modes: 04000000
-    m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1326131122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326131117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 299c7964f08b14c49adaafaaffa8fc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBeforeEvent: 0.1
-  eventBehaviour: 0
-  timeBehaviour: 0
-  debug: 0
-  OnEventTriggered:
-    m_PersistentCalls:
-      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent2, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1327745259

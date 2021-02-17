@@ -107,9 +107,11 @@ namespace Paperticket {
 
 
 
-        public void FocusAcquired() {           
-            if (activateOnButton) PTUtilities.instance.ControllerBeamActive = true;            
-            else DeactivateMenu();
+        public void FocusAcquired() {
+            if (menuActive) {
+                if (activateOnButton) PTUtilities.instance.ControllerBeamActive = true;
+                else DeactivateMenu();
+            }
         }
 
         public void FocusLost() {

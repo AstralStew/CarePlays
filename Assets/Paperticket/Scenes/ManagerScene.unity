@@ -99,7 +99,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1606,7 +1606,7 @@ MonoBehaviour:
   debugging: 1
   frameDebugging: 0
   loadDebugBundles: 0
-  debugBundles: 16000000
+  debugBundles: 14000000
   loadedBundles: []
   finishedInitialising: 0
 --- !u!4 &773205471

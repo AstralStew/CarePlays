@@ -810,7 +810,8 @@ namespace Paperticket {
         public IEnumerator FadeAudioMixerTo( AudioMixer mixer, string floatName, float targetValue, float duration, TimeScale timeScale ) {
 
             mixer.GetFloat(floatName, out float currentDB);
-            float targetDB = (targetValue - 1) * 80;
+            AnimationCurve volumeCurve = AnimationCurve.Linear(0, -80, 1, 2f);
+            float targetDB = volumeCurve.Evaluate(targetValue); // (targetValue - 1) * 80;
 
             if (_Debug) Debug.Log("Fading mixer '" + mixer.name + "', currentDB = " + currentDB + ", targetDB = " + targetDB);
 

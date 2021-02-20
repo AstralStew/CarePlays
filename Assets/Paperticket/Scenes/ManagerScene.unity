@@ -1606,7 +1606,7 @@ MonoBehaviour:
   debugging: 1
   frameDebugging: 0
   loadDebugBundles: 0
-  debugBundles: 03000000
+  debugBundles: 05000000
   loadedBundles: []
   finishedInitialising: 0
 --- !u!4 &773205471

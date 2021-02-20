@@ -22,8 +22,8 @@ namespace Paperticket {
         [SerializeField] SpriteRenderer fishSprite = null;
         [SerializeField] Transform objectSprites = null;
         [SerializeField] LineRenderer fishingLine2D = null;
-        [SerializeField] LineRenderer fishingLine3D = null;
-        [SerializeField] Transform line3DTarget = null;
+        //[SerializeField] LineRenderer fishingLine3D = null;
+        //[SerializeField] Transform line3DTarget = null;
 
         Transform playerRig = null;
         //Transform playerHead;
@@ -84,8 +84,8 @@ namespace Paperticket {
 
         [Space(10)]
         [SerializeField] [Range(0, 1)] float finishProgress = 0.989f;
-        [SerializeField] float finishDuration = 1;
-        [SerializeField] float finishPlayerSpeed = 1.3f;
+        [SerializeField] float finishDuration = 0.7f;
+        [SerializeField] float finishPlayerSpeed = 5f;
 
         [SerializeField] UnityEvent finishEvents = null;
 
@@ -437,14 +437,24 @@ namespace Paperticket {
         }
         IEnumerator FinishAnimation() {
 
+            yield return new WaitForSeconds(0.1f);                      
+
+
             float t = 0;
             while (t < finishDuration) {
-                t += Time.fixedDeltaTime;
+                //t += Time.fixedDeltaTime;
 
-                fishingLine2D.transform.Translate(Vector3.up * finishPlayerSpeed * Time.fixedDeltaTime);
-                playerFish.Translate(Vector3.up * finishPlayerSpeed * Time.fixedDeltaTime);
+                //fishingLine2D.transform.Translate(Vector3.up * finishPlayerSpeed * Time.fixedDeltaTime);
+                //playerFish.Translate(Vector3.up * finishPlayerSpeed * Time.fixedDeltaTime);
 
-                yield return new WaitForFixedUpdate();
+                //yield return new WaitForFixedUpdate();
+
+                t += Time.deltaTime;
+
+                fishingLine2D.transform.Translate(Vector3.up * finishPlayerSpeed * Time.deltaTime);
+                playerFish.Translate(Vector3.up * finishPlayerSpeed * Time.deltaTime);
+
+                yield return null;
             }
                      
 

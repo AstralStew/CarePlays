@@ -135,8 +135,8 @@ public class CrossSceneEventHelper : MonoBehaviour {
 
     public void DoHaptics( Hand hand, float strength, float duration ) {
 
-        PTUtilities.instance.DoHaptics(hand, strength, duration);
-        //StartCoroutine(OculusUtilities.instance.DoingHaptics(strength, strength, duration, hand));
+        //PTUtilities.instance.DoHaptics(hand, strength, duration);
+        StartCoroutine(OculusUtilities.instance.DoingHaptics(strength, strength, duration, hand));
 
     }
 
@@ -622,6 +622,7 @@ public class CrossSceneEventHelper : MonoBehaviour {
         tempAudio.volume = volume;
         tempAudio.minDistance = minDistance;
         tempAudio.maxDistance = maxDistance;
+        //tempAudio.outputAudioMixerGroup = PTUtilities.instance.audioMaster.FindMatchingGroups("Master")[0];
 
         tempAudio.Play();
 

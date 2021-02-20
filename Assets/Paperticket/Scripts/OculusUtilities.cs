@@ -23,6 +23,7 @@ namespace Paperticket {
                 Destroy(gameObject);
             }
 
+            Debug.Log("[OculusUtilities] OVRManager.loadedXRDevice = " + OVRManager.loadedXRDevice);
 
         }
 
@@ -40,16 +41,119 @@ namespace Paperticket {
 
 
 
-
+        OVRPlugin.HapticsState hapticState;
+        OVRPlugin.HapticsDesc hapticDesc;
         public IEnumerator DoingHaptics( float frequency, float amplitude, float duration, Hand hand ) {
 
-            if (hand != Hand.Right) OVRInput.SetControllerVibration(frequency, amplitude, OVRInput.Controller.LTouch);
-            else if (hand != Hand.Left) OVRInput.SetControllerVibration(frequency, amplitude, OVRInput.Controller.RTouch);
+            if (hand != Hand.Right) {
+                if (debugging) Debug.Log("[OculusUtilities] Starting haptics on 'LTouch' controller'");
 
-            yield return new WaitForSeconds(duration);
+                hapticState = OVRPlugin.GetControllerHapticsState((uint)OVRInput.Controller.LTouch);
+                hapticDesc = OVRPlugin.GetControllerHapticsDesc((uint)OVRInput.Controller.LTouch);
+                if (debugging) Debug.Log("[OculusUtilities] Haptics state/desc of 'LTouch' pre-call: \n " +
+                                          "SamplesAvailable = " + hapticState.SamplesAvailable + "\n " +
+                                          "SamplesQueud = " + hapticState.SamplesQueued + "\n " +
+                                          "MaximumBufferSamplesCount = " + hapticDesc.MaximumBufferSamplesCount + "\n " +
+                                          "MinimumBufferSamplesCount = " + hapticDesc.MinimumBufferSamplesCount + "\n " +
+                                          "MinimumSafeSamplesQueued = " + hapticDesc.MinimumSafeSamplesQueued + "\n " +
+                                          "OptimalBufferSamplesCount = " + hapticDesc.OptimalBufferSamplesCount + "\n " +
+                                          "SampleRateHz = " + hapticDesc.SampleRateHz + "\n " +
+                                          "SampleSizeInBytes = " + hapticDesc.SampleSizeInBytes);
 
-            if (hand != Hand.Right) OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
-            else if (hand != Hand.Left) OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+                OVRInput.SetControllerVibration(frequency, amplitude, OVRInput.Controller.LTouch);
+            }
+
+            if (hand != Hand.Left) {
+                if (debugging) Debug.Log("[OculusUtilities] Starting haptics on 'RTouch' controller'");
+
+                hapticState = OVRPlugin.GetControllerHapticsState((uint)OVRInput.Controller.RTouch);
+                hapticDesc = OVRPlugin.GetControllerHapticsDesc((uint)OVRInput.Controller.RTouch);
+                if (debugging) Debug.Log("[OculusUtilities] Haptics state/desc of 'RTouch' pre-call: \n " +
+                                          "SamplesAvailable = " + hapticState.SamplesAvailable + "\n " +
+                                          "SamplesQueud = " + hapticState.SamplesQueued + "\n " +
+                                          "MaximumBufferSamplesCount = " + hapticDesc.MaximumBufferSamplesCount + "\n " +
+                                          "MinimumBufferSamplesCount = " + hapticDesc.MinimumBufferSamplesCount + "\n " +
+                                          "MinimumSafeSamplesQueued = " + hapticDesc.MinimumSafeSamplesQueued + "\n " +
+                                          "OptimalBufferSamplesCount = " + hapticDesc.OptimalBufferSamplesCount + "\n " +
+                                          "SampleRateHz = " + hapticDesc.SampleRateHz + "\n " +
+                                          "SampleSizeInBytes = " + hapticDesc.SampleSizeInBytes);
+
+                OVRInput.SetControllerVibration(frequency, amplitude, OVRInput.Controller.RTouch);
+            }
+
+
+            yield return new WaitForSeconds(duration / 2);
+
+
+            if (hand != Hand.Right) {
+
+                hapticState = OVRPlugin.GetControllerHapticsState((uint)OVRInput.Controller.LTouch);
+                hapticDesc = OVRPlugin.GetControllerHapticsDesc((uint)OVRInput.Controller.LTouch);
+                if (debugging) Debug.Log("[OculusUtilities] Haptics state/desc of 'LTouch' during-call: \n " +
+                                          "SamplesAvailable = " + hapticState.SamplesAvailable + "\n " +
+                                          "SamplesQueud = " + hapticState.SamplesQueued + "\n " +
+                                          "MaximumBufferSamplesCount = " + hapticDesc.MaximumBufferSamplesCount + "\n " +
+                                          "MinimumBufferSamplesCount = " + hapticDesc.MinimumBufferSamplesCount + "\n " +
+                                          "MinimumSafeSamplesQueued = " + hapticDesc.MinimumSafeSamplesQueued + "\n " +
+                                          "OptimalBufferSamplesCount = " + hapticDesc.OptimalBufferSamplesCount + "\n " +
+                                          "SampleRateHz = " + hapticDesc.SampleRateHz + "\n " +
+                                          "SampleSizeInBytes = " + hapticDesc.SampleSizeInBytes);
+            }
+
+            if (hand != Hand.Left) {
+
+                hapticState = OVRPlugin.GetControllerHapticsState((uint)OVRInput.Controller.RTouch);
+                hapticDesc = OVRPlugin.GetControllerHapticsDesc((uint)OVRInput.Controller.RTouch);
+                if (debugging) Debug.Log("[OculusUtilities] Haptics state/desc of 'RTouch' during-call: \n " +
+                                          "SamplesAvailable = " + hapticState.SamplesAvailable + "\n " +
+                                          "SamplesQueud = " + hapticState.SamplesQueued + "\n " +
+                                          "MaximumBufferSamplesCount = " + hapticDesc.MaximumBufferSamplesCount + "\n " +
+                                          "MinimumBufferSamplesCount = " + hapticDesc.MinimumBufferSamplesCount + "\n " +
+                                          "MinimumSafeSamplesQueued = " + hapticDesc.MinimumSafeSamplesQueued + "\n " +
+                                          "OptimalBufferSamplesCount = " + hapticDesc.OptimalBufferSamplesCount + "\n " +
+                                          "SampleRateHz = " + hapticDesc.SampleRateHz + "\n " +
+                                          "SampleSizeInBytes = " + hapticDesc.SampleSizeInBytes);
+            }
+
+
+            yield return new WaitForSeconds(duration / 2);
+
+
+            if (hand != Hand.Right) {
+                if (debugging) Debug.Log("[OculusUtilities] Stopping haptics on 'LTouch' controller'");
+
+                OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
+
+                hapticState = OVRPlugin.GetControllerHapticsState((uint)OVRInput.Controller.LTouch);
+                hapticDesc = OVRPlugin.GetControllerHapticsDesc((uint)OVRInput.Controller.LTouch);
+                if (debugging) Debug.Log("[OculusUtilities] Haptics state/desc of 'LTouch' post-call: \n " +
+                                          "SamplesAvailable = " + hapticState.SamplesAvailable + "\n " +
+                                          "SamplesQueud = " + hapticState.SamplesQueued + "\n " +
+                                          "MaximumBufferSamplesCount = " + hapticDesc.MaximumBufferSamplesCount + "\n " +
+                                          "MinimumBufferSamplesCount = " + hapticDesc.MinimumBufferSamplesCount + "\n " +
+                                          "MinimumSafeSamplesQueued = " + hapticDesc.MinimumSafeSamplesQueued + "\n " +
+                                          "OptimalBufferSamplesCount = " + hapticDesc.OptimalBufferSamplesCount + "\n " +
+                                          "SampleRateHz = " + hapticDesc.SampleRateHz + "\n " +
+                                          "SampleSizeInBytes = " + hapticDesc.SampleSizeInBytes);
+            }
+
+            if (hand != Hand.Left) {
+                if (debugging) Debug.Log("[OculusUtilities] Stopping haptics on 'RTouch' controller'");
+
+                OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+
+                hapticState = OVRPlugin.GetControllerHapticsState((uint)OVRInput.Controller.RTouch);
+                hapticDesc = OVRPlugin.GetControllerHapticsDesc((uint)OVRInput.Controller.RTouch);
+                if (debugging) Debug.Log("[OculusUtilities] Haptics state/desc of 'RTouch' post-call: \n " +
+                                          "SamplesAvailable = " + hapticState.SamplesAvailable + "\n " +
+                                          "SamplesQueud = " + hapticState.SamplesQueued + "\n " +
+                                          "MaximumBufferSamplesCount = " + hapticDesc.MaximumBufferSamplesCount + "\n " +
+                                          "MinimumBufferSamplesCount = " + hapticDesc.MinimumBufferSamplesCount + "\n " +
+                                          "MinimumSafeSamplesQueued = " + hapticDesc.MinimumSafeSamplesQueued + "\n " +
+                                          "OptimalBufferSamplesCount = " + hapticDesc.OptimalBufferSamplesCount + "\n " +
+                                          "SampleRateHz = " + hapticDesc.SampleRateHz + "\n " +
+                                          "SampleSizeInBytes = " + hapticDesc.SampleSizeInBytes);
+            }
         }
 
     }

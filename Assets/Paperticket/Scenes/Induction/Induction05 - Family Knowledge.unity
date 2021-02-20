@@ -8940,7 +8940,7 @@ MonoBehaviour:
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: Paperticket.NellyAnimController+NellyAnimations,
             Assembly-CSharp
-          m_IntArgument: 5
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12574,6 +12574,26 @@ MonoBehaviour:
   OnEventTriggered:
     m_PersistentCalls:
       m_Calls:
+      - m_Arguments:
+        - m_ObjectArgument: {fileID: 1466831195}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine.CoreModule
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+          m_Vector2Argument: {x: 0, y: 0}
+          m_Vector2IntArgument: {x: 0, y: 0}
+          m_Vector3Argument: {x: 0, y: 0, z: 0}
+          m_Vector3IntArgument: {x: 0, y: 0, z: 0}
+          m_Vector4Argument: {x: 0, y: 0, z: 0, w: 0}
+          m_LayerMaskArgument:
+            serializedVersion: 2
+            m_Bits: 0
+          m_ColorArgument: {r: 0, g: 0, b: 0, a: 0}
+        m_CallState: 2
+        m_Target: {fileID: 1760068396}
+        m_MethodName: TeleportPlayer
+        m_Modes: 02000000
       - m_Arguments:
         - m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: System.Boolean, mscorlib
@@ -23039,7 +23059,7 @@ MonoBehaviour:
   debugging: 0
   currentIndex: 0
   startingPose: 6
-  startDelay: 0.4
+  startDelay: 0
   randomiseDelay: 0
 --- !u!95 &1352235467909143870
 Animator:
@@ -31855,7 +31875,7 @@ MonoBehaviour:
   debugging: 0
   currentIndex: 0
   startingPose: 4
-  startDelay: 0.2
+  startDelay: 0
   randomiseDelay: 0
 --- !u!95 &7066147355856602039
 Animator:

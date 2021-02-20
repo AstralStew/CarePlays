@@ -61,7 +61,7 @@ namespace Paperticket {
         public Vector3 ControllerAcceleration = Vector3.zero;
         public Vector3 ControllerAngularAcceleration = Vector3.zero;
         [Space(5)]
-        [SerializeField] AudioMixer audioMaster = null;
+        public AudioMixer audioMaster = null;
 
 
         [HideInInspector] public bool SetupComplete = false;        

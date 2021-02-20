@@ -29,7 +29,10 @@ namespace Paperticket {
 
         public bool Locked {
             get { return locked; }
-            set { locked = value; if (debugging) Debug.Log("[ExitMenu] Exit Menu " + (locked?"locked":"unlocked"));}
+            set { locked = value; 
+                if (debugging) Debug.Log("[ExitMenu] Exit Menu " + (locked?"locked":"unlocked"));
+                if (!locked) CheckFocus();
+            }
         }
         bool menuActive = false;
         bool lastMenuState = false;
@@ -107,20 +110,29 @@ namespace Paperticket {
 
 
 
-        public void FocusAcquired() {
+        void FocusAcquired() {
+            if (locked) return;
+
             if (menuActive) {
                 if (activateOnButton) PTUtilities.instance.ControllerBeamActive = true;
                 else DeactivateMenu();
             }
         }
 
-        public void FocusLost() {
+        void FocusLost() {
+            if (locked) return;
+
             if (!menuActive) {
                 ActivateMenu();
             }            
             PTUtilities.instance.ControllerBeamActive = false;
-        }
+        }                                   
 
+        void CheckFocus() {
+            if (!OVRManager.hasInputFocus) {
+                FocusLost();
+            }
+        }
 
     }
 }

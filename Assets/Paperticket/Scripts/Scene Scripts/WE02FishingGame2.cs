@@ -21,7 +21,9 @@ namespace Paperticket {
         [SerializeField] Transform playerFish = null;
         [SerializeField] SpriteRenderer fishSprite = null;
         [SerializeField] Transform objectSprites = null;
-        [SerializeField] LineRenderer fishingLine = null;
+        [SerializeField] LineRenderer fishingLine2D = null;
+        [SerializeField] LineRenderer fishingLine3D = null;
+        [SerializeField] Transform line3DTarget = null;
 
         Transform playerRig = null;
         //Transform playerHead;
@@ -64,17 +66,19 @@ namespace Paperticket {
         [Header("LINE CONTROLS")]
         [Space(10)]
         [SerializeField] float fishHeight = -1.69f;
-        [SerializeField] float lineZOffset = 1f;
-        [SerializeField] float lineYOffset = 3f;
-        [SerializeField] Vector3 fishToLineOffset;
+        [SerializeField] float line2DZOffset = 1f;
+        [SerializeField] float line2DYOffset = 3f;
+        [SerializeField] Vector3 fishToLine2DOffset;
         [SerializeField] float fishRotationMultiplier = 25;
         [Space(10)]
-        [SerializeField] float lineXMultiplier = 1f;
-        [SerializeField] float lineStartSpeed = 0.02f;
-        [SerializeField] float lineEndMaxDelta = 0.8f;
-        [SerializeField] float lineEndSmoothTime = 0.6f;
-
-
+        [SerializeField] float line2DXMultiplier = 1f;
+        [SerializeField] float line2DStartSpeed = 0.02f;
+        [SerializeField] float line2DEndMaxDelta = 0.8f;
+        [SerializeField] float line2DEndSmoothTime = 0.6f;
+        [Space(10)]
+        [SerializeField] Vector3 line3DMinPos = Vector3.zero;
+        [SerializeField] Vector3 line3DMaxPos = Vector3.zero;
+        [SerializeField] float line3DXMultiplier = 1f;
 
         [Header("FINISHING CONTROLS")]
 
@@ -83,11 +87,11 @@ namespace Paperticket {
         [SerializeField] float finishDuration = 1;
         [SerializeField] float finishPlayerSpeed = 1.3f;
 
-        [SerializeField] UnityEvent finishEvents;
+        [SerializeField] UnityEvent finishEvents = null;
 
 
 
-        [Header("READ ONLY")]
+        [Header("LIVE VARIABLES")]
         [Space(10)]
         [SerializeField] bool gameActive = false;
         [SerializeField] bool playerControl = false;
@@ -98,9 +102,12 @@ namespace Paperticket {
         [Space(10)]
         [SerializeField] float rodDistance = 0;
         [Space(10)]
-        [SerializeField] [Range(-1, 1)] float targetLineX = 0;
-        [SerializeField] [Range(-1, 1)] float lineStartX = 0;
-        [SerializeField] [Range(-1, 1)] float lineEndX = 0;
+        [SerializeField] [Range(-1, 1)] float targetLine2DX = 0;
+        [SerializeField] [Range(-1, 1)] float line2DStartX = 0;
+        [SerializeField] [Range(-1, 1)] float line2DEndX = 0;
+        [Space(5)]
+        [SerializeField] [Range(-1, 1)] float targetLine3DX = 0;
+        [SerializeField] [Range(-1, 1)] float line3DStartX = 0;
         [Space(10)]
         [SerializeField] [Range(0, 1)] float progress = 0;
         [Space(10)]
@@ -276,7 +283,7 @@ namespace Paperticket {
             UpdateObjects();
 
             // Move the fishing line renderer
-            UpdateFishingLine();
+            UpdateFishingLines();
 
             // Move/flip the player fish (must come after CalculateFishingLine)
             UpdatePlayerFish();
@@ -290,7 +297,9 @@ namespace Paperticket {
 
             //headDistance = playerRig.InverseTransformPoint(playerHead.position).x;
 
-            targetLineX = Mathf.Clamp(rodDistance / rodMaxDistance, -1, 1) * lineXMultiplier;
+            targetLine2DX = Mathf.Clamp(rodDistance / rodMaxDistance, -1, 1) * line2DXMultiplier;
+
+            targetLine3DX = Mathf.Clamp(rodDistance / rodMaxDistance, -1, 1) * line3DXMultiplier;
 
         }
         void CalculateReeling() {
@@ -326,26 +335,32 @@ namespace Paperticket {
 
 
         }
-        Vector3 lineStartPos = Vector3.zero;
-        Vector3 lineEndPos = Vector3.zero;
+        Vector3 line2DStartPos = Vector3.zero;
+        Vector3 line2DEndPos = Vector3.zero;
         float smoothVel = 0;
-        void UpdateFishingLine() {
+        void UpdateFishingLines() {
 
             // Move the end of the line towards the start
-            lineStartX = Mathf.Lerp(lineStartX, targetLineX, lineStartSpeed * (playerControl ? 1f : 0.5f));
+            line2DStartX = Mathf.Lerp(line2DStartX, targetLine2DX, line2DStartSpeed * (playerControl ? 1f : 0.5f));
 
             // Calculate the fishing line positions
-            lineStartPos = new Vector3(lineStartX, lineYOffset, lineZOffset);
+            line2DStartPos = new Vector3(line2DStartX, line2DYOffset, line2DZOffset);
 
             // Move the fishing line renderer
-            fishingLine.SetPosition(0, lineStartPos);
+            fishingLine2D.SetPosition(0, line2DStartPos);
 
             // Only move the end of the line if the player has control                        
             if (playerControl) {
-                lineEndX = Mathf.SmoothDamp(lineEndX, lineStartX, ref smoothVel, lineEndSmoothTime, lineEndMaxDelta);
-                lineEndPos = new Vector3(lineEndX, fishHeight, lineZOffset);
-                fishingLine.SetPosition(1, lineEndPos);
+                line2DEndX = Mathf.SmoothDamp(line2DEndX, line2DStartX, ref smoothVel, line2DEndSmoothTime, line2DEndMaxDelta);
+                line2DEndPos = new Vector3(line2DEndX, fishHeight, line2DZOffset);
+                fishingLine2D.SetPosition(1, line2DEndPos);
             }
+
+
+            //// Move the 3D fishing line starting point between curved and straight
+            //line3DStartX = Mathf.Lerp(line3DStartX, targetLine3DX, line2DStartSpeed);
+            //fishingLine3D.SetPosition(0, Vector3.Lerp(line3DMinPos, line3DMaxPos, (rodBlendWeightMultiplier - fishingRod.GetBlendShapeWeight(0)) / rodBlendWeightMultiplier));
+            //fishingLine3D.SetPosition(1, fishingLine3D.transform.InverseTransformPoint(line3DTarget.position + (line3DStartX * line3DTarget.right)));
 
         }
 
@@ -353,10 +368,10 @@ namespace Paperticket {
         void UpdatePlayerFish() {
 
             // Move the fish to track the end of the fishing line
-            playerFish.localPosition = lineEndPos + fishToLineOffset;
+            playerFish.localPosition = line2DEndPos + fishToLine2DOffset;
 
             // Check which side of the line the fish is on and rotate accordingly
-            fishRotation = fishRotationMultiplier * (lineEndX - lineStartX);
+            fishRotation = fishRotationMultiplier * (line2DEndX - line2DStartX);
             //if (lineStartX < lineEndX) 
                 
             //else 
@@ -373,7 +388,7 @@ namespace Paperticket {
         void UpdateRodGraphics() {
 
             fishingRod.SetBlendShapeWeight(0, rodBlendWeightMultiplier * (1 - progress));
-            fishingRod.SetBlendShapeWeight(1, 0);
+            //fishingRod.SetBlendShapeWeight(1, 0);
 
         }
 
@@ -426,7 +441,7 @@ namespace Paperticket {
             while (t < finishDuration) {
                 t += Time.fixedDeltaTime;
 
-                fishingLine.transform.Translate(Vector3.up * finishPlayerSpeed * Time.fixedDeltaTime);
+                fishingLine2D.transform.Translate(Vector3.up * finishPlayerSpeed * Time.fixedDeltaTime);
                 playerFish.Translate(Vector3.up * finishPlayerSpeed * Time.fixedDeltaTime);
 
                 yield return new WaitForFixedUpdate();
@@ -470,8 +485,8 @@ namespace Paperticket {
 
         public void MoveToStart() {
 
-            lineEndPos = new Vector3(lineEndX, -0.25f, lineZOffset);
-            fishingLine.SetPosition(1, lineEndPos);
+            line2DEndPos = new Vector3(line2DEndX, -0.25f, line2DZOffset);
+            fishingLine2D.SetPosition(1, line2DEndPos);
 
             //lineEndPos = transform.InverseTransformPoint(fishStartPos.position);
 

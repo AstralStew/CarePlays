@@ -1,31 +1,40 @@
 fileFormatVersion: 2
-guid: 4c55ab560abdccd499fe87b3e3fa48a8
+guid: 7284c332493673b4eb4b3393de54bfb5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8735336099345978660
-    second: WE01_TriggerInteractionSprite_0
+      213: 8799156924798582930
+    second: WE01_TutorialButton_0
   - first:
-      213: -566479307789658470
-    second: WE01_TriggerInteractionSprite_1
+      213: -5881273864291802499
+    second: WE01_TutorialButton_1
   - first:
-      213: -627012742896058719
-    second: WE01_TriggerInteractionSprite_2
+      213: 9133886644017667576
+    second: WE01_TutorialButton_2
   - first:
-      213: 5152990725706553849
-    second: WE01_TriggerInteractionSprite_3
+      213: 4715488735620141818
+    second: WE01_TutorialButton_3
   - first:
-      213: 2849529727607540457
-    second: WE01_TriggerInteractionSprite_4
+      213: -4999280146868213249
+    second: WE01_TutorialButton_4
   - first:
-      213: 3702653182549625623
-    second: WE01_TriggerInteractionSprite_5
+      213: 1216413617259732572
+    second: WE01_TutorialButton_5
   - first:
-      213: 8521429156218435876
-    second: WE01_TriggerInteractionSprite_6
+      213: -4090842863787883402
+    second: WE01_TutorialButton_6
   - first:
-      213: 8516229350630933895
-    second: WE01_TriggerInteractionSprite_7
+      213: 3464470932658717952
+    second: WE01_TutorialButton_7
+  - first:
+      213: -4721770771165850773
+    second: WE01_TutorialButton_8
+  - first:
+      213: -1553379905813975073
+    second: WE01_TutorialButton_9
+  - first:
+      213: -4661876380615991726
+    second: WE01_TutorialButton_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,13 +108,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WE01_TriggerInteractionSprite_0
+      name: WE01_TutorialButton_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 300
-        height: 300
+        width: 1012
+        height: 842
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -113,20 +122,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cda26d4791ad5c680800000000000000
-      internalID: -8735336099345978660
+      spriteID: 290c9896a92ec1a70800000000000000
+      internalID: 8799156924798582930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WE01_TriggerInteractionSprite_1
+      name: WE01_TutorialButton_1
       rect:
         serializedVersion: 2
-        x: 300
+        x: 1012
         y: 0
-        width: 300
-        height: 300
+        width: 1012
+        height: 842
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a96969622167328f0800000000000000
-      internalID: -566479307789658470
+      spriteID: d72291ca494816ea0800000000000000
+      internalID: -5881273864291802499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WE01_TriggerInteractionSprite_2
+      name: WE01_TutorialButton_2
       rect:
         serializedVersion: 2
-        x: 600
+        x: 2024
         y: 0
-        width: 300
-        height: 300
+        width: 1012
+        height: 842
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ae790e7b376c47f0800000000000000
-      internalID: -627012742896058719
+      spriteID: 8fd9b53628512ce70800000000000000
+      internalID: 9133886644017667576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WE01_TriggerInteractionSprite_3
+      name: WE01_TutorialButton_3
       rect:
         serializedVersion: 2
-        x: 900
+        x: 3036
         y: 0
-        width: 300
-        height: 300
+        width: 1012
+        height: 842
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,41 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f91f9863c9138740800000000000000
-      internalID: 5152990725706553849
+      spriteID: af29ef47508c07140800000000000000
+      internalID: 4715488735620141818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WE01_TriggerInteractionSprite_4
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 0
-        width: 300
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ea86f690309b8720800000000000000
-      internalID: 2849529727607540457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WE01_TriggerInteractionSprite_5
+      name: WE01_TutorialButton_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 300
-        width: 300
-        height: 300
+        y: 842
+        width: 1012
+        height: 842
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71b0758b377726330800000000000000
-      internalID: 3702653182549625623
+      spriteID: ff9e149913dfe9ab0800000000000000
+      internalID: -4999280146868213249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WE01_TriggerInteractionSprite_6
+      name: WE01_TutorialButton_5
       rect:
         serializedVersion: 2
-        x: 300
-        y: 300
-        width: 300
-        height: 300
+        x: 1012
+        y: 842
+        width: 1012
+        height: 842
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4297e0b4ba2324670800000000000000
-      internalID: 8521429156218435876
+      spriteID: c5ed6b47db191e010800000000000000
+      internalID: 1216413617259732572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WE01_TriggerInteractionSprite_7
+      name: WE01_TutorialButton_6
       rect:
         serializedVersion: 2
-        x: 600
-        y: 300
-        width: 300
-        height: 300
+        x: 2024
+        y: 842
+        width: 1012
+        height: 842
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,8 +248,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 785cc163979bf2670800000000000000
-      internalID: 8516229350630933895
+      spriteID: 6744bffe6186a37c0800000000000000
+      internalID: -4090842863787883402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WE01_TutorialButton_7
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 842
+        width: 1012
+        height: 842
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0050acb25f5441030800000000000000
+      internalID: 3464470932658717952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WE01_TutorialButton_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1684
+        width: 1012
+        height: 842
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6356d92086e87eb0800000000000000
+      internalID: -4721770771165850773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WE01_TutorialButton_9
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1684
+        width: 1012
+        height: 842
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdf6ab0b439417ae0800000000000000
+      internalID: -1553379905813975073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WE01_TutorialButton_10
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 1684
+        width: 1012
+        height: 842
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e999aa120bd4fb0800000000000000
+      internalID: -4661876380615991726
       vertices: []
       indices: 
       edges: []
@@ -269,7 +341,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 04bc57ab834de1245991d96212ec7d69
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -280,5 +352,5 @@ TextureImporter:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 
-  assetBundleName: main
+  assetBundleName: we01
   assetBundleVariant: 

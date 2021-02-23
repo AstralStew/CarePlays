@@ -19,14 +19,18 @@ public class OculusFocusAwareEvents : MonoBehaviour {
     }
 
 
-    [SerializeField] bool controllerBeamState = false;
+    //[SerializeField] bool controllerBeamState = false;
 
 
 
     // Start is called before the first frame update
-    void Awake() {
+    void OnEnable() {
         OVRManager.InputFocusLost += InputFocusLost;
         OVRManager.InputFocusAcquired += InputFocusAcquired;
+    }
+    void OnDisable() {
+        OVRManager.InputFocusLost -= InputFocusLost;
+        OVRManager.InputFocusAcquired -= InputFocusAcquired;
     }
 
 
@@ -34,8 +38,8 @@ public class OculusFocusAwareEvents : MonoBehaviour {
         if (debugging) Debug.Log("[OculusFocusAwareEvents] Input focus lost.");
 
         // Save the controller beam state and turn it off
-        controllerBeamState = PTUtilities.instance.ControllerBeamActive;
-        PTUtilities.instance.ControllerBeamActive = false;
+        //controllerBeamState = PTUtilities.instance.ControllerBeamActive;
+        //PTUtilities.instance.ControllerBeamActive = false;
 
         // Send off the focus lost event
         if (OnFocusAcquired != null) OnFocusLost.Invoke();
@@ -46,7 +50,7 @@ public class OculusFocusAwareEvents : MonoBehaviour {
         if (debugging) Debug.Log("[OculusFocusAwareEvents] Input focus acquired.");
 
         // Load the controller beam state
-        PTUtilities.instance.ControllerBeamActive = controllerBeamState;
+        //PTUtilities.instance.ControllerBeamActive = controllerBeamState;
 
         // Send off the focus acquired event
         if (OnFocusAcquired != null) OnFocusAcquired.Invoke();

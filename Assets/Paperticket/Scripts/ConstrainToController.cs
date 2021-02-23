@@ -12,9 +12,10 @@ namespace Paperticket {
 
         ParentConstraint constraint;
 
-        //[SerializeField] Hand hand;
+        [SerializeField] bool debugging = false;
+        [Space(10)]
         [SerializeField] controllerType controller = controllerType.LeftController;
-        
+        [Space(5)]
         [SerializeField] Vector3 positionOffset;
         [SerializeField] Vector3 rotationOffset;
         [Space(15)]
@@ -25,6 +26,8 @@ namespace Paperticket {
         [SerializeField] bool AffectXRotation = true;
         [SerializeField] bool AffectYRotation = true;
         [SerializeField] bool AffectZRotation = true;
+
+        //List<Renderer> renderers = new List<Renderer>();
 
 
         // Start is called before the first frame update
@@ -85,6 +88,8 @@ namespace Paperticket {
             constraint.constraintActive = true;
 
 
+
+
         }
 
         void OnEnable() {
@@ -98,16 +103,34 @@ namespace Paperticket {
         }
 
 
+        //bool focusLost = false;
         void QuestFocusLost() {
-            if (controller != controllerType.Head) {
+            if (/*!focusLost && */controller != controllerType.Head) {
                 constraint.constraintActive = false;
+
+                //// Get renderers on hands to disable them if Oculus input focus is lost
+                //foreach (Renderer rend in GetComponentsInChildren<Renderer>(false)) {
+                //    renderers.Add(rend);
+                //    rend.enabled = false;
+                //    if (debugging) Debug.Log("[ConstrainToController] Focus lost! Hiding renderer '" + rend.name + "'");
+                //}
+                //focusLost = true;
             }
         }
 
         void QuestFocusAcquired() {
             constraint.constraintActive = true;
+
+            //// Enable any renderers that were disabled when oculus input focus was lost
+            //if (focusLost && controller != controllerType.Head && renderers.Count > 0) {
+            //    foreach (Renderer rend in renderers) {
+            //        rend.enabled = true;
+            //        renderers.Remove(rend);
+            //        if (debugging) Debug.Log("[ConstrainToController] Focus lost! Showing renderer '" + rend.name + "'");
+            //    }
+            //}
+            //focusLost = false;
         }
 
     }
-
 }

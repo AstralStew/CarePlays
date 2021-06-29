@@ -2,12 +2,20 @@
 using UnityEngine;
 using System.IO;
 
+[RequireComponent(typeof(Camera))]
 public class Screenshotter : MonoBehaviour {
+
+    enum AALevel { none,x2,x4,x8 };
+
+
     [SerializeField] System.Environment.SpecialFolder editorBundleLocation = System.Environment.SpecialFolder.MyDocuments;
     [SerializeField] string subdirectory = "/Paperticket Studios/CarePlaysVR/";
     [Space(10)]
-    [SerializeField] TextureFormat textureFormat = TextureFormat.RGB24;
+    //[SerializeField] RenderTexture outputMap = null;
+    //[SerializeField] AALevel antiAliasing = AALevel.x2;
     [SerializeField] Vector2 textureSize = new Vector2(1920, 1080);
+    [Space(10)]
+    [SerializeField] TextureFormat textureFormat = TextureFormat.ARGB32;
     [SerializeField] bool linearSpace = true;
 
 
@@ -25,11 +33,13 @@ public class Screenshotter : MonoBehaviour {
         RenderTexture outputMap = new RenderTexture(Mathf.FloorToInt(textureSize.x), Mathf.FloorToInt(textureSize.y), 32);
         outputMap.name = "ScreenshotterRenderTexture";
         outputMap.enableRandomWrite = true;
+        outputMap.filterMode = FilterMode.Bilinear;
+        //outputMap.antiAliasing = Math.Max(1, (int)Math.Pow(2, (int)antiAliasing));
         outputMap.Create();
 
         // Force a render to the target texture.
-        Camera.main.targetTexture = outputMap;
-        Camera.main.Render();
+        GetComponent<Camera>().targetTexture = outputMap;
+        GetComponent<Camera>().Render();
 
         // Texture.ReadPixels reads from whatever texture is active. Ours needs to
         // be active. But let's remember the old one so we can restore it later.
@@ -46,7 +56,7 @@ public class Screenshotter : MonoBehaviour {
         File.WriteAllBytes(filePath, raster.EncodeToPNG());
 
         // Restore previous settings.
-        Camera.main.targetTexture = null;
+        GetComponent<Camera>().targetTexture = null;
         RenderTexture.active = oldRenderTexture;
 
         Debug.Log("[Screenshotter] Screenshot saved to '" + filePath + "'");

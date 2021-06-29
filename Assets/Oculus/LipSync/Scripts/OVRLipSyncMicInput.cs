@@ -110,18 +110,18 @@ public class OVRLipSyncMicInput : MonoBehaviour
     /// </summary>
     private void InitializeMicrophone()
     {
-        if (initialized)
-        {
-            return;
-        }
-        if (Microphone.devices.Length == 0)
-        {
-            return;
-        }
-        selectedDevice = Microphone.devices[0].ToString();
-        micSelected = true;
-        GetMicCaps();
-        initialized = true;
+        //if (initialized)
+        //{
+        //    return;
+        //}
+        //if (Microphone.devices.Length == 0)
+        //{
+        //    return;
+        //}
+        //selectedDevice = Microphone.devices[0].ToString();
+        //micSelected = true;
+        //GetMicCaps();
+        //initialized = true;
     }
 
 
@@ -130,82 +130,82 @@ public class OVRLipSyncMicInput : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (!focused)
-        {
-            if (Microphone.IsRecording(selectedDevice))
-            {
-                StopMicrophone();
-            }
-            return;
-        }
+        //if (!focused)
+        //{
+        //    if (Microphone.IsRecording(selectedDevice))
+        //    {
+        //        StopMicrophone();
+        //    }
+        //    return;
+        //}
 
-        if (!Application.isPlaying)
-        {
-            StopMicrophone();
-            return;
-        }
+        //if (!Application.isPlaying)
+        //{
+        //    StopMicrophone();
+        //    return;
+        //}
 
-        // Lazy Microphone initialization (needed on Android)
-        if (!initialized)
-        {
-            InitializeMicrophone();
-        }
+        //// Lazy Microphone initialization (needed on Android)
+        //if (!initialized)
+        //{
+        //    InitializeMicrophone();
+        //}
 
-        audioSource.volume = (micInputVolume / 100);
+        //audioSource.volume = (micInputVolume / 100);
 
-        //Hold To Speak
-        if (micControl == micActivation.HoldToSpeak)
-        {
-            if (Input.GetKey(micActivationKey))
-            {
-                if (!Microphone.IsRecording(selectedDevice))
-                {
-                    StartMicrophone();
-                }
-            }
-            else
-            {
-                if (Microphone.IsRecording(selectedDevice))
-                {
-                    StopMicrophone();
-                }
-            }
-        }
+        ////Hold To Speak
+        //if (micControl == micActivation.HoldToSpeak)
+        //{
+        //    if (Input.GetKey(micActivationKey))
+        //    {
+        //        if (!Microphone.IsRecording(selectedDevice))
+        //        {
+        //            StartMicrophone();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (Microphone.IsRecording(selectedDevice))
+        //        {
+        //            StopMicrophone();
+        //        }
+        //    }
+        //}
 
-        //Push To Talk
-        if (micControl == micActivation.PushToSpeak)
-        {
-            if (Input.GetKeyDown(micActivationKey))
-            {
-                if (Microphone.IsRecording(selectedDevice))
-                {
-                    StopMicrophone();
-                }
-                else if (!Microphone.IsRecording(selectedDevice))
-                {
-                    StartMicrophone();
-                }
-            }
-        }
+        ////Push To Talk
+        //if (micControl == micActivation.PushToSpeak)
+        //{
+        //    if (Input.GetKeyDown(micActivationKey))
+        //    {
+        //        if (Microphone.IsRecording(selectedDevice))
+        //        {
+        //            StopMicrophone();
+        //        }
+        //        else if (!Microphone.IsRecording(selectedDevice))
+        //        {
+        //            StartMicrophone();
+        //        }
+        //    }
+        //}
 
-        //Constant Speak
-        if (micControl == micActivation.ConstantSpeak)
-        {
-            if (!Microphone.IsRecording(selectedDevice))
-            {
-                StartMicrophone();
-            }
-        }
+        ////Constant Speak
+        //if (micControl == micActivation.ConstantSpeak)
+        //{
+        //    if (!Microphone.IsRecording(selectedDevice))
+        //    {
+        //        StartMicrophone();
+        //    }
+        //}
 
 
-        //Mic Selected = False
-        if (enableMicSelectionGUI)
-        {
-            if (Input.GetKeyDown(micSelectionGUIKey))
-            {
-                micSelected = false;
-            }
-        }
+        ////Mic Selected = False
+        //if (enableMicSelectionGUI)
+        //{
+        //    if (Input.GetKeyDown(micSelectionGUIKey))
+        //    {
+        //        micSelected = false;
+        //    }
+        //}
     }
 
 
@@ -267,23 +267,23 @@ public class OVRLipSyncMicInput : MonoBehaviour
         float buttonSpaceTop,
         float buttonSpaceLeft)
     {
-        //If there is more than one device, choose one.
-        if (Microphone.devices.Length >= 1 && enableMicSelectionGUI == true && micSelected == false)
-        {
-            for (int i = 0; i < Microphone.devices.Length; ++i)
-            {
-                if (GUI.Button(new Rect(left + ((width + buttonSpaceLeft) * i),
-                                        top + ((height + buttonSpaceTop) * i), width, height),
-                               Microphone.devices[i].ToString()))
-                {
-                    StopMicrophone();
-                    selectedDevice = Microphone.devices[i].ToString();
-                    micSelected = true;
-                    GetMicCaps();
-                    StartMicrophone();
-                }
-            }
-        }
+        ////If there is more than one device, choose one.
+        //if (Microphone.devices.Length >= 1 && enableMicSelectionGUI == true && micSelected == false)
+        //{
+        //    for (int i = 0; i < Microphone.devices.Length; ++i)
+        //    {
+        //        if (GUI.Button(new Rect(left + ((width + buttonSpaceLeft) * i),
+        //                                top + ((height + buttonSpaceTop) * i), width, height),
+        //                       Microphone.devices[i].ToString()))
+        //        {
+        //            StopMicrophone();
+        //            selectedDevice = Microphone.devices[i].ToString();
+        //            micSelected = true;
+        //            GetMicCaps();
+        //            StartMicrophone();
+        //        }
+        //    }
+        //}
     }
 
     /// <summary>
@@ -294,7 +294,7 @@ public class OVRLipSyncMicInput : MonoBehaviour
         if (micSelected == false) return;
 
         //Gets the frequency of the device
-        Microphone.GetDeviceCaps(selectedDevice, out minFreq, out maxFreq);
+        //Microphone.GetDeviceCaps(selectedDevice, out minFreq, out maxFreq);
 
         if (minFreq == 0 && maxFreq == 0)
         {
@@ -312,24 +312,24 @@ public class OVRLipSyncMicInput : MonoBehaviour
     /// </summary>
     public void StartMicrophone()
     {
-        if (micSelected == false) return;
+        //if (micSelected == false) return;
 
-        //Starts recording
-        audioSource.clip = Microphone.Start(selectedDevice, true, 1, micFrequency);
+        ////Starts recording
+        //audioSource.clip = Microphone.Start(selectedDevice, true, 1, micFrequency);
 
-        Stopwatch timer = Stopwatch.StartNew();
+        //Stopwatch timer = Stopwatch.StartNew();
 
-        // Wait until the recording has started
-        while (!(Microphone.GetPosition(selectedDevice) > 0) && timer.Elapsed.TotalMilliseconds < 1000) {
-            Thread.Sleep(50);
-        }
+        //// Wait until the recording has started
+        //while (!(Microphone.GetPosition(selectedDevice) > 0) && timer.Elapsed.TotalMilliseconds < 1000) {
+        //    Thread.Sleep(50);
+        //}
 
-        if (Microphone.GetPosition(selectedDevice) <= 0)
-        {
-            throw new Exception("Timeout initializing microphone " + selectedDevice);
-        }
-        // Play the audio source
-        audioSource.Play();
+        //if (Microphone.GetPosition(selectedDevice) <= 0)
+        //{
+        //    throw new Exception("Timeout initializing microphone " + selectedDevice);
+        //}
+        //// Play the audio source
+        //audioSource.Play();
     }
 
     /// <summary>
@@ -337,21 +337,21 @@ public class OVRLipSyncMicInput : MonoBehaviour
     /// </summary>
     public void StopMicrophone()
     {
-        if (micSelected == false) return;
+        //if (micSelected == false) return;
 
-        // Overriden with a clip to play? Don't stop the audio source
-        if ((audioSource != null) &&
-            (audioSource.clip != null) &&
-            (audioSource.clip.name == "Microphone"))
-        {
-            audioSource.Stop();
-        }
+        //// Overriden with a clip to play? Don't stop the audio source
+        //if ((audioSource != null) &&
+        //    (audioSource.clip != null) &&
+        //    (audioSource.clip.name == "Microphone"))
+        //{
+        //    audioSource.Stop();
+        //}
 
-        // Reset to stop mouth movement
-        OVRLipSyncContext context = GetComponent<OVRLipSyncContext>();
-        context.ResetContext();
+        //// Reset to stop mouth movement
+        //OVRLipSyncContext context = GetComponent<OVRLipSyncContext>();
+        //context.ResetContext();
 
-        Microphone.End(selectedDevice);
+        //Microphone.End(selectedDevice);
     }
 
 

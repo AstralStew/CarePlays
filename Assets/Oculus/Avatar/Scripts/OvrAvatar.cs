@@ -982,7 +982,7 @@ public class OvrAvatar : MonoBehaviour
 
     bool IsValidMic()
     {
-        string[] devices = Microphone.devices;
+        string[] devices = null; // Microphone.devices;
 
         if (devices.Length < 1)
         {
@@ -1004,21 +1004,21 @@ public class OvrAvatar : MonoBehaviour
         string selectedDevice = devices[selectedDeviceIndex];
 
         int minFreq;
-        int maxFreq;
-        Microphone.GetDeviceCaps(selectedDevice, out minFreq, out maxFreq);
+        int maxFreq = 0;
+        //Microphone.GetDeviceCaps(selectedDevice, out minFreq, out maxFreq);
 
         if (maxFreq == 0)
         {
             maxFreq = 44100;
         }
 
-        AudioClip clip = Microphone.Start(selectedDevice, true, 1, maxFreq);
+        AudioClip clip = null; // Microphone.Start(selectedDevice, true, 1, maxFreq);
         if (clip == null)
         {
             return false;
         }
 
-        Microphone.End(selectedDevice);
+        //Microphone.End(selectedDevice);
         return true;
     }
 
